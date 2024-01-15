@@ -1,0 +1,20 @@
+---
+// import { ViewTransitions } from 'astro:transitions';
+import '../assets/styles/talwind.css';
+---
+
+<!doctype html>
+<html
+  lang={'es' /* TODO: change by means of a utility */}
+  dir={'ltr' /* TODO: change by means of a utility */}
+  class="2xl:text-[20px]"
+>
+  <head>
+    <!-- TODO: Metadata,CustomStyles... -->
+    <!-- <ViewTransitions fallback="swap" /> -->
+  </head>
+
+  <body class="antialiased text-default tracking-tight">
+    <slot />
+  </body>
+</html>
