@@ -1,20 +1,26 @@
 ---
 // import { ViewTransitions } from 'astro:transitions';
 import '../assets/styles/talwind.css';
+import CustomStyles from '../components/CustomStyles.astro';
+import BasicScripts from '../components/common/BasicScripts.astro';
+
+import { I18N } from '../utils/config';
+
+const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html
-  lang={'es' /* TODO: change by means of a utility */}
-  dir={'ltr' /* TODO: change by means of a utility */}
-  class="2xl:text-[20px]"
->
+<html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <CustomStyles />
     <!-- TODO: Metadata,CustomStyles... -->
     <!-- <ViewTransitions fallback="swap" /> -->
   </head>
 
   <body class="antialiased text-default tracking-tight">
     <slot />
+    <BasicScripts />
   </body>
 </html>

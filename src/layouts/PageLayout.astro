@@ -1,6 +1,8 @@
 ---
 import Layout from "./Layout.astro";
 import Contact from "../components/widgets/Contact.astro";
+import Header from "../components/widgets/Header.astro";
+import { headerData } from "../navigation.ts";
 
 ---
 
@@ -9,7 +11,7 @@ import Contact from "../components/widgets/Contact.astro";
     <Contact />
   </slot>
   <slot name="header">
-    <!-- <Header /> TODO -->
+    <Header {...headerData} />
   </slot>
   <main>
     <slot />
