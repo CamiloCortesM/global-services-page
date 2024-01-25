@@ -1,0 +1,41 @@
+# TODO: Change all information
+site:
+  name: Global Service
+  site: 'https://globalservice.vercel.app'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: ''
+
+# SEO metadata
+metadata:
+  title:
+    default: Global Service
+    template: '%s — Global Service'
+  description: "Lorem Officia sit ad officia sunt minim enim deserunt commodo.Commodo non incididunt laboris est ut."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Global Service
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@nameUser'
+    site: '@nameUser'
+    cardType: summary_large_image
+
+i18n:
+  language: en-GB
+  textDirection: ltr
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system'
