@@ -25,38 +25,38 @@ interface HeaderData {
 export const headerData: HeaderData = {
   links: [
     {
-      text: 'Home',
+      text: 'HOME',
       href: getHomePermalink(),
     },
     {
-      text: 'About',
+      text: 'ABOUT',
       href: getPermalink('/about'),
     },
     {
-      text: 'Services',
+      text: 'SERVICES',
       links: [
         {
-          text: 'Apartment Cleaning',
+          text: 'APARTMENT CLEANING',
           href: getPermalink('/services/apartment-cleaning'),
         },
         {
-          text: 'House Cleaning',
+          text: 'HOUSE CLEANING',
           href: getPermalink('/services/house-cleaning'),
         },
         {
-          text: 'Carpet Cleaning',
+          text: 'CARPET CLEANING',
           href: getPermalink('/services/carpet-cleaning'),
         },
         {
-          text: 'Commercial Cleaning',
+          text: 'COMMERCIAL CLEANING',
           href: getPermalink('/services/comercial-cleaning'),
         },
         {
-          text: 'Window Cleaning',
+          text: 'WINDOW CLEANING',
           href: getPermalink('/services/window-cleaning'),
         },
         {
-          text: 'All Services',
+          text: 'ALL SERVICES',
           href: getPermalink('/service'),
         },
       ],
@@ -66,7 +66,7 @@ export const headerData: HeaderData = {
       href: getPermalink('/faqs'),
     },
     {
-      text: 'Contact',
+      text: 'CONTACT',
       href: getPermalink('/contact'),
     },
   ],
