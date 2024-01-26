@@ -49,6 +49,9 @@
   .aw-link-active{
     @apply text-[#464c8f]
   }
+  .wave-container {
+    @apply absolute bottom-0 z-40 w-full overflow-hidden h-24 hidden md:flex
+  }
 }
 
 #header {
