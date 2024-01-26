@@ -3,6 +3,9 @@
 import '../assets/styles/talwind.css';
 import CustomStyles from '../components/CustomStyles.astro';
 import BasicScripts from '../components/common/BasicScripts.astro';
+import Contact from '../components/widgets/Contact.astro';
+import Header from '../components/widgets/Header.astro';
+import { headerData } from '../navigation';
 
 import { I18N } from '../utils/config';
 
@@ -20,7 +23,18 @@ const { language, textDirection } = I18N;
   </head>
 
   <body class="antialiased text-default tracking-tight">
-    <slot />
+    <slot name="contact">
+      <Contact />
+    </slot>
+    <slot name="header">
+      <Header {...headerData} />
+    </slot>
+    <main>
+      <slot />
+    </main>
+    <slot name="footer">
+      <!-- <Footer TODO /> -->
+    </slot>
     <BasicScripts />
   </body>
 </html>
