@@ -1,22 +1,16 @@
 ---
-import Layout from "./Layout.astro";
-import Contact from "../components/widgets/Contact.astro";
-import Header from "../components/widgets/Header.astro";
-import { headerData } from "../navigation.ts";
-
+import Hero from '../components/widgets/Hero.astro';
+import Layout from './Layout.astro';
 ---
 
 <Layout>
-  <slot name="contact">
-    <Contact />
+  <slot name="Hero">
+    <Hero>
+      <Fragment slot="title">
+        Service and Maintenance Reliable solutions your needs
+      </Fragment>
+      <Fragment slot="content">Professional Cleaning Service</Fragment>
+    </Hero>
   </slot>
-  <slot name="header">
-    <Header {...headerData} />
-  </slot>
-  <main>
-    <slot />
-  </main>
-  <slot name="footer">
-    <!-- <Footer TODO /> -->
-  </slot>
+  <slot />
 </Layout>
