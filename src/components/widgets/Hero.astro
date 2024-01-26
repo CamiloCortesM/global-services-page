@@ -1,0 +1,49 @@
+---
+import Wave from '../ui/Wave.astro';
+
+export interface Props {
+  id?: string;
+  title?: string;
+  content?: string;
+  image?: string | any;
+}
+
+const {
+  id,
+  title = await Astro.slots.render('title'),
+  content = await Astro.slots.render('content'),
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+---
+
+<section class="relative h-52 md:h-[80vh] overflow-hidden">
+  <div
+    class="absolute z-10 inset-0 bg-gradient-to-r from-red-500 to-blue-800 opacity-55"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('/src/assets/images/personas-que-encargan-limpieza-oficinas.jpg');"
+  >
+  </div>
+  <div
+    class="relative z-20 w-full md:w-9/12 mx-auto h-full px-4 sm:px-6 flex items-center justify-center"
+  >
+    <div class="text-center text-white m-0 md:-mt-7">
+      {
+        title && (
+          <h1
+            class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+            set:html={title}
+          />
+        )
+      }
+      {
+        content && (
+          <p class="text-xl mb-6 font-semibold opacity-80" set:html={content} />
+        )
+      }
+    </div>
+  </div>
+  <Wave />
+</section>
