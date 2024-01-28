@@ -12,7 +12,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        ic:["*"],
+        ic:["*"], //TODO: optimize
       },
     }),
   ],
