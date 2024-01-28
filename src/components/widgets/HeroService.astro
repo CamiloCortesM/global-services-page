@@ -1,0 +1,49 @@
+---
+import { trim } from '../../utils/utils';
+
+export interface Props {
+  id?: string;
+  title?: string;
+  content?: string;
+  image?: string | any;
+}
+
+const {
+  id,
+  title = await Astro.slots.render('title'),
+  content = await Astro.slots.render('content'),
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+
+---
+
+<section class="relative h-52 md:h-[40vh] overflow-hidden white-text-selection">
+  <div
+    class="absolute z-10 inset-0 bg-gradient-to-r from-blue-800 via-blue-800 to-transparent opacity-55"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('/src/assets/images/vista-lateral-mesa-limpieza-barista-femenina-guantes-latex.jpg');"
+  >
+  </div>
+  <div
+    class="relative z-20 w-full mx-auto h-full px-4 sm:px-9 flex items-center justify-start"
+  >
+    <div class="text-start text-white">
+      {
+        title && (
+          <h1
+            class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-2 font-heading opacity-90"
+            set:html={title}
+          />
+        )
+      }
+      {
+        content && (
+          <p class="text-xl mb-6 font-semibold opacity-70" set:html={content} />
+        )
+      }
+    </div>
+  </div>
+</section>
