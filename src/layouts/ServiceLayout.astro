@@ -1,0 +1,16 @@
+---
+import HeroService from '../components/widgets/HeroService.astro';
+import Layout from './Layout.astro';
+---
+
+<Layout>
+  <slot name="Hero">
+    <HeroService>
+      <Fragment slot="title">Residential Cleaning</Fragment>
+      <Fragment slot="content">
+        lorem Ex in non eiusmod culpa elit anim proident.
+      </Fragment>
+    </HeroService>
+  </slot>
+  <slot />
+</Layout>
