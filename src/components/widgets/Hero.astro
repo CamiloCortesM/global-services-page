@@ -6,6 +6,7 @@ export interface Props {
   title?: string;
   content?: string;
   image?: string | any;
+  position?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
   title = await Astro.slots.render('title'),
   content = await Astro.slots.render('content'),
   image = await Astro.slots.render('image'),
+  position = await Astro.slots.render('position'),
 } = Astro.props;
 ---
 
@@ -22,8 +24,8 @@ const {
   >
   </div>
   <div
-    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style="background-image: url('/src/assets/images/personas-que-encargan-limpieza-oficinas.jpg');"
+    class=`absolute inset-0 bg-cover bg-${position} bg-no-repeat`
+    style=`background-image: url('${image}');`
   >
   </div>
   <div
