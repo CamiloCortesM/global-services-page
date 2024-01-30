@@ -1,15 +1,31 @@
 ---
 import Hero from '../components/widgets/Hero.astro';
 import Layout from './Layout.astro';
+
+interface Props {
+  title?: string;
+  content?: string;
+  image?: string;
+  position?: string;
+}
+
+const {
+  title = 'Premium Cleaning Services: Global Services and Maintenance',
+  content = 'Elevating environments through expert cleaning solutions',
+  image = '/src/assets/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina.jpg',
+  position = 'center',
+} = Astro.props;
 ---
 
 <Layout>
   <slot name="Hero">
     <Hero>
       <Fragment slot="title">
-        Service and Maintenance Reliable solutions your needs
+        {title}
       </Fragment>
-      <Fragment slot="content">Professional Cleaning Service</Fragment>
+      <Fragment slot="content">{content}</Fragment>
+      <Fragment slot="image">{image}</Fragment>
+      <Fragment slot="position">{position}</Fragment>
     </Hero>
   </slot>
   <slot />
