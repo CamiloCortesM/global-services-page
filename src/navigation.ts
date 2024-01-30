@@ -57,7 +57,7 @@ export const headerData: HeaderData = {
         },
         {
           text: 'ALL SERVICES',
-          href: getPermalink('/service'),
+          href: getPermalink('/services'),
         },
       ],
     },
