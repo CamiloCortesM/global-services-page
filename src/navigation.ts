@@ -34,6 +34,7 @@ export const headerData: HeaderData = {
     },
     {
       text: 'SERVICES',
+      href: getPermalink('/services'),
       links: [
         {
           text: 'APARTMENT CLEANING',
