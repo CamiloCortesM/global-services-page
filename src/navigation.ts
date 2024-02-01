@@ -71,8 +71,12 @@ export const headerData: HeaderData = {
     },
   ],
   actions: [
-    { text: 'GET QUOTE', href: '#', target: '_blank', variant: 'primary' },
-    { text: 'BOOK NOW!', href: '#', target: '_blank', variant: 'secondary' },
+    {
+      text: 'GET QUOTE',
+      href: getPermalink('/get-a-quote'),
+      variant: 'primary',
+    },
+    { text: 'BOOK NOW!', href: getPermalink('/booking'), variant: 'secondary' },
   ],
 };
 
