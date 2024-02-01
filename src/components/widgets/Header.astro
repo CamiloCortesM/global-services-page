@@ -70,7 +70,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button class="hover:text-link px-4 py-3 flex items-center">
+                  <button
+                    class=""
+                    class:list={[
+                      'hover:text-link px-4 py-5 flex items-center  leading-snug',
+                      { 'aw-link-active-select': href === currentPath },
+                    ]}
+                  >
                     {text}
                     <Icon
                       name="tabler:chevron-down"
@@ -82,8 +88,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link  py-2 px-5 block whitespace-no-wrap',
-                            { 'aw-link-active': href2 === currentPath },
+                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link py-2 px-5 block whitespace-no-wrap',
+                            { 'aw-link-active-select': href2 === currentPath },
                           ]}
                           href={href2}
                         >
@@ -96,7 +102,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link px-4 py-3 flex items-centers',
+                    'hover:text-link px-4 py-5 flex items-centers leading-snug',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
