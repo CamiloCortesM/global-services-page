@@ -1,0 +1,39 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import ItemQuote from '../ui/ItemQuote.astro';
+import type { Opinions } from '../../types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  items = [],
+  columns = 2,
+  tagline,
+
+  id,
+  classes = {},
+} = Astro.props as Opinions;
+---
+
+<WidgetWrapper
+  id={id}
+  containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={classes?.headline}
+  />
+  <ItemQuote
+    items={items}
+    columns={columns}
+    classes={{
+      container: 'gap-4 md:gap-6',
+      panel:
+        'rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.2)] backdrop-blur border border-[#ffffff29] bg-white p-4',
+      ...((classes?.items as {}) ?? {}),
+    }}
+  />
+</WidgetWrapper>
