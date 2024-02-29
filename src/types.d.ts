@@ -48,7 +48,6 @@ export interface Video {
 
 export interface Widget {
   id?: string;
-  isDark?: boolean;
   bg?: string;
   classes?: Record<string, string>;
 }
@@ -83,6 +82,7 @@ export interface Stat {
 export interface Item {
   title?: string;
   description?: string;
+  link?: string;
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
@@ -201,6 +201,24 @@ export interface Features extends Headline, Widget {
   isReversed?: boolean;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+}
+
+export interface Services extends Headline, Widget {
+  image?: string | unknown;
+  video?: Video;
+  items: Array<Item>;
+  columns: number;
+  defaultIcon?: string;
+  callToAction1?: CallToAction;
+  callToAction2?: CallToAction;
+  isReversed?: boolean;
+  isBeforeContent?: boolean;
+  isAfterContent?: boolean;
+}
+
+export interface Description extends Headline {
+  id?: string;
+  image?: string;
 }
 
 export interface Faqs extends Headline, Widget {

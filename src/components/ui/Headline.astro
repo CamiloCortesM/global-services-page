@@ -1,5 +1,6 @@
 ---
 import type { Headline } from '@/types';
+
 import { twMerge } from 'tailwind-merge';
 
 const {
@@ -23,7 +24,9 @@ const {
     >
       {tagline && (
         <p
+
           class="text-base text-secondary font-bold tracking-wide uppercase"
+
           set:html={tagline}
         />
       )}

@@ -1,0 +1,41 @@
+---
+import Image from '../common/Image.astro';
+import Headline from '../ui/Headline.astro';
+import type { Description } from '../../types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  image,
+
+  id,
+  classes = {},
+} = Astro.props as Description;
+---
+
+<div
+  class="flex flex-col justify-center items-center md:gap-4 md:flex-row-reverse relative mx-auto max-w-7xl px-4 md:px-6 lg:px-28 py-12 md:py-16 lg:py-20 text-default"
+>
+  <Headline title={title} subtitle={subtitle} classes={classes?.headline} />
+
+  <div aria-hidden="true" class="aspect-w-16 aspect-h-7 md:min-w-72 max-w-96">
+    {
+      image && (
+        <div class="w-full object-cover rounded-xl mx-auto shadow-lg">
+          {typeof image === 'string' ? (
+            <Fragment set:html={image} />
+          ) : (
+            <Image
+              class="w-full object-cover rounded-xl mx-auto bg-gray-500 shadow-lg"
+              width={400}
+              height={400}
+              widths={[400, 768]}
+              layout="responsive"
+              {...(image as any)}
+            />
+          )}
+        </div>
+      )
+    }
+  </div>
+</div>
