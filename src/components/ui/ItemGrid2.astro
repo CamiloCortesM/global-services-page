@@ -2,11 +2,7 @@
 import type { ItemGrid } from '../../types';
 import Button from './Button.astro';
 
-const {
-  items = [],
-  classes = {},
-} = Astro.props as ItemGrid;
-
+const { items = [] } = Astro.props as ItemGrid;
 ---
 
 <link
@@ -28,43 +24,36 @@ const {
   items && (
     <div class="swiper mySwiper h-96">
       <div class="swiper-wrapper">
-        {items.map(
-          ({
-            title,
-            description,
-            image,
-            callToAction,
-          }) => (
-            <div class="swiper-slide relative flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] overflow-hidden">
-              <div class="h-3/5 overflow-hidden relative container-link">
-                <a
-                  href="#"
-                  class="w-full h-full flex justify-center items-center hover:scale-125 transition-transform hover:duration-[4s] ease-in hover:ease-out duration-1000"
-                >
-                  <img
-                    src={image?.src}
-                    alt={image?.alt}
-                    class="w-full h-full object-cover zoom-img"
-                  />
-                </a>
-              </div>
-              <div class="h-2/5 p-3 overflow-hidden">
-                <div class="text-xl font-bold">{title}</div>
-                {description && (
-                  <p
-                    class="text-muted mt-1 text-sm whitespace-normal overflow-hidden line-clamp-3"
-                    set:html={description}
-                  />
-                )}
-                {callToAction && (
-                  <div class="mt-2">
-                    <Button {...callToAction} />
-                  </div>
-                )}
-              </div>
+        {items.map(({ title, description, link, image, callToAction }) => (
+          <div class="swiper-slide relative flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] overflow-hidden">
+            <div class="h-3/5 overflow-hidden relative container-link">
+              <a
+                href={link}
+                class="w-full h-full flex justify-center items-center hover:scale-125 transition-transform hover:duration-[4s] ease-in hover:ease-out duration-1000"
+              >
+                <img
+                  src={image?.src}
+                  alt={image?.alt}
+                  class="w-full h-full object-cover zoom-img"
+                />
+              </a>
             </div>
-          )
-        )}
+            <div class="h-2/5 p-3 overflow-hidden">
+              <div class="text-xl font-bold">{title}</div>
+              {description && (
+                <p
+                  class="text-muted mt-1 text-sm whitespace-normal overflow-hidden line-clamp-3"
+                  set:html={description}
+                />
+              )}
+              {callToAction && (
+                <div class="mt-2">
+                  <Button {...callToAction} />
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
       <div class="swiper-pagination" />
     </div>
@@ -89,16 +78,16 @@ const {
       dynamicBullets: true,
     },
 
-    breakpoints:{
-      0:{
-        slidesPerView:1
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
       },
-      560:{
-        slidesPerView:2,
+      560: {
+        slidesPerView: 2,
       },
-      950:{
-        slidesPerView:3,
-      }
-    }
+      950: {
+        slidesPerView: 3,
+      },
+    },
   });
 </script>
