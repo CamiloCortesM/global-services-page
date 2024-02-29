@@ -1,0 +1,33 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import ItemGrid2 from '../ui/ItemGrid2.astro';
+import type { Services } from '../../types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+
+  id,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Services;
+---
+
+<WidgetWrapper
+  id={id}
+  containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={classes?.headline}
+  />
+  <ItemGrid2
+    items={items}
+  />
+</WidgetWrapper>

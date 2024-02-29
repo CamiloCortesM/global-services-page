@@ -1,10 +1,332 @@
 ---
 import Layout from '../layouts/PageLayout.astro';
+import Features from '../components/widgets/Features.astro';
+import Description from '../components/widgets/Description.astro';
+import Benefit from '../components/widgets/Benefit.astro';
+import Services from '../components/widgets/Services.astro';
+import Stats from '../components/widgets/Stats.astro';
+import Steps from '../components/widgets/Steps.astro';
+import Brands from '../components/widgets/Brands.astro';
+import FAQs from '../components/widgets/FAQs.astro';
+import { getPermalink } from '../utils/permalinks';
 ---
 
 <Layout>
-  <div class="w-full h-screen bg-white">
-   
-  </div>
-  <div class="w-full h-screen bg-white"></div>
+  <Description
+    id="description"
+    title="THE BEST CLEANING COMPANY IN LONDON"
+    subtitle="At Global Services and Maintenance, we specialise in providing professional cleaning and maintenance services for homes and offices in London. With years of experience, we guarantee exceptional results in every task, from general cleaning to carpet washing and garden maintenance. Our highly trained team is committed to delivering excellence in every detail, with efficiency, professionalism, and competitive pricing. Trust us to keep your space immaculate and in perfect condition."
+    classes={{
+      headline: {
+        title: 'text-2xl md:text-3xl',
+        subtitle: 'text-left text-md',
+      },
+    }}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
+      alt: 'Todo:change',
+    }}
+  />
+
+  <Features
+    id="features"
+    tagline="Our Excellence"
+    title="Experience Excellence with Global Services and Maintenance"
+    subtitle="Explore the exceptional standards of professional cleaning and maintenance services we offer in London."
+    items={[
+      {
+        title: 'Specialised Formulas',
+        description:
+          'Powerful yet gentle detergents ensure thorough cleaning without harming surfaces.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Dependability',
+        description:
+          'Trust us to restore your home to its sparkling best, your sanctuary of cleanliness.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Certified Quality',
+        description:
+          'We guarantee impeccable cleaning standards for your home or office.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Decades of Expertise',
+        description:
+          'With years of industry experience, we deliver life-changing cleaning quality.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'A Skilled Team',
+        description:
+          'Our professionals work with respect for your home, ensuring a job done right.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Efficiency at Work',
+        description:
+          'Swift and effective services tailored to seamlessly fit your schedule.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Benefit
+    isReversed
+    tagline="Benefit"
+    title="Why We Are Different?"
+    items={[
+      {
+        title: 'Satisfaction Guaranteed',
+        description:
+          'We are committed to ensuring your satisfaction with every service, working tirelessly to exceed your expectations and provide you with an exceptional cleaning experience.',
+      },
+      {
+        title: 'Fully Licensed and Insured Professionals',
+        description:
+          'Our team of professionals is fully licensed and insured, providing you with the peace of mind that your property is in safe and reliable hands.',
+      },
+      {
+        title: 'Building Lasting Relationships',
+        description:
+          'We actively engage with the community, forging long-term relationships with our customers and constantly seeking new opportunities for growth and expansion for our company.',
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709050517~exp=1709054117~hmac=40deee42843737865431b89c549be019954c535b19225b647749e06087f8bd79&w=996',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Ready for Impeccable Cleaning
+      </h3>
+      Get prepared for a thorough cleaning of your home, office, residence, or warehouse
+      with astonishing precision. We'll ensure your space shines brilliantly and
+      exudes a fresh, inviting scent.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Benefit>
+
+  <Benefit
+    isAfterContent
+    items={[
+      {
+        title: 'Tailored Cleaning Solutions',
+        description: `We design personalised cleaning programmes tailored to your specific needs, ensuring exceptional results with every service.`,
+      },
+      {
+        title: 'Commitment to Environmental Responsibility',
+        description:
+          'We are committed to using natural, environmentally-friendly cleaning products, guaranteeing effective cleaning without compromising the health of your home or the planet.',
+      },
+      {
+        title: 'Continuous Improvement and Innovation',
+        description:
+          'We strive to stay at the forefront of the industry through ongoing training of our staff and the adoption of new technologies and innovative practices to deliver the highest quality service.',
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/hombres-tiro-completo-chocan-cinco-oficina_23-2149345549.jpg?t=st=1709050551~exp=1709054151~hmac=03a3cd0f5efe0c5d0003422e676811159838f65fced42b34e85351a88d39527b&w=996',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Benefit>
+
+  <Services
+    tagline="Our Services"
+    title="Explore our diverse templates"
+    subtitle="Discover our selection below to streamline and elevate your projects."
+    items={[
+      {
+        title: 'General cleaning',
+        description:
+          'Comprehensive cleaning services tailored to your needs, ensuring a pristine and hygienic environment.',
+        link: getPermalink('/services/general-cleaning'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520594.jpg?t=st=1709088387~exp=1709091987~hmac=1bf82601d7aa24a881d526a694409d39fccbff1239eefbf637163360aaf91596&w=996',
+          alt: 'General cleaning',
+        },
+      },
+      {
+        title: 'Window cleaning',
+        description:
+          'Expert cleaning for crystal-clear windows, enhancing the appearance and brightness of your space.',
+        link: getPermalink('/services/window-cleaning'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/primer-mano-ventana-limpieza-guante-goma_23-2148529568.jpg?t=st=1709088427~exp=1709092027~hmac=0f978bff641a53b61921fa02b48551442f36708263d42c09f2c7c95f1f580610&w=826',
+          alt: 'Window cleaning',
+        },
+      },
+      {
+        title: 'Carpet washing',
+        description: `Professional carpet cleaning to rejuvenate your carpets and restore them to their original freshness.`,
+        link: getPermalink('/services/carpet-cleaning'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/hombre-haciendo-servicio-profesional-limpieza-hogar_23-2150359033.jpg?t=st=1709088474~exp=1709092074~hmac=d6f65c07db419e543a43121144c71ce0e3d202635359a0c6535c307f2a3df90f&w=996',
+          alt: 'Carpet washing',
+        },
+      },
+      {
+        title: 'Garden maintenance',
+        description:
+          'Expert care for your garden, ensuring it remains lush, vibrant, and beautiful all year round.',
+        link: getPermalink('/services/garden-maintenance'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/joven-apuesto-jardinero-alegre-sonriendo-regando-cuidando-plantas_176420-3834.jpg?t=st=1709088508~exp=1709092108~hmac=2ff2ac91c1ad0b954fcfd007cdbbb4daf6409c5e8f6b81934ff22dfc4374c29f&w=996',
+          alt: 'Garden maintenance',
+        },
+      },
+      {
+        title: 'Maintenance services',
+        description:
+          'Comprehensive maintenance solutions to keep your property in top condition and functioning smoothly.',
+        link: getPermalink('/services/maintenance-services'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/fontanera-que-trabaja-arreglar-problemas-casa-cliente_23-2150990725.jpg?t=st=1709088559~exp=1709092159~hmac=589093fb29e7afa6861afecb6885f041796084fd824fb941eee856ec4054ea5c&w=996',
+          alt: 'Maintenance services',
+        },
+      },
+    ]}
+  />
+
+  <Stats
+    title="Our Journey in Figures"
+    subtitle="Discover What Sets Us Apart"
+    stats={[
+      { title: 'Years of experience', amount: '8' },
+      { title: 'Satisfied customers', amount: '100' },
+      { title: 'Cleaners', amount: '50' },
+      { title: 'Branches', amount: '2' },
+    ]}
+  />
+
+  <Steps
+    isReversed
+    title="Streamline your cleaning and maintenance service booking process with Global Services and Maintenance."
+    items={[
+      {
+        title: 'Step 1: Choose Your Service',
+        description:
+          "Browse through our range of cleaning and maintenance services and select the one that best suits your needs. Whether it's general cleaning, window cleaning, carpet washing, or garden maintenance, we've got you covered.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: Schedule Appointment',
+        description:
+          'Contact us to schedule an appointment at your preferred date and time. Our friendly staff will assist you in finding the most convenient slot for your cleaning or maintenance service.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Step 3: Confirmation',
+        description:
+          "Once your appointment is scheduled, you'll receive a confirmation email or message with all the details. Rest assured, your service is booked and our team will be there on time.",
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Step 4: Relax and Enjoy',
+        description:
+          'Sit back and relax while our skilled professionals take care of your cleaning and maintenance needs. With Global Services and Maintenance, you can trust that your property is in good hands.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/personas-que-encargan-limpieza-oficinas_23-2149374433.jpg?t=st=1709089122~exp=1709092722~hmac=d00e9cb30bc94476d4240d9f8df88d9bd1ceec579eeeb4f118f160a3ca4eea0c&w=360',
+      alt: 'Steps image',
+    }}
+  />
+
+  <Brands
+    title="Some Of Our Partners"
+    subtitle="Our Trusted Collaborators"
+    icons={[]}
+    images={[
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
+        alt: 'Paypal',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+        alt: 'Visa',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
+        alt: 'Ebay',
+      },
+
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
+        alt: 'Youtube',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find answers to the most common questions about the services we offer at Global Services and Maintenance."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why Choose Global Services and Maintenance?',
+        description:
+          "At Global Services and Maintenance, we are committed to providing high-quality cleaning and maintenance services. Our highly trained and dedicated team strives to exceed our customers' expectations on every job. Additionally, our attention to detail and eco-friendly approach set us apart in the market.",
+      },
+      {
+        title: 'What Services Do You Offer?',
+        description:
+          'We offer a wide range of cleaning and maintenance services, including general cleaning, window cleaning, carpet washing, and garden maintenance. Whatever your needs, we are here to help you keep your space clean and tidy.',
+      },
+      {
+        title: 'How Can I Schedule an Appointment?',
+        description:
+          "Scheduling an appointment with Global Services and Maintenance is easy. Simply get in touch with our team, and we will be happy to coordinate an appointment that fits your schedule. Whether it's for a one-off clean or regular maintenance, we are here to assist.",
+      },
+      {
+        title: 'How Soon Can I Schedule a Service?',
+        description:
+          "We strive to provide quick and efficient service to our customers. Depending on availability, we can schedule an appointment in as little as a few days. Contact us today, and we'll have your space sparkling clean in no time!",
+      },
+      {
+        title: 'Do You Offer Customised Services?',
+        description:
+          "Yes, at Global Services and Maintenance, we understand that every customer has unique needs. That's why we offer customised services to accommodate your specific requirements. Just let us know what you need, and we'll design a tailored cleaning and maintenance plan for you!",
+      },
+      {
+        title: 'How Can I Get More Information About Your Services?',
+        description:
+          'For more information about our services and rates, feel free to contact our team. We are here to answer all your questions and provide you with the information you need to make the best decision for your space.',
+      },
+    ]}
+  />
 </Layout>
