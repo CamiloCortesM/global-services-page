@@ -235,9 +235,12 @@ export interface Steps extends Headline, Widget {
     icon?: string;
     classes?: Record<string, string>;
   }>;
-  callToAction?: string | CallToAction;
+  itemsImagesShort: Array<Image>;
+  itemImageLarge: string | Image;
   image?: string | Image;
+  callToAction?: string | CallToAction;
   isReversed?: boolean;
+  isReversedImage?: boolean;
 }
 
 export interface Content extends Headline, Widget {
@@ -251,3 +254,15 @@ export interface Content extends Headline, Widget {
 }
 
 export interface Contact extends Headline, Form, Widget {}
+
+export interface Quote {
+  quote?: string;
+  author?: string;
+  classes?: Record<string, string>;
+}
+
+export interface Opinions extends Headline, Widget {
+  items?: Array<Quote>;
+  columns?: number;
+  classes?: Record<string, string>;
+}

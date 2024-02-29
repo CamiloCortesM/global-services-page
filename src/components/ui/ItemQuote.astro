@@ -1,0 +1,60 @@
+---
+import { twMerge } from 'tailwind-merge';
+import type { Opinions } from '../../types';
+
+const { items = [], columns, classes = {} } = Astro.props as Opinions;
+
+const {
+  container: containerClass = '',
+  panel: panelClass = '',
+  title: titleClass = '',
+  description: descriptionClass = '',
+} = classes;
+---
+
+{
+  items && (
+    <div
+      class={twMerge(
+        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+          columns === 4
+            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+            : columns === 3
+              ? 'lg:grid-cols-3 sm:grid-cols-2'
+              : columns === 2
+                ? 'sm:grid-cols-2 '
+                : ''
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(({ author, quote, classes: itemClasses = {} }) => (
+        <div
+          class={twMerge(
+            'relative flex flex-col',
+            panelClass,
+            itemClasses?.panel
+          )}
+        >
+          <div
+            class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}
+          >
+            <blockquote class="text-lg italic font-light text-default border-l-2 pl-2 border-secondary">
+              {quote}
+            </blockquote>
+          </div>
+          {author && (
+            <p
+              class={twMerge(
+                'text-muted mt-2',
+                descriptionClass,
+                itemClasses?.description
+              )}
+              set:html={author}
+            />
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}

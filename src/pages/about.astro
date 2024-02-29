@@ -1,4 +1,7 @@
 ---
+import Steps3 from '@/components/widgets/Steps3.astro';
+import Steps2 from '@/components/widgets/Steps2.astro';
+import QuoteCustomer from '@/components/widgets/QuoteCustomer.astro';
 import Layout from '../layouts/PageLayout.astro';
 ---
 
@@ -7,6 +10,109 @@ import Layout from '../layouts/PageLayout.astro';
   content="Discover our journey and commitment to excellence"
   image="images/personas-que-encargan-limpieza-oficinas.jpg"
 >
-  <div class="w-full h-screen bg-white"></div>
-  <div class="w-full h-screen bg-white"></div>
+  <Steps3
+    title="Our Commitment to Excellence in Cleaning"
+    subtitle="At Global Service & Maintenance, we are dedicated to providing exceptional cleaning services in London. Our goal is to create a clean and healthy environment, surpassing our clients' expectations."
+    image={{
+      src: '/images/mujeres-limpieza-oficina.webp',
+      alt: 'Women - Office Cleaning',
+    }}
+  />
+
+  <Steps2
+    title="Our Goal"
+    subtitle="With a highly trained team and quality cleaning products, we aim for flawless results and complete customer satisfaction. We value trust and strive to build lasting relationships based on quality and attention to detail. Trust us for impeccable cleaning and exceptional service."
+    isReversedImage="true"
+    items={[
+      {
+        title: 'Our Aim',
+        description:
+          'Deliver exceptional cleaning services for homes and businesses, surpassing customer expectations in cleanliness and hygiene while fostering lasting client relationships based on trust and excellence.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Company Vision',
+        description:
+          'Leading the industry in residential and commercial cleaning services, delivering exceptional quality, meticulous attention to detail, and ultimate customer satisfaction.',
+        icon: 'tabler:crown',
+      },
+      {
+        title: 'The Procedure',
+        description:
+          'We assess cleaning needs, execute a comprehensive plan with skilled teams and quality products, and conduct thorough quality checks to ensure impeccable results.',
+        icon: 'tabler:award',
+      },
+    ]}
+    itemsImagesShort={[
+      {
+        alt: 'clean-house',
+        src: '/images/1-unsplash.webp',
+      },
+      {
+        alt: 'clean-windows',
+        src: '/images/3-unsplash.webp',
+      },
+    ]}
+    itemImageLarge={{
+      alt: 'items-clean',
+      src: '/images/2-unsplash.webp',
+    }}
+  />
+
+  <Steps2
+    title="Why Choose Us"
+    subtitle="We are more than just a cleaning company. We are your partners in creating a clean and healthy environment for your home or business."
+    isReversed="true"
+    items={[
+      {
+        title: 'Quality',
+        description:
+          'We use high-quality cleaning products and equipment, ensuring a flawless and hygienic result. We also conduct regular quality checks to maintain our high standards.',
+        icon: 'tabler:discount-check-filled',
+      },
+      {
+        title: 'Experience',
+        description:
+          'We have been in the cleaning industry for over 10 years, serving a wide range of clients across London. We have the expertise and skills to handle any cleaning challenge, no matter how big or small.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Trust',
+        description:
+          'We are a reliable and trustworthy company, with a proven track record of delivering exceptional service. We value your privacy and security, and we treat your property with respect and care.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+    itemsImagesShort={[
+      {
+        alt: 'clean-windows',
+        src: '/images/4-unsplash.webp',
+      },
+      {
+        alt: 'clean-carpet',
+        src: '/images/6-unsplash.webp',
+      },
+    ]}
+    itemImageLarge={{
+      alt: 'gathering-people',
+      src: '/images/5-unsplash.webp',
+    }}
+  />
+  <QuoteCustomer
+    title="Commitment to Customer Satisfaction"
+    subtitle="We are dedicated to providing the best possible service to our customers. But don't just take our word for it. Here's what some of our satisfied customers have to say:"
+    tagline="Customer Reviews"
+    items={[
+      {
+        quote:
+          'Global Service & Maintenance did an amazing job. My house has never been cleaner. I highly recommend their services.',
+        author: ' - Karmen M.',
+      },
+      {
+        quote:
+          "The team at Global Service & Maintenance is professional, thorough, and always on time. I wouldn't trust anyone else to clean my home.",
+        author: '- John D.',
+      },
+    ]}
+  />
 </Layout>
