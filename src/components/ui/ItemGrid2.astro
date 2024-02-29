@@ -1,24 +1,12 @@
 ---
-import { Icon } from 'astro-icon/components';
-import { twMerge } from 'tailwind-merge';
 import type { ItemGrid } from '../../types';
 import Button from './Button.astro';
 
 const {
   items = [],
-  columns,
-  defaultIcon = '',
   classes = {},
 } = Astro.props as ItemGrid;
 
-const {
-  container: containerClass = '',
-  // container: containerClass = "sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
-  panel: panelClass = '',
-  title: titleClass = '',
-  description: descriptionClass = '',
-  icon: defaultIconClass = 'text-primary',
-} = classes;
 ---
 
 <link
@@ -46,7 +34,6 @@ const {
             description,
             image,
             callToAction,
-            classes: itemClasses = {},
           }) => (
             <div class="swiper-slide relative flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] overflow-hidden">
               <div class="h-3/5 overflow-hidden relative container-link">
