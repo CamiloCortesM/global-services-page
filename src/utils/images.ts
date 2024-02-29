@@ -1,6 +1,6 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import type { AstroSeo } from '@astrolib/seo';
+import type { OpenGraph } from '@astrolib/seo';
 import type { MetaDataImage } from '../types';
 
 const load = async function () {
@@ -56,9 +56,9 @@ export const findImage = async (
 
 /** */
 export const adaptOpenGraphImages = async (
-  openGraph: AstroSeo.OpenGraph = {},
+  openGraph: OpenGraph = {},
   astroSite: URL | undefined = new URL('')
-): Promise<AstroSeo.OpenGraph> => {
+): Promise<OpenGraph> => {
   if (!openGraph?.images?.length) {
     return openGraph;
   }
