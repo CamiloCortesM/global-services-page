@@ -1,11 +1,14 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
+import type { MetaDataImage } from '../types';
 
 const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
   try {
-    images = import.meta.glob('../assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}');
+    images = import.meta.glob(
+      '/images/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}'
+    );
   } catch (e) {
     // continue regardless of error
   }
@@ -30,12 +33,16 @@ export const findImage = async (
   }
 
   // Absolute paths
-  if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
+  if (
+    imagePath.startsWith('http://') ||
+    imagePath.startsWith('https://') ||
+    imagePath.startsWith('/')
+  ) {
     return imagePath;
   }
 
   // Relative paths or not "~/assets/"
-  if (!imagePath.startsWith('~/assets/images')) {
+  if (!imagePath.startsWith('images')) {
     return imagePath;
   }
 
@@ -61,9 +68,11 @@ export const adaptOpenGraphImages = async (
   const defaultHeight = 626;
 
   const adaptedImages = await Promise.all(
-    images.map(async (image) => {
+    images.map(async (image: MetaDataImage) => {
       if (image?.url) {
-        const resolvedImage = (await findImage(image.url)) as ImageMetadata | undefined;
+        const resolvedImage = (await findImage(image.url)) as
+          | ImageMetadata
+          | undefined;
         if (!resolvedImage) {
           return {
             url: '',
@@ -79,9 +88,18 @@ export const adaptOpenGraphImages = async (
 
         if (typeof _image === 'object') {
           return {
-            url: typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : 'pepe',
-            width: typeof _image.width === 'number' ? _image.width : undefined,
-            height: typeof _image.height === 'number' ? _image.height : undefined,
+            url:
+              'src' in _image && typeof _image.src === 'string'
+                ? String(new URL(_image.src, astroSite))
+                : 'pepe',
+            width:
+              'width' in _image && typeof _image.width === 'number'
+                ? _image.width
+                : undefined,
+            height:
+              'height' in _image && typeof _image.height === 'number'
+                ? _image.height
+                : undefined,
           };
         }
         return {
