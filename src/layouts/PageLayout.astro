@@ -1,5 +1,5 @@
 ---
-import Hero from '../components/widgets/Hero.astro';
+import { Hero } from '@/components/widgets';
 import Layout from './Layout.astro';
 
 interface Props {
@@ -12,8 +12,8 @@ interface Props {
 const {
   title = 'Premium Cleaning Services: Global Services and Maintenance',
   content = 'Elevating environments through expert cleaning solutions',
-  image = 'images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina.jpg',
-  position = 'center',
+  image = '/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina.webp',
+  position = 'bg-center',
 } = Astro.props;
 ---
 
