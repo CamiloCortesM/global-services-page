@@ -1,8 +1,6 @@
 ---
-import WidgetWrapper from "../ui/WidgetWrapper.astro";
-import ItemGrid from "../ui/ItemGrid.astro";
-import Headline from "../ui/Headline.astro";
-import type { Features } from "../../types";
+import {WidgetWrapper,ItemGrid,Headline} from "@/components/ui/";
+import type { Features } from "@/types";
 
 const {
   title = await Astro.slots.render("title"),
