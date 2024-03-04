@@ -1,14 +1,17 @@
 ---
-import Layout from '../layouts/PageLayout.astro';
-import Features from '../components/widgets/Features.astro';
-import Description from '../components/widgets/Description.astro';
-import Benefit from '../components/widgets/Benefit.astro';
-import Services from '../components/widgets/Services.astro';
-import Stats from '../components/widgets/Stats.astro';
-import Steps from '../components/widgets/Steps.astro';
-import Brands from '../components/widgets/Brands.astro';
-import FAQs from '../components/widgets/FAQs.astro';
-import { getPermalink } from '../utils/permalinks';
+import Layout from '@/layouts/PageLayout.astro';
+import {
+  Features,
+  Description,
+  Benefit,
+  Services,
+  Stats,
+  Steps,
+  Brands,
+  FAQs,
+} from '@/components/widgets';
+
+import { getPermalink } from '@/utils/permalinks';
 ---
 
 <Layout>
@@ -100,9 +103,7 @@ import { getPermalink } from '../utils/permalinks';
     }}
   >
     <Fragment slot="content">
-      <h3
-        class="text-2xl font-bold tracking-tight sm:text-3xl mb-2"
-      >
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
         Ready for Impeccable Cleaning
       </h3>
       Get prepared for a thorough cleaning of your home, office, residence, or warehouse
@@ -111,7 +112,7 @@ import { getPermalink } from '../utils/permalinks';
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 "></div>
+      <div class="absolute inset-0 bg-blue-50"></div>
     </Fragment>
   </Benefit>
 

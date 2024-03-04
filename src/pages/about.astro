@@ -1,20 +1,27 @@
 ---
-import Steps3 from '@/components/widgets/Steps3.astro';
-import Steps2 from '@/components/widgets/Steps2.astro';
-import QuoteCustomer from '@/components/widgets/QuoteCustomer.astro';
-import Layout from '../layouts/PageLayout.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import { Steps3, Steps2, QuoteCustomer } from '@/components/widgets';
+import {
+  womenCleanOffice,
+  unsplashImage1,
+  unsplashImage3,
+  unsplashImage2,
+  unsplashImage4,
+  unsplashImage5,
+  unsplashImage6,
+} from '@/assets/images/images.js';
 ---
 
 <Layout
   title="About Our Company"
   content="Discover our journey and commitment to excellence"
-  image="images/personas-que-encargan-limpieza-oficinas.jpg"
+  image="/images/personas-que-encargan-limpieza-oficinas.webp"
 >
   <Steps3
     title="Our Commitment to Excellence in Cleaning"
     subtitle="At Global Service & Maintenance, we are dedicated to providing exceptional cleaning services in London. Our goal is to create a clean and healthy environment, surpassing our clients' expectations."
     image={{
-      src: '/images/mujeres-limpieza-oficina.webp',
+      src: womenCleanOffice,
       alt: 'Women - Office Cleaning',
     }}
   />
@@ -46,16 +53,16 @@ import Layout from '../layouts/PageLayout.astro';
     itemsImagesShort={[
       {
         alt: 'clean-house',
-        src: '/images/1-unsplash.webp',
+        src: unsplashImage1,
       },
       {
         alt: 'clean-windows',
-        src: '/images/3-unsplash.webp',
+        src: unsplashImage3,
       },
     ]}
     itemImageLarge={{
       alt: 'items-clean',
-      src: '/images/2-unsplash.webp',
+      src: unsplashImage2,
     }}
   />
 
@@ -86,16 +93,16 @@ import Layout from '../layouts/PageLayout.astro';
     itemsImagesShort={[
       {
         alt: 'clean-windows',
-        src: '/images/4-unsplash.webp',
+        src: unsplashImage4,
       },
       {
         alt: 'clean-carpet',
-        src: '/images/6-unsplash.webp',
+        src: unsplashImage6,
       },
     ]}
     itemImageLarge={{
       alt: 'gathering-people',
-      src: '/images/5-unsplash.webp',
+      src: unsplashImage5,
     }}
   />
   <QuoteCustomer
