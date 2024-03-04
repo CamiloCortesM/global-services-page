@@ -1,4 +1,5 @@
 ---
+import { FAQs } from '@/components/widgets';
 import Layout from '@/layouts/PageLayout.astro';
 ---
 
@@ -8,4 +9,72 @@ import Layout from '@/layouts/PageLayout.astro';
   image="/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina2.webp"
   position="bg-top"
 >
+  <FAQs
+    title="General Questions"
+    subtitle="These are some of the most frequently asked questions about Global Service and Maintenance, where we answer each of themChoosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
+    columns={1}
+    classes={{ container: 'lg:py-10' }}
+    items={[
+      {
+        title:
+          'What types of cleaning services does your London-based company offer?',
+        description:
+          ' Our London-based company offers a variety of cleaning services including commercial cleaning, residential cleaning, end of tenancy cleaning, carpet cleaning, and window cleaning.',
+      },
+      {
+        title:
+          'How long has your cleaning services company been operating in London? ',
+        description:
+          'Our cleaning services company has been operating in London for over 5 years.',
+      },
+      {
+        title: 'Does your company provide cleaning services outside of London?',
+        description:
+          'Yes, while we are based in London, we also provide cleaning services in the surrounding areas.',
+      },
+      {
+        title:
+          'What measures does your company take to ensure the quality of its cleaning services?',
+        description:
+          'We ensure the quality of our cleaning services by using high-quality cleaning products, employing experienced and trained staff, and regularly seeking feedback from our clients.',
+      },
+      {
+        title:
+          'Does your cleaning services company have any accreditations or certifications?',
+        description:
+          'Yes, our company is fully accredited and certified by the British Institute of Cleaning Science.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Questions About Services"
+    subtitle="Here are the most frequently asked questions about the services provided by Global Service and Maintenance"
+    columns={1}
+    classes={{ container: 'lg:py-10' }}
+    items={[
+      {
+        title: 'What specific cleaning services does your company offer?',
+        description:
+          'Our company offers a wide range of cleaning services including commercial cleaning, residential cleaning, end of tenancy cleaning, carpet cleaning, and window cleaning.',
+      },
+      {
+        title:
+          ' Can you provide a brief description of what your commercial cleaning service entails?',
+        description:
+          'Our commercial cleaning service includes cleaning of office spaces, shops, restaurants, warehouses, and other commercial premises. This involves dusting, vacuuming, mopping, restroom cleaning, and trash removal.',
+      },
+      {
+        title: 'What is included in your residential cleaning service?',
+        description:
+          'Our residential cleaning service includes dusting, vacuuming, mopping, kitchen cleaning, bathroom cleaning, and general tidying up of all rooms in the house.',
+      },
+      {
+        title:
+          'How does your end of tenancy cleaning service differ from regular cleaning?',
+        description:
+          'Our end of tenancy cleaning service is a deep cleaning service designed to ensure that a property is in pristine',
+      },
+    ]}
+  />
 </Layout>
