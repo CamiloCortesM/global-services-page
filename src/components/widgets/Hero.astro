@@ -1,5 +1,5 @@
 ---
-import Wave from '../ui/Wave.astro';
+import Wave from '@/components/ui/Wave.astro';
 
 export interface Props {
   id?: string;
@@ -18,13 +18,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative h-52 md:h-[80vh] overflow-hidden white-text-selection">
+<section
+  class="relative h-52 md:h-[80vh] overflow-hidden white-text-selection"
+  {...id ? { id } : {}}
+>
   <div
     class="absolute z-10 inset-0 bg-gradient-to-r from-red-500 to-blue-800 opacity-55"
   >
   </div>
   <div
-    class=`absolute inset-0 bg-cover bg-${position} bg-no-repeat`
+    class=`absolute inset-0 bg-cover ${position} bg-no-repeat`
     style=`background-image: url('${image}');`
   >
   </div>

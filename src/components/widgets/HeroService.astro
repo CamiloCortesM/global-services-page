@@ -16,13 +16,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative h-52 md:h-[40vh] overflow-hidden white-text-selection">
+<section
+  class="relative h-52 md:h-[40vh] overflow-hidden white-text-selection"
+  {...id ? { id } : {}}
+>
   <div
-    class="absolute z-10 inset-0 bg-gradient-to-r from-blue-800 via-blue-800 to-transparent opacity-55"
+    class="absolute z-10 inset-0 bg-gradient-to-r from-blue-800 via-blue-700 to-transparent opacity-55"
   >
   </div>
   <div
-    class=`absolute inset-0 bg-cover bg-${position} bg-no-repeat`
+    class=`absolute inset-0 bg-cover ${position} bg-no-repeat`
     style=`background-image: url('${image}');`
   >
   </div>
