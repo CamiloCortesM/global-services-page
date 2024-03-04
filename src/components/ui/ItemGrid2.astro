@@ -1,6 +1,5 @@
 ---
-import type { ItemGrid } from '../../types';
-import Button from './Button.astro';
+import type { ItemGrid } from '@/types';
 
 const { items = [] } = Astro.props as ItemGrid;
 ---
@@ -24,7 +23,7 @@ const { items = [] } = Astro.props as ItemGrid;
   items && (
     <div class="swiper mySwiper h-96">
       <div class="swiper-wrapper">
-        {items.map(({ title, description, link, image, callToAction }) => (
+        {items.map(({ title, description, link, image }) => (
           <div class="swiper-slide relative flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] overflow-hidden">
             <div class="h-3/5 overflow-hidden relative container-link">
               <a
@@ -45,11 +44,6 @@ const { items = [] } = Astro.props as ItemGrid;
                   class="text-muted mt-1 text-sm whitespace-normal overflow-hidden line-clamp-3"
                   set:html={description}
                 />
-              )}
-              {callToAction && (
-                <div class="mt-2">
-                  <Button {...callToAction} />
-                </div>
               )}
             </div>
           </div>

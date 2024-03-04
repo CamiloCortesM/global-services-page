@@ -1,13 +1,13 @@
 ---
-import FAQs from '@/components/widgets/FAQs.astro';
-import Layout from '../layouts/PageLayout.astro';
+import { FAQs } from '@/components/widgets';
+import Layout from '@/layouts/PageLayout.astro';
 ---
 
 <Layout
   title="FAQs: Answers to Your Cleaning Queries"
   content="Find solutions to common cleaning questions."
-  image="images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina2.jpg"
-  position="top"
+  image="/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina2.webp"
+  position="bg-top"
 >
   <FAQs
     title="General Questions"
@@ -54,8 +54,7 @@ import Layout from '../layouts/PageLayout.astro';
     classes={{ container: 'lg:py-10' }}
     items={[
       {
-        title:
-          'What specific cleaning services does your company offer?',
+        title: 'What specific cleaning services does your company offer?',
         description:
           'Our company offers a wide range of cleaning services including commercial cleaning, residential cleaning, end of tenancy cleaning, carpet cleaning, and window cleaning.',
       },

@@ -1,10 +1,13 @@
 ---
+import { logo } from '@/assets/images/images';
+import { Image } from './common';
 ---
 
-
-<!-- <span class="self-center ml-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap">
-    🚀 Services
-  </span> -->
-  
-<img src='/logo.png' alt="logo" class="ml-2 w-56 h-16 " /> 
-<!-- TODO: Change -->
+<Image
+  widths={[180, 210]}
+  width={210}
+  height={60}
+  layout="cover"
+  src={logo}
+  alt="logo"
+/>

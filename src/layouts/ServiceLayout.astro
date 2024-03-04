@@ -1,5 +1,5 @@
 ---
-import HeroService from '../components/widgets/HeroService.astro';
+import { HeroService } from '@/components/widgets';
 import Layout from './Layout.astro';
 
 interface Props {
@@ -12,8 +12,8 @@ interface Props {
 const {
   title = 'Residential Cleaning',
   content = 'lorem Ex in non eiusmod culpa elit anim proident.',
-  image = 'images/vista-lateral-mesa-limpieza-barista-femenina-guantes-latex.jpg',
-  position = 'center',
+  image = '/images/vista-lateral-mesa-limpieza-barista-femenina-guantes-latex.webp',
+  position = 'bg-center',
 } = Astro.props;
 ---
 

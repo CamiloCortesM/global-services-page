@@ -1,12 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Logo from '../Logo.astro';
-import ToggleMenu from '../common/ToggleMenu.astro';
-import Button from '../ui/Button.astro';
+import Logo from '@/components/Logo.astro';
+import ToggleMenu from '@/components/common/ToggleMenu.astro';
+import Button from '@/components/ui/Button.astro';
 
-import { getHomePermalink } from '../../utils/permalinks';
-import { trimSlash } from '../../utils/permalinks';
-import type { ActionLink, MenuLink } from '../../navigation';
+import { getHomePermalink, trimSlash } from '@/utils/permalinks';
+import type { ActionLink, MenuLink } from '@/navigation';
 
 export interface Props {
   id?: string;
@@ -30,16 +29,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
 <header
-  class:list={[
-    { sticky: isSticky, relative: !isSticky },
-    'top-0 z-50 flex-none mx-auto w-full border-b border-gray-50/0',
-  ]}
+  class:list={['top-0 z-50 flex-none mx-auto w-full border-b border-gray-50/0']}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
 >
   <div
     class:list={[
-      'relative text-default py-2 px-2 md:px-2 lg:px-5 mx-auto w-full md:flex md:justify-between',
+      'relative text-default py-0 px-2 lg:px-5 mx-auto w-full md:flex md:justify-between',
       {
         'max-w-7xl': !isFullWidth,
       },
@@ -63,7 +59,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.88rem] tracking-[0.02rem] font-medium"
+        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.82rem] tracking-[0.02rem] font-medium"
       >
         {
           links.map(({ text, href, links }) => (
@@ -83,7 +79,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       class="w-3.5 h-3.5 ml-0.5 hidden md:inline"
                     />
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md  rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
@@ -121,7 +117,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         'hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:min-w-64 md:w-auto md:static justify-end left-0 bottom-0 p-3 md:p-0',
       ]}
     >
-      <div class="items-center flex justify-between w-full md:w-auto">
+      <div class="items-center flex justify-end w-full md:w-auto">
         {
           actions?.length ? (
             <span>
