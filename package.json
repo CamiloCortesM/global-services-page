@@ -26,8 +26,10 @@
   "devDependencies": {
     "@iconify-json/ic": "^1.1.17",
     "@iconify-json/tabler": "^1.1.104",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
+    "sharp": "^0.33.2",
     "tailwind-merge": "^2.2.0"
   }
 }
