@@ -1,0 +1,60 @@
+---
+import { WidgetWrapper } from '@/components/ui';
+import type { CertificationDetails } from '@/types';
+import { Image } from '../common';
+
+const {
+  id,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as CertificationDetails;
+---
+
+<WidgetWrapper
+  id={id}
+  containerClass={`w-full flex justify-center items-center mt-6 bg-gray-200 mx-auto py-2 md:py-2 lg:py-2 gap-0 md:gap-10 lg:gap-20 ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="text-center mr-5 hidden md:flex">
+    <p class="text-muted text-left">
+      <em>Completely Registered & Certified:</em>
+    </p>
+  </div>
+  <div>
+    <Image
+      width={90}
+      height={75}
+      layout="contained"
+      src="https://res.cloudinary.com/dnw9rbfpx/image/upload/v1710124529/iso-modified_1_uahc71.webp"
+      alt="iso-certfied"
+    />
+  </div>
+  <div>
+    <Image
+      width={140}
+      height={120}
+      layout="contained"
+      src="https://res.cloudinary.com/dnw9rbfpx/image/upload/v1710124529/CHAS-modified_1_ysewdw.webp"
+      alt="chas-certfied"
+    />
+  </div>
+
+  <div>
+    <Image
+      width={180}
+      height={110}
+      layout="contained"
+      src="https://res.cloudinary.com/dnw9rbfpx/image/upload/v1710124529/BICSc-Blue-logo-RGB-01-e1639057859456-modified_1_svc5mj.webp"
+      alt="BicsBlueLogo-certfied"
+    />
+  </div>
+  <div>
+    <Image
+      width={130}
+      height={90}
+      layout="contained"
+      src="https://res.cloudinary.com/dnw9rbfpx/image/upload/v1710124529/SAFECONTRACTOR_2_tqivjx.webp"
+      alt="safeContractor-certfied"
+    />
+  </div>
+</WidgetWrapper>
