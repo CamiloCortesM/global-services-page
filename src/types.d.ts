@@ -203,6 +203,15 @@ export interface Features extends Headline, Widget {
   isAfterContent?: boolean;
 }
 
+export interface ServicesOfferings extends Headline, Widget {
+  image?: { src: string; alt: string };
+  listItems: string[];
+  titleHeading: string;
+  paragraphText: string;
+  strongText: string;
+  paragraphList: string;
+}
+
 export interface Services extends Headline, Widget {
   image?: string | unknown;
   video?: Video;
@@ -216,9 +225,21 @@ export interface Services extends Headline, Widget {
   isAfterContent?: boolean;
 }
 
+export interface CertificationDetails extends Widget {}
+
+export interface ServiceDetails extends Widget {
+  paragraph1?: string;
+  paragraph2?: string;
+  paragraph3?: string;
+}
+
 export interface Description extends Headline {
   id?: string;
   image?: string;
+}
+
+export interface ImageGalery extends Widget {
+  images: [{ src: string; alt: string }];
 }
 
 export interface Faqs extends Headline, Widget {
