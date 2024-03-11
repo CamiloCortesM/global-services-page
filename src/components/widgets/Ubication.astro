@@ -1,0 +1,60 @@
+---
+export interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  map?: string | any;
+}
+
+const {
+  id,
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  map = await Astro.slots.render('map'),
+} = Astro.props;
+---
+
+<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-12 md:py-20">
+      <div class="text-center pb-6 md:pb-8 max-w-5xl mx-auto">
+        {
+          title && (
+            <h1
+              class="font-bold leading-tighter tracking-tighter font-heading text-heading text-4xl"
+              set:html={title}
+            />
+          )
+        }
+      </div>
+      <div class="max-w-3xl mx-auto">
+        {
+          subtitle && (
+            <p
+              class="text-xl text-muted mb-10 text-center"
+              set:html={subtitle}
+            />
+          )
+        }
+      </div>
+      <div>
+        {
+          map && (
+            <iframe
+              class="mx-auto rounded-md w-full"
+              src={map}
+              width="500"
+              height="350"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            />
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

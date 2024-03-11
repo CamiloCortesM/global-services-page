@@ -1,11 +1,64 @@
 ---
 import Layout from '@/layouts/PageLayout.astro';
+import { Features3, ContactUs, Ubication } from '@/components/widgets';
 ---
 
-<Layout
-  title="Get in Touch"
-  content="Reach out for sparkling clean solutions."
-  image="/images/oficina-limpieza-hombres-tiro-completo.webp"
->
+<Layout title="Contact Us" content="Reach out for sparkling clean solutions.">
+  <ContactUs
+    title="Drop us a message today!"
+    classes={{ container: 'md:py-4 lg:py-8' }}
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 48 business hours."
+  />
 
+  <Features3
+    title="We are here to help!"
+    classes={{ container: 'md:py-4 lg:py-8 max-w-5xl' }}
+    items={[
+      {
+        title: 'General support',
+        description: `Chat with us for inquiries about our services, payment methods, or any other concerns you may have about us or our services.`,
+      },
+      {
+        title: 'Contact sales',
+        description:
+          'Chat with us for enquiries about our cleaning services, payment options, schedule availability, or any other questions you may have about our company and what we offer.',
+      },
+
+      {
+        title: 'Phone',
+        description: '+44 204571654',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: 'Example@google.com',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+  <Ubication
+    title="Ubication"
+    subtitle="Located in the heart of London, our company provides top-quality cleaning services to meet all your home and office maintenance needs."
+    map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317737.474289965!2d-0.4030843720082168!3d51.52561661344472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b323093d307%3A0x2fb199016d5642a7!2sThe%20British%20Museum!5e0!3m2!1sen!2sco!4v1710100009195!5m2!1sen!2sco"
+  />
 </Layout>
