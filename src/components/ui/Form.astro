@@ -1,6 +1,7 @@
 ---
 import type { Form } from '@/types';
 import { Button } from '../ui';
+import sgMail from '@sendgrid/mail';
 
 const {
   inputs,
@@ -9,39 +10,83 @@ const {
   button = 'Contact us',
   description = '',
 } = Astro.props as Form;
+
+sgMail.setApiKey(import.meta.env.TWILIO_EMAIL_KEY);
+const errors = { name: '', email: '', textarea: '', disclaimer: '' };
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get('name');
+    const email = data.get('email');
+    const textarea = data.get('textarea');
+
+    const formValidate = () => {};
+    if (typeof name !== 'string' || name.length < 5) {
+      errors.name += 'Please enter a name.';
+    }
+    if (typeof textarea !== 'string' || textarea.length < 10) {
+      errors.textarea += 'Messsage too short.';
+    }
+
+    const hasErrors = Object.values(errors).some((msg) => msg);
+
+    if (!hasErrors) {
+      const msg = {
+        to: 'kurumi.010730@gmail.com',
+        from: 'kurumi.010730@gmail.com',
+        subject: 'Contact Global Service & Maintenance',
+        text: `Name: ${name} \nMessage: ${textarea} \nUser Email: ${email}`,
+      };
+
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
-<form onsubmit="formValidate(e)">
+<form method="POST" onsubmit="return formValidate(event)">
   {
-    inputs?.map(
-      ({
-        type = 'text',
-        name,
-        label = '',
-        autocomplete = 'on',
-        placeholder = '',
-      }) =>
-        name && (
-          <div class="mb-6">
-            {label && (
-              <label for={name} class="block text-sm font-medium">
-                {label}
-              </label>
-            )}
-            <input
-              type={type}
-              name={name}
-              id={name}
-              autocomplete={autocomplete}
-              placeholder={placeholder}
-              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 bg-white error"
-              required
-              oninvalid="this.setCustomValidity('Please fill in this field.')"
-              oninput="this.setCustomValidity('')"
-            />
-          </div>
-        )
-    )
+    inputs &&
+      inputs.map(
+        ({
+          type = 'text',
+          name,
+          label = '',
+          autocomplete = 'on',
+          placeholder = '',
+        }) =>
+          name && (
+            <div class="mb-6">
+              {label && (
+                <label for={name} class="block text-sm font-medium">
+                  {label}
+                </label>
+              )}
+              <input
+                type={type}
+                name={name}
+                id={name}
+                autocomplete={autocomplete}
+                placeholder={placeholder}
+                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
+                required
+                minlength="5"
+              />
+            </div>
+          )
+      )
   }
 
   {
@@ -53,12 +98,11 @@ const {
         <textarea
           id="textarea"
           name="textarea"
-          rows={textarea.rows ?? 4}
+          rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 bg-white error"
+          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
           required
-          oninvalid="this.setCustomValidity('Please write your message.')"
-          oninput="this.setCustomValidity('')"
+          minlength="10"
         />
       </div>
     )
@@ -72,16 +116,14 @@ const {
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 bg-white"
+            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white"
             required
-            oninvalid="this.setCustomValidity('Check this box if you want to continue.')"
-            oninput="this.setCustomValidity('')"
           />
         </div>
         <div class="ml-3">
           <label
             for="disclaimer"
-            class="cursor-pointer select-none text-sm text-gray-600"
+            class="cursor-pointer select-none text-sm text-gray-600 "
           >
             {disclaimer.label}
           </label>
@@ -103,31 +145,8 @@ const {
   {
     description && (
       <div class="mt-3 text-center">
-        <p class="text-sm text-gray-600">{description}</p>
+        <p class="text-sm text-gray-600 ">{description}</p>
       </div>
     )
   }
 </form>
-
-<style>
-  .error:focus-visible {
-    outline: none;
-    border-color: #f13236;
-  }
-</style>
-
-<script>
-  function formValidate(e) {
-    const form = e.target;
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      form.querySelectorAll('.error').forEach((element) => {
-        if (!element.validity.valid) {
-          element.classList.add('error');
-        } else {
-          element.classList.remove('error');
-        }
-      });
-    }
-  }
-</script>
