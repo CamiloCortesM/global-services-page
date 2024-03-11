@@ -14,6 +14,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrolib/seo": "^1.0.0-beta.5",
     "@fontsource-variable/inter": "^5.0.16",
+    "@sendgrid/mail": "^8.1.1",
     "astro": "^4.0.9",
     "astro-icon": "^1.1.0",
     "js-yaml": "^4.1.0",
