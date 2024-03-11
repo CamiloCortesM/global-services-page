@@ -1,0 +1,33 @@
+---
+import { WidgetWrapper } from '@/components/ui';
+import type { ServiceDetails } from '@/types';
+
+const {
+  id,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+  paragraph1 = '',
+  paragraph2 = '',
+  paragraph3 = '',
+} = Astro.props as ServiceDetails;
+---
+
+<WidgetWrapper
+  id={id}
+  containerClass={`max-w-6xl mx-auto py-4 md:py-4 lg:py-4  ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="mb-8 md:mx-auto md:mb-12 text-center">
+    {paragraph1 && <p class="mt-4 text-muted text-left">{paragraph1}</p>}
+
+    {paragraph2 && <p class="mt-4 text-muted text-left">{paragraph2}</p>}
+
+    {
+      paragraph3 && (
+        <p class="mt-4 text-muted text-left">
+          <strong>{paragraph3}</strong>
+        </p>
+      )
+    }
+  </div>
+</WidgetWrapper>

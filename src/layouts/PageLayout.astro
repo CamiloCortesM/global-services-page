@@ -1,12 +1,14 @@
 ---
 import { Hero } from '@/components/widgets';
 import Layout from './Layout.astro';
+import type { MetaData } from '@/types';
 
 interface Props {
   title?: string;
   content?: string;
   image?: string;
   position?: string;
+  metadata?: MetaData;
 }
 
 const {
