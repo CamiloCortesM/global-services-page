@@ -1,5 +1,5 @@
 ---
-import { ItemGrid3, WidgetWrapper, Headline } from '@/components/ui';
+import { ItemGrid, Headline, WidgetWrapper } from '../ui';
 import type { Features } from '@/types';
 
 const {
@@ -7,7 +7,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   items = [],
-  columns = 3,
+  columns = 2,
   defaultIcon,
 
   id,
@@ -27,7 +27,7 @@ const {
     tagline={tagline}
     classes={classes?.headline}
   />
-  <ItemGrid3
+  <ItemGrid
     items={items}
     columns={columns}
     defaultIcon={defaultIcon}
@@ -35,6 +35,7 @@ const {
       container: 'gap-4 md:gap-6',
       panel:
         'rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white p-6',
+
       icon: 'w-12 h-12 mb-6 text-primary',
       ...((classes?.items as {}) ?? {}),
     }}
