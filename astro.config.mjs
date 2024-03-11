@@ -12,7 +12,19 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        ic:["*"], //TODO: optimize
+        ic: ['*'], //TODO: optimize
+        mdi: [
+          'tools',
+          'magnify',
+          'leaf',
+          'window-open-variant',
+          'brush',
+          'grass',
+          'tree-outline',
+          'toolbox',
+          'worker',
+          'hammer-wrench',
+        ],
       },
     }),
   ],

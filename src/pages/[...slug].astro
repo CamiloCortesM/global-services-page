@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/ServiceLayout.astro';
+import {
+  ServiceDetails,
+  CertificationDetails,
+  Features2,
+  ServiceOfferings,
+  ImageGalery,
+  FAQs,
+} from '../components/widgets';
+import { getStaticPathsServices } from '../utils/service';
+
+export function getStaticPaths() {
+  return getStaticPathsServices();
+}
+
+const {
+  serviceDetails,
+  features,
+  serviceOfferings,
+  imageGalery,
+  faqs,
+  layout,
+} = Astro.props;
+---
+
+<Layout {...layout}>
+  <CertificationDetails />
+
+  <ServiceDetails {...serviceDetails} />
+
+  <Features2 {...features}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <ServiceOfferings
+    {...serviceOfferings}
+    classes={{
+      headline: {
+        title: 'text-left',
+        subtitle: 'text-left',
+        container: 'mb-2 md:mb-4',
+      },
+    }}
+  />
+
+  <ImageGalery {...imageGalery} />
+
+  <FAQs classes={{ container: 'max-w-6xl' }} {...faqs} />
+</Layout>

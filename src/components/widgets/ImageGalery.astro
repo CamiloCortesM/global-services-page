@@ -1,0 +1,53 @@
+---
+import { Image } from '../common';
+import { WidgetWrapper } from '../ui';
+import type { ImageGalery } from '@/types';
+
+const {
+  images = [],
+  id,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as ImageGalery;
+
+interface Image {
+  src: string;
+  alt: string;
+}
+
+const elementosPorFila = Math.ceil(images.length / 4);
+const groupedImages: Image[][] = [];
+
+for (let i = 0; i < 4; i++) {
+  groupedImages.push(
+    images.slice(i * elementosPorFila, (i + 1) * elementosPorFila)
+  );
+}
+---
+
+<WidgetWrapper
+  id={id}
+  containerClass={`max-w-6xl mx-auto py-4 md:py-4 lg:py-4  ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {
+      groupedImages.map((group) => (
+        <div class="grid gap-4">
+          {group.map((image) => (
+            <div class="overflow-hidden rounded-lg">
+              <Image
+                width="auto"
+                height="auto"
+                layout="cover"
+                src={image.src}
+                alt={image.alt}
+                class="h-full max-w-full transition duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</WidgetWrapper>

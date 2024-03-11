@@ -34,27 +34,26 @@ export const headerData: HeaderData = {
     },
     {
       text: 'SERVICES',
-      href: getPermalink('/services'),
       links: [
         {
           text: 'GENERAL CLEANING',
-          href: getPermalink('/services/general-cleaning'),
+          href: getPermalink('/general-cleaning'),
         },
         {
           text: 'WINDOW CLEANING',
-          href: getPermalink('/services/window-cleaning'),
+          href: getPermalink('/window-cleaning'),
         },
         {
           text: 'CARPET CLEANING',
-          href: getPermalink('/services/carpet-cleaning'),
+          href: getPermalink('/carpet-cleaning'),
         },
         {
           text: 'GARDEN MAINTENANCE',
-          href: getPermalink('/services/garden-maintenance'),
+          href: getPermalink('/garden-maintenance'),
         },
         {
           text: 'MAINTENANCE SERVICES',
-          href: getPermalink('/services/maintenance-services'),
+          href: getPermalink('/maintenance-services'),
         },
       ],
     },
@@ -92,11 +91,17 @@ export const footerData = {
     {
       title: 'Cleaning Services',
       links: [
-        { text: 'General Cleaning', href: '#' },
-        { text: 'Window Cleaning', href: '#' },
-        { text: 'Carpet Cleaning', href: '#' },
-        { text: 'Garden Maintenance', href: '#' },
-        { text: 'Maintenance Services', href: '#' },
+        { text: 'General Cleaning', href: getPermalink('/general-cleaning') },
+        { text: 'Window Cleaning', href: getPermalink('/window-cleaning') },
+        { text: 'Carpet Cleaning', href: getPermalink('/carpet-cleaning') },
+        {
+          text: 'Garden Maintenance',
+          href: getPermalink('/garden-maintenance'),
+        },
+        {
+          text: 'Maintenance Services',
+          href: getPermalink('/maintenance-services'),
+        },
       ],
     },
     {
