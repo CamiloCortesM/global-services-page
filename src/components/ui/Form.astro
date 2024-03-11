@@ -28,7 +28,6 @@ if (Astro.request.method === 'POST') {
     if (typeof textarea !== 'string' || textarea.length < 10) {
       errors.textarea += 'Messsage too short.';
     }
-
     const hasErrors = Object.values(errors).some((msg) => msg);
 
     if (!hasErrors) {
