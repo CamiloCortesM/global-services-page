@@ -1,0 +1,80 @@
+---
+import { Headline, WidgetWrapper } from '@/components/ui';
+import type { ServicesOfferings } from '@/types';
+import { Image } from '../common';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+
+  id,
+  classes = {},
+  image = { src: '', alt: '' },
+  bg = await Astro.slots.render('bg'),
+  paragraphList = 'This service offers the following:',
+  listItems = [],
+  titleHeading = '',
+  paragraphText = '',
+  strongText = '',
+} = Astro.props as ServicesOfferings;
+---
+
+<style>
+  .list-square {
+    list-style: none;
+    padding-left: 0;
+  }
+  .list-square li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+  .list-square li:before {
+    content: '\25A0';
+    font-size: 0.6em;
+    width: 1em;
+    margin-right: 0.5em;
+  }
+</style>
+
+<WidgetWrapper
+  id={id}
+  containerClass={`block md:flex max-w-6xl mx-auto py-6 md:py-6 lg:py-8 gap-6  ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="pt-6 pr-6">
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      classes={classes?.headline}
+    />
+    <p class="text-left text-muted mb-3">{paragraphList}</p>
+    <ul class="grid grid-cols-2 gap-1 list-square text-sm text-muted mb-6">
+      {listItems.map((item) => <li>{item}</li>)}
+    </ul>
+    <p>
+      <strong>{strongText}</strong>
+    </p>
+  </div>
+  <div class="md:max-w-xs lgmax-w-sm">
+    <div>
+      <Image
+        width={700}
+        height={620}
+        layout="contained"
+        src={image.src}
+        alt={image.alt}
+      />
+    </div>
+    <div>
+      <h3 class="font-bold font-heading text-heading text-xl mb-1 text-left">
+        {titleHeading}
+      </h3>
+      <p class="text-muted text-sm mb-1">
+        {paragraphText}
+      </p>
+    </div>
+  </div>
+</WidgetWrapper>
