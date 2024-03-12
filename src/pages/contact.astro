@@ -1,13 +1,18 @@
 ---
 import Layout from '@/layouts/PageLayout.astro';
-import { Features3, ContactUs, Ubication } from '@/components/widgets';
+import { ContactUs, Ubication } from '@/components/widgets';
 ---
 
-<Layout title="Contact Us" content="Reach out for sparkling clean solutions.">
+<Layout
+  title="Contact Us"
+  content="Reach out for sparkling clean solutions."
+  image="/images/oficina-limpieza-hombres-tiro-completo.webp"
+>
   <ContactUs
     title="Drop us a message today!"
     classes={{ container: 'md:py-4 lg:py-8' }}
     subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    description="Our support team typically responds within 48 business hours."
     inputs={[
       {
         type: 'text',
@@ -27,12 +32,6 @@ import { Features3, ContactUs, Ubication } from '@/components/widgets';
       label:
         'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
     }}
-    description="Our support team typically responds within 48 business hours."
-  />
-
-  <Features3
-    title="We are here to help!"
-    classes={{ container: 'md:py-4 lg:py-8 max-w-5xl' }}
     items={[
       {
         title: 'General support',
@@ -43,7 +42,6 @@ import { Features3, ContactUs, Ubication } from '@/components/widgets';
         description:
           'Chat with us for enquiries about our cleaning services, payment options, schedule availability, or any other questions you may have about our company and what we offer.',
       },
-
       {
         title: 'Phone',
         description: '+44 204571654',
@@ -56,6 +54,7 @@ import { Features3, ContactUs, Ubication } from '@/components/widgets';
       },
     ]}
   />
+
   <Ubication
     title="Ubication"
     subtitle="Located in the heart of London, our company provides top-quality cleaning services to meet all your home and office maintenance needs."
