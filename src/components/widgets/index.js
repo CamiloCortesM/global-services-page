@@ -6,7 +6,6 @@ export { default as Description } from './Description.astro';
 export { default as FAQs } from './FAQs.astro';
 export { default as Features } from './Features.astro';
 export { default as Features2 } from './Features2.astro';
-export { default as Features3 } from './Features3.astro';
 export { default as Footer } from './Footer.astro';
 export { default as Header } from './Header.astro';
 export { default as Hero } from './Hero.astro';
