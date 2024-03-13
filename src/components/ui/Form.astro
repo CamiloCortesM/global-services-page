@@ -1,5 +1,4 @@
 ---
-export const prerender = true;
 import type { Form } from '@/types';
 import { Button } from '../ui';
 import sgMail from '@sendgrid/mail';
@@ -13,7 +12,7 @@ const {
 } = Astro.props as Form;
 
 sgMail.setApiKey(import.meta.env.TWILIO_EMAIL_KEY);
-const errors = { name: '', email: '', textarea: '', disclaimer: '' };
+const errors = { name: '', email: '', textarea: ''};
 
 if (Astro.request.method === 'POST') {
   try {
@@ -35,7 +34,7 @@ if (Astro.request.method === 'POST') {
         to: 'kurumi.010730@gmail.com',
         from: 'kurumi.010730@gmail.com',
         subject: 'Contact Global Service & Maintenance',
-        text: `Name: ${name} \nMessage: ${textarea} \nUser Email: ${email}`,
+        text: `Name: ${name} \nUser Email: ${email}  \nMessage: ${textarea}`,
       };
 
       sgMail
@@ -55,7 +54,7 @@ if (Astro.request.method === 'POST') {
 }
 ---
 
-<form method="POST" onsubmit="return formValidate(event)">
+<form method="POST">
   {
     inputs &&
       inputs.map(

@@ -6,14 +6,16 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), icon({
-    include: {
-      tabler: ['*'],
-      ic: ["*"], //TODO: optimize
-      mdi: [
+  output: 'hybrid',
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    icon({
+      include: {
+        tabler: ['*'],
+        ic: ['*'], //TODO: optimize
+        mdi: [
           'tools',
           'magnify',
           'leaf',
@@ -25,7 +27,8 @@ export default defineConfig({
           'worker',
           'hammer-wrench',
         ],
-    }
-  })],
+      },
+    }),
+  ],
   adapter: vercel()
 });
