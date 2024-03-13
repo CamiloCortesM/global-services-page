@@ -22,7 +22,6 @@ if (Astro.request.method === 'POST') {
     const email = data.get('email');
     const textarea = data.get('textarea');
 
-    const formValidate = () => {};
     if (typeof name !== 'string' || name.length < 5) {
       errors.name += 'Please enter a name.';
     }
