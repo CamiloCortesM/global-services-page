@@ -1,13 +1,14 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
-
 import vercel from '@astrojs/vercel/serverless';
+
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: netlify(),
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -15,7 +16,8 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        ic: ['*'], //TODO: optimize
+        ic: ['*'],
+        //TODO: optimize
         mdi: [
           'tools',
           'magnify',
