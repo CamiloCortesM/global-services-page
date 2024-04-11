@@ -34,18 +34,37 @@ export interface AnalyticsConfig {
   };
 }
 
-const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
-  site?: SiteConfig;
-  metadata?: MetaDataConfig;
-  i18n?: I18NConfig;
-  // apps?: {
-  //   TODO page routes
-  // };
-  ui?: unknown;
-  analytics?: unknown;
-};
+// const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
+//   site?: SiteConfig;
+//   metadata?: MetaDataConfig;
+//   i18n?: I18NConfig;
+//   // apps?: {
+//   //   TODO page routes
+//   // };
+//   ui?: unknown;
+//   analytics?: unknown;
+// };
 
 const DEFAULT_SITE_NAME = 'Website';
+
+//TODO: DELETE IN PRODUCTION
+const config = {
+  site: {
+    name: DEFAULT_SITE_NAME,
+    site: undefined,
+    base: '/',
+    trailingSlash: false,
+
+    googleSiteVerificationId: '',
+  },
+  metadata: {},
+  i18n: {
+    language: 'en-GB',
+    textDirection: 'ltr',
+  },
+  ui: {},
+  analytics: {},
+};
 
 const getSite = () => {
   const _default = {
