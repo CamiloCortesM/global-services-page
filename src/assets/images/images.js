@@ -5,7 +5,6 @@ import unsplashImage3 from './3-unsplash.webp';
 import unsplashImage4 from './4-unsplash.webp';
 import unsplashImage5 from './5-unsplash.webp';
 import unsplashImage6 from './6-unsplash.webp';
-import logo from './logo.webp';
 
 export {
   womenCleanOffice,
@@ -15,5 +14,4 @@ export {
   unsplashImage4,
   unsplashImage5,
   unsplashImage6,
-  logo,
 };
