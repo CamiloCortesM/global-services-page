@@ -1,11 +1,13 @@
 ---
-import {WidgetWrapper,ItemGrid,Headline} from "@/components/ui/";
-import type { Features } from "@/types";
+import Headline from '@/components/ui/Headline.astro';
+import ItemGrid from '@/components/ui/ItemGrid.astro';
+import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
+import type { Features } from '@/types';
 
 const {
-  title = await Astro.slots.render("title"),
-  subtitle = await Astro.slots.render("subtitle"),
-  tagline = await Astro.slots.render("tagline"),
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
   items = [],
   columns = 2,
 
@@ -13,13 +15,13 @@ const {
 
   id,
   classes = {},
-  bg = await Astro.slots.render("bg"),
+  bg = await Astro.slots.render('bg'),
 } = Astro.props as Features;
 ---
 
 <WidgetWrapper
   id={id}
-  containerClass={`max-w-5xl ${classes?.container ?? ""}`}
+  containerClass={`max-w-5xl ${classes?.container ?? ''}`}
   bg={bg}
 >
   <Headline
@@ -33,9 +35,9 @@ const {
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
-      container: "",
-      title: "md:text-[1.3rem]",
-      icon: "text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0",
+      container: '',
+      title: 'md:text-[1.3rem]',
+      icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
       ...((classes?.items as {}) ?? {}),
     }}
   />

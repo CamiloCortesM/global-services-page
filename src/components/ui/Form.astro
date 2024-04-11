@@ -1,6 +1,6 @@
 ---
 import type { Form } from '@/types';
-import { Button } from '../ui';
+import Button from '@/components/ui/Button.astro';
 import sgMail from '@sendgrid/mail';
 
 const {
@@ -12,7 +12,7 @@ const {
 } = Astro.props as Form;
 
 sgMail.setApiKey(import.meta.env.TWILIO_EMAIL_KEY);
-const errors = { name: '', email: '', textarea: ''};
+const errors = { name: '', email: '', textarea: '' };
 
 if (Astro.request.method === 'POST') {
   try {

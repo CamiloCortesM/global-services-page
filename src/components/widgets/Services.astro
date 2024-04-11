@@ -1,5 +1,7 @@
 ---
-import { Headline, WidgetWrapper, ItemGrid2 } from '@/components/ui';
+import Headline from '@/components/ui/Headline.astro';
+import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
+import ItemGrid2 from '@/components/ui/ItemGrid2.astro';
 import type { Services } from '@/types';
 
 const {
@@ -25,7 +27,5 @@ const {
     tagline={tagline}
     classes={classes?.headline}
   />
-  <ItemGrid2
-    items={items}
-  />
+  <ItemGrid2 items={items} />
 </WidgetWrapper>
