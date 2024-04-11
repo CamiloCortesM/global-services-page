@@ -1,5 +1,8 @@
 ---
-import { Form, Headline, WidgetWrapper, ItemGrid } from '../ui';
+import Form from '@/components/ui/Form.astro';
+import Headline from '@/components/ui/Headline.astro';
+import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
+import ItemGrid from '@/components/ui/ItemGrid.astro';
 import type { Contact } from '@/types';
 
 const {
@@ -35,8 +38,7 @@ const {
       defaultIcon={defaultIcon}
       classes={{
         container: 'gap-2 md:gap-4 h-full',
-        panel:
-          'rounded-lg border border-gray-200 bg-white p-5',
+        panel: 'rounded-lg border border-gray-200 bg-white p-5',
 
         icon: 'w-10 h-10 mb-6 text-primary',
         ...((classes?.items as {}) ?? {}),

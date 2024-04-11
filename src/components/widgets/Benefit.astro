@@ -1,5 +1,8 @@
 ---
-import { Headline, WidgetWrapper, Button, ItemGrid } from '@/components/ui';
+import Headline from '@/components/ui/Headline.astro';
+import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
+import Button from '@/components/ui/Button.astro';
+import ItemGrid from '@/components/ui/ItemGrid.astro';
 import Image from '@/components/common/Image.astro';
 import type { Content } from '@/types';
 
@@ -33,8 +36,7 @@ const {
       container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
       title:
         'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
-      subtitle:
-        'max-w-3xl mx-auto sm:text-center text-xl text-muted',
+      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted',
     }}
   />
   <div class="mx-auto max-w-7xl p-4 md:px-8">
