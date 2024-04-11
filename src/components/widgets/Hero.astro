@@ -37,15 +37,14 @@ const {
     <div class="text-center text-white m-0 md:-mt-7">
       {
         title && (
-          <h1
-            class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
-            set:html={title}
-          />
+          <h1 class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+            {title}
+          </h1>
         )
       }
       {
         content && (
-          <p class="text-xl mb-6 font-semibold opacity-80" set:html={content} />
+          <p class="text-xl md:text-3xl mb-6 font-semibold opacity-80" set:html={content} />
         )
       }
     </div>
