@@ -1,5 +1,5 @@
 ---
-// import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions';
 import '@/assets/styles/talwind.css';
 import CustomStyles from '@/components/CustomStyles.astro';
 import BasicScripts from '@/components/common/BasicScripts.astro';
@@ -21,7 +21,7 @@ const { language, textDirection } = I18N;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <CustomStyles />
     <!-- TODO: Metadata,CustomStyles... -->
-    <!-- <ViewTransitions fallback="swap" /> -->
+    <ViewTransitions/>
   </head>
 
   <body class="antialiased text-default tracking-tight">
