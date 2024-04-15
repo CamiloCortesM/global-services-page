@@ -1,0 +1,126 @@
+---
+import Step1 from './Step1.astro';
+import ProgressBarStep from '../ui/ProgressBarStep.astro';
+import Step2 from './Step2.astro';
+import Step4 from './Step4.astro';
+---
+
+<style is:global>
+  .icon-step {
+    background-color: white;
+  }
+
+  .icon-step span {
+    color: rgb(75 85 99 / 1);
+  }
+
+  .icon-active {
+    background-color: #464c8f;
+  }
+
+  .icon-active span {
+    color: white;
+  }
+
+  .card {
+    animation: fade 300ms ease-in-out forwards;
+  }
+  .card.active {
+    animation: slide 450ms ease-in-out both;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.75);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+</style>
+
+<script>
+  const multiStepForm = document.querySelector('[data-multi-step]');
+  const fieldsets = [...multiStepForm!.querySelectorAll('fieldset')];
+  const progressBar = document.querySelectorAll('#progressbar > div');
+
+  let currentStep = 0;
+
+  function showStep(step: number) {
+    fieldsets?.forEach((fieldset, index) => {
+      fieldset.classList.toggle('active', index === step);
+    });
+
+    progressBar.forEach((stepElement, index) => {
+      if (index === 0) return;
+      const isStepActive = index <= step;
+      stepElement
+        .querySelector('.line-icon-step')
+        ?.classList.toggle('bg-[#464c8f]', isStepActive);
+      stepElement
+        .querySelector('.icon-step')
+        ?.classList.toggle('icon-active', isStepActive);
+    });
+  }
+
+  multiStepForm!.addEventListener('click', (e: any) => {
+    let incrementor;
+    if (e.target!.matches('[data-next]')) {
+      incrementor = 1;
+    } else if (e.target.matches('[data-previous]')) {
+      incrementor = -1;
+    }
+
+    if (incrementor == null) return;
+
+    //TODO: valid inputs
+    const allValid = true;
+    if (allValid) {
+      currentStep += incrementor;
+      showStep(currentStep);
+    }
+  });
+
+  fieldsets.forEach((step) => {
+    step.addEventListener('animationend', (e: any) => {
+      fieldsets[currentStep].classList.remove('hidden');
+      e.target!.classList.toggle(
+        'hidden',
+        !e.target!.classList.contains('active')
+      );
+    });
+  });
+
+  showStep(currentStep);
+</script>
+
+<form data-multi-step class="bg-white p-4 md:p-12 w-full mx-auto relativ">
+  <div class="w-full py-6 px-2 md:px-10 my-4">
+    <!-- progressbar -->
+    <ProgressBarStep />
+
+    <hr class="my-7 mx-2 md:mx-10 h-0.5 border-t-0 bg-neutral-100" />
+
+    <Step1 />
+    <Step2 />
+    <Step2 />
+    <Step4 />
+  </div>
+</form>
