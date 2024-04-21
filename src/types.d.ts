@@ -212,6 +212,12 @@ export interface ServicesOfferings extends Headline, Widget {
   paragraphList: string;
 }
 
+export interface StepForm {
+  title: string;
+  id: string;
+  classes: string;
+}
+
 export interface Services extends Headline, Widget {
   image?: string | unknown;
   video?: Video;
@@ -290,4 +296,8 @@ export interface Opinions extends Headline, Widget {
   items?: Array<Quote>;
   columns?: number;
   classes?: Record<string, string>;
+}
+
+export interface NumberInputControl {
+  text?: string;
 }
