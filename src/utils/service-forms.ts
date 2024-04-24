@@ -339,7 +339,7 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'One off Cleaning': `   <div
+  'One off Cleaning': `<div
   class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
 >
   <label for="bedrooms" class="font-semibold text-lg text-muted"
@@ -670,7 +670,7 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'End of Tenancy Cleaning': `  <div
+  'End of Tenancy Cleaning': `<div
   class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
 >
   <label for="bedrooms" class="font-semibold text-lg text-muted"
@@ -793,11 +793,6 @@ export const servicesForms: FormType = {
 <div
   class="flex-row justify-between items-center w-full px-2 md:px-20 my-2 pb-5"
 >
-  <input
-    type="hidden"
-    name="sites-adittionals"
-    value="End of Tenancy Cleaning"
-  />
   <label class="mb-5 text-lg font-medium text-gray-900">
     Which of the following apply to your property? <span
       class="text-red-500">*</span
@@ -880,7 +875,9 @@ export const servicesForms: FormType = {
               d="M13.427 18.776v.288h.142v-.315zm-.107.288v-.268l-.153.028v.24zm.695 1.887a.306.356 0 0 1-.306.356a.306.356 0 0 1-.306-.356a.306.356 0 0 1 .306-.356a.306.356 0 0 1 .306.356m-2.605-1.626h.142v.533h-.142zm-.26 0h.153v.533h-.153zm5.621-.303a.4.4 0 0 0-.1-.288l-.055-.026h-.013c-.063 0-.119.068-.148.166l.316.172zm.779 1.664c.1 0 .178-.145.178-.316s-.082-.315-.178-.315s-.177.144-.177.315s.081.316.177.316m-.269-.659h-.089v-.011a.33.33 0 0 0-.141.308c0 .171.082.316.178.316a.14.14 0 0 0 .112-.073a.6.6 0 0 1-.034-.2a.5.5 0 0 1 .057-.248a.23.23 0 0 0-.083-.092m-3.572.498a.36.36 0 0 1 .291.155a.295.295 0 0 0-.581 0a.36.36 0 0 1 .29-.155m-.558-2.491v.134l.697-.195l.206-.046l.002-.005l-.852.028zm.97-1.156l.124.037l.077.042l-.174-.463l-1.465-.4l-.018-.152l1.421.39l-.386-1.022l-1.1.125l-.121-1.016l.368-.063l.224-.076l.023-.12l-1.409-.374l-.362.04l-.15.029v.057l.023.093l.765.275l.122 1.215l-.693.079l-.043.006l.766.21l.015.151l-.932-.255v.207a.14.14 0 0 0 .1.137l.865.26l.034.335l.092.03l.011.374l.334.1zm-.721-.218l-.636.087l-.034-.289zm-7.731-5.293l1.764-.051l-.214-.511l-1.674.057zm1.313-.467l.145.341l-1.192.034l-.084-.337zm-1.139 5.968v-.114l-.108-.129v.243zm3.209.504v-.264l-.23.02v.275zm-2.268.283v-.327l-.219.03v.323zm-.8-.95l.35.476l-.051-2.106v-1.357l-.596-.579l-.002 3.159l.284.387l.015.018zm-.21-3.665l.606.461l2.775-.118l-.786-.438Zm3.429 1.709v-1.113l-2.778.12v1.168zm-.523 2.249l.064-.006l.459-.044v-2.057l-2.776.175l.04 2.147l.379-.037l.08-.011v.003zM6.675 7.5H2.887l.059 3.359l3.729-.575zm-.192 2.679l-3.351.516l-.053-3.021l3.4-.007zM2 2.106v19.788h20V2.106Zm19.752 19.539H2.248V2.355h19.5Zm-5.789-3.043l.107.058h.449l-.065-.031zm2.189.245a.675.675 0 0 0-.627-.47h-.753l.031.27v.153h-.005a.6.6 0 0 1 .044.226v.06l.11.061a.5.5 0 0 0 .026-.162a.37.37 0 0 0-.117-.3h.666a.39.39 0 0 1 .362.272l.936 2.668q-.002.012.006.023h.285a.5.5 0 0 0-.025-.131zm-11.896.104a.44.44 0 0 1 .394-.269h4.737l1.016-.3H6.65a.72.72 0 0 0-.65.439l-1.166 2.66a.5.5 0 0 0-.038.164h.284l.01-.034zM18.152 9.4a3 3 0 0 0-.437-.172a.5.5 0 0 0-.145-.016V7.42L14 7.5v2.791l1.986.319a3.1 3.1 0 0 0-1.229.6a2 2 0 0 0-.126.112H10.65v-1.034h3.232V7.5H6.767v2.791h3.162v1.027H7.586l.058.137l-2.085.06l-.049-.2h-.852l-.729.459v.147h10.237l-.054.107H3.93v.215h.7v5.4l-.322.621h.644l.576-1.288l-.328-.018l-.045-4.723l8.867-.007a6.6 6.6 0 0 0-.165 2.93c0 .016.014.13.045.3l.57 1.512h-.1v.161l-.087.014l-.019.732l-.094.006l-.034.132l-.267.059l-2.555.714l-.032.39h.153l-.026-.138l2.517-.472l.278.105l-.52 1.227v.408l.194.027l.034-.247v-.007l.563-1.35l.385-.071l2.321 1.1l.074.159h.2l-.029-.391L15.5 18.47l.981.054l.215.105l-.04-.328l-1.926-.294l-.021-.12h-.081l-.023-.725l-.088-.03v-.106a2 2 0 0 0 .205.243a1.2 1.2 0 0 0 .339.246v.006L15.4 18l.633.1l-.378-.473v-.032a3.7 3.7 0 0 0 .725-.193a2.5 2.5 0 0 0 1-.467c.311-.321.25-.751.158-1.4a8.5 8.5 0 0 1-.111-1.606a5.8 5.8 0 0 1 .473-2.09q.062-.15.106-.275l.018.019c.058.047.139-.027.3-.034a.45.45 0 0 1 .356.115c-.009.045-.562-.122-.678.069c-.03.049-.031.125 0 .149s.131-.051.264-.092c.218-.066.458.017.46.069c0 .079-.532.052-.678.357c-.048.1-.053.23-.012.253s.118-.075.23-.173a1.05 1.05 0 0 1 .575-.3c.034.049-.66.475-.575.7a.19.19 0 0 0 .173.1a.27.27 0 0 0 .176-.11c-.051.084-.1.187-.061.248c.027.045.076.026.126.08c.078.084.036.2.053.255a.65.65 0 0 1-.474.12a3 3 0 0 0-.437-.171c-.146-.032-.193-.014-.219.01a.166.166 0 0 0 0 .22c.058.047.139-.027.3-.035a.46.46 0 0 1 .357.115c-.01.046-.563-.121-.679.069c-.03.05-.031.126 0 .15s.131-.051.265-.092c.217-.067.457.017.46.069c0 .079-.532.05-.679.356c-.048.1-.053.232-.011.253s.117-.074.23-.172a1.05 1.05 0 0 1 .575-.3c.034.049-.661.475-.575.7a.1.1 0 0 0 .022.037v1.91a4 4 0 0 1 .04.529a.27.27 0 0 0 .219.255a6.6 6.6 0 0 0 1.78.066a.31.31 0 0 0 .273-.3v-2.5a.32.32 0 0 0-.321-.32l-.148.023a1.2 1.2 0 0 0 .454-.713a.37.37 0 0 0 .255.1c.167-.014.273-.221.311-.2s-.105.2-.058.39c.043.176.23.3.288.266c.058-.035-.022-.178.069-.276c.05-.055.1-.036.126-.081c.037-.061-.01-.164-.061-.248a.27.27 0 0 0 .176.11a.19.19 0 0 0 .173-.1c.085-.227-.609-.653-.575-.7a1.05 1.05 0 0 1 .575.3c.112.1.188.194.23.173s.036-.154-.012-.253c-.146-.3-.682-.278-.678-.357c0-.052.242-.135.46-.07c.133.042.22.127.264.093s.03-.1 0-.15c-.116-.19-.669-.023-.678-.068a.45.45 0 0 1 .356-.115c.16.007.241.08.3.034a.164.164 0 0 0 0-.218c-.026-.026-.073-.044-.218-.012a3 3 0 0 0-.437.173a.7.7 0 0 1-.506-.138l-.138-.07c.152-.213.261-.483.17-.623c-.158-.243-.852.009-.886-.115c-.019-.073.2-.238.439-.273a.41.41 0 0 0 .311.158a.3.3 0 0 0 .15-.065a1 1 0 0 0 .111.055a.4.4 0 0 0-.008.206c.043.175.23.3.288.264s-.022-.178.069-.276c.05-.055.1-.035.126-.08c.037-.061-.01-.165-.061-.25a.26.26 0 0 0 .176.112a.19.19 0 0 0 .173-.1c.085-.226-.609-.653-.575-.7a1.07 1.07 0 0 1 .575.3c.112.1.188.194.23.172s.036-.154-.012-.253c-.146-.3-.682-.278-.678-.357c0-.052.242-.135.46-.07c.133.042.22.128.264.093s.03-.1 0-.15c-.116-.19-.669-.023-.678-.068a.45.45 0 0 1 .352-.111c.16.007.241.08.3.034a.164.164 0 0 0 0-.218c-.026-.026-.073-.043-.218-.012a3 3 0 0 0-.437.173a.7.7 0 0 1-.506-.138a6 6 0 0 0-.472-.22a.3.3 0 0 0-.022-.228c-.158-.243-.852.009-.885-.115c-.022-.077.226-.26.482-.278a1 1 0 0 1 .116 0c.272.026.4.19.46.149c.045-.031.05-.175-.023-.253c-.217-.226-1.1.148-1.518.368a.7.7 0 0 1-.508.138m-11.178.667v-2.4h6.685v2.4ZM8 11.693l.265-.253h3.191l.242.253zm4.693 0c-.052.114-.366.131-.449 0a.2.2 0 0 1-.011-.182a.2.2 0 0 1 .044-.063a.04.04 0 0 1 .017-.008l.047-.006l.093.1l.04-.021l-.077-.083l.062-.01h.007a.26.26 0 0 1 .158.078c.043.04.094.132.066.195zm6 .879l.007-.011zm2.317.819L21 13.38zm0-2.372l-.01-.011zm-3.44-1.55a1 1 0 0 1 .226-.048a.45.45 0 0 1 .356.115c-.008.038-.385-.069-.582 0zm0 .27a1 1 0 0 1 .168-.076c.218-.067.458.017.46.069c0 .071-.437.056-.628.28zm-3.382.426V7.672l3.191-.072v2.972a2 2 0 0 0-.233-.045a3 3 0 0 0-.356-.022a3 3 0 0 0-.349.019zm-.072 4.845l-.018-.216h.074l.075-.01a.7.7 0 0 1 .238-.005l.054.01l.013.172c0 .013.01.11.032.257l-.439.024a4 4 0 0 1-.029-.232m.405 1.484l-.063-.134l.426-.083q.031.065.065.128zm1.153-.24l-.552.115a2 2 0 0 1-.074-.125l.08-.015l.552-.108l1.283-.252a1 1 0 0 1-.034.124zm.874.184q-.126.074-.314.156a1.3 1.3 0 0 1-.528.159h-.039a.6.6 0 0 1-.208-.054l.209-.05zm-1.823-1.231l-.006-.035l.1.01h.255zm1.921.385a.9.9 0 0 0 .033-.327a.7.7 0 0 1-.1.309l-.4-.109a.6.6 0 0 0 .269-.2a.6.6 0 0 0 .093-.317l.045-.014l.061-.021l.051-.02q.074-.028.136-.055l.089-.038l.01.1l.014.139a4.4 4.4 0 0 1 .037.643zm.247-1.647l-.048.015l-.159.048l-.095.027l-.024.007l-.069.017a4 4 0 0 1 .143-.693c.062-.22.1-.365.031-.508a.44.44 0 0 0-.331-.223a1 1 0 0 0-.113-.01a.94.94 0 0 0-.505.163a1 1 0 0 0-.213.186a1.83 1.83 0 0 0-.354 1.118v.175h-.133v-.072a3.2 3.2 0 0 1 .159-1.312a1.4 1.4 0 0 1 .227-.378a1.1 1.1 0 0 1 .962-.386a.6.6 0 0 1 .27.108a.5.5 0 0 1 .164.19a.5.5 0 0 1 .054.23c.059-.2.076-.3.018-.4a.44.44 0 0 0-.236-.183a1 1 0 0 0-.14-.038h-.021a1 1 0 0 0-.139-.01a1 1 0 0 0-.152.01a1.29 1.29 0 0 0-1 .707a3 3 0 0 0-.214 1.468v.073h-.321v-.068a3.9 3.9 0 0 1 .326-1.983a2 2 0 0 1 .128-.2q.041-.055.085-.107l.013-.014a1.66 1.66 0 0 1 .64-.443a1.4 1.4 0 0 1 .715-.09a.79.79 0 0 1 .6.4a1.08 1.08 0 0 1-.032.838A5 5 0 0 0 16.9 13.9zm.317 2.73a1.9 1.9 0 0 1-.85.471a2.4 2.4 0 0 1-.7.189h-.06a.94.94 0 0 1-.414-.092a1 1 0 0 1-.283-.2a1 1 0 0 1-.075-.079l-.077-.094l.365-.087l.087-.02a.7.7 0 0 0 .168.127a.57.57 0 0 0 .294.06a1.8 1.8 0 0 0 .559-.165a1.6 1.6 0 0 0 .664-.374l.042-.059l.43-.1V15.9l-.32.067v-.116l.33-.065l-.336-.091q-.015-.194-.044-.435c-.026-.221-.059-.5-.072-.807v-.027a.23.23 0 0 1 .058-.1a.24.24 0 0 1 .274-.074l.057.017v.051a9 9 0 0 0 .082.931c.084.614.139 1.049-.179 1.424m.444-4.381a5.3 5.3 0 0 0-.324 1.434v.04l-.036.018a3 3 0 0 1-.273.115l-.1.037v-.107a5.7 5.7 0 0 1 .318-1.588c.116-.353.18-.547.071-.733a.77.77 0 0 0-.563-.325a1.5 1.5 0 0 0-.236-.018a1.96 1.96 0 0 0-.879.215a2 2 0 0 0-.479.345a2 2 0 0 0-.169.194a2 2 0 0 0-.074.107a2 2 0 0 0-.114.2A4.1 4.1 0 0 0 14.5 14.2v.077h-.077a5 5 0 0 1-.306-.023l-.061-.006v-.061a4.55 4.55 0 0 1 .265-1.954q.042-.102.1-.2q.029-.054.06-.107a2.2 2.2 0 0 1 .393-.486q.067-.063.141-.12a2.55 2.55 0 0 1 1.824-.521a1.16 1.16 0 0 1 .866.479c.195.313.086.622-.051 1.016m1.446 2.511h-.15V14.7a.4.4 0 0 0 .15-.074zm.186-.485v-.038a.32.32 0 0 0-.184-.211a2 2 0 0 1-.15-.091a.14.14 0 0 1-.068-.112a.2.2 0 0 1 .068-.122a.4.4 0 0 1 .15-.09a.3.3 0 0 1 .207-.007c.216.092.12.546.239.642q-.127.016-.266.029zm-.3-1.679c.02-.013.06.04.119.094a.4.4 0 0 0 .143.092a2 2 0 0 0 .11.166q-.131.05-.253.1l-.115.053a.4.4 0 0 0 .054-.118c.038-.186-.103-.362-.067-.387zM20 13.23a.3.3 0 0 0 0 .068c-.255-.079-.73.074-.758-.028c-.012-.044.064-.123.18-.186c.107.117.219.191.289.169s.086-.134.1-.261h.029a.8.8 0 0 1 .265.077a.25.25 0 0 0-.105.161m-.02-.63c.158-.068.42.086.425.218c0 .052-.036.091-.089.127a.2.2 0 0 0-.035-.053c-.079-.082-.246-.085-.446-.045a.3.3 0 0 1 .145-.247m-.08-.344c-.092 0-.219-.023-.343-.029c-.118-.077-.261-.128-.258-.228l.006-.029a1 1 0 0 1 .134-.026a1 1 0 0 1 .116 0a.8.8 0 0 1 .317.1c.012.069.018.144.028.21zm-.175-.475a.22.22 0 0 1 .112.126a3 3 0 0 0-.356-.1a.3.3 0 0 1 .244-.028zM20 9.764q.046.05.039.082c-.006.021-.044.036-.1.037A1 1 0 0 0 20 9.764m-1.052-.087v-.095h.15v.107q.036-.02.084-.044l.019.006a.27.27 0 0 1 .137.21a.26.26 0 0 0-.184.1a.3.3 0 0 0-.023.22l-.033-.034a1 1 0 0 0-.15-.1c-.092-.053-.175-.1-.172-.177s.076-.147.17-.193zm0 .981a.5.5 0 0 0 .15-.134a.37.37 0 0 0 .081-.194c.122.287.4.594.538.552c.159-.05.035-.558.265-.656c.158-.067.42.086.425.218c.007.161-.37.195-.4.415a.3.3 0 0 0 .036.17a5.3 5.3 0 0 0-.855.359l-.088.047a1 1 0 0 1-.15.069a.44.44 0 0 1-.268.022a3 3 0 0 0-.437-.173a.4.4 0 0 0-.17-.013a.48.48 0 0 0-.068-.4a.9.9 0 0 0-.433-.306v-.313c.042-.031.1-.092.168-.153a1.05 1.05 0 0 1 .575-.3c.034.049-.66.475-.575.7a.19.19 0 0 0 .173.1a.27.27 0 0 0 .176-.11c-.051.084-.1.187-.061.248c.027.045.076.026.126.081c.092.1.016.246.069.276s.245-.09.288-.265c.047-.191-.094-.367-.057-.391s.143.182.31.2a.3.3 0 0 0 .18-.049zm-.771-.225l-.007.012zm.643-4.278h-.35l-.34-.625c.212-.343.282-.76.131-.886c-.191-.161-.757.126-1.048.541c-.205.291-.362.771-.193.92s.656-.057.934-.347l.054-.06l.427.457h-1.959l-.325-.582l-.044-.557a1.162 1.162 0 1 0-.776-.008l-.077.511l-.468.636H13.32V4.883h-.864v1.272h-.975v.621h7.339zm-2.784-2.024h-.575l-.083.558a.851.851 0 1 1 .7 0zM9 4.529H6.76l.214-.329v-.836l-.3-.46h-.7l-.383.5v.82l.294.306h-.744V2.506h-.506v2.023h-.169V2.651h-.222v1.878h-.222V2.973h-.284v1.556H3.6V2.805h-.268v1.724h-.138V2.613h-.207v1.916H2.8V3.2h-.387v1.329h-.165v1.044H9Zm-.355.69H2.413v-.336h6.232z"
             ></path></svg
           >
-          <div class="w-full text-2xl font-semibold">Study room/Office</div>
+          <div class="w-full text-2xl font-semibold">
+            Study room/Office
+          </div>
         </div>
       </label>
     </li>
@@ -929,8 +926,11 @@ export const servicesForms: FormType = {
   />
 </div>
 <div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
-  <label class="block tracking-wide text-gray-700 text-base font-bold mb-2">
-    Which of the following items are included in the deep cleaning service?
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
+    Which of the following items are included in the deep cleaning
+    service?
   </label>
   <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
     <li class="h-full">
@@ -1011,7 +1011,9 @@ export const servicesForms: FormType = {
   </ul>
 </div>
 <div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
-  <label class="block tracking-wide text-gray-700 text-base font-bold mb-2">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
     Would you like any of the following additional cleanings?
   </label>
   <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
@@ -1164,8 +1166,8 @@ export const servicesForms: FormType = {
     <label
       class="block tracking-wide text-gray-700 text-base font-bold mb-2"
     >
-      Which sides of the windows should we clean? <span class="text-red-500"
-        >*</span
+      Which sides of the windows should we clean? <span
+        class="text-red-500">*</span
       >
     </label>
     <div class="grid grid-cols-3 gap-5">
@@ -1225,7 +1227,8 @@ export const servicesForms: FormType = {
     <label
       for="mattresses-single-count"
       class="font-semibold text-lg text-muted"
-      >How many single matresses? <span class="text-red-500">*</span></label
+      >How many single mattresses? <span class="text-red-500">*</span
+      ></label
     >
     <div
       class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
@@ -1286,7 +1289,8 @@ export const servicesForms: FormType = {
     <label
       for="mattresses-double-count"
       class="font-semibold text-lg text-muted"
-      >How many double matresses? <span class="text-red-500">*</span></label
+      >How many double mattresses? <span class="text-red-500">*</span
+      ></label
     >
     <div
       class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
@@ -1347,7 +1351,7 @@ export const servicesForms: FormType = {
     <label
       for="mattresses-king-size-count"
       class="font-semibold text-lg text-muted"
-      >How many king size matresses? <span class="text-red-500">*</span
+      >How many king size mattresses? <span class="text-red-500">*</span
       ></label
     >
     <div
@@ -1408,8 +1412,10 @@ export const servicesForms: FormType = {
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
-    <label for="half_lenght -count" class="font-semibold text-lg text-muted"
-      >How many pairs of half lenght cutrains? <span class="text-red-500"
+    <label
+      for="half_length -count"
+      class="font-semibold text-lg text-muted"
+      >How many pairs of half length curtains? <span class="text-red-500"
         >*</span
       ></label
     >
@@ -1418,8 +1424,8 @@ export const servicesForms: FormType = {
     >
       <button
         type="button"
-        id="decrement-button-half_lenght -count"
-        data-input-counter="quantity-half_lenght -count"
+        id="decrement-button-half_length -count"
+        data-input-counter="quantity-half_length -count"
         data-operation="decrement"
         class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -1436,10 +1442,10 @@ export const servicesForms: FormType = {
         </svg>
       </button>
       <input
-        name="half_lenght_count"
+        name="half_length_count"
         maxlength="1"
         type="text"
-        id="quantity-half_lenght -count"
+        id="quantity-half_length -count"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         value="0"
         oninput="this.value = this.value.replace(/[^0-9]/g, '');"
@@ -1447,8 +1453,8 @@ export const servicesForms: FormType = {
       />
       <button
         type="button"
-        id="increment-button-half_lenght -count"
-        data-input-counter="quantity-half_lenght -count"
+        id="increment-button-half_length -count"
+        data-input-counter="quantity-half_length -count"
         data-operation="increment"
         class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -1469,8 +1475,10 @@ export const servicesForms: FormType = {
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
-    <label for="full_lenght-count" class="font-semibold text-lg text-muted"
-      >How many pairs of full lenght cutrains? <span class="text-red-500"
+    <label
+      for="full_length-count"
+      class="font-semibold text-lg text-muted"
+      >How many pairs of full length curtains? <span class="text-red-500"
         >*</span
       ></label
     >
@@ -1479,8 +1487,8 @@ export const servicesForms: FormType = {
     >
       <button
         type="button"
-        id="decrement-button-full_lenght-count"
-        data-input-counter="quantity-full_lenght-count"
+        id="decrement-button-full_length-count"
+        data-input-counter="quantity-full_length-count"
         data-operation="decrement"
         class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -1497,10 +1505,10 @@ export const servicesForms: FormType = {
         </svg>
       </button>
       <input
-        name="full_lenght_count"
+        name="full_length_count"
         maxlength="1"
         type="text"
-        id="quantity-full_lenght-count"
+        id="quantity-full_length-count"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         value="0"
         oninput="this.value = this.value.replace(/[^0-9]/g, '');"
@@ -1508,8 +1516,459 @@ export const servicesForms: FormType = {
       />
       <button
         type="button"
-        id="increment-button-full_lenght-count"
-        data-input-counter="quantity-full_lenght-count"
+        id="increment-button-full_length-count"
+        data-input-counter="quantity-full_length-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
+    The majority of our clients booking end of tenancy cleaning also tend
+    to include:
+  </label>
+  <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="balcony_cleaning-option"
+        name="balcony_cleaning"
+        class="hidden peer"
+      />
+      <label
+        for="balcony_cleaning-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            ><path
+              fill="currentColor"
+              d="M24 12.278c-.595.347-1 .984-1 1.722a1.99 1.99 0 0 0 1 1.721v4.303c-.083-.005-.162-.024-.246-.024H20v-4.279A1.99 1.99 0 0 0 21 14c0-.738-.405-1.375-1-1.722V8h4zM8 20.024v-4.303A1.99 1.99 0 0 0 9 14c0-.738-.405-1.375-1-1.722V8h4v4.278c-.595.347-1 .984-1 1.722a1.99 1.99 0 0 0 1 1.721V20H8.246c-.084 0-.163.019-.246.024m10-7.746c-.595.347-1 .984-1 1.722a1.99 1.99 0 0 0 1 1.721V20h-4v-4.279A1.99 1.99 0 0 0 15 14c0-.738-.405-1.375-1-1.722V8h4zM29 6H3c-.55 0-1 .45-1 1c0 .549.45 1 1 1h3v4.278c-.595.347-1 .984-1 1.722a1.99 1.99 0 0 0 1 1.721v4.934a4.23 4.23 0 0 0-2 3.591C4 25.215 4.785 26 5.754 26h20.492c.969 0 1.754-.785 1.754-1.754c0-1.518-.803-2.84-2-3.591v-4.934A1.99 1.99 0 0 0 27 14c0-.738-.405-1.375-1-1.722V8h3c.55 0 1-.451 1-1c0-.55-.45-1-1-1"
+            ></path></svg
+          >
+
+          <div class="w-full text-2xl font-semibold">
+            Balcony Cleaning
+          </div>
+        </div>
+      </label>
+    </li>
+    <li>
+      <input
+        type="checkbox"
+        id="garage_cleaning-option"
+        name="garage_cleaning"
+        class="hidden peer"
+      />
+      <label
+        for="garage_cleaning-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="m16.936 17.845l-.013.121a3 3 0 0 0-.012.212v.091h.06l.036-.066a.25.25 0 0 0 .04-.115c0-.026.012-.124.022-.219s.016-.17.014-.17q-.005.002-.014.017a1 1 0 0 1-.069.071zm-.895.006a.2.2 0 0 0-.054-.056a1 1 0 0 1-.074-.076q-.02-.03-.022-.027l.022.224l.023.216l.036.068l.036.069h.058v-.1a3 3 0 0 0-.025-.318m1.064-.803h-.2v.734l.024-.019a.33.33 0 0 0 .128-.2c.016-.095.05-.458.046-.482zm-.974.002v1.155c0 1.267 0 1.191.039 1.235s.044.046.317.046a3 3 0 0 0 .269-.007a.15.15 0 0 0 .083-.072a11 11 0 0 0 .012-1.194v-1.168h-.356c-.195 0-.362.002-.364.005m-.12.681a.3.3 0 0 0 .051.044v-.73h-.19v.024c-.005.024.036.445.05.508a.3.3 0 0 0 .089.154m1.145-.744a.6.6 0 0 0 .011-.121a.4.4 0 0 0-.1-.009a.2.2 0 0 0 .023.033l.043.065zm-1.349-.126v.052c.007.083.007.083.039.03l.045-.068l.017-.021h-.071Zm-2.766-1.164a.267.267 0 0 1-.267.267a.267.267 0 0 1-.267-.267a.267.267 0 0 1 .267-.267a.267.267 0 0 1 .267.267m4.036 1.29l-.008-.015l-.037-.052a.6.6 0 0 0-.392-.2a1.3 1.3 0 0 0-.3 0a.63.63 0 0 0-.341.151a.5.5 0 0 0-.09.114s.248.006.586.006zm.152-.188a.4.4 0 0 0 .014-.088c.009-.077.009-.083 0-.107a.3.3 0 0 0-.041-.056a.12.12 0 0 0-.061-.041a.4.4 0 0 0-.119-.017l-.013.119c-.013.125-.015.166-.007.171a1.4 1.4 0 0 0 .227.019m-1.255-.169a1 1 0 0 0-.019-.14a.4.4 0 0 0-.07.007c-.063.011-.067.013-.094.04a.4.4 0 0 0-.047.057l-.019.029l.007.081a.5.5 0 0 0 .016.091c.007.01.015.01.115 0a.5.5 0 0 0 .116-.02c.007-.007.006-.032-.005-.145m1.52.947a2.3 2.3 0 0 0 .06-.484a1.13 1.13 0 0 0-.157-.6l-.038-.056l-.012-.014l-.046.046l-.045.046l.015.023a.6.6 0 0 1 .1.264a2.7 2.7 0 0 1-.01.64a3 3 0 0 1-.411 1l-.035.059v.122l.017-.022a2.8 2.8 0 0 0 .562-1.024M15.7 16.545l.02-.029l-.032-.037c-.058-.066-.053-.065-.086-.021a1 1 0 0 0-.166.46a1.3 1.3 0 0 0-.008.229a1.95 1.95 0 0 0 .34 1.058a4 4 0 0 0 .294.4a.2.2 0 0 0 0-.061a.17.17 0 0 0-.036-.117a3 3 0 0 1-.406-.988a2.7 2.7 0 0 1-.015-.609a.7.7 0 0 1 .095-.285m2.157-.429a1 1 0 0 0-.172.057l-.166.062l-.064.069l-.065.068l.037.049a1 1 0 0 1 .149.331a1.2 1.2 0 0 1 .038.354a2 2 0 0 1-.041.408a2.7 2.7 0 0 1-.6 1.119l-.065.082v.294l.078-.079a5.3 5.3 0 0 0 .762-1.072a1.2 1.2 0 0 0 .141-.446a4 4 0 0 0 .04-.545c0-.219-.006-.518-.018-.609a.4.4 0 0 0-.054-.142m-1.846 2.531a4 4 0 0 1-.351-.5a1.94 1.94 0 0 1-.3-1a1.5 1.5 0 0 1 .007-.231a1.05 1.05 0 0 1 .18-.492a.4.4 0 0 0 .034-.049a1 1 0 0 0-.06-.068l-.061-.066l-.138-.054l-.171-.064l-.03-.012l-.03.059a.3.3 0 0 0-.035.135c-.01.108-.016.482-.011.663a2.6 2.6 0 0 0 .1.71a5 5 0 0 0 .691 1.087c.061.073.221.245.228.245s0-.242 0-.291zm1.489-2.468c.013-.006.091-.037.175-.067a1 1 0 0 0 .151-.063c0-.019-.029-.05-.079-.085l-.054-.039l-.024.026a.4.4 0 0 1-.044.037c-.01.006-.122.043-.248.081l-.553.17c-.178.054-.327.1-.331.1l-.11-.031l-.533-.163a18 18 0 0 1-.465-.146a.2.2 0 0 1-.064-.042l-.03-.03l-.056.04c-.051.036-.071.06-.073.083a1 1 0 0 0 .166.069a.52.52 0 0 1 .316.217l.111.12c.01.011.012.011.048 0a1.4 1.4 0 0 1 .255-.041c.122-.011.757-.011.873 0a1.3 1.3 0 0 1 .249.04l.037.012l.132-.137a2 2 0 0 1 .151-.151m.491-.172a2 2 0 0 0-.109-.093a1 1 0 0 0-.149-.105s-.009.012-.013.027s-.006.028.011.04l.09.068c.041.03.095.074.121.1c.044.041.046.044.042.065a.06.06 0 0 0 .033.069a.055.055 0 0 0 .07-.015a.06.06 0 0 0-.025-.094a.4.4 0 0 1-.071-.062m-2.726-.142l-.009-.028a.1.1 0 0 0-.014-.028l-.08.055a1.5 1.5 0 0 0-.215.182a.04.04 0 0 1-.026.018c-.021 0-.043.029-.043.057a.057.057 0 1 0 .114 0c0-.028 0-.031.036-.067a2 2 0 0 1 .211-.167zm2.498-.169a.1.1 0 0 0-.007.049l.067.048a2 2 0 0 1 .111.08a.9.9 0 0 0 .282.134a.25.25 0 0 0 .053-.125c0-.009-.476-.231-.492-.232a.1.1 0 0 0-.014.046m-2.71.17c.048-.036.152-.11.174-.124v-.02c0-.01-.01-.03-.014-.045a.1.1 0 0 0-.011-.027l-.231.105c-.268.123-.261.119-.26.138a.4.4 0 0 0 .056.116a.4.4 0 0 0 .118-.044a.8.8 0 0 0 .168-.099m3.294-1.117A1.2 1.2 0 0 0 18 14.72a.33.33 0 0 0-.157.087a.6.6 0 0 1-.109.073l-.051.024v.163l.048.02l.088.037a.6.6 0 0 0 .315.025a.7.7 0 0 0 .234-.062a.3.3 0 0 0 .126-.231c.006-.076-.007-.082-.147-.107m-3.181.375l.088-.037l.048-.02v-.163l-.053-.027a.6.6 0 0 1-.107-.073a1 1 0 0 0-.086-.061a.4.4 0 0 0-.207-.025a2 2 0 0 0-.323.056c-.029.012-.036.029-.032.082a.3.3 0 0 0 .126.231a.7.7 0 0 0 .237.063a.6.6 0 0 0 .309-.026m.1.454c-.008.032-.006.04.013.109c.046.167.057.2.083.223s-.03.01.616.208l.511.156l.366-.112l.538-.166c.1-.029.182-.057.192-.062a.15.15 0 0 0 .063-.075c0-.012.02-.067.037-.123c.043-.147.039-.179-.039-.282a1 1 0 0 0-.089-.092q-.086-.073-.086-.129a.2.2 0 0 1 .109-.147a.1.1 0 0 0 .032-.033a.4.4 0 0 0 0-.14c-.009-.064-.016-.086-.034-.1a2 2 0 0 0-.2-.11l-.449.13l-.445.13l-.446-.13l-.45-.13l-.1.053a.4.4 0 0 0-.106.071a.55.55 0 0 0-.02.235a.2.2 0 0 0 .044.036a.16.16 0 0 1 .085.183a1 1 0 0 1-.091.1a.4.4 0 0 0-.134.197m1.4.351a.32.32 0 0 1 .121-.189a1.4 1.4 0 0 1 .478-.2c.162-.04.172-.04.186-.019s0 .027-.048.142a1 1 0 0 1-.083.163a.4.4 0 0 1-.109.1c-.029.015-.4.151-.426.154a.124.124 0 0 1-.123-.088a.1.1 0 0 1 .003-.063zm-1.129-.412c.009-.009.014-.009.07 0a1.7 1.7 0 0 1 .571.209a.3.3 0 0 1 .109.123a.23.23 0 0 1 .033.142a.124.124 0 0 1-.123.088a4 4 0 0 1-.432-.159c-.081-.048-.116-.094-.183-.247c-.055-.121-.06-.142-.046-.156zm.357-.744l.294.086l.194.057l.108.03l.545-.159l.273-.08l.126-.039l-.123-.079a2.3 2.3 0 0 0-.317-.151a2 2 0 0 0-.307-.079a1.3 1.3 0 0 0-.291-.017a1.8 1.8 0 0 0-.591.173c-.042.022-.1.051-.124.067l-.142.084l.129.041c.014.004.115.035.226.066m-.044-.168a1.7 1.7 0 0 1 .561-.163a1 1 0 0 1 .258.016a2 2 0 0 1 .291.074a3 3 0 0 1 .23.1l-.184.054l-.517.151l-.081-.022l-.192-.057l-.3-.086l-.136-.039zm-9.727.912a.241.241 0 1 0 .24.241a.24.24 0 0 0-.24-.241m6.086.013a.241.241 0 1 0 .241.241a.24.24 0 0 0-.241-.241m.852-.543a2.5 2.5 0 0 1-.357-.435c0-.029.13-.052.288-.052c.317 0 .45-.168.288-.361a.67.67 0 0 0-.694-.132c-.087.073-.136.011-.331-.329a3.7 3.7 0 0 0-.53-.689a17.3 17.3 0 0 0-4.989-.075a1.9 1.9 0 0 0-.794.793c-.174.342-.218.38-.358.3a.68.68 0 0 0-.671.115c-.155.228-.065.376.224.376c.155 0 .286.022.286.048a2.3 2.3 0 0 1-.275.389c-.486.6-.492.628-.528 2.363a18 18 0 0 0 .016 1.824a.48.48 0 0 0 .235.288a2.3 2.3 0 0 0 .7.052c.581-.027.747-.155.747-.568c0-.234 0-.235.389-.175a46 46 0 0 0 4.7 0l.465-.063l.025.31c.032.384.253.516.869.516c.352 0 .47-.036.634-.2c.2-.2.2-.229.2-1.528a15 15 0 0 0-.093-1.858a1.38 1.38 0 0 0-.446-.909m-6.583-1.4c.176-.278.305-.519.506-.566a29 29 0 0 1 4.411.06a2.5 2.5 0 0 1 .572.945a15 15 0 0 1-2.867.201a15.6 15.6 0 0 1-2.865-.2a2.2 2.2 0 0 1 .243-.44m2.628 3.253H7.221l-.021-.059h3.805l-.019.054zm1.856.052a.13.13 0 0 1-.109.051h-3.5a.13.13 0 0 1-.108-.051h3.715Zm-1.856-.158H7.183l-.02-.057h3.882l-.02.057zm0-.109H7.145l-.021-.06h3.961l-.021.06zm0-.112h-2l-.014-.042v-.012h4.03v.012l-.015.042zm0-.575h1.727l.034.054H7.345l.034-.054zm-1.687-.052a.13.13 0 0 1 .107-.045h3.165a.14.14 0 0 1 .107.045H7.415Zm1.687.158H10.9l.032.051H7.281l.031-.051zm0 .1h1.854l.034.054h-3.78l.034-.054zm0 .106h1.925l.03.048h-3.91l.031-.048zm0 .1h1.984l.017.026l.009.027H7.092a.1.1 0 0 1 .01-.027l.016-.026zm-3.039-.311c-.734-.023-.83-.059-.83-.3c0-.362.112-.41.681-.3a3.3 3.3 0 0 1 .706.207l.582.128l-.173.183a2.2 2.2 0 0 1-.97.081zm.31 2.346c.01 0 .39-.222.681-.393a1.6 1.6 0 0 1 .793-.2l2.506-.016a1.6 1.6 0 0 1 .865.228l.575.382c-1.809.071-3.62.07-5.424.001zm5.921-2.342a2.2 2.2 0 0 1-.965-.088l-.173-.183l.582-.129a3.3 3.3 0 0 1 .706-.206c.569-.108.681-.06.681.3c-.004.25-.101.281-.835.305zm-6.473-.359a.267.267 0 0 1-.267.267a.267.267 0 0 1-.267-.267a.267.267 0 0 1 .267-.267a.267.267 0 0 1 .267.267m15.338-7.402H22l-9.849-4.561L2 8.282h1.058zm-2.668 1.52h1.516v9.714h-1.516zm1.803-.33v10.044h.865V8.282H3.058v11.234h.865V9.472Z"
+            ></path></svg
+          >
+
+          <div class="w-full text-2xl font-semibold">Garage Cleaning</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
+  'Antiviral Sanitisation': ` <div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
+    Please tell us about your place: <span class="text-red-500">*</span>
+  </label>
+  <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        input-radio-checked
+        type="radio"
+        id="studio-option"
+        name="place"
+        value="studio"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="studio-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 64 64"
+            enable-background="new 0 0 64 64"
+            xml:space="preserve"
+          >
+            <g>
+              <g>
+                <path
+                  fill="#B4CCB9"
+                  d="M2,15v46c0,1.104,0.896,2,2,2h12V13H4C2.896,13,2,13.896,2,15z"
+                ></path>
+                <path
+                  fill="#B4CCB9"
+                  d="M44,3H20c-1.104,0-2,0.896-2,2v58l0.001,0.002H27V54c0-0.553,0.447-1,1-1h8c0.553,0,1,0.447,1,1v9.002
+             h8.999L46,63V5C46,3.896,45.104,3,44,3z"
+                ></path>
+                <path
+                  fill="#B4CCB9"
+                  d="M60,23H48v40h12c1.104,0,2-0.896,2-2V25C62,23.896,61.104,23,60,23z"
+                ></path>
+              </g>
+              <path
+                fill="#394240"
+                d="M60,21H48V5c0-2.211-1.789-4-4-4H20c-2.211,0-4,1.789-4,4v6H4c-2.211,0-4,1.789-4,4v46c0,2.211,1.789,4,4,4
+           h56c2.211,0,4-1.789,4-4V25C64,22.789,62.211,21,60,21z M16,63H4c-1.104,0-2-0.896-2-2V15c0-1.104,0.896-2,2-2h12V63z M35,63.002
+           h-6V55h6V63.002z M46,63l-0.001,0.002H37V54c0-0.553-0.447-1-1-1h-8c-0.553,0-1,0.447-1,1v9.002h-8.999L18,63V5
+           c0-1.104,0.896-2,2-2h24c1.104,0,2,0.896,2,2V63z M62,61c0,1.104-0.896,2-2,2H48V23h12c1.104,0,2,0.896,2,2V61z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M7,25h4c0.553,0,1-0.447,1-1v-4c0-0.553-0.447-1-1-1H7c-0.553,0-1,0.447-1,1v4C6,24.553,6.447,25,7,25z
+            M8,21h2v2H8V21z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M7,35h4c0.553,0,1-0.447,1-1v-4c0-0.553-0.447-1-1-1H7c-0.553,0-1,0.447-1,1v4C6,34.553,6.447,35,7,35z
+            M8,31h2v2H8V31z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M7,45h4c0.553,0,1-0.447,1-1v-4c0-0.553-0.447-1-1-1H7c-0.553,0-1,0.447-1,1v4C6,44.553,6.447,45,7,45z
+            M8,41h2v2H8V41z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M29,19h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C30,19.447,29.553,19,29,19
+           z M28,23h-2v-2h2V23z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M29,29h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C30,29.447,29.553,29,29,29
+           z M28,33h-2v-2h2V33z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M29,39h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C30,39.447,29.553,39,29,39
+           z M28,43h-2v-2h2V43z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M39,19h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C40,19.447,39.553,19,39,19
+           z M38,23h-2v-2h2V23z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M29,9h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C30,9.447,29.553,9,29,9z
+            M28,13h-2v-2h2V13z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M39,9h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C40,9.447,39.553,9,39,9z
+            M38,13h-2v-2h2V13z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M39,29h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C40,29.447,39.553,29,39,29
+           z M38,33h-2v-2h2V33z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M39,39h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C40,39.447,39.553,39,39,39
+           z M38,43h-2v-2h2V43z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M57,29h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C58,29.447,57.553,29,57,29
+           z M56,33h-2v-2h2V33z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M57,39h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C58,39.447,57.553,39,57,39
+           z M56,43h-2v-2h2V43z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M57,49h-4c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h4c0.553,0,1-0.447,1-1v-4C58,49.447,57.553,49,57,49
+           z M56,53h-2v-2h2V53z"
+              ></path>
+              <path
+                fill="#394240"
+                d="M7,55h4c0.553,0,1-0.447,1-1v-4c0-0.553-0.447-1-1-1H7c-0.553,0-1,0.447-1,1v4C6,54.553,6.447,55,7,55z
+            M8,51h2v2H8V51z"
+              ></path>
+              <g opacity="0.15">
+                <path
+                  d="M2,15v46c0,1.104,0.896,2,2,2h12V13H4C2.896,13,2,13.896,2,15z"
+                ></path>
+                <path
+                  d="M60,23H48v40h12c1.104,0,2-0.896,2-2V25C62,23.896,61.104,23,60,23z"
+                ></path>
+              </g>
+              <rect x="29" y="55" fill="#F76D57" width="6" height="8.002"
+              ></rect>
+              <g>
+                <rect
+                  x="8"
+                  y="21"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="8"
+                  y="31"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="8"
+                  y="41"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="8"
+                  y="51"
+                  fill="#506C7F"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="26"
+                  y="11"
+                  fill="#506C7F"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="26"
+                  y="21"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="26"
+                  y="31"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="26"
+                  y="41"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="36"
+                  y="11"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="36"
+                  y="21"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="36"
+                  y="31"
+                  fill="#506C7F"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="36"
+                  y="41"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="54"
+                  y="31"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="54"
+                  y="41"
+                  fill="#506C7F"
+                  width="2.001"
+                  height="2.002"></rect>
+                <rect
+                  x="54"
+                  y="51"
+                  fill="#F9EBB2"
+                  width="2.001"
+                  height="2.002"></rect>
+              </g>
+            </g>
+          </svg>
+          <div class="w-full text-2xl font-semibold">Studio</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-radio-checked="house-section"
+        type="radio"
+        id="house-option"
+        value="house/flat"
+        name="place"
+        class="hidden peer"
+      />
+      <label
+        for="house-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 64 64"
+            enable-background="new 0 0 64 64"
+            xml:space="preserve"
+            fill="#000000"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  fill="#F9EBB2"
+                  d="M56,60c0,1.104-0.896,2-2,2H38V47c0-0.553-0.447-1-1-1H27c-0.553,0-1,0.447-1,1v15H10c-1.104,0-2-0.896-2-2 V31.411L32.009,7.403L56,31.394V60z"
+                ></path>
+                <polygon
+                  fill="#F76D57"
+                  points="14,6 18,6 18,12.601 14,16.593 "></polygon>
+                <rect x="28" y="48" fill="#F9EBB2" width="8" height="14"
+                ></rect>
+                <path
+                  fill="#F76D57"
+                  d="M61,33c-0.276,0-0.602-0.036-0.782-0.217L32.716,5.281c-0.195-0.195-0.451-0.293-0.707-0.293 s-0.512,0.098-0.707,0.293L3.791,32.793C3.61,32.974,3.276,33,3,33c-0.553,0-1-0.447-1-1c0-0.276,0.016-0.622,0.197-0.803 L31.035,2.41c0,0,0.373-0.41,0.974-0.41s0.982,0.398,0.982,0.398l28.806,28.805C61.978,31.384,62,31.724,62,32 C62,32.552,61.553,33,61,33z"
+                ></path>
+                <g>
+                  <path
+                    fill="#394240"
+                    d="M63.211,29.789L34.438,1.015c0,0-0.937-1.015-2.43-1.015s-2.376,0.991-2.376,0.991L20,10.604V5 c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v13.589L0.783,29.783C0.24,30.326,0,31.172,0,32c0,1.656,1.343,3,3,3 c0.828,0,1.662-0.251,2.205-0.794L6,33.411V60c0,2.211,1.789,4,4,4h44c2.211,0,4-1.789,4-4V33.394l0.804,0.804 C59.347,34.739,60.172,35,61,35c1.657,0,3-1.343,3-3C64,31.171,63.754,30.332,63.211,29.789z M14,6h4v6.601l-4,3.992V6z M36,62h-8 V48h8V62z M56,60c0,1.104-0.896,2-2,2H38V47c0-0.553-0.447-1-1-1H27c-0.553,0-1,0.447-1,1v15H10c-1.104,0-2-0.896-2-2V31.411 L32.009,7.403L56,31.394V60z M61,33c-0.276,0-0.602-0.036-0.782-0.217L32.716,5.281c-0.195-0.195-0.451-0.293-0.707-0.293 s-0.512,0.098-0.707,0.293L3.791,32.793C3.61,32.974,3.276,33,3,33c-0.553,0-1-0.447-1-1c0-0.276,0.016-0.622,0.197-0.803 L31.035,2.41c0,0,0.373-0.41,0.974-0.41s0.982,0.398,0.982,0.398l28.806,28.805C61.978,31.384,62,31.724,62,32 C62,32.552,61.553,33,61,33z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M23,32h-8c-0.553,0-1,0.447-1,1v8c0,0.553,0.447,1,1,1h8c0.553,0,1-0.447,1-1v-8 C24,32.447,23.553,32,23,32z M22,40h-6v-6h6V40z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M41,42h8c0.553,0,1-0.447,1-1v-8c0-0.553-0.447-1-1-1h-8c-0.553,0-1,0.447-1,1v8 C40,41.553,40.447,42,41,42z M42,34h6v6h-6V34z"
+                  ></path>
+                </g>
+                <rect x="28" y="48" fill="#506C7F" width="8" height="14"
+                ></rect>
+                <g>
+                  <rect x="16" y="34" fill="#45AAB8" width="6" height="6"
+                  ></rect>
+                  <rect x="42" y="34" fill="#45AAB8" width="6" height="6"
+                  ></rect>
+                </g>
+              </g>
+            </g></svg
+          >
+
+          <div class="w-full text-2xl font-semibold">House/Flat</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="house-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="bedrooms-count" class="font-semibold text-lg text-muted"
+      >How many bedrooms? <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-bedrooms-count"
+        data-input-counter="quantity-bedrooms-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="bedrooms_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-bedrooms-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        required
+        disabled
+      />
+      <button
+        type="button"
+        id="increment-button-bedrooms-count"
+        data-input-counter="quantity-bedrooms-count"
         data-operation="increment"
         class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -1542,14 +2001,6 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Regular Cleaning Luxury': `
-        <label for="regular-cleaning-luxury-requirements">Luxury requirements for Regular Cleaning:</label>
-        <input type="text" id="regular-cleaning-luxury-requirements" name="regular-cleaning-luxury-requirements">
-    `,
-  'Antiviral Sanitisation': `
-        <label for="antiviral-sanitisation-area">Area for Antiviral Sanitisation:</label>
-        <input type="text" id="antiviral-sanitisation-area" name="antiviral-sanitisation-area">
-    `,
   'Office Cleaning': `
         <label for="office-cleaning-size">Size of the office for Office Cleaning:</label>
         <input type="text" id="office-cleaning-size" name="office-cleaning-size">
