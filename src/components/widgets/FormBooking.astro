@@ -50,7 +50,7 @@ import Step3 from './Step3.astro';
   }
 </style>
 
-<script>
+<!-- <script>
   import { servicesForms } from '@/utils/service-forms';
 
   function init() {
@@ -86,6 +86,8 @@ import Step3 from './Step3.astro';
           return servicesForms['One off Cleaning'];
         case 'End of Tenancy Cleaning':
           return servicesForms['End of Tenancy Cleaning'];
+        case 'Antiviral Sanitisation':
+          return servicesForms['Antiviral Sanitisation'];
         // Agrega más casos para los otros servicios si es necesario...
         default:
           return '';
@@ -94,6 +96,7 @@ import Step3 from './Step3.astro';
 
     let buttons: NodeListOf<Element> | null = null;
     let checkboxes: NodeListOf<Element> | null = null;
+    let radios: NodeListOf<Element> | null = null;
 
     multiStepForm?.addEventListener('click', (e: any) => {
       let incrementor: number | null = null;
@@ -118,6 +121,11 @@ import Step3 from './Step3.astro';
               checkbox.removeEventListener('change', checkboxChangeHandler);
             });
           }
+          if (radios && radios?.length > 0) {
+            radios.forEach((radio) => {
+              radio.removeEventListener('change', checkboxChangeHandler);
+            });
+          }
 
           const h2Element = fieldsets[currentStep + 1].querySelector('h2');
           const selectElement = fieldsets[currentStep].querySelector('select');
@@ -139,13 +147,18 @@ import Step3 from './Step3.astro';
             checkboxes.forEach((checkbox) => {
               checkbox.addEventListener('change', checkboxChangeHandler);
             });
+
+            radios = formStep2.querySelectorAll('[input-radio-checked]');
+            radios.forEach((radio) => {
+              radio.addEventListener('change', radioChangeHandler);
+            });
           }
           break;
         case 1:
-          console.log('hola2');
+          console.log('not implemented');
           break;
         case 2:
-          console.log('hola3');
+          console.log('not implemented');
           break;
       }
 
@@ -166,6 +179,36 @@ import Step3 from './Step3.astro';
         showStep(currentStep);
       }
     });
+
+    function radioChangeHandler() {
+      const targetId = this.getAttribute('input-radio-checked');
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const inputElements = targetElement.querySelectorAll('input');
+        inputElements.forEach((input) => {
+          input.disabled = false;
+        });
+        targetElement.classList.add('block');
+        targetElement.classList.remove('hidden');
+      }
+
+      const radios = document.querySelectorAll(
+        `input[type="radio"][name="${this.name}"][input-radio-checked]:not(#${this.id})`
+      );
+      radios.forEach((radio) => {
+        const otherTargetId: any = radio.getAttribute('input-radio-checked');
+        const otherTargetElement = document.getElementById(otherTargetId);
+        if (otherTargetElement) {
+          const inputElements = otherTargetElement.querySelectorAll('input');
+          inputElements.forEach((input) => {
+            input.disabled = true;
+          });
+          otherTargetElement.classList.remove('block');
+          otherTargetElement.classList.add('hidden');
+        }
+      });
+    }
 
     function buttonClickHandler() {
       const inputId = this.getAttribute('data-input-counter');
@@ -225,7 +268,7 @@ import Step3 from './Step3.astro';
   }
   init();
   document.addEventListener('astro:after-swap', init);
-</script>
+</script> -->
 
 <form data-multi-step class="bg-white p-4 md:p-12 w-full mx-auto relative">
   <div class="w-full py-6 px-2 md:px-10 my-4">
