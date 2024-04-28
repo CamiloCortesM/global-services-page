@@ -134,7 +134,8 @@ export const servicesForms: FormType = {
       <input
         type="checkbox"
         id="kitchen-option"
-        name="kitchen"
+        value="kitchen"
+        name="additional_task"
         class="hidden peer"
       />
       <label
@@ -162,7 +163,8 @@ export const servicesForms: FormType = {
       <input
         type="checkbox"
         id="utility-room-option"
-        name="utility_room"
+        value="utility_room"
+        name="additional_task"
         class="hidden peer"
       />
       <label
@@ -190,7 +192,8 @@ export const servicesForms: FormType = {
       <input
         type="checkbox"
         id="office-option"
-        name="office"
+        value="office"
+        name="additional_task"
         class="hidden peer"
       />
       <label
@@ -246,7 +249,7 @@ export const servicesForms: FormType = {
       <input
         id="bordered-radio-1"
         type="radio"
-        value="More than weekly"
+        value="more than weekly"
         name="service_frequency"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
         required
@@ -298,7 +301,7 @@ export const servicesForms: FormType = {
       <input
         id="pets-radio-1"
         type="radio"
-        value="Yes"
+        value="yes"
         name="pets"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
         required
@@ -313,7 +316,7 @@ export const servicesForms: FormType = {
       <input
         id="pets-radio-2"
         type="radio"
-        value="No"
+        value="no"
         name="pets"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
       />
