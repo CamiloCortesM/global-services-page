@@ -2425,10 +2425,930 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Carpet Cleaning': `
-        <label for="carpet-cleaning-area">Area for Carpet Cleaning:</label>
-        <input type="text" id="carpet-cleaning-area" name="carpet-cleaning-area">
-    `,
+  'Carpet Cleaning': `<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="bedroom" class="font-semibold text-xl text-muted"
+      >Bedroom
+    </label>
+    <span class="text-gray-600 text-xs">up to 20 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-bedroom"
+      data-input-counter="quantity-bedroom"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="bedroom"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-bedroom"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-bedroom"
+      data-input-counter="quantity-bedroom"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="double_bedroom" class="font-semibold text-xl text-muted"
+      >Double bedroom
+    </label>
+    <span class="text-gray-600 text-xs">up to 30 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-double_bedroom"
+      data-input-counter="quantity-double_bedroom"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="double_bedroom"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-double_bedroom"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-double_bedroom"
+      data-input-counter="quantity-double_bedroom"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="lounge" class="font-semibold text-xl text-muted"
+      >Lounge
+    </label>
+    <span class="text-gray-600 text-xs">up to 30 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-lounge"
+      data-input-counter="quantity-lounge"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="lounge"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-lounge"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-lounge"
+      data-input-counter="quantity-lounge"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="stairs" class="font-semibold text-xl text-muted"
+      >Stairs
+    </label>
+    <span class="text-gray-600 text-xs">up to 30 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-stairs"
+      data-input-counter="quantity-stairs"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="stairs"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-stairs"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-stairs"
+      data-input-counter="quantity-stairs"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="landing" class="font-semibold text-xl text-muted"
+      >Landing
+    </label>
+    <span class="text-gray-600 text-xs">up to 2 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-landing"
+      data-input-counter="quantity-landing"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="landing"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-landing"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-landing"
+      data-input-counter="quantity-landing"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="bathroom" class="font-semibold text-xl text-muted"
+      >Bathroom
+    </label>
+    <span class="text-gray-600 text-xs">up to 5 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-bathroom"
+      data-input-counter="quantity-bathroom"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="bathroom"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-bathroom"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-bathroom"
+      data-input-counter="quantity-bathroom"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="hallway" class="font-semibold text-xl text-muted"
+      >Hallway
+    </label>
+    <span class="text-gray-600 text-xs">up to 20 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-hallway"
+      data-input-counter="quantity-hallway"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="hallway"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-hallway"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-hallway"
+      data-input-counter="quantity-hallway"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="kitchen" class="font-semibold text-xl text-muted"
+      >Kitchen
+    </label>
+    <span class="text-gray-600 text-xs">up to 20 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-kitchen"
+      data-input-counter="quantity-kitchen"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="kitchen"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-kitchen"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-kitchen"
+      data-input-counter="quantity-kitchen"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="dining_room" class="font-semibold text-xl text-muted"
+      >Dining room
+    </label>
+    <span class="text-gray-600 text-xs">up to 30 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-dining_room"
+      data-input-counter="quantity-dining_room"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="dining_room"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-dining_room"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-dining_room"
+      data-input-counter="quantity-dining_room"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="small_rug" class="font-semibold text-xl text-muted"
+      >Small rug
+    </label>
+    <span class="text-gray-600 text-xs">up to 4 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-small_rug"
+      data-input-counter="quantity-small_rug"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="small_rug"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-small_rug"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-small_rug"
+      data-input-counter="quantity-small_rug"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="medium_rug" class="font-semibold text-xl text-muted"
+      >Medium rug
+    </label>
+    <span class="text-gray-600 text-xs">up to 8 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-medium_rug"
+      data-input-counter="quantity-medium_rug"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="medium_rug"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-medium_rug"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-medium_rug"
+      data-input-counter="quantity-medium_rug"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <div class="flex flex-col">
+    <label for="large_rug" class="font-semibold text-xl text-muted"
+      >Large rug
+    </label>
+    <span class="text-gray-600 text-xs">up to 15 sq. m.</span>
+  </div>
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-large_rug"
+      data-input-counter="quantity-large_rug"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="large_rug"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-large_rug"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-large_rug"
+      data-input-counter="quantity-large_rug"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div class="w-full px-2 md:px-16 mt-8 mb-6 md:mb-5">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="additional-areas"
+  >
+    Additional areas
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="additional-areas"
+    name="additional_areas"
+    type="text"
+  />
+</div>
+<div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
+    On average, how would you describe the dirt level in all areas of your
+    carpet? <span class="text-red-500">*</span>
+  </label>
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="flex items-center ps-4 border border-gray-200 rounded">
+      <input
+        id="average-clean"
+        type="radio"
+        value="clean"
+        name="average-dirt"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+        required
+      />
+      <label
+        for="average-clean"
+        class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
+        >Clean</label
+      >
+    </div>
+    <div class="flex items-center ps-4 border border-gray-200 rounded">
+      <input
+        id="average-moderate"
+        type="radio"
+        value="moderate"
+        name="average-dirt"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+      />
+      <label
+        for="average-moderate"
+        class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
+        >Moderate</label
+      >
+    </div>
+    <div class="flex items-center ps-4 border border-gray-200 rounded">
+      <input
+        id="average-heavy"
+        type="radio"
+        value="heavy"
+        name="average-dirt"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+      />
+      <label
+        for="average-heavy"
+        class="w-full py-4 ms-2 text-sm font-medium text-gray-900"
+        >Heavy</label
+      >
+    </div>
+  </div>
+</div>
+<div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
+    What materials is your carpet made of? (Select all that apply)
+  </label>
+  <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="material-wool"
+        name="material"
+        class="hidden peer"
+        value="wool"
+      />
+      <label
+        for="material-wool"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            ><path
+              fill="currentColor"
+              d="M332.04 27.759c-4.596 2.47-10.075 7.56-14.275 14.453c-2.602 5.644-11.487 22.4-3.68 27.5c9.571 1.4 18.325-8.765 22.752-15.879c4.2-6.894 6.212-14.097 6.3-19.314c.25-9.162-5.102-9.93-11.097-6.76m-35.082 49.057c-17.085 22.447-30.962 44.18-45.3 64.636a1291 1291 0 0 0-35.102-24.556c-21.021-10.201-22.682-3.57-28.057.078c17.396 13.455 34.746 26.954 51.877 40.576l-10.354 14.775c-21.77-17.33-43.972-34.51-66.23-51.7a182 182 0 0 0-13.441 3.48a2180 2180 0 0 1 16.523 29.632c15.874 12.41 32.705 25.03 49.549 37.993l-10.442 14.898a5041 5041 0 0 0-18.484-14.2c8.628 16.656 17.002 33.46 25.057 50.409c20.13 13.193 44.62 31.66 62.4 44.44c3.916-.75 7.82-1.533 11.715-2.337l-18.424 21.84a768 768 0 0 1-25.52 4.08c2.098 5.112 4.148 10.24 6.174 15.375a899 899 0 0 0 137.143-28.658c5.08-7.527 6.204-14.563-1.344-20.562c-28.95 9.639-58.497 17.842-88.736 24.341l19.406-22.945a814 814 0 0 0 28.172-7.504a944 944 0 0 0-12.02-11.593l11.653-13.78a940 940 0 0 1 19.992 19.51a876 876 0 0 0 18.436-5.963a182 182 0 0 0-4.067-15.088a1687 1687 0 0 0-18.842-16.808l67.805-80.17c-6.175-1.897-11.06-6.287-13.598-11.723l-55.459 65.746c-18.82-29.505-45.863-53.235-77.923-67.972L311.31 87.7c-6.206-1.37-11.54-5.817-14.352-10.884m156.94 13.267c-4.9 1.797-11.044 6.058-16.176 12.29c-3.37 5.216-14.532 20.556-7.528 26.704c9.276 2.736 19.38-6.087 24.768-12.504c5.132-6.231 8.138-13.077 8.963-18.23s-.34-7.571-1.438-8.475c-2.728-1.57-6.156-.662-8.59.215zm-320.524 40.723c-9.202-3.944-14.229-1.076-15.666 7.63c61.04 106.67 106.595 219.245 144.486 334.592c11.13 4.931 10.359-1.798 13.073-4.56c-27.876-117.522-81.03-230.756-141.893-337.662m143.127 6.564c27.765 20.66 54.483 42.173 80.338 64.383l-11.604 13.756c-25.474-21.888-51.767-43.07-79.064-63.399zm-174.16 10.447c-15.251-4.231-12.5 5.804-15.385 11.512c76.376 111.834 103.795 216.838 143.553 321.967c8.333 6.566 12.036 2.365 14.379-3.275c-37.546-114.2-82.537-225.242-142.547-330.204m152.117 21.004c26.123 21.061 51.575 42.484 75.68 64.586l-11.623 13.778c-23.597-21.658-48.62-42.759-74.416-63.582zm-181.01 2.662c-9.338-2.596-11.688 3.193-11.44 12.083c55.283 98.074 99.863 193.737 132.585 300.882c10.108 5.981 14.405 3.828 17.693-.463c-39.185-104.242-66.175-205.338-138.838-312.502m-23.406 27.44a182 182 0 0 0-22.596 48.787l40.008-17.041a2111 2111 0 0 0-17.412-31.746m180.613 3.863c25.72 20.202 50.754 41.287 71.557 63.725l-11.715 13.89C270.68 258.862 246 238.05 220.192 217.716zM75.927 246.624l-53.412 22.75c-5.851 3.791-7.273 9.93-2.15 19.541l64.513-25.027a1802 1802 0 0 0-8.951-17.264m151.459 28.426a1343 1343 0 0 1 8.146 18.674a752 752 0 0 0 14.666-2.133c-7.36-5.36-15.139-11.038-22.812-16.541m-134.36 4.984l-40.375 15.662a759 759 0 0 0 49.996 3.977a1609 1609 0 0 0-9.62-19.639zm-72.672 29.547c-1.801 5.343-5.821 10.118 1.733 17.072a918 918 0 0 0 96.285 6.766a1473 1473 0 0 0-7.057-15.416c-29.61-.99-59.907-3.728-90.96-8.422zm364.907 6.96a917 917 0 0 1-129.692 26.968a1126 1126 0 0 1 5.49 14.918c39.738-4.882 80.213-12.616 121.637-23.924c6.55-4.86 10.362-10.291 2.565-17.963zM25.845 345.238c-2.76 3.598-7.863 6.493 4.052 13.528c33.771 3.469 67.817 5.712 102.278 6.261a1382 1382 0 0 0-5.781-13.49a934 934 0 0 1-100.55-6.299zm351.783 9.233a875 875 0 0 1-57.195 12.877l47.392 17.822c9.683 3.145 30.587 11.951 29.406 20.983c-2.359 13.928-27.517 11.142-34.53 21.632c-1.93 3.205-2.83 7.536-2.182 11.524c18.943 40.217 75.27 45.85 114.746 46.886c15.587.961 10.116-14.706-1.11-15.016c-24.701-3.81-85.094-6.218-90.271-29.144c-2.465-15.017 32.627-16.775 32.57-31.993c-.078-20.225-26.292-36.584-43.61-42.188a182 182 0 0 0 4.784-13.383m-92.469 18.844a887 887 0 0 1-18.008 2.476q3.068 8.985 5.967 18.014l65.526 28.564c8.046-2.521 20.204-1.952 17.373-22.408zm-247.607 4.3a182.7 182.7 0 0 0 17.13 28.987l-.45-27.498q-8.356-.693-16.68-1.489m34.705 2.858l.783 47.773c2.852 16.181 11.086 16.074 19.26 16.893l.086-63.448a1203 1203 0 0 1-20.13-1.218zm38.129 1.994l-.102 74.74c3.905 9.613 9.563 15.077 19.51 9.957l-1.48-84.203a1087 1087 0 0 1-17.928-.494m36.244 18.256l1.285 73.234a182 182 0 0 0 26.596 6.229a1272 1272 0 0 0-27.881-79.463m133.476 15.763a923 923 0 0 1 11.604 43.082a183.3 183.3 0 0 0 33.178-23.56z"
+            ></path></svg
+          >
+          <div class="w-full text-2xl font-semibold">Wool</div>
+        </div>
+      </label>
+    </li>
+    <li>
+      <input
+        type="checkbox"
+        id="material-synthetic"
+        name="material"
+        class="hidden peer"
+        value="synthetic"
+      />
+      <label
+        for="material-synthetic"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+            ><path
+              fill="currentColor"
+              d="M24 64h56v384H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h8v-40h-8c-13.3 0-24-10.7-24-24s10.7-24 24-24h8v-32h-8c-13.3 0-24-10.7-24-24s10.7-24 24-24h8v-32h-8c-13.3 0-24-10.7-24-24s10.7-24 24-24h8v-40h-8c-13.3 0-24-10.7-24-24s10.7-24 24-24m88 0h416v384H112zm528 24c0 13.3-10.7 24-24 24h-8v40h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8v32h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8v32h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8v40h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-56V64h56c13.3 0 24 10.7 24 24"
+            ></path></svg
+          >
+          <div class="w-full text-2xl font-semibold">Synthetic</div>
+        </div>
+      </label>
+    </li>
+    <li>
+      <input
+        type="checkbox"
+        id="material-cotton"
+        name="material"
+        class="hidden peer"
+        value="cotton"
+      />
+      <label
+        for="material-cotton"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50"
+      >
+        <div class="block">
+          <svg
+            class="mb-2 w-20 h-20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 2048 2048"
+            ><path
+              fill="currentColor"
+              d="M1504 393q91 18 167 64t131 112t87 150t31 177q0 101-37 191t-103 160t-153 112t-189 48q-71 106-178 173t-236 81v387H896v-387q-128-14-235-81t-179-173q-101-5-189-47t-153-112t-102-160T0 896q0-93 31-176t86-150t132-113t167-64q29-88 83-160t125-124t157-80T960 0q93 0 178 28t157 81t126 124t83 160m-96 887q79 0 149-30t122-82t83-122t30-150q0-79-30-149t-82-122t-123-83t-149-30h-3q-1 0-3 1q-12-82-51-152t-98-123t-134-81t-159-29q-84 0-159 29t-134 81t-98 122t-51 153h-3q-1 0-3-1q-80 1-150 31t-122 81t-82 122t-30 150q0 80 30 149t82 122t122 83t150 30h45q24 51 59 93t79 75t94 54t107 29v-129q-56-12-103-41t-81-70t-53-94t-19-109h128q0 30 9 58t26 53t40 42t53 28V896h128v373q29-10 52-28t41-42t26-52t9-59h128q0 57-19 109t-53 93t-81 71t-103 41v129q55-8 106-29t95-53t79-75t59-94z"
+            ></path></svg
+          >
+          <div class="w-full text-2xl font-semibold">Cotton</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
   'Mattress Cleaning': `
         <label for="mattress-cleaning-size">Size of the mattress for Mattress Cleaning:</label>
         <input type="text" id="mattress-cleaning-size" name="mattress-cleaning-size">
