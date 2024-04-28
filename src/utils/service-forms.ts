@@ -1630,11 +1630,11 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Antiviral Sanitisation': ` <div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
+  'Antiviral Sanitisation': `<div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
   <label
     class="block tracking-wide text-gray-700 text-base font-bold mb-2"
   >
-    Please tell us about your place: <span class="text-red-500">*</span>
+    Choose your property type: <span class="text-red-500">*</span>
   </label>
   <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
     <li class="h-full">
@@ -1872,7 +1872,7 @@ export const servicesForms: FormType = {
         input-radio-checked="house-section"
         type="radio"
         id="house-option"
-        value="house/flat"
+        value="house-flat"
         name="place"
         class="hidden peer"
       />
