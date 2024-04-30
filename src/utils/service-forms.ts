@@ -1,6 +1,7 @@
 type FormType = {
   [key: string]: string;
 };
+
 export const servicesForms: FormType = {
   'Regular Cleaning': `<div
   class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
@@ -2054,7 +2055,8 @@ export const servicesForms: FormType = {
         input-option-checked="kitchen-section"
         type="checkbox"
         id="kitchen-option"
-        name="kitchen"
+        value="kitchen"
+        name="office_features"
         class="hidden peer"
       />
       <label
@@ -2083,7 +2085,8 @@ export const servicesForms: FormType = {
         input-option-checked="bathrooms-section"
         type="checkbox"
         id="bathrooms-option"
-        name="bathrooms"
+        value="bathrooms"
+        name="office_features"
         class="hidden peer"
       />
       <label
@@ -2110,7 +2113,8 @@ export const servicesForms: FormType = {
         input-option-checked="toilets-section"
         type="checkbox"
         id="toilets-option"
-        name="toilets"
+        value="toilets"
+        name="office_features"
         class="hidden peer"
       />
       <label
@@ -2137,7 +2141,8 @@ export const servicesForms: FormType = {
         input-option-checked="other-section"
         type="checkbox"
         id="other-option"
-        name="others"
+        value="others"
+        name="office_features"
         class="hidden peer"
       />
       <label
@@ -2360,14 +2365,14 @@ export const servicesForms: FormType = {
   >
     <label
       class="block tracking-wide text-gray-700 text-base font-bold mb-2"
-      for="others_areas"
+      for="others_features"
     >
       Others <span class="text-red-500">*</span>
     </label>
     <input
       class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
-      id="others_areas"
-      name="others_areas"
+      id="others_features"
+      name="others_features"
       type="text"
       required
       disabled
@@ -2386,7 +2391,7 @@ export const servicesForms: FormType = {
       <input
         id="frequency_service-radio-1"
         type="radio"
-        value="Once"
+        value="once"
         name="frequency_service"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
         required
@@ -2401,7 +2406,7 @@ export const servicesForms: FormType = {
       <input
         id="frequency_service-radio-2"
         type="radio"
-        value="Weekly"
+        value="weekly"
         name="frequency_service"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
       />
@@ -2415,7 +2420,7 @@ export const servicesForms: FormType = {
       <input
         id="frequency_service-radio-3"
         type="radio"
-        value="Fortnightly"
+        value="fortnightly"
         name="frequency_service"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
       />
@@ -3365,14 +3370,1848 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Mattress Cleaning': `
-        <label for="mattress-cleaning-size">Size of the mattress for Mattress Cleaning:</label>
-        <input type="text" id="mattress-cleaning-size" name="mattress-cleaning-size">
-    `,
-  'Upholstery Cleaning': `
-        <label for="upholstery-cleaning-material">Material for Upholstery Cleaning:</label>
-        <input type="text" id="upholstery-cleaning-material" name="upholstery-cleaning-material">
-    `,
+  'Mattress Cleaning': `<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="babycot" class="font-semibold text-lg text-muted"
+    >Babycot <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-babycot"
+      data-input-counter="quantity-babycot"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="babycot"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-babycot"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-babycot"
+      data-input-counter="quantity-babycot"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="single_mattress" class="font-semibold text-lg text-muted"
+    >Single Mattress <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-single_mattress"
+      data-input-counter="quantity-single_mattress"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="single_mattress"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-single_mattress"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-single_mattress"
+      data-input-counter="quantity-single_mattress"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="double-mattress" class="font-semibold text-lg text-muted"
+    >Double Mattress <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-double-mattress"
+      data-input-counter="quantity-double-mattress"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="double-mattress"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-double-mattress"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-double-mattress"
+      data-input-counter="quantity-double-mattress"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="queen-size" class="font-semibold text-lg text-muted"
+    >Queen size <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-queen-size"
+      data-input-counter="quantity-queen-size"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="queen-size"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-queen-size"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-queen-size"
+      data-input-counter="quantity-queen-size"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="king-size" class="font-semibold text-lg text-muted"
+    >King size <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-king-size"
+      data-input-counter="quantity-king-size"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="king-size"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-king-size"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-king-size"
+      data-input-counter="quantity-king-size"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    Would you like to add upholstery cleaning?
+  </label>
+  <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        input-option-checked="dining-chair-section"
+        type="checkbox"
+        id="dining-chair"
+        value="dining chair"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="dining-chair"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 60"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M44,27.435v-9.6c1.853-1.894,3-4.482,3-7.334C47,4.71,42.29,0,36.5,0h-13C17.71,0,13,4.71,13,10.5 c0,2.853,1.147,5.44,3,7.334v9.6c-3.14,1.408-5,3.337-5,5.565l0.012,0.241C11.005,33.327,11,33.413,11,33.5 c0,1.953,1.258,3.602,3,4.224V59c0,0.553,0.448,1,1,1s1-0.447,1-1V42h2v15c0,0.553,0.448,1,1,1s1-0.447,1-1V42h20v15 c0,0.553,0.448,1,1,1s1-0.447,1-1V42h2v17c0,0.553,0.448,1,1,1s1-0.447,1-1V37.731c1.593-0.567,2.78-1.997,2.972-3.731L49,33 C49,30.772,47.14,28.843,44,27.435z M23.5,2h13c4.687,0,8.5,3.813,8.5,8.5S41.187,19,36.5,19h-13c-4.687,0-8.5-3.813-8.5-8.5 S18.813,2,23.5,2z M18,19.427C19.602,20.418,21.482,21,23.5,21h13c2.018,0,3.898-0.582,5.5-1.573v7.237 C38.795,25.611,34.674,25,30,25s-8.795,0.611-12,1.664V19.427z M16,40v-2h2v2H16z M20,40v-2h20v2H20z M42,40v-2h2v2H42z M44.5,36 h-29c-1.378,0-2.5-1.121-2.5-2.5c0-0.104,0.018-0.205,0.041-0.356l0.078-0.779C14.004,29.937,19.818,27,30,27 c9.986,0,15.77,2.824,16.824,5.223l0.143,0.972C46.982,33.295,47,33.396,47,33.5C47,34.879,45.878,36,44.5,36z"
+                ></path>
+                <path
+                  d="M42,32H28c-0.552,0-1,0.447-1,1s0.448,1,1,1h14c0.552,0,1-0.447,1-1S42.552,32,42,32z"
+                ></path>
+                <path
+                  d="M22,32h-4c-0.552,0-1,0.447-1,1s0.448,1,1,1h4c0.552,0,1-0.447,1-1S22.553,32,22,32z"
+                ></path>
+              </g>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Dining Chair</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="armchair-section"
+        type="checkbox"
+        id="armchair-option"
+        value="armchair"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="armchair-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60.008 60.008"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M19.297,21.211c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l0.92-0.92 c0.433,0.213,0.901,0.332,1.373,0.332s0.94-0.12,1.373-0.332l0.92,0.92c0.195,0.195,0.451,0.293,0.707,0.293 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-0.919-0.919c0.426-0.866,0.426-1.881,0-2.747l0.919-0.919 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-0.92,0.92c-0.866-0.425-1.88-0.425-2.747,0l-0.92-0.92 c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l0.92,0.92c-0.426,0.866-0.426,1.88,0,2.747l-0.92,0.92 C18.906,20.187,18.906,20.82,19.297,21.211z M23.797,16.711c0.437,0.438,0.437,1.148,0,1.586c-0.438,0.438-1.148,0.438-1.586,0 c-0.437-0.438-0.437-1.148,0-1.586c0.219-0.219,0.506-0.328,0.793-0.328S23.578,16.492,23.797,16.711z"
+                ></path>
+                <path
+                  d="M35.297,21.211c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l0.92-0.92 c0.433,0.213,0.901,0.332,1.373,0.332s0.94-0.12,1.373-0.332l0.92,0.92c0.195,0.195,0.451,0.293,0.707,0.293 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-0.919-0.919c0.426-0.866,0.426-1.881,0-2.747l0.919-0.919 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-0.92,0.92c-0.866-0.425-1.88-0.425-2.747,0l-0.92-0.92 c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l0.92,0.92c-0.426,0.866-0.426,1.88,0,2.747l-0.92,0.92 C34.906,20.187,34.906,20.82,35.297,21.211z M39.797,16.711c0.437,0.438,0.437,1.148,0,1.586c-0.438,0.438-1.148,0.438-1.586,0 c-0.437-0.438-0.437-1.148,0-1.586c0.219-0.219,0.506-0.328,0.793-0.328S39.578,16.492,39.797,16.711z"
+                ></path>
+                <path
+                  d="M59.949,32.28c-0.438-3.935-3.595-7.171-7.508-7.695c-0.78-0.104-1.558-0.092-2.32,0.006l0.901-9.18 c0.561-3.476-0.428-7.007-2.711-9.688c-2.283-2.681-5.612-4.218-9.133-4.218H21.003c-3.521,0-6.851,1.538-9.133,4.218 c-2.283,2.681-3.271,6.212-2.719,9.612l0.769,9.261c-0.773-0.103-1.562-0.117-2.353-0.011c-3.913,0.524-7.071,3.76-7.509,7.695 c-0.3,2.704,0.568,5.328,2.381,7.2c2.944,3.04,4.565,6.785,4.565,10.545v1.052c0,2.337,1.826,4.237,4.123,4.397 c0.439,1.822,2.11,3.031,4.377,3.031c2.253,0,3.916-1.196,4.367-3h20.266c0.451,1.804,2.114,3,4.367,3 c2.277,0,3.956-1.22,4.385-3.057c2.312-0.282,4.115-2.234,4.115-4.62v-0.802c0-3.76,1.621-7.505,4.565-10.545 C59.382,37.607,60.249,34.983,59.949,32.28z M11.969,25.114l-0.835-10.022c-0.467-2.897,0.355-5.839,2.258-8.073 s4.677-3.515,7.611-3.515h18.175c2.935,0,5.708,1.281,7.611,3.515c1.902,2.234,2.725,5.177,2.25,8.135l-0.979,9.952 c-0.023,0.009-0.044,0.02-0.066,0.029c-0.169,0.067-0.333,0.144-0.498,0.221c-0.083,0.039-0.166,0.077-0.247,0.119 c-0.183,0.093-0.362,0.194-0.538,0.3c-0.049,0.03-0.097,0.06-0.145,0.09c-0.196,0.124-0.388,0.253-0.575,0.393 c-0.004,0.003-0.008,0.006-0.012,0.01c-0.174,0.131-0.35,0.259-0.515,0.404c-0.866,0.757-1.562,1.668-2.065,2.674 c-0.627,0.956-1.057,2.03-1.257,3.158H17.866c-0.201-1.128-0.63-2.203-1.257-3.158c-0.504-1.005-1.2-1.917-2.065-2.674 c-0.157-0.137-0.324-0.259-0.49-0.383c-0.01-0.008-0.021-0.016-0.031-0.024c-0.183-0.137-0.371-0.264-0.563-0.386 c-0.053-0.034-0.106-0.067-0.16-0.099c-0.172-0.104-0.346-0.202-0.524-0.294c-0.088-0.046-0.179-0.087-0.269-0.13 c-0.157-0.074-0.314-0.148-0.475-0.213C12.011,25.134,11.991,25.123,11.969,25.114z M16.938,34.504H43.07 c1.618,0,2.934,1.316,2.934,2.934v2.966c0,0.607-0.494,1.101-1.101,1.101H15.105c-0.607,0-1.101-0.494-1.101-1.101v-2.966 C14.004,35.82,15.32,34.504,16.938,34.504z M15.504,56.504c-0.88,0-1.805-0.279-2.242-1h4.483 C17.309,56.225,16.384,56.504,15.504,56.504z M44.504,56.504c-0.88,0-1.805-0.279-2.242-1h4.483 C46.309,56.225,45.384,56.504,44.504,56.504z M56.132,38.088c-3.307,3.416-5.128,7.655-5.128,11.937v0.802 c0,1.476-1.201,2.677-2.678,2.677h-8.322h-20h-8.573c-1.338,0-2.427-1.089-2.427-2.427v-1.052c0-4.283-1.821-8.522-5.128-11.937 c-1.396-1.442-2.063-3.479-1.83-5.587c0.337-3.035,2.771-5.53,5.787-5.934c0.319-0.042,0.636-0.064,0.949-0.064 c0.732,0,1.44,0.133,2.117,0.357c0.145,0.048,0.289,0.097,0.429,0.155c0.249,0.102,0.492,0.22,0.729,0.352 c0.129,0.072,0.254,0.151,0.378,0.232c0.236,0.153,0.467,0.316,0.687,0.501c0.683,0.576,1.253,1.288,1.667,2.095 c0.401,0.786,0.648,1.647,0.721,2.545c-2.021,0.617-3.505,2.478-3.505,4.698v2.966c0,1.709,1.391,3.101,3.101,3.101h29.799 c1.709,0,3.101-1.391,3.101-3.101v-2.966c0-2.221-1.485-4.081-3.506-4.698c0.07-0.889,0.315-1.746,0.714-2.53 c0.836-1.64,2.318-2.883,4.071-3.411l0.217-0.065c0.854-0.225,1.757-0.289,2.677-0.166c3.016,0.403,5.448,2.899,5.785,5.934 C58.195,34.609,57.529,36.646,56.132,38.088z"
+                ></path>
+              </g>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Armchair</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="two-seater-section"
+        type="checkbox"
+        id="two-seater-option"
+        value="two seater"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="two-seater-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 60"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M60,32.748V27.83c0-1.27-0.846-2.334-2-2.691V14.433c0-1.189-0.477-2.266-1.242-3.063c-0.02-0.024-0.029-0.055-0.051-0.077 c-0.023-0.023-0.053-0.031-0.078-0.051C55.833,10.477,54.757,10,53.567,10H33.433c-1.189,0-2.265,0.477-3.062,1.242 c-0.024,0.02-0.055,0.029-0.078,0.051c-0.023,0.023-0.031,0.053-0.051,0.077c-0.088,0.091-0.162,0.194-0.242,0.293 c-0.08-0.099-0.154-0.201-0.242-0.293c-0.02-0.024-0.029-0.055-0.051-0.077c-0.023-0.023-0.053-0.031-0.078-0.051 C28.833,10.477,27.757,10,26.567,10H6.433c-1.189,0-2.265,0.477-3.062,1.242c-0.024,0.02-0.055,0.029-0.078,0.051 c-0.023,0.023-0.031,0.053-0.051,0.077C2.477,12.167,2,13.244,2,14.433v10.706c-1.154,0.357-2,1.422-2,2.691v4.917 c0,0.651,0.281,1.233,0.724,1.645C0.276,34.981,0,35.706,0,36.5c0,0.98,0.407,1.864,1.058,2.5C0.407,39.636,0,40.52,0,41.5 C0,43.43,1.57,45,3.5,45H4v4c0,0.552,0.447,1,1,1h3c0.409,0,0.776-0.249,0.929-0.628L10.677,45h38.645l1.749,4.372 C51.224,49.751,51.591,50,52,50h3c0.553,0,1-0.448,1-1v-4h0.5c1.93,0,3.5-1.57,3.5-3.5c0-0.98-0.407-1.864-1.058-2.5 C59.593,38.364,60,37.48,60,36.5c0-0.794-0.276-1.519-0.724-2.108C59.719,33.981,60,33.398,60,32.748z M48.025,32.839 c0.008-0.101,0.018-0.201,0.031-0.3c0.014-0.108,0.03-0.216,0.049-0.322c0.018-0.098,0.037-0.196,0.059-0.292 c0.024-0.104,0.051-0.207,0.08-0.31c0.027-0.095,0.055-0.189,0.086-0.282c0.034-0.101,0.071-0.199,0.109-0.298 c0.035-0.091,0.072-0.181,0.111-0.27c0.043-0.096,0.089-0.19,0.137-0.283c0.044-0.086,0.088-0.172,0.135-0.257 c0.052-0.091,0.107-0.179,0.163-0.268c0.051-0.081,0.102-0.162,0.157-0.24c0.06-0.086,0.124-0.169,0.188-0.251 c0.058-0.075,0.116-0.151,0.178-0.223c0.068-0.08,0.14-0.156,0.212-0.233c0.065-0.069,0.129-0.139,0.196-0.205 c0.075-0.074,0.155-0.143,0.234-0.213c0.071-0.062,0.14-0.126,0.214-0.185c0.083-0.067,0.17-0.129,0.256-0.192 c0.075-0.055,0.149-0.111,0.227-0.162c0.091-0.06,0.185-0.114,0.279-0.17c0.079-0.047,0.157-0.096,0.238-0.139 c0.098-0.052,0.2-0.098,0.301-0.145c0.082-0.038,0.162-0.079,0.245-0.114c0.106-0.044,0.216-0.081,0.325-0.119 c0.083-0.029,0.165-0.062,0.249-0.088c0.115-0.035,0.234-0.062,0.352-0.091c0.082-0.02,0.162-0.044,0.246-0.061 c0.135-0.027,0.273-0.044,0.411-0.063c0.069-0.009,0.137-0.024,0.207-0.031C53.908,27.011,54.12,27,54.335,27h2.835 c0.458,0,0.83,0.373,0.83,0.83v4.917C58,32.887,57.887,33,57.748,33H56.5h-8.483C48.02,32.946,48.021,32.892,48.025,32.839z M53.567,12c0.302,0,0.588,0.062,0.855,0.163l-2.13,2.13c-0.391,0.391-0.391,1.023,0,1.414C52.488,15.902,52.744,16,53,16 s0.512-0.098,0.707-0.293l2.13-2.13C55.938,13.845,56,14.131,56,14.433V25h-1.665c-0.284,0-0.564,0.015-0.84,0.043 c-0.096,0.01-0.188,0.029-0.283,0.042c-0.179,0.024-0.359,0.046-0.535,0.082c-0.107,0.022-0.21,0.053-0.316,0.079 c-0.159,0.039-0.319,0.074-0.474,0.122c-0.11,0.034-0.215,0.077-0.323,0.115c-0.146,0.052-0.293,0.1-0.435,0.159 c-0.108,0.045-0.211,0.099-0.317,0.149c-0.136,0.064-0.273,0.125-0.405,0.195c-0.104,0.056-0.203,0.12-0.304,0.18 c-0.127,0.075-0.255,0.148-0.378,0.23c-0.099,0.066-0.192,0.138-0.287,0.208c-0.118,0.086-0.237,0.17-0.35,0.262 c-0.093,0.075-0.179,0.157-0.268,0.236c-0.108,0.096-0.218,0.19-0.321,0.292c-0.085,0.084-0.165,0.173-0.247,0.261 c-0.098,0.105-0.198,0.209-0.291,0.32c-0.078,0.092-0.149,0.189-0.223,0.284c-0.088,0.114-0.176,0.226-0.258,0.344 c-0.07,0.1-0.133,0.205-0.198,0.308c-0.076,0.121-0.152,0.24-0.222,0.365c-0.06,0.108-0.115,0.219-0.17,0.329 c-0.064,0.127-0.128,0.254-0.185,0.385c-0.05,0.115-0.095,0.232-0.14,0.35c-0.051,0.132-0.102,0.265-0.147,0.4 c-0.04,0.122-0.074,0.245-0.108,0.369c-0.038,0.137-0.075,0.274-0.107,0.413c-0.028,0.128-0.051,0.257-0.073,0.387 c-0.024,0.14-0.047,0.28-0.065,0.423c-0.016,0.134-0.026,0.269-0.036,0.405c-0.006,0.088-0.02,0.174-0.023,0.263H33.433 c-0.302,0-0.588-0.062-0.855-0.163l2.13-2.13c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-2.13,2.13 C31.062,31.155,31,30.869,31,30.567V14.433c0-0.302,0.062-0.589,0.163-0.856l2.13,2.13C33.488,15.902,33.744,16,34,16 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-2.13-2.13C32.844,12.062,33.131,12,33.433,12H53.567z M26.567,12 c0.302,0,0.588,0.062,0.855,0.163l-2.13,2.13c-0.391,0.391-0.391,1.023,0,1.414C25.488,15.902,25.744,16,26,16 s0.512-0.098,0.707-0.293l2.13-2.13C28.938,13.845,29,14.131,29,14.433v16.134c0,0.302-0.062,0.589-0.163,0.856l-2.13-2.13 c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l2.13,2.13C27.156,32.938,26.869,33,26.567,33H13.993 c-0.004-0.089-0.017-0.175-0.023-0.263c-0.01-0.136-0.02-0.271-0.036-0.405c-0.017-0.142-0.04-0.282-0.064-0.422 c-0.023-0.13-0.045-0.26-0.074-0.389c-0.031-0.139-0.068-0.276-0.106-0.412c-0.034-0.124-0.068-0.248-0.108-0.37 c-0.045-0.136-0.095-0.268-0.147-0.4c-0.045-0.117-0.09-0.235-0.14-0.35c-0.057-0.131-0.121-0.257-0.185-0.385 c-0.056-0.111-0.11-0.222-0.17-0.329c-0.07-0.125-0.146-0.245-0.222-0.365c-0.065-0.104-0.128-0.208-0.198-0.308 c-0.082-0.118-0.17-0.231-0.258-0.344c-0.074-0.095-0.145-0.192-0.223-0.284c-0.093-0.11-0.192-0.214-0.291-0.32 c-0.082-0.088-0.161-0.177-0.247-0.261c-0.103-0.101-0.213-0.196-0.321-0.292c-0.089-0.079-0.176-0.16-0.268-0.236 c-0.113-0.092-0.232-0.175-0.349-0.261c-0.096-0.07-0.19-0.143-0.289-0.209c-0.122-0.081-0.25-0.154-0.377-0.229 c-0.102-0.06-0.201-0.124-0.305-0.18c-0.132-0.071-0.269-0.132-0.405-0.195c-0.106-0.05-0.209-0.103-0.317-0.149 c-0.142-0.059-0.289-0.108-0.435-0.159c-0.108-0.038-0.213-0.082-0.323-0.115c-0.155-0.048-0.315-0.083-0.474-0.122 c-0.105-0.026-0.209-0.058-0.316-0.079c-0.175-0.036-0.355-0.058-0.535-0.082c-0.095-0.013-0.187-0.033-0.283-0.042 C6.229,25.015,5.949,25,5.665,25H4V14.433c0-0.302,0.062-0.589,0.163-0.856l2.13,2.13C6.488,15.902,6.744,16,7,16 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-2.13-2.13C5.844,12.062,6.131,12,6.433,12H26.567z M2,27.83 C2,27.373,2.372,27,2.83,27h2.835c0.215,0,0.427,0.011,0.637,0.032c0.07,0.007,0.138,0.021,0.207,0.031 c0.138,0.018,0.276,0.036,0.411,0.063c0.083,0.017,0.164,0.041,0.246,0.061c0.118,0.029,0.237,0.055,0.352,0.091 c0.085,0.026,0.166,0.059,0.249,0.088c0.109,0.039,0.219,0.075,0.325,0.119c0.083,0.035,0.163,0.076,0.245,0.114 c0.101,0.047,0.203,0.093,0.301,0.145c0.081,0.043,0.159,0.092,0.238,0.139c0.094,0.055,0.188,0.11,0.279,0.17 c0.078,0.051,0.151,0.108,0.227,0.162c0.086,0.063,0.173,0.125,0.256,0.192c0.073,0.059,0.143,0.123,0.214,0.185 c0.079,0.07,0.158,0.139,0.234,0.213c0.068,0.066,0.132,0.136,0.196,0.205c0.072,0.077,0.144,0.153,0.212,0.233 c0.062,0.073,0.119,0.148,0.178,0.223c0.064,0.083,0.128,0.165,0.188,0.251c0.055,0.078,0.106,0.159,0.157,0.24 c0.056,0.088,0.111,0.177,0.163,0.268c0.048,0.084,0.092,0.17,0.135,0.257c0.047,0.093,0.094,0.187,0.137,0.283 c0.039,0.089,0.076,0.179,0.111,0.27c0.039,0.098,0.076,0.197,0.109,0.298c0.031,0.093,0.059,0.187,0.086,0.282 c0.029,0.102,0.056,0.205,0.08,0.31c0.022,0.097,0.041,0.194,0.059,0.292c0.019,0.107,0.036,0.214,0.049,0.322 c0.013,0.099,0.023,0.199,0.031,0.3c0.004,0.053,0.005,0.107,0.008,0.161H3.5H2.252C2.113,33,2,32.887,2,32.748V27.83z M7.323,48H6 v-3h2.523L7.323,48z M54,48h-1.323l-1.2-3H54V48z M58,41.5c0,0.827-0.673,1.5-1.5,1.5H55h-5H10H5H3.5C2.673,43,2,42.327,2,41.5 S2.673,40,3.5,40h53C57.327,40,58,40.673,58,41.5z M3.5,38C2.673,38,2,37.327,2,36.5S2.673,35,3.5,35h8.835h14.232h6.865h14.232 H56.5c0.827,0,1.5,0.673,1.5,1.5S57.327,38,56.5,38H3.5z"
+                ></path>
+                <path
+                  d="M13.293,23.707C13.488,23.902,13.744,24,14,24s0.512-0.098,0.707-0.293L16,22.414l1.293,1.293 C17.488,23.902,17.744,24,18,24s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L17.414,21l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L16,19.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L14.586,21l-1.293,1.293C12.902,22.684,12.902,23.316,13.293,23.707z"
+                ></path>
+                <path
+                  d="M41.293,23.707C41.488,23.902,41.744,24,42,24s0.512-0.098,0.707-0.293L44,22.414l1.293,1.293 C45.488,23.902,45.744,24,46,24s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L45.414,21l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L44,19.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L42.586,21l-1.293,1.293C40.902,22.684,40.902,23.316,41.293,23.707z"
+                ></path>
+              </g>
+            </g></svg
+          >
+
+          <div class="w-full text-2xl font-semibold">Two seater</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="three-seater-section"
+        type="checkbox"
+        id="three-seater-option"
+        value="three seater"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="three-seater-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 60"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M60,26c0-1.474-0.81-2.75-2-3.444v-3.06C58,14.812,54.188,11,49.503,11h-5.675c-1.773,0-3.456,0.585-4.828,1.665 C37.628,11.585,35.945,11,34.172,11h-8.344c-1.773,0-3.456,0.585-4.828,1.665C19.628,11.585,17.945,11,16.172,11h-5.675 C5.812,11,2,14.812,2,19.497v3.06C0.81,23.25,0,24.526,0,26v20h1v3h6v-3h1h44h1v3h6v-3h1V26z M8,32h10.172 c0.263,0,0.521,0.107,0.707,0.293c1.169,1.167,3.071,1.169,4.242,0C23.308,32.107,23.565,32,23.828,32h12.344 c0.263,0,0.521,0.107,0.707,0.293c1.17,1.168,3.072,1.168,4.242,0v0C41.308,32.107,41.565,32,41.828,32H52v3H8V32z M54,37v-2v-5 v-3.7c0-0.915,0.482-1.743,1.229-2.109c0.203-0.099,0.402-0.152,0.603-0.174c0.043-0.004,0.085-0.012,0.129-0.013 c0.071-0.002,0.143,0.006,0.216,0.014c0.045,0.004,0.09,0.007,0.134,0.014c0.115,0.021,0.232,0.051,0.354,0.095l0.158,0.056 C57.515,24.497,58,25.191,58,26v18h-4V37z M49.503,13C53.085,13,56,15.915,56,19.497V22c-2.206,0-4,1.794-4,4v0.3V30H41.828 c-0.673,0-1.305,0.232-1.828,0.638V14.441C41.062,13.513,42.404,13,43.828,13H49.503z M34.172,13c1.424,0,2.767,0.513,3.828,1.441 v16.197C37.477,30.231,36.845,30,36.172,30H23.828c-0.673,0-1.305,0.232-1.828,0.638V14.441C23.062,13.513,24.404,13,25.828,13 H34.172z M4,19.497C4,15.915,6.915,13,10.497,13h5.675c1.424,0,2.767,0.513,3.828,1.441v16.197C19.477,30.231,18.845,30,18.172,30 H8v-3.7V26c0-2.206-1.794-4-4-4V19.497z M2,26c0-0.809,0.485-1.503,1.177-1.818l0.158-0.056c0.122-0.044,0.239-0.074,0.354-0.094 c0.045-0.007,0.091-0.01,0.137-0.014c0.072-0.007,0.143-0.015,0.214-0.014c0.045,0.001,0.087,0.01,0.131,0.013 c0.201,0.022,0.399,0.074,0.6,0.173C5.518,24.557,6,25.385,6,26.3V30v5v2v7H2V26z M5,47H3v-1h2V47z M52,44H8v-7h44V44z M57,47h-2 v-1h2V47z"
+                ></path>
+                <path
+                  d="M27.293,22.707C27.488,22.902,27.744,23,28,23s0.512-0.098,0.707-0.293L30,21.414l1.293,1.293 C31.488,22.902,31.744,23,32,23s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L31.414,20l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L30,18.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L28.586,20l-1.293,1.293C26.902,21.684,26.902,22.316,27.293,22.707z"
+                ></path>
+                <path
+                  d="M45.293,22.707C45.488,22.902,45.744,23,46,23s0.512-0.098,0.707-0.293L48,21.414l1.293,1.293 C49.488,22.902,49.744,23,50,23s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L49.414,20l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L48,18.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L46.586,20l-1.293,1.293C44.902,21.684,44.902,22.316,45.293,22.707z"
+                ></path>
+                <path
+                  d="M9.293,22.707C9.488,22.902,9.744,23,10,23s0.512-0.098,0.707-0.293L12,21.414l1.293,1.293C13.488,22.902,13.744,23,14,23 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L13.414,20l1.293-1.293c0.391-0.391,0.391-1.023,0-1.414 s-1.023-0.391-1.414,0L12,18.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414L10.586,20l-1.293,1.293 C8.902,21.684,8.902,22.316,9.293,22.707z"
+                ></path>
+              </g>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Three seater</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="four-seater-section"
+        type="checkbox"
+        id="four-seater-option"
+        value="Four seater"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="four-seater-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 h-24 w-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 495 495"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <path
+                d="M403.5,24h-8c-2.997,0-5.862,0.57-8.5,1.598V23.5C387,10.542,376.458,0,363.5,0h-96C254.542,0,244,10.542,244,23.5v8V312 H99.5h-8C78.542,312,68,322.542,68,335.5v96c0,12.958,10.542,23.5,23.5,23.5h8c0.721,0,1.433-0.038,2.138-0.102 c-1.053,2.666-1.638,5.566-1.638,8.602v8c0,12.958,10.542,23.5,23.5,23.5h248c30.603,0,55.5-24.897,55.5-55.5v-392 C427,34.542,416.458,24,403.5,24z M334.606,456l-41-41h18.787l41,41H334.606z M235,440v-16.498c0-0.002,0-0.005,0-0.008 c-0.003-12.954-10.541-23.492-23.495-23.495c-0.002,0-0.005,0-0.008,0h-39.995c-0.001,0-0.003,0-0.005,0H155.5 c-12.958,0-23.5,10.542-23.5,23.5V440h-8.5c-0.721,0-1.433,0.038-2.138,0.102c1.053-2.666,1.638-5.566,1.638-8.602v-96 c0-2.997-0.57-5.862-1.597-8.5H244v113H235z M190.606,456l-37.803-37.803c-0.681-0.681-1.463-1.197-2.295-1.562 c1.404-1.023,3.126-1.635,4.992-1.635h12.894l41,41H190.606z M147,433.606L169.393,456H155.5c-4.687,0-8.5-3.813-8.5-8.5V433.606z M208.393,415L220,426.606v18.787L189.606,415H208.393z M347,92.394V87.5c0-3.753,2.448-6.941,5.829-8.064L388,114.607v18.787 L347,92.394z M355.502,64c-0.003,0-0.006,0-0.009,0C342.539,64.004,332,74.544,332,87.5v7.987c0,0.008,0,0.017,0,0.025v39.975 c0,0.008,0,0.017,0,0.025v7.987c0,12.958,10.542,23.5,23.5,23.5H372v8.999H259V53.402c2.638,1.028,5.503,1.598,8.5,1.598h96 c2.997,0,5.862-0.57,8.5-1.598V64H355.502z M259,190.999h113V200h-16.498c-0.003,0-0.006,0-0.009,0 C342.539,200.004,332,210.544,332,223.5v7.987c0,0.008,0,0.017,0,0.025v39.975c0,0.008,0,0.017,0,0.025v7.987 c0,12.958,10.542,23.5,23.5,23.5H372v9H259V190.999z M347,228.394V223.5c0-3.753,2.448-6.941,5.829-8.064L388,250.607v18.787 L347,228.394z M259,327h113v9h-0.498c-0.002,0-0.003,0-0.005,0H355.5c-12.958,0-23.5,10.542-23.5,23.5v31.987 c0,0.008,0,0.017,0,0.025V400h-16.498c-0.002,0-0.003,0-0.005,0H291.5c-12.958,0-23.5,10.542-23.5,23.5V440h-9V327z M388,389.394 l-35.197-35.197c-0.681-0.681-1.463-1.197-2.295-1.562c1.404-1.023,3.126-1.635,4.992-1.635h12.893L388,370.607V389.394z M347,388.394v-18.787l41,41v18.787L347,388.394z M294.606,456L283,444.394v-18.787L313.393,456H294.606z M374.344,455.737 L333.606,415h5.894c3.497,0,6.427-2.397,7.257-5.636l35.439,35.439c1.141,1.141,2.559,1.832,4.037,2.083 C383.927,451.468,379.556,454.826,374.344,455.737z M379.5,288h-12.894L347,268.394v-18.787l35.196,35.196 c0.681,0.681,1.463,1.197,2.296,1.562C383.089,287.388,381.366,288,379.5,288z M388,229.394L373.606,215h5.894 c4.687,0,8.5,3.813,8.5,8.5V229.394z M379.5,152h-12.894L347,132.394v-18.787l35.196,35.196c0.681,0.681,1.463,1.197,2.296,1.562 C383.089,151.388,381.366,152,379.5,152z M388,93.394L373.606,79h5.894c4.687,0,8.5,3.813,8.5,8.5V93.394z M267.5,15h96 c4.687,0,8.5,3.813,8.5,8.5v8c0,4.687-3.813,8.5-8.5,8.5h-96c-4.687,0-8.5-3.813-8.5-8.5v-8C259,18.813,262.813,15,267.5,15z M91.5,440c-4.687,0-8.5-3.813-8.5-8.5v-96c0-4.687,3.813-8.5,8.5-8.5h8c4.687,0,8.5,3.813,8.5,8.5v96c0,4.687-3.813,8.5-8.5,8.5 H91.5z M412,439.5c0,22.332-18.168,40.5-40.5,40.5h-248c-4.687,0-8.5-3.813-8.5-8.5v-8c0-4.687,3.813-8.5,8.5-8.5h9.734 c3.138,9.29,11.93,16,22.266,16h56c10.336,0,19.128-6.71,22.266-16h35.469c3.138,9.29,11.93,16,22.266,16h80 c17.369,0,31.5-14.131,31.5-31.5v-80c0-10.335-6.71-19.127-16-22.266v-35.469c9.29-3.138,16-11.93,16-22.266v-56 c0-10.335-6.71-19.127-16-22.266v-35.469c9.29-3.138,16-11.93,16-22.266v-56c0-10.335-6.71-19.127-16-22.266V47.5 c0-4.687,3.813-8.5,8.5-8.5h8c4.687,0,8.5,3.813,8.5,8.5V439.5z"
+              ></path>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Four seater</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div id="dining-chair-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="two_seater-count" class="font-semibold text-lg text-muted"
+      >How many dining chairs? <span class="text-red-500">*</span
+      ></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-two_seater-count"
+        data-input-counter="quantity-two_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="two_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-two_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-two_seater-count"
+        data-input-counter="quantity-dining_chairs-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="armchair-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="armchair-count" class="font-semibold text-lg text-muted"
+      >How many armchairs? <span class="text-red-500">*</span
+      ></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-armchair-count"
+        data-input-counter="quantity-armchair-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="armchair_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-armchair-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-armchair-count"
+        data-input-counter="quantity-armchair-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="two-seater-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="two_seater-count" class="font-semibold text-lg text-muted"
+      >How many 2 seater sofas? <span class="text-red-500">*</span
+      ></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-two_seater-count"
+        data-input-counter="quantity-two_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="two_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-two_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-two_seater-count"
+        data-input-counter="quantity-two_seater-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="three-seater-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="three_seater-count" class="font-semibold text-lg text-muted"
+      >How many 3 seater sofas? <span class="text-red-500">*</span
+      ></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-three_seater-count"
+        data-input-counter="quantity-three_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="three_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-three_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-three_seater-count"
+        data-input-counter="quantity-three_seater-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="four-seater-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="four_seater-count" class="font-semibold text-lg text-muted"
+      >How many 4 seater sofas?<span class="text-red-500">*</span
+      ></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-four_seater-count"
+        data-input-counter="quantity-four_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="four_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-four_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-four_seater-count"
+        data-input-counter="quantity-four_seater-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
+  'Upholstery Cleaning': `<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    What kind of Sofas/Chairs would you like cleaned? <span
+      class="text-red-500">*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        input-option-checked="dining-chair-section"
+        type="checkbox"
+        id="dining-chair"
+        value="dining chair"
+        name="upholstery_options"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="dining-chair"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 60"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M44,27.435v-9.6c1.853-1.894,3-4.482,3-7.334C47,4.71,42.29,0,36.5,0h-13C17.71,0,13,4.71,13,10.5 c0,2.853,1.147,5.44,3,7.334v9.6c-3.14,1.408-5,3.337-5,5.565l0.012,0.241C11.005,33.327,11,33.413,11,33.5 c0,1.953,1.258,3.602,3,4.224V59c0,0.553,0.448,1,1,1s1-0.447,1-1V42h2v15c0,0.553,0.448,1,1,1s1-0.447,1-1V42h20v15 c0,0.553,0.448,1,1,1s1-0.447,1-1V42h2v17c0,0.553,0.448,1,1,1s1-0.447,1-1V37.731c1.593-0.567,2.78-1.997,2.972-3.731L49,33 C49,30.772,47.14,28.843,44,27.435z M23.5,2h13c4.687,0,8.5,3.813,8.5,8.5S41.187,19,36.5,19h-13c-4.687,0-8.5-3.813-8.5-8.5 S18.813,2,23.5,2z M18,19.427C19.602,20.418,21.482,21,23.5,21h13c2.018,0,3.898-0.582,5.5-1.573v7.237 C38.795,25.611,34.674,25,30,25s-8.795,0.611-12,1.664V19.427z M16,40v-2h2v2H16z M20,40v-2h20v2H20z M42,40v-2h2v2H42z M44.5,36 h-29c-1.378,0-2.5-1.121-2.5-2.5c0-0.104,0.018-0.205,0.041-0.356l0.078-0.779C14.004,29.937,19.818,27,30,27 c9.986,0,15.77,2.824,16.824,5.223l0.143,0.972C46.982,33.295,47,33.396,47,33.5C47,34.879,45.878,36,44.5,36z"
+                ></path>
+                <path
+                  d="M42,32H28c-0.552,0-1,0.447-1,1s0.448,1,1,1h14c0.552,0,1-0.447,1-1S42.552,32,42,32z"
+                ></path>
+                <path
+                  d="M22,32h-4c-0.552,0-1,0.447-1,1s0.448,1,1,1h4c0.552,0,1-0.447,1-1S22.553,32,22,32z"
+                ></path>
+              </g>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Dining Chair</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="armchair-section"
+        type="checkbox"
+        id="armchair-option"
+        value="armchair"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="armchair-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60.008 60.008"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M19.297,21.211c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l0.92-0.92 c0.433,0.213,0.901,0.332,1.373,0.332s0.94-0.12,1.373-0.332l0.92,0.92c0.195,0.195,0.451,0.293,0.707,0.293 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-0.919-0.919c0.426-0.866,0.426-1.881,0-2.747l0.919-0.919 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-0.92,0.92c-0.866-0.425-1.88-0.425-2.747,0l-0.92-0.92 c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l0.92,0.92c-0.426,0.866-0.426,1.88,0,2.747l-0.92,0.92 C18.906,20.187,18.906,20.82,19.297,21.211z M23.797,16.711c0.437,0.438,0.437,1.148,0,1.586c-0.438,0.438-1.148,0.438-1.586,0 c-0.437-0.438-0.437-1.148,0-1.586c0.219-0.219,0.506-0.328,0.793-0.328S23.578,16.492,23.797,16.711z"
+                ></path>
+                <path
+                  d="M35.297,21.211c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l0.92-0.92 c0.433,0.213,0.901,0.332,1.373,0.332s0.94-0.12,1.373-0.332l0.92,0.92c0.195,0.195,0.451,0.293,0.707,0.293 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-0.919-0.919c0.426-0.866,0.426-1.881,0-2.747l0.919-0.919 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-0.92,0.92c-0.866-0.425-1.88-0.425-2.747,0l-0.92-0.92 c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l0.92,0.92c-0.426,0.866-0.426,1.88,0,2.747l-0.92,0.92 C34.906,20.187,34.906,20.82,35.297,21.211z M39.797,16.711c0.437,0.438,0.437,1.148,0,1.586c-0.438,0.438-1.148,0.438-1.586,0 c-0.437-0.438-0.437-1.148,0-1.586c0.219-0.219,0.506-0.328,0.793-0.328S39.578,16.492,39.797,16.711z"
+                ></path>
+                <path
+                  d="M59.949,32.28c-0.438-3.935-3.595-7.171-7.508-7.695c-0.78-0.104-1.558-0.092-2.32,0.006l0.901-9.18 c0.561-3.476-0.428-7.007-2.711-9.688c-2.283-2.681-5.612-4.218-9.133-4.218H21.003c-3.521,0-6.851,1.538-9.133,4.218 c-2.283,2.681-3.271,6.212-2.719,9.612l0.769,9.261c-0.773-0.103-1.562-0.117-2.353-0.011c-3.913,0.524-7.071,3.76-7.509,7.695 c-0.3,2.704,0.568,5.328,2.381,7.2c2.944,3.04,4.565,6.785,4.565,10.545v1.052c0,2.337,1.826,4.237,4.123,4.397 c0.439,1.822,2.11,3.031,4.377,3.031c2.253,0,3.916-1.196,4.367-3h20.266c0.451,1.804,2.114,3,4.367,3 c2.277,0,3.956-1.22,4.385-3.057c2.312-0.282,4.115-2.234,4.115-4.62v-0.802c0-3.76,1.621-7.505,4.565-10.545 C59.382,37.607,60.249,34.983,59.949,32.28z M11.969,25.114l-0.835-10.022c-0.467-2.897,0.355-5.839,2.258-8.073 s4.677-3.515,7.611-3.515h18.175c2.935,0,5.708,1.281,7.611,3.515c1.902,2.234,2.725,5.177,2.25,8.135l-0.979,9.952 c-0.023,0.009-0.044,0.02-0.066,0.029c-0.169,0.067-0.333,0.144-0.498,0.221c-0.083,0.039-0.166,0.077-0.247,0.119 c-0.183,0.093-0.362,0.194-0.538,0.3c-0.049,0.03-0.097,0.06-0.145,0.09c-0.196,0.124-0.388,0.253-0.575,0.393 c-0.004,0.003-0.008,0.006-0.012,0.01c-0.174,0.131-0.35,0.259-0.515,0.404c-0.866,0.757-1.562,1.668-2.065,2.674 c-0.627,0.956-1.057,2.03-1.257,3.158H17.866c-0.201-1.128-0.63-2.203-1.257-3.158c-0.504-1.005-1.2-1.917-2.065-2.674 c-0.157-0.137-0.324-0.259-0.49-0.383c-0.01-0.008-0.021-0.016-0.031-0.024c-0.183-0.137-0.371-0.264-0.563-0.386 c-0.053-0.034-0.106-0.067-0.16-0.099c-0.172-0.104-0.346-0.202-0.524-0.294c-0.088-0.046-0.179-0.087-0.269-0.13 c-0.157-0.074-0.314-0.148-0.475-0.213C12.011,25.134,11.991,25.123,11.969,25.114z M16.938,34.504H43.07 c1.618,0,2.934,1.316,2.934,2.934v2.966c0,0.607-0.494,1.101-1.101,1.101H15.105c-0.607,0-1.101-0.494-1.101-1.101v-2.966 C14.004,35.82,15.32,34.504,16.938,34.504z M15.504,56.504c-0.88,0-1.805-0.279-2.242-1h4.483 C17.309,56.225,16.384,56.504,15.504,56.504z M44.504,56.504c-0.88,0-1.805-0.279-2.242-1h4.483 C46.309,56.225,45.384,56.504,44.504,56.504z M56.132,38.088c-3.307,3.416-5.128,7.655-5.128,11.937v0.802 c0,1.476-1.201,2.677-2.678,2.677h-8.322h-20h-8.573c-1.338,0-2.427-1.089-2.427-2.427v-1.052c0-4.283-1.821-8.522-5.128-11.937 c-1.396-1.442-2.063-3.479-1.83-5.587c0.337-3.035,2.771-5.53,5.787-5.934c0.319-0.042,0.636-0.064,0.949-0.064 c0.732,0,1.44,0.133,2.117,0.357c0.145,0.048,0.289,0.097,0.429,0.155c0.249,0.102,0.492,0.22,0.729,0.352 c0.129,0.072,0.254,0.151,0.378,0.232c0.236,0.153,0.467,0.316,0.687,0.501c0.683,0.576,1.253,1.288,1.667,2.095 c0.401,0.786,0.648,1.647,0.721,2.545c-2.021,0.617-3.505,2.478-3.505,4.698v2.966c0,1.709,1.391,3.101,3.101,3.101h29.799 c1.709,0,3.101-1.391,3.101-3.101v-2.966c0-2.221-1.485-4.081-3.506-4.698c0.07-0.889,0.315-1.746,0.714-2.53 c0.836-1.64,2.318-2.883,4.071-3.411l0.217-0.065c0.854-0.225,1.757-0.289,2.677-0.166c3.016,0.403,5.448,2.899,5.785,5.934 C58.195,34.609,57.529,36.646,56.132,38.088z"
+                ></path>
+              </g>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Armchair</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="two-seater-section"
+        type="checkbox"
+        id="two-seater-option"
+        value="two seater"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="two-seater-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 60"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M60,32.748V27.83c0-1.27-0.846-2.334-2-2.691V14.433c0-1.189-0.477-2.266-1.242-3.063c-0.02-0.024-0.029-0.055-0.051-0.077 c-0.023-0.023-0.053-0.031-0.078-0.051C55.833,10.477,54.757,10,53.567,10H33.433c-1.189,0-2.265,0.477-3.062,1.242 c-0.024,0.02-0.055,0.029-0.078,0.051c-0.023,0.023-0.031,0.053-0.051,0.077c-0.088,0.091-0.162,0.194-0.242,0.293 c-0.08-0.099-0.154-0.201-0.242-0.293c-0.02-0.024-0.029-0.055-0.051-0.077c-0.023-0.023-0.053-0.031-0.078-0.051 C28.833,10.477,27.757,10,26.567,10H6.433c-1.189,0-2.265,0.477-3.062,1.242c-0.024,0.02-0.055,0.029-0.078,0.051 c-0.023,0.023-0.031,0.053-0.051,0.077C2.477,12.167,2,13.244,2,14.433v10.706c-1.154,0.357-2,1.422-2,2.691v4.917 c0,0.651,0.281,1.233,0.724,1.645C0.276,34.981,0,35.706,0,36.5c0,0.98,0.407,1.864,1.058,2.5C0.407,39.636,0,40.52,0,41.5 C0,43.43,1.57,45,3.5,45H4v4c0,0.552,0.447,1,1,1h3c0.409,0,0.776-0.249,0.929-0.628L10.677,45h38.645l1.749,4.372 C51.224,49.751,51.591,50,52,50h3c0.553,0,1-0.448,1-1v-4h0.5c1.93,0,3.5-1.57,3.5-3.5c0-0.98-0.407-1.864-1.058-2.5 C59.593,38.364,60,37.48,60,36.5c0-0.794-0.276-1.519-0.724-2.108C59.719,33.981,60,33.398,60,32.748z M48.025,32.839 c0.008-0.101,0.018-0.201,0.031-0.3c0.014-0.108,0.03-0.216,0.049-0.322c0.018-0.098,0.037-0.196,0.059-0.292 c0.024-0.104,0.051-0.207,0.08-0.31c0.027-0.095,0.055-0.189,0.086-0.282c0.034-0.101,0.071-0.199,0.109-0.298 c0.035-0.091,0.072-0.181,0.111-0.27c0.043-0.096,0.089-0.19,0.137-0.283c0.044-0.086,0.088-0.172,0.135-0.257 c0.052-0.091,0.107-0.179,0.163-0.268c0.051-0.081,0.102-0.162,0.157-0.24c0.06-0.086,0.124-0.169,0.188-0.251 c0.058-0.075,0.116-0.151,0.178-0.223c0.068-0.08,0.14-0.156,0.212-0.233c0.065-0.069,0.129-0.139,0.196-0.205 c0.075-0.074,0.155-0.143,0.234-0.213c0.071-0.062,0.14-0.126,0.214-0.185c0.083-0.067,0.17-0.129,0.256-0.192 c0.075-0.055,0.149-0.111,0.227-0.162c0.091-0.06,0.185-0.114,0.279-0.17c0.079-0.047,0.157-0.096,0.238-0.139 c0.098-0.052,0.2-0.098,0.301-0.145c0.082-0.038,0.162-0.079,0.245-0.114c0.106-0.044,0.216-0.081,0.325-0.119 c0.083-0.029,0.165-0.062,0.249-0.088c0.115-0.035,0.234-0.062,0.352-0.091c0.082-0.02,0.162-0.044,0.246-0.061 c0.135-0.027,0.273-0.044,0.411-0.063c0.069-0.009,0.137-0.024,0.207-0.031C53.908,27.011,54.12,27,54.335,27h2.835 c0.458,0,0.83,0.373,0.83,0.83v4.917C58,32.887,57.887,33,57.748,33H56.5h-8.483C48.02,32.946,48.021,32.892,48.025,32.839z M53.567,12c0.302,0,0.588,0.062,0.855,0.163l-2.13,2.13c-0.391,0.391-0.391,1.023,0,1.414C52.488,15.902,52.744,16,53,16 s0.512-0.098,0.707-0.293l2.13-2.13C55.938,13.845,56,14.131,56,14.433V25h-1.665c-0.284,0-0.564,0.015-0.84,0.043 c-0.096,0.01-0.188,0.029-0.283,0.042c-0.179,0.024-0.359,0.046-0.535,0.082c-0.107,0.022-0.21,0.053-0.316,0.079 c-0.159,0.039-0.319,0.074-0.474,0.122c-0.11,0.034-0.215,0.077-0.323,0.115c-0.146,0.052-0.293,0.1-0.435,0.159 c-0.108,0.045-0.211,0.099-0.317,0.149c-0.136,0.064-0.273,0.125-0.405,0.195c-0.104,0.056-0.203,0.12-0.304,0.18 c-0.127,0.075-0.255,0.148-0.378,0.23c-0.099,0.066-0.192,0.138-0.287,0.208c-0.118,0.086-0.237,0.17-0.35,0.262 c-0.093,0.075-0.179,0.157-0.268,0.236c-0.108,0.096-0.218,0.19-0.321,0.292c-0.085,0.084-0.165,0.173-0.247,0.261 c-0.098,0.105-0.198,0.209-0.291,0.32c-0.078,0.092-0.149,0.189-0.223,0.284c-0.088,0.114-0.176,0.226-0.258,0.344 c-0.07,0.1-0.133,0.205-0.198,0.308c-0.076,0.121-0.152,0.24-0.222,0.365c-0.06,0.108-0.115,0.219-0.17,0.329 c-0.064,0.127-0.128,0.254-0.185,0.385c-0.05,0.115-0.095,0.232-0.14,0.35c-0.051,0.132-0.102,0.265-0.147,0.4 c-0.04,0.122-0.074,0.245-0.108,0.369c-0.038,0.137-0.075,0.274-0.107,0.413c-0.028,0.128-0.051,0.257-0.073,0.387 c-0.024,0.14-0.047,0.28-0.065,0.423c-0.016,0.134-0.026,0.269-0.036,0.405c-0.006,0.088-0.02,0.174-0.023,0.263H33.433 c-0.302,0-0.588-0.062-0.855-0.163l2.13-2.13c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-2.13,2.13 C31.062,31.155,31,30.869,31,30.567V14.433c0-0.302,0.062-0.589,0.163-0.856l2.13,2.13C33.488,15.902,33.744,16,34,16 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-2.13-2.13C32.844,12.062,33.131,12,33.433,12H53.567z M26.567,12 c0.302,0,0.588,0.062,0.855,0.163l-2.13,2.13c-0.391,0.391-0.391,1.023,0,1.414C25.488,15.902,25.744,16,26,16 s0.512-0.098,0.707-0.293l2.13-2.13C28.938,13.845,29,14.131,29,14.433v16.134c0,0.302-0.062,0.589-0.163,0.856l-2.13-2.13 c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l2.13,2.13C27.156,32.938,26.869,33,26.567,33H13.993 c-0.004-0.089-0.017-0.175-0.023-0.263c-0.01-0.136-0.02-0.271-0.036-0.405c-0.017-0.142-0.04-0.282-0.064-0.422 c-0.023-0.13-0.045-0.26-0.074-0.389c-0.031-0.139-0.068-0.276-0.106-0.412c-0.034-0.124-0.068-0.248-0.108-0.37 c-0.045-0.136-0.095-0.268-0.147-0.4c-0.045-0.117-0.09-0.235-0.14-0.35c-0.057-0.131-0.121-0.257-0.185-0.385 c-0.056-0.111-0.11-0.222-0.17-0.329c-0.07-0.125-0.146-0.245-0.222-0.365c-0.065-0.104-0.128-0.208-0.198-0.308 c-0.082-0.118-0.17-0.231-0.258-0.344c-0.074-0.095-0.145-0.192-0.223-0.284c-0.093-0.11-0.192-0.214-0.291-0.32 c-0.082-0.088-0.161-0.177-0.247-0.261c-0.103-0.101-0.213-0.196-0.321-0.292c-0.089-0.079-0.176-0.16-0.268-0.236 c-0.113-0.092-0.232-0.175-0.349-0.261c-0.096-0.07-0.19-0.143-0.289-0.209c-0.122-0.081-0.25-0.154-0.377-0.229 c-0.102-0.06-0.201-0.124-0.305-0.18c-0.132-0.071-0.269-0.132-0.405-0.195c-0.106-0.05-0.209-0.103-0.317-0.149 c-0.142-0.059-0.289-0.108-0.435-0.159c-0.108-0.038-0.213-0.082-0.323-0.115c-0.155-0.048-0.315-0.083-0.474-0.122 c-0.105-0.026-0.209-0.058-0.316-0.079c-0.175-0.036-0.355-0.058-0.535-0.082c-0.095-0.013-0.187-0.033-0.283-0.042 C6.229,25.015,5.949,25,5.665,25H4V14.433c0-0.302,0.062-0.589,0.163-0.856l2.13,2.13C6.488,15.902,6.744,16,7,16 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-2.13-2.13C5.844,12.062,6.131,12,6.433,12H26.567z M2,27.83 C2,27.373,2.372,27,2.83,27h2.835c0.215,0,0.427,0.011,0.637,0.032c0.07,0.007,0.138,0.021,0.207,0.031 c0.138,0.018,0.276,0.036,0.411,0.063c0.083,0.017,0.164,0.041,0.246,0.061c0.118,0.029,0.237,0.055,0.352,0.091 c0.085,0.026,0.166,0.059,0.249,0.088c0.109,0.039,0.219,0.075,0.325,0.119c0.083,0.035,0.163,0.076,0.245,0.114 c0.101,0.047,0.203,0.093,0.301,0.145c0.081,0.043,0.159,0.092,0.238,0.139c0.094,0.055,0.188,0.11,0.279,0.17 c0.078,0.051,0.151,0.108,0.227,0.162c0.086,0.063,0.173,0.125,0.256,0.192c0.073,0.059,0.143,0.123,0.214,0.185 c0.079,0.07,0.158,0.139,0.234,0.213c0.068,0.066,0.132,0.136,0.196,0.205c0.072,0.077,0.144,0.153,0.212,0.233 c0.062,0.073,0.119,0.148,0.178,0.223c0.064,0.083,0.128,0.165,0.188,0.251c0.055,0.078,0.106,0.159,0.157,0.24 c0.056,0.088,0.111,0.177,0.163,0.268c0.048,0.084,0.092,0.17,0.135,0.257c0.047,0.093,0.094,0.187,0.137,0.283 c0.039,0.089,0.076,0.179,0.111,0.27c0.039,0.098,0.076,0.197,0.109,0.298c0.031,0.093,0.059,0.187,0.086,0.282 c0.029,0.102,0.056,0.205,0.08,0.31c0.022,0.097,0.041,0.194,0.059,0.292c0.019,0.107,0.036,0.214,0.049,0.322 c0.013,0.099,0.023,0.199,0.031,0.3c0.004,0.053,0.005,0.107,0.008,0.161H3.5H2.252C2.113,33,2,32.887,2,32.748V27.83z M7.323,48H6 v-3h2.523L7.323,48z M54,48h-1.323l-1.2-3H54V48z M58,41.5c0,0.827-0.673,1.5-1.5,1.5H55h-5H10H5H3.5C2.673,43,2,42.327,2,41.5 S2.673,40,3.5,40h53C57.327,40,58,40.673,58,41.5z M3.5,38C2.673,38,2,37.327,2,36.5S2.673,35,3.5,35h8.835h14.232h6.865h14.232 H56.5c0.827,0,1.5,0.673,1.5,1.5S57.327,38,56.5,38H3.5z"
+                ></path>
+                <path
+                  d="M13.293,23.707C13.488,23.902,13.744,24,14,24s0.512-0.098,0.707-0.293L16,22.414l1.293,1.293 C17.488,23.902,17.744,24,18,24s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L17.414,21l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L16,19.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L14.586,21l-1.293,1.293C12.902,22.684,12.902,23.316,13.293,23.707z"
+                ></path>
+                <path
+                  d="M41.293,23.707C41.488,23.902,41.744,24,42,24s0.512-0.098,0.707-0.293L44,22.414l1.293,1.293 C45.488,23.902,45.744,24,46,24s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L45.414,21l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L44,19.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L42.586,21l-1.293,1.293C40.902,22.684,40.902,23.316,41.293,23.707z"
+                ></path>
+              </g>
+            </g></svg
+          >
+
+          <div class="w-full text-2xl font-semibold">Two seater</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="three-seater-section"
+        type="checkbox"
+        id="three-seater-option"
+        value="three seater"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="three-seater-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 60"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M60,26c0-1.474-0.81-2.75-2-3.444v-3.06C58,14.812,54.188,11,49.503,11h-5.675c-1.773,0-3.456,0.585-4.828,1.665 C37.628,11.585,35.945,11,34.172,11h-8.344c-1.773,0-3.456,0.585-4.828,1.665C19.628,11.585,17.945,11,16.172,11h-5.675 C5.812,11,2,14.812,2,19.497v3.06C0.81,23.25,0,24.526,0,26v20h1v3h6v-3h1h44h1v3h6v-3h1V26z M8,32h10.172 c0.263,0,0.521,0.107,0.707,0.293c1.169,1.167,3.071,1.169,4.242,0C23.308,32.107,23.565,32,23.828,32h12.344 c0.263,0,0.521,0.107,0.707,0.293c1.17,1.168,3.072,1.168,4.242,0v0C41.308,32.107,41.565,32,41.828,32H52v3H8V32z M54,37v-2v-5 v-3.7c0-0.915,0.482-1.743,1.229-2.109c0.203-0.099,0.402-0.152,0.603-0.174c0.043-0.004,0.085-0.012,0.129-0.013 c0.071-0.002,0.143,0.006,0.216,0.014c0.045,0.004,0.09,0.007,0.134,0.014c0.115,0.021,0.232,0.051,0.354,0.095l0.158,0.056 C57.515,24.497,58,25.191,58,26v18h-4V37z M49.503,13C53.085,13,56,15.915,56,19.497V22c-2.206,0-4,1.794-4,4v0.3V30H41.828 c-0.673,0-1.305,0.232-1.828,0.638V14.441C41.062,13.513,42.404,13,43.828,13H49.503z M34.172,13c1.424,0,2.767,0.513,3.828,1.441 v16.197C37.477,30.231,36.845,30,36.172,30H23.828c-0.673,0-1.305,0.232-1.828,0.638V14.441C23.062,13.513,24.404,13,25.828,13 H34.172z M4,19.497C4,15.915,6.915,13,10.497,13h5.675c1.424,0,2.767,0.513,3.828,1.441v16.197C19.477,30.231,18.845,30,18.172,30 H8v-3.7V26c0-2.206-1.794-4-4-4V19.497z M2,26c0-0.809,0.485-1.503,1.177-1.818l0.158-0.056c0.122-0.044,0.239-0.074,0.354-0.094 c0.045-0.007,0.091-0.01,0.137-0.014c0.072-0.007,0.143-0.015,0.214-0.014c0.045,0.001,0.087,0.01,0.131,0.013 c0.201,0.022,0.399,0.074,0.6,0.173C5.518,24.557,6,25.385,6,26.3V30v5v2v7H2V26z M5,47H3v-1h2V47z M52,44H8v-7h44V44z M57,47h-2 v-1h2V47z"
+                ></path>
+                <path
+                  d="M27.293,22.707C27.488,22.902,27.744,23,28,23s0.512-0.098,0.707-0.293L30,21.414l1.293,1.293 C31.488,22.902,31.744,23,32,23s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L31.414,20l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L30,18.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L28.586,20l-1.293,1.293C26.902,21.684,26.902,22.316,27.293,22.707z"
+                ></path>
+                <path
+                  d="M45.293,22.707C45.488,22.902,45.744,23,46,23s0.512-0.098,0.707-0.293L48,21.414l1.293,1.293 C49.488,22.902,49.744,23,50,23s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L49.414,20l1.293-1.293 c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L48,18.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0 s-0.391,1.023,0,1.414L46.586,20l-1.293,1.293C44.902,21.684,44.902,22.316,45.293,22.707z"
+                ></path>
+                <path
+                  d="M9.293,22.707C9.488,22.902,9.744,23,10,23s0.512-0.098,0.707-0.293L12,21.414l1.293,1.293C13.488,22.902,13.744,23,14,23 s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L13.414,20l1.293-1.293c0.391-0.391,0.391-1.023,0-1.414 s-1.023-0.391-1.414,0L12,18.586l-1.293-1.293c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414L10.586,20l-1.293,1.293 C8.902,21.684,8.902,22.316,9.293,22.707z"
+                ></path>
+              </g>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Three seater</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="four-seater-section"
+        type="checkbox"
+        id="four-seater-option"
+        value="Four seater"
+        name="upholstery_options"
+        class="hidden peer"
+      />
+      <label
+        for="four-seater-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 h-24 w-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 495 495"
+            xml:space="preserve"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <path
+                d="M403.5,24h-8c-2.997,0-5.862,0.57-8.5,1.598V23.5C387,10.542,376.458,0,363.5,0h-96C254.542,0,244,10.542,244,23.5v8V312 H99.5h-8C78.542,312,68,322.542,68,335.5v96c0,12.958,10.542,23.5,23.5,23.5h8c0.721,0,1.433-0.038,2.138-0.102 c-1.053,2.666-1.638,5.566-1.638,8.602v8c0,12.958,10.542,23.5,23.5,23.5h248c30.603,0,55.5-24.897,55.5-55.5v-392 C427,34.542,416.458,24,403.5,24z M334.606,456l-41-41h18.787l41,41H334.606z M235,440v-16.498c0-0.002,0-0.005,0-0.008 c-0.003-12.954-10.541-23.492-23.495-23.495c-0.002,0-0.005,0-0.008,0h-39.995c-0.001,0-0.003,0-0.005,0H155.5 c-12.958,0-23.5,10.542-23.5,23.5V440h-8.5c-0.721,0-1.433,0.038-2.138,0.102c1.053-2.666,1.638-5.566,1.638-8.602v-96 c0-2.997-0.57-5.862-1.597-8.5H244v113H235z M190.606,456l-37.803-37.803c-0.681-0.681-1.463-1.197-2.295-1.562 c1.404-1.023,3.126-1.635,4.992-1.635h12.894l41,41H190.606z M147,433.606L169.393,456H155.5c-4.687,0-8.5-3.813-8.5-8.5V433.606z M208.393,415L220,426.606v18.787L189.606,415H208.393z M347,92.394V87.5c0-3.753,2.448-6.941,5.829-8.064L388,114.607v18.787 L347,92.394z M355.502,64c-0.003,0-0.006,0-0.009,0C342.539,64.004,332,74.544,332,87.5v7.987c0,0.008,0,0.017,0,0.025v39.975 c0,0.008,0,0.017,0,0.025v7.987c0,12.958,10.542,23.5,23.5,23.5H372v8.999H259V53.402c2.638,1.028,5.503,1.598,8.5,1.598h96 c2.997,0,5.862-0.57,8.5-1.598V64H355.502z M259,190.999h113V200h-16.498c-0.003,0-0.006,0-0.009,0 C342.539,200.004,332,210.544,332,223.5v7.987c0,0.008,0,0.017,0,0.025v39.975c0,0.008,0,0.017,0,0.025v7.987 c0,12.958,10.542,23.5,23.5,23.5H372v9H259V190.999z M347,228.394V223.5c0-3.753,2.448-6.941,5.829-8.064L388,250.607v18.787 L347,228.394z M259,327h113v9h-0.498c-0.002,0-0.003,0-0.005,0H355.5c-12.958,0-23.5,10.542-23.5,23.5v31.987 c0,0.008,0,0.017,0,0.025V400h-16.498c-0.002,0-0.003,0-0.005,0H291.5c-12.958,0-23.5,10.542-23.5,23.5V440h-9V327z M388,389.394 l-35.197-35.197c-0.681-0.681-1.463-1.197-2.295-1.562c1.404-1.023,3.126-1.635,4.992-1.635h12.893L388,370.607V389.394z M347,388.394v-18.787l41,41v18.787L347,388.394z M294.606,456L283,444.394v-18.787L313.393,456H294.606z M374.344,455.737 L333.606,415h5.894c3.497,0,6.427-2.397,7.257-5.636l35.439,35.439c1.141,1.141,2.559,1.832,4.037,2.083 C383.927,451.468,379.556,454.826,374.344,455.737z M379.5,288h-12.894L347,268.394v-18.787l35.196,35.196 c0.681,0.681,1.463,1.197,2.296,1.562C383.089,287.388,381.366,288,379.5,288z M388,229.394L373.606,215h5.894 c4.687,0,8.5,3.813,8.5,8.5V229.394z M379.5,152h-12.894L347,132.394v-18.787l35.196,35.196c0.681,0.681,1.463,1.197,2.296,1.562 C383.089,151.388,381.366,152,379.5,152z M388,93.394L373.606,79h5.894c4.687,0,8.5,3.813,8.5,8.5V93.394z M267.5,15h96 c4.687,0,8.5,3.813,8.5,8.5v8c0,4.687-3.813,8.5-8.5,8.5h-96c-4.687,0-8.5-3.813-8.5-8.5v-8C259,18.813,262.813,15,267.5,15z M91.5,440c-4.687,0-8.5-3.813-8.5-8.5v-96c0-4.687,3.813-8.5,8.5-8.5h8c4.687,0,8.5,3.813,8.5,8.5v96c0,4.687-3.813,8.5-8.5,8.5 H91.5z M412,439.5c0,22.332-18.168,40.5-40.5,40.5h-248c-4.687,0-8.5-3.813-8.5-8.5v-8c0-4.687,3.813-8.5,8.5-8.5h9.734 c3.138,9.29,11.93,16,22.266,16h56c10.336,0,19.128-6.71,22.266-16h35.469c3.138,9.29,11.93,16,22.266,16h80 c17.369,0,31.5-14.131,31.5-31.5v-80c0-10.335-6.71-19.127-16-22.266v-35.469c9.29-3.138,16-11.93,16-22.266v-56 c0-10.335-6.71-19.127-16-22.266v-35.469c9.29-3.138,16-11.93,16-22.266v-56c0-10.335-6.71-19.127-16-22.266V47.5 c0-4.687,3.813-8.5,8.5-8.5h8c4.687,0,8.5,3.813,8.5,8.5V439.5z"
+              ></path>
+            </g></svg
+          >
+          <div class="w-full text-2xl font-semibold">Four seater</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="dining-chair-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="two_seater-count" class="font-semibold text-lg text-muted"
+      >How many dining chairs? <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-two_seater-count"
+        data-input-counter="quantity-two_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="two_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-two_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-two_seater-count"
+        data-input-counter="quantity-dining_chairs-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="armchair-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="armchair-count" class="font-semibold text-lg text-muted"
+      >How many armchairs? <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-armchair-count"
+        data-input-counter="quantity-armchair-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="armchair_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-armchair-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-armchair-count"
+        data-input-counter="quantity-armchair-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="two-seater-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="two_seater-count" class="font-semibold text-lg text-muted"
+      >How many 2 seater sofas? <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-two_seater-count"
+        data-input-counter="quantity-two_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="two_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-two_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-two_seater-count"
+        data-input-counter="quantity-two_seater-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="three-seater-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label
+      for="three_seater-count"
+      class="font-semibold text-lg text-muted"
+      >How many 3 seater sofas? <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-three_seater-count"
+        data-input-counter="quantity-three_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="three_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-three_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-three_seater-count"
+        data-input-counter="quantity-three_seater-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="four-seater-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label
+      for="four_seater-count"
+      class="font-semibold text-lg text-muted"
+      >How many 4 seater sofas?<span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-four_seater-count"
+        data-input-counter="quantity-four_seater-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="four_seater_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-four_seater-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-four_seater-count"
+        data-input-counter="quantity-four_seater-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    What kind of material are your items?* <span class="text-red-500"
+      >*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-3 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="fabric"
+        value="fabric"
+        name="material_options"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="fabric"
+        class="inline-flex h-20 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Fabric</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="velvet-option"
+        value="velvet"
+        name="material_options"
+        class="hidden peer"
+      />
+      <label
+        for="velvet-option"
+        class="inline-flex h-20 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Velvet</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="delicate-option"
+        value="delicate"
+        name="material_options"
+        class="hidden peer"
+      />
+      <label
+        for="delicate-option"
+        class="inline-flex h-20 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Delicate
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="other-section"
+        type="checkbox"
+        id="other-option"
+        value="other"
+        name="material_options"
+        class="hidden peer"
+      />
+      <label
+        for="other-option"
+        class="inline-flex h-20 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Other</div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="other-section" class="w-full px-2 md:px-16 mb-6 md:mb-8 hidden">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="other_material"
+  >
+    Other material <span class="text-red-500">*</span>
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="other_material"
+    name="other_material"
+    type="text"
+  />
+</div>
+<div class="flex-row w-full px-2 md:px-16 mb-6 md:mb-5">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+  >
+    Choose your property type: <span class="text-red-500">*</span>
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        input-radio-checked="mattress-section"
+        type="radio"
+        id="mattress-option-yes"
+        name="mattress_option"
+        value="yes"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="mattress-option-yes"
+        class="inline-flex h-12 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Yes</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-radio-checked
+        type="radio"
+        id="mattress-option-no"
+        value="no"
+        name="mattress_option"
+        class="hidden peer"
+      />
+      <label
+        for="mattress-option-no"
+        class="inline-flex h-12 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">No</div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="mattress-section" class="my-2 w-full md:px-16 px-5 hidden">
+  <h3 class="mb-5 text-xl font-medium text-gray-900 text-center">
+    Mattress Cleaning
+  </h3>
+  <div
+    class="flex justify-between items-center w-full my-2 pb-5 border-b-4 border-dotted"
+  >
+    <label for="babycot" class="font-semibold text-lg text-muted"
+      >Babycot <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-babycot"
+        data-input-counter="quantity-babycot"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="babycot"
+        maxlength="1"
+        min="0"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        type="text"
+        id="quantity-babycot"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-babycot"
+        data-input-counter="quantity-babycot"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full my-2 pb-5 border-b-4 border-dotted"
+  >
+    <label for="single_mattress" class="font-semibold text-lg text-muted"
+      >Single Mattress <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-single_mattress"
+        data-input-counter="quantity-single_mattress"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="single_mattress"
+        maxlength="1"
+        min="0"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        type="text"
+        id="quantity-single_mattress"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-single_mattress"
+        data-input-counter="quantity-single_mattress"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full my-2 pb-5 border-b-4 border-dotted"
+  >
+    <label for="double-mattress" class="font-semibold text-lg text-muted"
+      >Double Mattress <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-double-mattress"
+        data-input-counter="quantity-double-mattress"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="double-mattress"
+        maxlength="1"
+        min="0"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        type="text"
+        id="quantity-double-mattress"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-double-mattress"
+        data-input-counter="quantity-double-mattress"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full my-2 pb-5 border-b-4 border-dotted"
+  >
+    <label for="queen-size" class="font-semibold text-lg text-muted"
+      >Queen size <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-queen-size"
+        data-input-counter="quantity-queen-size"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="queen-size"
+        maxlength="1"
+        min="0"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        type="text"
+        id="quantity-queen-size"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-queen-size"
+        data-input-counter="quantity-queen-size"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full my-2 pb-5 border-b-4 border-dotted"
+  >
+    <label for="king-size" class="font-semibold text-lg text-muted"
+      >King size <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-king-size"
+        data-input-counter="quantity-king-size"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="king-size"
+        maxlength="1"
+        min="0"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        type="text"
+        id="quantity-king-size"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-king-size"
+        data-input-counter="quantity-king-size"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
   'Window Cleaning': `
         <label for="window-cleaning-number">Number of windows for Window Cleaning:</label>
         <input type="text" id="window-cleaning-number" name="window-cleaning-number">
