@@ -865,7 +865,8 @@ export const servicesForms: FormType = {
       <input
         type="checkbox"
         id="office-option"
-
+        value="office"
+        name="task_areas"
         class="hidden peer"
       />
       <label
@@ -876,8 +877,6 @@ export const servicesForms: FormType = {
           <svg
             class="mb-2 w-20 h-20"
             xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
             viewBox="0 0 24 24"
             ><path
               fill="currentColor"
@@ -4226,7 +4225,7 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Upholstery Cleaning': `<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  'Upholstery Cleaning': ` <div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
   <label class="mb-5 text-lg font-medium text-gray-900">
     What kind of Sofas/Chairs would you like cleaned? <span
       class="text-red-500">*</span
@@ -4241,7 +4240,6 @@ export const servicesForms: FormType = {
         value="dining chair"
         name="upholstery_options"
         class="hidden peer"
-        required
       />
       <label
         for="dining-chair"
@@ -4449,7 +4447,9 @@ export const servicesForms: FormType = {
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
-    <label for="two_seater-count" class="font-semibold text-lg text-muted"
+    <label
+      for="dining-chair-count"
+      class="font-semibold text-lg text-muted"
       >How many dining chairs? <span class="text-red-500">*</span></label
     >
     <div
@@ -4457,8 +4457,8 @@ export const servicesForms: FormType = {
     >
       <button
         type="button"
-        id="decrement-button-two_seater-count"
-        data-input-counter="quantity-two_seater-count"
+        id="decrement-button-dining-chair-count"
+        data-input-counter="quantity-dining-chair-count"
         data-operation="decrement"
         class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -4475,11 +4475,11 @@ export const servicesForms: FormType = {
         </svg>
       </button>
       <input
-        name="two_seater_count"
+        name="dining_chair_count"
         maxlength="1"
         min="1"
         type="text"
-        id="quantity-two_seater-count"
+        id="quantity-dining-chair-count"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         value="1"
         oninput="this.value = this.value.replace(/[^1-9]/g, '');"
@@ -4488,8 +4488,8 @@ export const servicesForms: FormType = {
       />
       <button
         type="button"
-        id="increment-button-two_seater-count"
-        data-input-counter="quantity-dining_chairs-count"
+        id="increment-button-dining-chair-count"
+        data-input-counter="quantity-dining-chair-count"
         data-operation="increment"
         class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -4778,7 +4778,6 @@ export const servicesForms: FormType = {
         value="fabric"
         name="material_options"
         class="hidden peer"
-        required
       />
       <label
         for="fabric"
@@ -4935,6 +4934,7 @@ export const servicesForms: FormType = {
         id="quantity-babycot"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         required
+        disabled
       />
       <button
         type="button"
@@ -4995,6 +4995,7 @@ export const servicesForms: FormType = {
         id="quantity-single_mattress"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         required
+        disabled
       />
       <button
         type="button"
@@ -5055,6 +5056,7 @@ export const servicesForms: FormType = {
         id="quantity-double-mattress"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         required
+        disabled
       />
       <button
         type="button"
@@ -5115,6 +5117,7 @@ export const servicesForms: FormType = {
         id="quantity-queen-size"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         required
+        disabled
       />
       <button
         type="button"
@@ -5175,6 +5178,7 @@ export const servicesForms: FormType = {
         id="quantity-king-size"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         required
+        disabled
       />
       <button
         type="button"
@@ -5212,10 +5216,516 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Window Cleaning': `
-        <label for="window-cleaning-number">Number of windows for Window Cleaning:</label>
-        <input type="text" id="window-cleaning-number" name="window-cleaning-number">
-    `,
+  'Window Cleaning': `<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="small_window" class="font-semibold text-lg text-muted"
+    >Small window <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-small_window"
+      data-input-counter="quantity-small_window"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="small_window"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-small_window"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-small_window"
+      data-input-counter="quantity-small_window"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="medium_window" class="font-semibold text-lg text-muted"
+    >Medium window <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-medium_window"
+      data-input-counter="quantity-medium_window"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="medium_window"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-medium_window"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-medium_window"
+      data-input-counter="quantity-medium_window"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="large_window" class="font-semibold text-lg text-muted"
+    >Large window <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-large_window"
+      data-input-counter="quantity-large_window"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="large_window"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-large_window"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-large_window"
+      data-input-counter="quantity-large_window"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="bay_window" class="font-semibold text-lg text-muted"
+    >Bay window <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-bay_window"
+      data-input-counter="quantity-bay_window"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="bay_window"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-bay_window"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-bay_window"
+      data-input-counter="quantity-bay_window"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="french_door" class="font-semibold text-lg text-muted"
+    >French door <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-french_door"
+      data-input-counter="quantity-french_door"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="french_door"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-french_door"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-french_door"
+      data-input-counter="quantity-french_door"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="flex-row w-full px-2 mt-5 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    Which sides of the windows should we clean? <span class="text-red-500"
+      >*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="outside-option"
+        name="window_cleaning_sides"
+        value="outside"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="outside-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Outside
+        </div>
+      </label>
+    </li>
+
+    <li class="h-full">
+      <input
+        type="radio"
+        id="inside-option"
+        value="inside"
+        name="window_cleaning_sides"
+        class="hidden peer"
+      />
+      <label
+        for="inside-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Inside</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="inside_and_outside-option"
+        value="inside and outside"
+        name="window_cleaning_sides"
+        class="hidden peer"
+      />
+      <label
+        for="inside_and_outside-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Inside and Outside
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    Would you be able to provide us with:
+  </label>
+  <ul class="grid w-full gap-2 md:gap-3 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        input-option-checked="electricity-section"
+        type="checkbox"
+        id="electricity-option"
+        value="electricity"
+        name="utility_options"
+        class="hidden peer"
+      />
+      <label
+        for="electricity-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Electricity
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="water-section"
+        type="checkbox"
+        id="water-option"
+        value="water"
+        name="utility_options"
+        class="hidden peer"
+      />
+      <label
+        for="water-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Water</div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="electricity-section" class="w-full px-2 md:px-16 mb-6 md:mb-8 hidden">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="electricity-location"
+  >
+    Where is the electrical outlet located: <span class="text-red-500"
+      >*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="inside-location"
+        name="electricity-location"
+        value="inside"
+        class="hidden peer"
+        required
+        disabled
+      />
+      <label
+        for="inside-location"
+        class="inline-flex h-12 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Inside</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="outside-location"
+        value="outside"
+        name="electricity-location"
+        class="hidden peer"
+        disabled
+      />
+      <label
+        for="outside-location"
+        class="inline-flex h-12 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Outside
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="water-section" class="w-full px-2 md:px-16 mb-6 md:mb-8 hidden">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="water-location"
+  >
+    Where is your water tap located: <span class="text-red-500">*</span>
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="inside-location-water"
+        name="water-location"
+        value="inside"
+        class="hidden peer"
+        required
+        disabled
+      />
+      <label
+        for="inside-location-water"
+        class="inline-flex h-12 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Inside</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="outside-location-water"
+        value="outside"
+        name="water-location"
+        class="hidden peer"
+        disabled
+      />
+      <label
+        for="outside-location-water"
+        class="inline-flex h-12 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Outside
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
   'Curtain Cleaning': `
         <label for="curtain-cleaning-type">Type of curtains for Curtain Cleaning:</label>
         <input type="text" id="curtain-cleaning-type" name="curtain-cleaning-type">
