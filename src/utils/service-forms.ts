@@ -5726,10 +5726,184 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Curtain Cleaning': `
-        <label for="curtain-cleaning-type">Type of curtains for Curtain Cleaning:</label>
-        <input type="text" id="curtain-cleaning-type" name="curtain-cleaning-type">
-    `,
+  'Curtain Cleaning': `<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="short" class="font-semibold text-lg text-muted"
+    >Short <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-short"
+      data-input-counter="quantity-short"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="short"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-short"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-short"
+      data-input-counter="quantity-short"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  class="flex justify-between items-center w-full px-5 md:px-20 my-2 pb-5 border-b-4 border-dotted"
+>
+  <label for="full_length" class="font-semibold text-lg text-muted"
+    >Full length <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-full_length"
+      data-input-counter="quantity-full_length"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="full_length"
+      maxlength="1"
+      min="0"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      type="text"
+      id="quantity-full_length"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-full_length"
+      data-input-counter="quantity-full_length"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="flex-row w-full px-2 mt-5 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    Select Cleaning Method: <span class="text-red-500">*</span>
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="steam-option"
+        name="cleaning_method"
+        value="steam"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="steam-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Steam Cleaning
+        </div>
+      </label>
+    </li>
+
+    <li class="h-full">
+      <input
+        type="radio"
+        id="dry-option"
+        value="dry"
+        name="cleaning_method"
+        class="hidden peer"
+      />
+      <label
+        for="dry-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Dry Cleaning
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
   'Oven Cleaning': `
         <label for="oven-cleaning-size">Size of the oven for Oven Cleaning:</label>
         <input type="text" id="oven-cleaning-size" name="oven-cleaning-size">
