@@ -4766,7 +4766,7 @@ export const servicesForms: FormType = {
 </div>
 <div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
   <label class="mb-5 text-lg font-medium text-gray-900">
-    What kind of material are your items?* <span class="text-red-500"
+    What kind of material are your items? <span class="text-red-500"
       >*</span
     >
   </label>
@@ -4854,7 +4854,7 @@ export const servicesForms: FormType = {
   <label
     class="block tracking-wide text-gray-700 text-base font-bold mb-2"
   >
-    Choose your property type: <span class="text-red-500">*</span>
+  Would you like to add mattress cleaning? <span class="text-red-500">*</span>
   </label>
   <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-4 mt-4">
     <li class="h-full">
@@ -5904,10 +5904,1325 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Oven Cleaning': `
-        <label for="oven-cleaning-size">Size of the oven for Oven Cleaning:</label>
-        <input type="text" id="oven-cleaning-size" name="oven-cleaning-size">
-    `,
+  'Oven Cleaning': `<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    What kind of Sofas/Chairs would you like cleaned? <span
+      class="text-red-500">*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-10 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        input-option-checked="aga_oven-section"
+        type="checkbox"
+        id="aga_oven-option"
+        value="aga oven"
+        name="oven_options"
+        class="hidden peer"
+      />
+      <label
+        for="aga_oven-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white stroke-black peer-checked:stroke-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            viewBox="77.803 190.572 334.828 252.361"
+            width="334.828"
+            height="252.361"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="77.803"
+              y="190.572"
+              width="334.828"
+              height="225.211"
+              style="fill: none; fill-rule: evenodd;paint-order: fill; stroke-linecap: round; stroke-miterlimit: 30; stroke-linejoin: round; stroke-width: 23px;"
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="256.539"
+              y="217.496"
+              width="122.936"
+              height="65.258"
+              style="fill: none; stroke-width: 11px;"
+              rx="3.073"
+              ry="3.073"
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="108.966"
+              y="217.893"
+              width="122.936"
+              height="65.258"
+              style="fill: none; stroke-width: 11px;"
+              rx="3.073"
+              ry="3.073"
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="107.213"
+              y="309.039"
+              width="122.936"
+              height="65.258"
+              style="fill: none; stroke-width: 11px;"
+              rx="3.073"
+              ry="3.073"
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="257.077"
+              y="309.915"
+              width="122.936"
+              height="65.258"
+              style="fill: none; stroke-width: 11px;"
+              rx="3.073"
+              ry="3.073"
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="113.257"
+              y="426.679"
+              width="43.82"
+              height="15.775"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="320.689"
+              y="427.158"
+              width="43.82"
+              height="15.775"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="365.323"
+              y="321.48"
+              width="28.763"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="366.031"
+              y="345.626"
+              width="28.199"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="366.595"
+              y="251.132"
+              width="26.507"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="365.557"
+              y="227.739"
+              width="28.763"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="245.271"
+              y="238.395"
+              width="23.802"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="245.073"
+              y="334.732"
+              width="23.238"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="92.277"
+              y="347.085"
+              width="33.275"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="92.23"
+              y="322.336"
+              width="33.275"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="93.912"
+              y="251.738"
+              width="33.275"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="93.671"
+              y="229.219"
+              width="33.275"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="219.16"
+              y="238.424"
+              width="22.674"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+            <rect
+              x="218.724"
+              y="334.85"
+              width="22.11"
+              height="16.293"
+              style=""
+              transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, -1.4210854715202004e-14)"
+            ></rect>
+          </svg>
+          <div class="w-full text-2xl font-semibold">Aga oven</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="bbqs-section"
+        type="checkbox"
+        id="bbqs-option"
+        value="bbqs"
+        name="oven_options"
+        class="hidden peer"
+      />
+      <label
+        for="bbqs-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+            class="mb-1 w-24 h-24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+          >
+            <path
+              class="st0"
+              d="M498.268,83.64c-3.426-6.862-8.517-13.483-19.147-11.894c-8.634,1.29-16.353,3.693-29.927-4.632 c-40.041-33.945-111.581-56.56-193.202-56.56c-81.654,0-153.22,22.632-193.244,56.593c-13.541,8.284-21.252,5.889-29.868,4.599 c-10.63-1.588-15.72,5.032-19.148,11.894c-4.758,9.524-24.13,43.293-6.388,57.492c13.766,11.021,20.487,17.924,23.789,22 c14.174,96.917,94.588,196.63,224.859,196.63c130.288,0,210.703-99.712,224.875-196.63c3.302-4.076,10.023-10.979,23.789-22 C522.398,126.933,503.026,93.164,498.268,83.64z M71.506,129.769c0-36.473,42.396-67.93,104.02-83.043l-101.542,97.5 C72.488,139.501,71.506,134.702,71.506,129.769z M89.606,169.685c-0.723-0.748-1.355-1.538-2.046-2.304L221.124,39.165 c1.698-0.166,3.319-0.433,5.04-0.574c10.198-0.923,20.636-1.355,31.25-1.355c6.804,0,13.466,0.274,20.078,0.674l-159.59,153.053 C106.591,184.557,96.992,177.471,89.606,169.685z M187.438,215.566c-15.571-3.111-30.06-7.32-43.194-12.294 c-0.308-0.117-0.582-0.25-0.881-0.374L311.762,41.22c0.374,0.05,0.766,0.083,1.132,0.141c16.077,2.529,31.149,6.156,45.048,10.613 c0.166,0.05,0.324,0.117,0.49,0.175l-170.42,163.517C187.829,215.632,187.629,215.607,187.438,215.566z M276.179,221.879 c-6.138,0.341-12.452,0.507-18.764,0.507c-12.601,0-24.937-0.648-36.847-1.88L385.074,62.638 c13.49,6.263,25.111,13.607,34.326,21.842c0.715,0.616,1.356,1.265,2.047,1.897L280.579,221.538 C279.098,221.621,277.668,221.813,276.179,221.879z M323.997,216.148l113.577-108.978c3.685,7.245,5.731,14.822,5.731,22.599 C443.305,169.27,393.807,202.848,323.997,216.148z"
+            ></path>
+            <path
+              class="st0"
+              d="M377.754,340.414c-13.109,8.01-27.324,14.738-42.578,19.962l17.409,43.551H159.407l17.866-44.716 c-15.637-3.926-30.259-9.465-43.892-16.261L89.24,473.696c-4.018,10.946,0.956,22.874,11.129,26.616 c10.181,3.751,21.692-2.105,25.726-13.042l19.838-49.632h220.126l19.838,49.632c4.035,10.937,15.546,16.792,25.726,13.042 c10.173-3.742,15.147-15.67,11.13-26.616L377.754,340.414z"
+            ></path>
+          </svg>
+          <div class="w-full text-2xl font-semibold">BBQs</div>
+        </div></label
+      >
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="oven-section"
+        type="checkbox"
+        id="oven-option"
+        value="oven"
+        name="oven_options"
+        class="hidden peer"
+      />
+      <label
+        for="oven-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+          <svg
+          class="mb-1 w-24 h-24"
+            viewBox="0 0 50 50"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            ><path
+                d="M12 2C10.9 2 10 2.9 10 4L7 4C5.35 4 4 5.35 4 7L4 14L46 14L46 7C46 5.35 44.65 4 43 4L40 4C40 2.9 39.1 2 38 2L32 2C30.9 2 30 2.9 30 4L21 4C21 2.9 20.1 2 19 2L12 2 z M 10 7C11.1 7 12 7.9 12 9C12 10.1 11.1 11 10 11C8.9 11 8 10.1 8 9C8 7.9 8.9 7 10 7 z M 16 7C17.1 7 18 7.9 18 9C18 10.1 17.1 11 16 11C14.9 11 14 10.1 14 9C14 7.9 14.9 7 16 7 z M 22 7C23.1 7 24 7.9 24 9C24 10.1 23.1 11 22 11C20.9 11 20 10.1 20 9C20 7.9 20.9 7 22 7 z M 28 7C29.1 7 30 7.9 30 9C30 10.1 29.1 11 28 11C26.9 11 26 10.1 26 9C26 7.9 26.9 7 28 7 z M 40 7C41.1 7 42 7.9 42 9C42 10.1 41.1 11 40 11C38.9 11 38 10.1 38 9C38 7.9 38.9 7 40 7 z M 4 16L4 42C4 43.65 5.35 45 7 45L9 45L9 46C9 47.1 9.9 48 11 48L14 48C15.1 48 16 47.1 16 46L16 45L34 45L34 46C34 47.1 34.9 48 36 48L39 48C40.1 48 41 47.1 41 46L41 45L43 45C44.65 45 46 43.65 46 42L46 16L4 16 z M 10 21L40 21L40 39L10 39L10 21 z"
+              ></path></g
+            ></svg
+          >
+          <div class="w-full text-2xl font-semibold">Oven</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="extractor-section"
+        type="checkbox"
+        id="extractor-option"
+        value="extractor"
+        name="oven_options"
+        class="hidden peer"
+      />
+      <label
+        for="extractor-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+        <svg
+        class="mb-1 w-24 h-24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 512.003 512.003"
+        > <g><polygon
+                points="348.506,167.415 163.493,167.415 11.887,236.943 500.112,236.943 "
+              ></polygon>
+            </g>
+          </g>
+          <g>
+            <g>
+              <rect y="267.359" width="512.003" height="78.324"></rect>
+            </g>
+          </g>
+          <g>
+            <g>
+              <rect
+                x="180.344"
+                y="18.604"
+                width="151.305"
+                height="118.394"></rect>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M152.285,411.41c0-6.791,1.288-9.476,3.419-13.923c2.704-5.641,6.409-13.367,6.409-27.074h-30.417 c0,6.792-1.288,9.476-3.419,13.924c-2.705,5.641-6.409,13.366-6.409,27.073c0,13.707,3.704,21.433,6.409,27.073 c2.132,4.447,3.419,7.132,3.419,13.924c0,6.79-1.288,9.474-3.419,13.92c-2.705,5.64-6.409,13.366-6.409,27.071h30.417 c0-6.79,1.288-9.474,3.419-13.92c2.705-5.64,6.409-13.365,6.409-27.071c0-13.707-3.704-21.433-6.409-27.073 C153.572,420.887,152.285,418.202,152.285,411.41z"
+              ></path>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M228.292,411.41c0-6.791,1.288-9.476,3.419-13.923c2.704-5.641,6.409-13.367,6.409-27.074h-30.417 c0,6.792-1.288,9.476-3.419,13.924c-2.705,5.641-6.409,13.366-6.409,27.073c0,13.707,3.704,21.433,6.409,27.073 c2.132,4.447,3.419,7.132,3.419,13.924c0,6.79-1.288,9.474-3.419,13.92c-2.705,5.64-6.409,13.366-6.409,27.071h30.417 c0-6.79,1.288-9.474,3.419-13.92c2.705-5.64,6.409-13.365,6.409-27.071c0-13.707-3.704-21.433-6.409-27.073 C229.579,420.887,228.292,418.202,228.292,411.41z"
+              ></path>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M304.297,411.41c0-6.791,1.288-9.476,3.419-13.923c2.705-5.641,6.409-13.367,6.409-27.074h-30.417 c0,6.792-1.288,9.476-3.419,13.924c-2.705,5.641-6.409,13.366-6.409,27.073c0,13.707,3.704,21.433,6.409,27.073 c2.132,4.447,3.419,7.132,3.419,13.924c0,6.79-1.288,9.474-3.419,13.92c-2.705,5.64-6.409,13.366-6.409,27.071h30.417 c0-6.79,1.288-9.474,3.419-13.92c2.705-5.64,6.409-13.365,6.409-27.071c0-13.707-3.704-21.433-6.409-27.073 C305.584,420.887,304.297,418.202,304.297,411.41z"
+              ></path>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M380.305,411.41c0-6.791,1.288-9.476,3.419-13.923c2.705-5.641,6.409-13.367,6.409-27.074h-30.417 c0,6.792-1.288,9.476-3.419,13.924c-2.705,5.641-6.409,13.366-6.409,27.073c0,13.707,3.704,21.433,6.409,27.073 c2.132,4.447,3.419,7.132,3.419,13.924c0,6.79-1.288,9.474-3.419,13.92c-2.705,5.64-6.409,13.366-6.409,27.071h30.417 c0-6.79,1.288-9.474,3.419-13.92c2.705-5.64,6.409-13.365,6.409-27.071c0-13.707-3.704-21.433-6.409-27.073 C381.591,420.887,380.305,418.202,380.305,411.41z"
+              ></path>
+            </g>
+          </g>
+        </g></svg
+      >
+          <div class="w-full text-2xl font-semibold">Extractor</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="microwave-section"
+        type="checkbox"
+        id="microwave-option"
+        value="microwave"
+        name="oven_options"
+        class="hidden peer"
+      />
+      <label
+        for="microwave-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+        <svg class="mb-1 w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path fill-rule="evenodd" d="M0 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm2.546 1.088h6.408c.321 0 .582.26.582.582v4.66c0 .322-.26.582-.582.582H2.546a.582.582 0 0 1-.582-.582V4.67c0-.322.26-.582.582-.582m8.146.748c0-.345.28-.625.625-.625h1.046a.625.625 0 1 1 0 1.25h-1.046a.625.625 0 0 1-.625-.625m.625 1.539a.625.625 0 1 0 0 1.25h1.046a.625.625 0 1 0 0-1.25z" clip-rule="evenodd"/></svg>
+          <div class="w-full text-2xl font-semibold">Microwave</div>
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        input-option-checked="hobs-section"
+        type="checkbox"
+        id="hobs-option"
+        value="Hobs"
+        name="oven_options"
+        class="hidden peer"
+      />
+      <label
+        for="hobs-option"
+        class="inline-flex h-44 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div
+          class="flex flex-col justify-center items-center w-full text-center"
+        >
+        <svg class="mb-1 w-24 h-24" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 315" xmlns:xlink="http://www.w3.org/1999/xlink"><g> <path d="m308,0h-301c-3.866,0-7,3.134-7,7v301c0,3.866 3.134,7 7,7h301c3.866,0 7-3.134 7-7v-301c0-3.866-3.134-7-7-7zm-7,301h-287v-287h287v287z"></path> <circle cx="200.919" cy="282.959" r="8.29"></circle> <circle cx="232.745" cy="282.959" r="8.29"></circle> <circle cx="264.57" cy="282.959" r="8.29"></circle> <path d="m94.313,283.352c35.203,0 63.843-28.64 63.843-63.842 0-35.202-28.64-63.842-63.843-63.842-35.202,0-63.842,28.64-63.842,63.842 0.001,35.202 28.64,63.842 63.842,63.842zm0-113.684c27.483,0 49.843,22.359 49.843,49.842 0,27.482-22.359,49.842-49.843,49.842-27.482,0-49.842-22.359-49.842-49.842 0.001-27.483 22.36-49.842 49.842-49.842z"></path> <path d="m104.648,135.216c28.554,0 51.783-23.23 51.783-51.784 0-28.554-23.229-51.783-51.783-51.783s-51.784,23.229-51.784,51.783c0,28.553 23.231,51.784 51.784,51.784zm0-89.568c20.834,7.10543e-15 37.783,16.949 37.783,37.783 0,20.834-16.949,37.784-37.783,37.784-20.834,0-37.784-16.95-37.784-37.784 2.84217e-14-20.833 16.95-37.783 37.784-37.783z"></path> <path d="m232.745,135.216c28.554,0 51.783-23.23 51.783-51.784 0-28.554-23.229-51.783-51.783-51.783s-51.783,23.229-51.783,51.783c0,28.553 23.229,51.784 51.783,51.784zm0-89.568c20.834,7.10543e-15 37.783,16.949 37.783,37.783 0,20.834-16.949,37.784-37.783,37.784s-37.783-16.95-37.783-37.784c0-20.833 16.949-37.783 37.783-37.783z"></path> <path d="m232.745,262.194c28.554,0 51.783-23.23 51.783-51.783s-23.229-51.784-51.783-51.784-51.783,23.23-51.783,51.784 23.229,51.783 51.783,51.783zm0-89.567c20.834,0 37.783,16.95 37.783,37.784s-16.949,37.783-37.783,37.783-37.783-16.949-37.783-37.783 16.949-37.784 37.783-37.784z"></path> </g> </g></svg>
+          <div class="w-full text-2xl font-semibold">Hobs</div>
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div id="aga_oven-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="two_oven_size-count" class="font-semibold text-lg text-muted"
+      >Two oven size <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-two_oven_size-count"
+        data-input-counter="quantity-two_oven_size-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="two_oven_size_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-two_oven_size-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-two_oven_size-count"
+        data-input-counter="quantity-two_oven_size-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="four_oven_size-count" class="font-semibold text-lg text-muted"
+      > Four oven size <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-four_oven_size-count"
+        data-input-counter="quantity-four_oven_size-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="four_oven_size_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-four_oven_size-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-four_oven_size-count"
+        data-input-counter="quantity-four_oven_size-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="side_module-count" class="font-semibold text-lg text-muted"
+      > Side module <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-side_module-count"
+        data-input-counter="quantity-side_module-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="side_module_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-side_module-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-side_module-count"
+        data-input-counter="quantity-side_module-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="bbqs-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="small_barbecue-count" class="font-semibold text-lg text-muted"
+      >Small barbecue <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-small_barbecue-count"
+        data-input-counter="quantity-small_barbecue-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="small_barbecue_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-small_barbecue-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-small_barbecue-count"
+        data-input-counter="quantity-small_barbecue-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="large_barbecue-count" class="font-semibold text-lg text-muted"
+      >Large barbecue <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-large_barbecue-count"
+        data-input-counter="quantity-large_barbecue-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="large_barbecue_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-large_barbecue-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-large_barbecue-count"
+        data-input-counter="quantity-large_barbecue-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="oven-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="single_oven-count" class="font-semibold text-lg text-muted"
+      >Single oven <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-single_oven-count"
+        data-input-counter="quantity-single_oven-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="single_oven_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-single_oven-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-single_oven-count"
+        data-input-counter="quantity-single_oven-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="double_oven-count" class="font-semibold text-lg text-muted"
+      >Double oven <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-double_oven-count"
+        data-input-counter="quantity-double_oven-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="double_oven_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-double_oven-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-double_oven-count"
+        data-input-counter="quantity-double_oven-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="single_wide_oven-count" class="font-semibold text-lg text-muted"
+      >Single wide oven <span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-single_wide_oven-count"
+        data-input-counter="quantity-single_wide_oven-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="single_wide_oven_count"
+        maxlength="1"
+        min="0"
+        type="text"
+        id="quantity-single_wide_oven-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="0"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-single_wide_oven-count"
+        data-input-counter="quantity-single_wide_oven-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="extractor-section" class="hidden w-full">
+  <div
+  class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+>
+  <label for="extractor-count" class="font-semibold text-lg text-muted"
+    >Extractor <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-extractor-count"
+      data-input-counter="quantity-extractor-count"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="extractor_count"
+      maxlength="1"
+      min="0"
+      type="text"
+      id="quantity-extractor-count"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      disabled
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-extractor-count"
+      data-input-counter="quantity-extractor-count"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  </div>
+  <div
+  class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+>
+  <label for="extractor_double-count" class="font-semibold text-lg text-muted"
+    >Extractor (double) <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-extractor_double-count"
+      data-input-counter="quantity-extractor_double-count"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="extractor_double_count"
+      maxlength="1"
+      min="0"
+      type="text"
+      id="quantity-extractor_double-count"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      disabled
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-extractor_double-count"
+      data-input-counter="quantity-extractor_double-count"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  </div>
+  <div
+  class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+>
+  <label for="range_extractor-count" class="font-semibold text-lg text-muted"
+    >Range extractor <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-range_extractor-count"
+      data-input-counter="quantity-range_extractor-count"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="range_extractor_count"
+      maxlength="1"
+      min="0"
+      type="text"
+      id="quantity-range_extractor-count"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      disabled
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-range_extractor-count"
+      data-input-counter="quantity-range_extractor-count"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  </div>
+</div>
+<div id="microwave-section" class="hidden w-full">
+  <div
+    class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+  >
+    <label for="microwave_oven-count" class="font-semibold text-lg text-muted"
+      >microwave oven<span class="text-red-500">*</span></label
+    >
+    <div
+      class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+    >
+      <button
+        type="button"
+        id="decrement-button-microwave_oven-count"
+        data-input-counter="quantity-microwave_oven-count"
+        data-operation="decrement"
+        class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <input
+        name="microwave_oven_count"
+        maxlength="1"
+        min="1"
+        type="text"
+        id="quantity-microwave_oven-count"
+        class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+        value="1"
+        oninput="this.value = this.value.replace(/[^1-9]/g, '');"
+        disabled
+        required
+      />
+      <button
+        type="button"
+        id="increment-button-microwave_oven-count"
+        data-input-counter="quantity-microwave_oven-count"
+        data-operation="increment"
+        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mx-2 fill-current"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="hobs-section" class="hidden w-full">
+  <div
+  class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+>
+  <label for="gas_hob-count" class="font-semibold text-lg text-muted"
+    >Gas hob <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-gas_hob-count"
+      data-input-counter="quantity-gas_hob-count"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="gas_hob_count"
+      maxlength="1"
+      min="0"
+      type="text"
+      id="quantity-gas_hob-count"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      disabled
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-gas_hob-count"
+      data-input-counter="quantity-gas_hob-count"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  </div>
+  <div
+  class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+>
+  <label for="gas_hob_double-count" class="font-semibold text-lg text-muted"
+    >Gas hob (double) <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-gas_hob_double-count"
+      data-input-counter="quantity-gas_hob_double-count"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="gas_hob_double_count"
+      maxlength="1"
+      min="0"
+      type="text"
+      id="quantity-gas_hob_double-count"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      disabled
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-gas_hob_double-count"
+      data-input-counter="quantity-gas_hob_double-count"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  </div>
+  <div
+  class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
+>
+  <label for="ceramic_hob-count" class="font-semibold text-lg text-muted"
+    >Ceramic hob <span class="text-red-500">*</span></label
+  >
+  <div
+    class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+  >
+    <button
+      type="button"
+      id="decrement-button-ceramic_hob-count"
+      data-input-counter="quantity-ceramic_hob-count"
+      data-operation="decrement"
+      class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <input
+      name="ceramic_hob_count"
+      maxlength="1"
+      min="0"
+      type="text"
+      id="quantity-ceramic_hob-count"
+      class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
+      value="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+      disabled
+      required
+    />
+    <button
+      type="button"
+      id="increment-button-ceramic_hob-count"
+      data-input-counter="quantity-ceramic_hob-count"
+      data-operation="increment"
+      class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 mx-2 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  </div>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
   'Rubbish Removal': `
         <label for="rubbish-removal-type">Type of rubbish for Rubbish Removal:</label>
         <input type="text" id="rubbish-removal-type" name="rubbish-removal-type">
