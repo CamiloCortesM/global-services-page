@@ -7229,16 +7229,495 @@ export const servicesForms: FormType = {
     type="text"
   />
 </div>`,
-  'Rubbish Removal': `
-        <label for="rubbish-removal-type">Type of rubbish for Rubbish Removal:</label>
-        <input type="text" id="rubbish-removal-type" name="rubbish-removal-type">
-    `,
-  Gardening: `
-        <label for="gardening-area">Area for Gardening:</label>
-        <input type="text" id="gardening-area" name="gardening-area">
-    `,
-  'Maintenance service': `
-        <label for="maintenance-service-description">Description for Maintenance Service:</label>
-        <textarea id="maintenance-service-description" name="maintenance-service-description" rows="4"></textarea>
-    `,
+  'Rubbish Removal': `<div class="grid grid-cols-1 md:grid-cols-2 md:px-16 px-2 gap-5">
+  <div class="w-full mb-3">
+    <label
+      class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+      for="rubbish_yards"
+    >
+      Rubbish cubic yards: <span class="text-red-500">*</span>
+    </label>
+    <input
+      class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+      id="rubbish_yards"
+      name="rubbish_yards"
+      type="text"
+      required
+    />
+  </div>
+  <div class="w-full mb-3">
+    <label
+      class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+      for="rubbish_weight"
+    >
+      Rubbish weight (kg): <span class="text-red-500">*</span>
+    </label>
+    <input
+      class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+      id="rubbish_weight"
+      name="rubbish_weight"
+      type="text"
+      required
+    />
+  </div>
+</div>`,
+  Gardening: `<div class="flex-row w-full px-2 mt-5 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    How often would you like the gardening team to come? <span
+      class="text-red-500">*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-4 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="once-option"
+        name="gardening_frequency"
+        value="once"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="once-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">Once</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="weekly-option"
+        name="gardening_frequency"
+        value="weekly"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="weekly-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">Weekly</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="fortnightly-option"
+        value="fortnightly"
+        name="gardening_frequency"
+        class="hidden peer"
+      />
+      <label
+        for="fortnightly-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Fortnightly
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="monthly-option"
+        value="monthly"
+        name="gardening_frequency"
+        class="hidden peer"
+      />
+      <label
+        for="monthly-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Monthly
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="flex-row w-full px-2 mt-5 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900 select-none">
+    How many hours do you think you need per visit? <span
+      class="text-red-500">*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="one-hour-option"
+        name="hours_per_visit"
+        value="1"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="one-hour-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          1 hour per visit
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="two-hours-option"
+        name="hours_per_visit"
+        value="2"
+        class="hidden peer"
+      />
+      <label
+        for="two-hours-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          2 hours per visit
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="three-hours-option"
+        name="hours_per_visit"
+        value="3"
+        class="hidden peer"
+      />
+      <label
+        for="three-hours-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          3 hours per visit
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="flex-row w-full px-2 mt-5 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900 select-none">
+    How big is your garden? <span class="text-red-500">*</span>
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="up-to-30sqm-option"
+        name="garden_size"
+        value="up_to_30_sqm"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="up-to-30sqm-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Up to 30 sq. m.
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="up-to-60sqm-option"
+        name="garden_size"
+        value="up_to_60_sqm"
+        class="hidden peer"
+      />
+      <label
+        for="up-to-60sqm-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Up to 60 sq. m.
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="over-60sqm-option"
+        name="garden_size"
+        value="over_60_sqm"
+        class="hidden peer"
+      />
+      <label
+        for="over-60sqm-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Over 60 sq. m.
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="flex-row w-full px-2 mt-5 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900 select-none">
+    What is the condition of your garden? <span class="text-red-500"
+      >*</span
+    >
+  </label>
+  <ul class="grid w-full gap-2 md:gap-4 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="radio"
+        id="well-maintained-option"
+        name="garden_condition"
+        value="well_maintained"
+        class="hidden peer"
+        required
+      />
+      <label
+        for="well-maintained-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Well maintained
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="tlc-option"
+        name="garden_condition"
+        value="in_need_of_some_TLC"
+        class="hidden peer"
+      />
+      <label
+        for="tlc-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          In need of some TLC
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="radio"
+        id="overgrown-option"
+        name="garden_condition"
+        value="overgrown"
+        class="hidden peer"
+      />
+      <label
+        for="overgrown-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white select-none"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Overgrown
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="flex-row w-full px-2 mt-8 md:px-16 mb-6 md:mb-5">
+  <label class="mb-5 text-lg font-medium text-gray-900">
+    Pick your priorities for the service:
+  </label>
+  <ul class="grid w-full gap-2 md:gap-3 md:grid-cols-3 mt-4">
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="weeding-option"
+        value="weeding"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="weeding-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Weeding
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="mowing-option"
+        value="mowing"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="mowing-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Mowing</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="leaf-collection-option"
+        value="leaf_collection"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="leaf-collection-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Leaf collection
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="pruning-option"
+        value="pruning"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="pruning-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Pruning
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="edging-option"
+        value="edging"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="edging-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">Edging</div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="re-establish-beds-option"
+        value="re_establish_beds"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="re-establish-beds-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Re-establish beds
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="turn-over-beds-option"
+        value="turn_over_beds"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="turn-over-beds-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Turn over beds
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="replanting-option"
+        value="replanting"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="replanting-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Replanting
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="hedge-cutting-option"
+        value="hedge_cutting"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="hedge-cutting-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Hedge cutting
+        </div>
+      </label>
+    </li>
+    <li class="h-full">
+      <input
+        type="checkbox"
+        id="bush-reshaping-option"
+        value="bush_reshaping"
+        name="service_priorities"
+        class="hidden peer"
+      />
+      <label
+        for="bush-reshaping-option"
+        class="inline-flex h-16 items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-[#494f8c] peer-checked:bg-[#494f8c] hover:text-gray-600 peer-checked:text-white hover:bg-gray-50 fill-black peer-checked:fill-white"
+      >
+        <div class="w-full text-lg font-semibold text-center">
+          Bush reshaping
+        </div>
+      </label>
+    </li>
+  </ul>
+</div>
+<div class="w-full px-2 md:px-16 mb-6 md:mb-8">
+  <label
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    for="any-requirements"
+  >
+    Any special requirements?
+  </label>
+  <input
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-800"
+    id="any-requirements"
+    name="additional_requirements"
+    type="text"
+  />
+</div>`,
+  'Maintenance service': `<div class="mb-6 px-2 md:px-16">
+  <label
+    for="service_details"
+    class="block tracking-wide text-gray-700 text-base font-bold mb-2"
+    >Maintenance Service Details: <span class="text-red-500">*</span
+    ></label
+  >
+  <textarea
+    id="service_details"
+    name="service_details"
+    class="form-textarea w-full bg-gray-100 border border-gray-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+    rows="6"
+    placeholder="Please provide details about the maintenance service you need"
+    required
+  ></textarea>
+</div>`,
 };
