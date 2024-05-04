@@ -1,0 +1,28 @@
+---
+import Button from '../ui/Button.astro';
+import StepForm from './StepForm.astro';
+---
+
+<StepForm id="step2" classes="hidden" title="Rubbish cleaning">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div id="form-step2" class="w-full">
+      
+    </div>
+  </div>
+  <div class="flex -mx-3 px-2 md:px-16 mb-6">
+    <Button
+      data-previous
+      type="button"
+      text="PREVIOUS"
+      variant="tertiary"
+      class="w-auto"
+    />
+    <Button
+      data-next
+      type="button"
+      text="NEXT"
+      variant="tertiary"
+      class="ml-3 -auto"
+    />
+  </div>
+</StepForm>
