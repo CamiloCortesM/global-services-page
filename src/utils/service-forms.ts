@@ -6282,7 +6282,8 @@ export const servicesForms: FormType = {
     </li>
   </ul>
 </div>
-<div id="aga_oven-section" class="hidden w-full">
+<div id="aga_oven-section" class="mt-5 mb-5 border-b-4 border-dotted w-full hidden">
+  <h3 class="mb-5 text-2xl font-medium text-gray-900 text-center">Aga oven</h3>
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
@@ -6467,7 +6468,8 @@ export const servicesForms: FormType = {
     </div>
   </div>
 </div>
-<div id="bbqs-section" class="hidden w-full">
+<div id="bbqs-section" class="mt-5 mb-5 border-b-4 border-dotted w-full hidden">
+  <h3 class="mb-5 text-2xl font-medium text-gray-900 text-center">BBQs</h3>
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
@@ -6591,7 +6593,8 @@ export const servicesForms: FormType = {
     </div>
   </div>
 </div>
-<div id="oven-section" class="hidden w-full">
+<div id="oven-section" class="mt-5 mb-5 border-b-4 border-dotted w-full hidden">
+  <h3 class="mb-5 text-2xl font-medium text-gray-900 text-center">Oven</h3>
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
@@ -6776,7 +6779,8 @@ export const servicesForms: FormType = {
     </div>
   </div>
 </div>
-<div id="extractor-section" class="hidden w-full">
+<div id="extractor-section" class="mt-5 mb-5 border-b-4 border-dotted w-full hidden">
+  <h3 class="mb-5 text-2xl font-medium text-gray-900 text-center">Extractor</h3>
   <div
   class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
 >
@@ -6961,7 +6965,8 @@ export const servicesForms: FormType = {
   </div>
   </div>
 </div>
-<div id="microwave-section" class="hidden w-full">
+<div id="microwave-section" class="mt-5 mb-5 border-b-4 border-dotted w-full hidden">
+  <h3 class="mb-5 text-2xl font-medium text-gray-900 text-center">Microwave</h3>
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
@@ -7024,7 +7029,8 @@ export const servicesForms: FormType = {
     </div>
   </div>
 </div>
-<div id="hobs-section" class="hidden w-full">
+<div id="hobs-section" class="mt-5 mb-5 border-b-4 border-dotted w-full hidden">
+  <h3 class="mb-5 text-2xl font-medium text-gray-900 text-center">Hobs</h3>
   <div
   class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
 >
