@@ -52,12 +52,14 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
 
 <script>
   import { servicesForms } from '@/utils/service-forms';
+  import { transformServiceName } from '@/utils/utils';
 
   function init() {
     if (window.location.pathname !== '/booking') return;
     const multiStepForm = document.querySelector('[data-multi-step]');
     const fieldsets = [...(multiStepForm?.querySelectorAll('fieldset') || [])];
     const progressBar = document.querySelectorAll('#progressbar > div');
+    const alertError = document.querySelector('#alter_error');
 
     let currentStep = 0;
 
@@ -181,6 +183,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
           const resumeEmail = document.querySelector('#resume_email');
           const resumePhone = document.querySelector('#resume_phone');
           const resumeAddress = document.querySelector('#resume_address');
+
           const resumeServiceDetails: any = document.querySelector(
             '#resume_service_details'
           );
@@ -199,8 +202,10 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
           const bookingSummary = {};
 
           inputsService.forEach((input) => {
-            const name: any = input.getAttribute('name');
-            const value = input.value;
+            const name: any = transformServiceName(
+              input.getAttribute('name') || ''
+            );
+            const value = transformServiceName(input.value);
 
             if (!input.disabled) {
               if (input.type === 'checkbox') {
@@ -210,21 +215,14 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
                 if (input.checked) {
                   bookingSummary[name].push(value);
                 }
-              }
-              else if (input.type === 'radio') {
+              } else if (input.type === 'radio') {
                 if (input.checked) {
                   bookingSummary[name] = value;
                 }
-              }
-              else if (input.type === 'text') {
+              } else if (input.type === 'text') {
                 bookingSummary[name] = value;
               }
             }
-          });
-
-          Object.keys(bookingSummary).forEach((key) => {
-            const value = bookingSummary[key];
-            console.log(`${key}: ${value}`);
           });
 
           resumeZipcode!.textContent = zipcode.value;
@@ -257,22 +255,41 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
 
           break;
       }
+      //TODO: refactor all scripts
+      //TODO: display validations in all service inputs
+      //TODO: send the email with the data
 
       const inputs = [...fieldsets[currentStep].querySelectorAll('input')];
       inputs.forEach((input) => {
-        console.log(input.reportValidity());
+        const label = input.nextElementSibling;
+        console.log(label);
         if (!input.reportValidity()) {
-          input.classList.add('border-red-500');
+          if (input.classList.contains('hidden')) {
+            label!.classList.add('border-red-500');
+          } else {
+            input.classList.add('border-red-500');
+          }
         } else {
-          input.classList.remove('border-red-500');
+          if (input.classList.contains('hidden')) {
+            label!.classList.remove('border-red-500');
+          } else {
+            input.classList.remove('border-red-500');
+          }
         }
       });
 
       const allValid = inputs.every((input) => input.reportValidity());
 
       if (allValid) {
+        alertError!.classList.add('hidden');
+        alertError!.classList.remove('flex');
         currentStep += incrementor;
         showStep(currentStep);
+      } else {
+        alertError!.classList.remove('hidden');
+        alertError!.classList.add('flex');
+
+        alertError!.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
 
