@@ -3891,7 +3891,7 @@ export const servicesForms: FormType = {
   <div
     class="flex justify-between items-center w-full px-2 md:px-16 mb-6 md:mb-5"
   >
-    <label for="two_seater-count" class="font-semibold text-lg text-muted"
+    <label for="dining_chairs-count" class="font-semibold text-lg text-muted"
       >How many dining chairs? <span class="text-red-500">*</span
       ></label
     >
@@ -3900,8 +3900,8 @@ export const servicesForms: FormType = {
     >
       <button
         type="button"
-        id="decrement-button-two_seater-count"
-        data-input-counter="quantity-two_seater-count"
+        id="decrement-button-dining_chairs-count"
+        data-input-counter="quantity-dining_chairs-count"
         data-operation="decrement"
         class="cursor-pointer outline-none focus:outline-none border-r border-gray-200 transition-all text-gray-500 hover:text-blue-600"
       >
@@ -3918,11 +3918,11 @@ export const servicesForms: FormType = {
         </svg>
       </button>
       <input
-        name="two_seater_count"
+        name="dining_chairs_count"
         maxlength="1"
         min="1"
         type="text"
-        id="quantity-two_seater-count"
+        id="quantity-dining_chairs-count"
         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
         value="1"
         oninput="this.value = this.value.replace(/[^1-9]/g, '');"
@@ -3931,7 +3931,7 @@ export const servicesForms: FormType = {
       />
       <button
         type="button"
-        id="increment-button-two_seater-count"
+        id="increment-button-dining_chairs-count"
         data-input-counter="quantity-dining_chairs-count"
         data-operation="increment"
         class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600"
