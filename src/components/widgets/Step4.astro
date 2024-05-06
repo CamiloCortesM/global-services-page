@@ -17,49 +17,48 @@ import StepForm from './StepForm.astro';
       class="inline-flex items-center text-sm text-gray-500 px-2 py-1 border border-gray-300 rounded-lg"
     >
       <Icon name="tabler:map-pin-filled" class="w-6 h-6 mr-2" />
-      Wehlistrasse 66, 1200, Innsbruck
+      <span id="resume_zipcode"> Wehlistrasse 66, 1200, Innsbruck</span>
     </p>
     <p
       class="inline-flex items-center text-sm text-gray-500 px-2 py-1 border border-gray-300 rounded-lg"
     >
       <Icon name="tabler:calendar" class="w-6 h-6 mr-2" />
-      17 Desember 2023
+      <span id="resume_date"> 17 Desember 2023</span>
     </p>
-    <div
+
+    <p
       class="inline-flex items-center text-sm text-gray-500 px-2 py-1 border border-gray-300 rounded-lg"
     >
-      <p class="flex items-center">
-        <Icon name="tabler:spray" class="w-6 h-6 mr-2" />
-        General Cleaning
-      </p>
-    </div>
+      <Icon name="tabler:spray" class="w-6 h-6 mr-2" />
+      <span id="resume_service"> General Cleaning</span>
+    </p>
   </div>
   <hr class="my-4 bg-gray-300" />
   <div class="space-y-2 my-5">
     <h2 class="text-2xl font-bold">Contact Information</h2>
-    <p class="text-sm text-gray-500">
+    <p class="flex items-center text-sm text-gray-500">
       <span class="font-semibold mr-1">Name:</span>
-      John Doe
+      <span id="resume_name"></span>
     </p>
     <p class="flex items-center text-sm text-gray-500">
       <span class="font-semibold mr-1">Email:</span>
-      Johndoe@example.com
+      <span id="resume_email"></span>
     </p>
     <p class="flex items-center text-sm text-gray-500">
       <span class="font-semibold mr-1">Phone: </span>
-      123-456-7890
+      <span id="resume_phone"></span>
+    </p>
+    <p class="flex items-center text-sm text-gray-500">
+      <span class="font-semibold mr-1">Address: </span>
+      <span id="resume_address"></span>
     </p>
   </div>
   <hr class="my-4 bg-gray-300" />
   <div class="space-y-2 my-5">
     <h2 class="text-2xl font-bold">Service details:</h2>
-    <p class="flex items-center text-sm text-gray-500">
-      <span class="font-semibold mr-1">Preferred Calling Hours:</span> Anytime
-    </p>
-    <p class="flex items-center text-sm text-gray-500">
-      <span class="font-semibold mr-1">Additional Notes:</span> Lorem ipsum dolor
-      sit amet...
-    </p>
+    <div id="resume_service_details">
+     
+    </div>
   </div>
   <hr class="my-4 bg-gray-300" />
   <Button
@@ -67,7 +66,7 @@ import StepForm from './StepForm.astro';
     type="button"
     text="PREVIOUS"
     variant="tertiary"
-    class="ml-3 w-auto"
+    class="w-auto"
   />
   <Button type="submit" text="SUBMIT" variant="tertiary" class="ml-3 w-auto" />
 </StepForm>
