@@ -1872,7 +1872,7 @@ export const servicesForms: FormType = {
         input-radio-checked="house-section"
         type="radio"
         id="house-option"
-        value="house-flat"
+        value="house/flat"
         name="place"
         class="hidden peer"
       />
