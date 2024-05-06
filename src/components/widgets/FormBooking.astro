@@ -1,9 +1,9 @@
 ---
-import Step1 from './Step1.astro';
+import ServiceSelectorStep from './ServiceSelectorStep.astro';
 import ProgressBarStep from '../ui/ProgressBarStep.astro';
-import Step2 from './Step2.astro';
+import ServiceDetailsStep from './ServiceDetailsStep.astro';
 import Step4 from './Step4.astro';
-import Step3 from './Step3.astro';
+import PersonalDetailsStep from './PersonalDetailsStep.astro';
 ---
 
 <style is:global>
@@ -50,7 +50,7 @@ import Step3 from './Step3.astro';
   }
 </style>
 
-<!-- <script>
+<script>
   import { servicesForms } from '@/utils/service-forms';
 
   function init() {
@@ -88,7 +88,26 @@ import Step3 from './Step3.astro';
           return servicesForms['End of Tenancy Cleaning'];
         case 'Antiviral Sanitisation':
           return servicesForms['Antiviral Sanitisation'];
-        // Agrega más casos para los otros servicios si es necesario...
+        case 'Office Cleaning':
+          return servicesForms['Office Cleaning'];
+        case 'Carpet Cleaning':
+          return servicesForms['Carpet Cleaning'];
+        case 'Mattress Cleaning':
+          return servicesForms['Mattress Cleaning'];
+        case 'Upholstery Cleaning':
+          return servicesForms['Upholstery Cleaning'];
+        case 'Window Cleaning':
+          return servicesForms['Window Cleaning'];
+        case 'Curtain Cleaning':
+          return servicesForms['Curtain Cleaning'];
+        case 'Oven Cleaning':
+          return servicesForms['Oven Cleaning'];
+        case 'Rubbish Removal':
+          return servicesForms['Rubbish Removal'];
+        case 'Gardening':
+          return servicesForms['Gardening'];
+        case 'Maintenance service':
+          return servicesForms['Maintenance service'];
         default:
           return '';
       }
@@ -154,11 +173,88 @@ import Step3 from './Step3.astro';
             });
           }
           break;
-        case 1:
-          console.log('not implemented');
-          break;
         case 2:
-          console.log('not implemented');
+          const resumeZipcode = document.querySelector('#resume_zipcode');
+          const resumeDate = document.querySelector('#resume_date');
+          const resumeService = document.querySelector('#resume_service');
+          const resumeName = document.querySelector('#resume_name');
+          const resumeEmail = document.querySelector('#resume_email');
+          const resumePhone = document.querySelector('#resume_phone');
+          const resumeAddress = document.querySelector('#resume_address');
+          const resumeServiceDetails: any = document.querySelector(
+            '#resume_service_details'
+          );
+          resumeServiceDetails.innerHTML = '';
+          const zipcode: any = document.querySelector('#grid-zip');
+          const date: any = document.querySelector('#date');
+          const selectOption: any = fieldsets[0].querySelector('select');
+          const name: any = document.querySelector('#name');
+          const email: any = document.querySelector('#email');
+          const phone: any = document.querySelector('#phone');
+          const address: any = document.querySelector('#address');
+          const inputsService = [
+            ...(fieldsets[1]?.querySelectorAll('input') || []),
+          ];
+
+          const bookingSummary = {};
+
+          inputsService.forEach((input) => {
+            const name: any = input.getAttribute('name');
+            const value = input.value;
+
+            if (!input.disabled) {
+              if (input.type === 'checkbox') {
+                if (!bookingSummary[name]) {
+                  bookingSummary[name] = [];
+                }
+                if (input.checked) {
+                  bookingSummary[name].push(value);
+                }
+              }
+              else if (input.type === 'radio') {
+                if (input.checked) {
+                  bookingSummary[name] = value;
+                }
+              }
+              else if (input.type === 'text') {
+                bookingSummary[name] = value;
+              }
+            }
+          });
+
+          Object.keys(bookingSummary).forEach((key) => {
+            const value = bookingSummary[key];
+            console.log(`${key}: ${value}`);
+          });
+
+          resumeZipcode!.textContent = zipcode.value;
+          resumeDate!.textContent = date.value;
+          resumeName!.textContent = name.value;
+          resumeEmail!.textContent = email.value;
+          resumePhone!.textContent = phone.value;
+          resumeAddress!.textContent = address.value;
+          resumeService!.textContent =
+            selectOption.options[selectOption.selectedIndex].text;
+
+          function addDetailToSummary(title, value) {
+            const detailElement = document.createElement('p');
+            detailElement.classList.add(
+              'flex',
+              'items-center',
+              'text-sm',
+              'text-gray-500'
+            );
+            detailElement.innerHTML = `
+           <span class="font-semibold mr-1">${title}:</span> ${value}
+          `;
+            resumeServiceDetails.appendChild(detailElement);
+          }
+
+          Object.keys(bookingSummary).forEach((key) => {
+            const value = bookingSummary[key];
+            addDetailToSummary(key, value);
+          });
+
           break;
       }
 
@@ -268,7 +364,7 @@ import Step3 from './Step3.astro';
   }
   init();
   document.addEventListener('astro:after-swap', init);
-</script> -->
+</script>
 
 <form data-multi-step class="bg-white p-4 md:p-12 w-full mx-auto relative">
   <div class="w-full py-6 px-2 md:px-10 my-4">
@@ -277,9 +373,9 @@ import Step3 from './Step3.astro';
 
     <hr class="my-7 mx-2 md:mx-10 h-0.5 border-t-0 bg-neutral-100" />
 
-    <Step1 />
-    <Step2 />
-    <Step3 />
+    <ServiceSelectorStep />
+    <ServiceDetailsStep />
+    <PersonalDetailsStep />
     <Step4 />
   </div>
 </form>
