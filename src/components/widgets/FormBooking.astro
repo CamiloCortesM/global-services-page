@@ -2,7 +2,7 @@
 import ServiceSelectorStep from './ServiceSelectorStep.astro';
 import ProgressBarStep from '../ui/ProgressBarStep.astro';
 import ServiceDetailsStep from './ServiceDetailsStep.astro';
-import Step4 from './Step4.astro';
+import BookingSummaryStep from './BookingSummaryStep.astro';
 import PersonalDetailsStep from './PersonalDetailsStep.astro';
 ---
 
@@ -54,12 +54,16 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
   import { servicesForms } from '@/utils/service-forms';
   import { transformServiceName } from '@/utils/utils';
 
-  function init() {
+  function init(): void {
     if (window.location.pathname !== '/booking') return;
+
     const multiStepForm = document.querySelector('[data-multi-step]');
-    const fieldsets = [...(multiStepForm?.querySelectorAll('fieldset') || [])];
+    const fieldsets = [...multiStepForm?.querySelectorAll('fieldset')!];
     const progressBar = document.querySelectorAll('#progressbar > div');
     const alertError = document.querySelector('#alter_error');
+    let buttons: NodeListOf<Element> | null = null;
+    let checkboxes: NodeListOf<Element> | null = null;
+    let radios: NodeListOf<Element> | null = null;
 
     let currentStep = 0;
 
@@ -80,220 +84,11 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       });
     }
 
-    function getFormHTMLForService(service: string) {
-      switch (service) {
-        case 'Regular Cleaning':
-          return servicesForms['Regular Cleaning'];
-        case 'One off Cleaning':
-          return servicesForms['One off Cleaning'];
-        case 'End of Tenancy Cleaning':
-          return servicesForms['End of Tenancy Cleaning'];
-        case 'Antiviral Sanitisation':
-          return servicesForms['Antiviral Sanitisation'];
-        case 'Office Cleaning':
-          return servicesForms['Office Cleaning'];
-        case 'Carpet Cleaning':
-          return servicesForms['Carpet Cleaning'];
-        case 'Mattress Cleaning':
-          return servicesForms['Mattress Cleaning'];
-        case 'Upholstery Cleaning':
-          return servicesForms['Upholstery Cleaning'];
-        case 'Window Cleaning':
-          return servicesForms['Window Cleaning'];
-        case 'Curtain Cleaning':
-          return servicesForms['Curtain Cleaning'];
-        case 'Oven Cleaning':
-          return servicesForms['Oven Cleaning'];
-        case 'Rubbish Removal':
-          return servicesForms['Rubbish Removal'];
-        case 'Gardening':
-          return servicesForms['Gardening'];
-        case 'Maintenance service':
-          return servicesForms['Maintenance service'];
-        default:
-          return '';
-      }
+    function getFormHTMLForService(service: string): string {
+      return servicesForms[service] || '';
     }
 
-    let buttons: NodeListOf<Element> | null = null;
-    let checkboxes: NodeListOf<Element> | null = null;
-    let radios: NodeListOf<Element> | null = null;
-
-    multiStepForm?.addEventListener('click', (e: any) => {
-      let incrementor: number | null = null;
-      if (e.target!.matches('[data-next]')) {
-        incrementor = 1;
-      } else if (e.target.matches('[data-previous]')) {
-        currentStep += -1;
-        return showStep(currentStep);
-      }
-      if (incrementor == null) return;
-
-      switch (currentStep) {
-        case 0:
-          if (buttons && buttons?.length > 0) {
-            buttons.forEach((button) => {
-              button.removeEventListener('click', buttonClickHandler);
-            });
-          }
-
-          if (checkboxes && checkboxes?.length > 0) {
-            checkboxes.forEach((checkbox) => {
-              checkbox.removeEventListener('change', checkboxChangeHandler);
-            });
-          }
-          if (radios && radios?.length > 0) {
-            radios.forEach((radio) => {
-              radio.removeEventListener('change', checkboxChangeHandler);
-            });
-          }
-
-          const h2Element = fieldsets[currentStep + 1].querySelector('h2');
-          const selectElement = fieldsets[currentStep].querySelector('select');
-          const formStep2 =
-            fieldsets[currentStep + 1].querySelector('#form-step2');
-          if (h2Element && selectElement && formStep2) {
-            const selectedOptionText =
-              selectElement.options[selectElement.selectedIndex].text;
-            h2Element.textContent = selectedOptionText;
-            const formHTML = getFormHTMLForService(selectedOptionText);
-            formStep2.innerHTML = formHTML;
-
-            buttons = formStep2.querySelectorAll('[data-input-counter]');
-            buttons.forEach((button) => {
-              button.addEventListener('click', buttonClickHandler);
-            });
-
-            checkboxes = formStep2.querySelectorAll('[input-option-checked]');
-            checkboxes.forEach((checkbox) => {
-              checkbox.addEventListener('change', checkboxChangeHandler);
-            });
-
-            radios = formStep2.querySelectorAll('[input-radio-checked]');
-            radios.forEach((radio) => {
-              radio.addEventListener('change', radioChangeHandler);
-            });
-          }
-          break;
-        case 2:
-          const resumeZipcode = document.querySelector('#resume_zipcode');
-          const resumeDate = document.querySelector('#resume_date');
-          const resumeService = document.querySelector('#resume_service');
-          const resumeName = document.querySelector('#resume_name');
-          const resumeEmail = document.querySelector('#resume_email');
-          const resumePhone = document.querySelector('#resume_phone');
-          const resumeAddress = document.querySelector('#resume_address');
-
-          const resumeServiceDetails: any = document.querySelector(
-            '#resume_service_details'
-          );
-          resumeServiceDetails.innerHTML = '';
-          const zipcode: any = document.querySelector('#grid-zip');
-          const date: any = document.querySelector('#date');
-          const selectOption: any = fieldsets[0].querySelector('select');
-          const name: any = document.querySelector('#name');
-          const email: any = document.querySelector('#email');
-          const phone: any = document.querySelector('#phone');
-          const address: any = document.querySelector('#address');
-          const inputsService = [
-            ...(fieldsets[1]?.querySelectorAll('input') || []),
-          ];
-
-          const bookingSummary = {};
-
-          inputsService.forEach((input) => {
-            const name: any = transformServiceName(
-              input.getAttribute('name') || ''
-            );
-            const value = transformServiceName(input.value);
-
-            if (!input.disabled) {
-              if (input.type === 'checkbox') {
-                if (!bookingSummary[name]) {
-                  bookingSummary[name] = [];
-                }
-                if (input.checked) {
-                  bookingSummary[name].push(value);
-                }
-              } else if (input.type === 'radio') {
-                if (input.checked) {
-                  bookingSummary[name] = value;
-                }
-              } else if (input.type === 'text') {
-                bookingSummary[name] = value;
-              }
-            }
-          });
-
-          resumeZipcode!.textContent = zipcode.value;
-          resumeDate!.textContent = date.value;
-          resumeName!.textContent = name.value;
-          resumeEmail!.textContent = email.value;
-          resumePhone!.textContent = phone.value;
-          resumeAddress!.textContent = address.value;
-          resumeService!.textContent =
-            selectOption.options[selectOption.selectedIndex].text;
-
-          function addDetailToSummary(title, value) {
-            const detailElement = document.createElement('p');
-            detailElement.classList.add(
-              'flex',
-              'items-center',
-              'text-sm',
-              'text-gray-500'
-            );
-            detailElement.innerHTML = `
-           <span class="font-semibold mr-1">${title}:</span> ${value}
-          `;
-            resumeServiceDetails.appendChild(detailElement);
-          }
-
-          Object.keys(bookingSummary).forEach((key) => {
-            const value = bookingSummary[key];
-            addDetailToSummary(key, value);
-          });
-
-          break;
-      }
-      //TODO: refactor all scripts
-      //TODO: display validations in all service inputs
-      //TODO: send the email with the data
-
-      const inputs = [...fieldsets[currentStep].querySelectorAll('input')];
-      inputs.forEach((input) => {
-        const label = input.nextElementSibling;
-        console.log(label);
-        if (!input.reportValidity()) {
-          if (input.classList.contains('hidden')) {
-            label!.classList.add('border-red-500');
-          } else {
-            input.classList.add('border-red-500');
-          }
-        } else {
-          if (input.classList.contains('hidden')) {
-            label!.classList.remove('border-red-500');
-          } else {
-            input.classList.remove('border-red-500');
-          }
-        }
-      });
-
-      const allValid = inputs.every((input) => input.reportValidity());
-
-      if (allValid) {
-        alertError!.classList.add('hidden');
-        alertError!.classList.remove('flex');
-        currentStep += incrementor;
-        showStep(currentStep);
-      } else {
-        alertError!.classList.remove('hidden');
-        alertError!.classList.add('flex');
-
-        alertError!.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-
-    function radioChangeHandler() {
+    function handleRadioChange() {
       const targetId = this.getAttribute('input-radio-checked');
       const targetElement = document.getElementById(targetId);
 
@@ -323,7 +118,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       });
     }
 
-    function buttonClickHandler() {
+    function handlerCouterButton() {
       const inputId = this.getAttribute('data-input-counter');
       const operation = this.getAttribute('data-operation');
       const inputElement = document.getElementById(inputId) as HTMLInputElement;
@@ -342,7 +137,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       }
     }
 
-    function checkboxChangeHandler() {
+    function handleCheckboxChange() {
       const targetId = this.getAttribute('input-option-checked');
       const targetElement = document.getElementById(
         targetId
@@ -369,6 +164,207 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       }
     }
 
+    function handleNextButtonClick() {
+      handleStepChange(1);
+    }
+
+    function handlePreviousButtonClick() {
+      handleStepChange(-1);
+    }
+
+    function handleButtonClick(event) {
+      if (event.target.matches('[data-next]')) {
+        handleNextButtonClick();
+      } else if (event.target.matches('[data-previous]')) {
+        handlePreviousButtonClick();
+      }
+    }
+
+    function updateBookingSummary() {
+      const resumeZipcode = document.querySelector('#resume_zipcode');
+      const resumeDate = document.querySelector('#resume_date');
+      const resumeService = document.querySelector('#resume_service');
+      const resumeName = document.querySelector('#resume_name');
+      const resumeEmail = document.querySelector('#resume_email');
+      const resumePhone = document.querySelector('#resume_phone');
+      const resumeAddress = document.querySelector('#resume_address');
+
+      const resumeServiceDetails: any = document.querySelector(
+        '#resume_service_details'
+      );
+      resumeServiceDetails.innerHTML = '';
+      const zipcode: any = document.querySelector('#grid-zip');
+      const date: any = document.querySelector('#date');
+      const selectOption: any = fieldsets[0].querySelector('select');
+      const name: any = document.querySelector('#name');
+      const email: any = document.querySelector('#email');
+      const phone: any = document.querySelector('#phone');
+      const address: any = document.querySelector('#address');
+      const inputsService = [
+        ...(fieldsets[1]?.querySelectorAll('input') || []),
+      ];
+
+      const bookingSummary = {};
+
+      inputsService.forEach((input) => {
+        const name: any = transformServiceName(
+          input.getAttribute('name') || ''
+        );
+        const value = transformServiceName(input.value);
+
+        if (!input.disabled) {
+          if (input.type === 'checkbox') {
+            if (!bookingSummary[name]) {
+              bookingSummary[name] = [];
+            }
+            if (input.checked) {
+              bookingSummary[name].push(value);
+            }
+          } else if (input.type === 'radio') {
+            if (input.checked) {
+              bookingSummary[name] = value;
+            }
+          } else if (input.type === 'text') {
+            bookingSummary[name] = value;
+          }
+        }
+      });
+
+      resumeZipcode!.textContent = zipcode.value;
+      resumeDate!.textContent = date.value;
+      resumeName!.textContent = name.value;
+      resumeEmail!.textContent = email.value;
+      resumePhone!.textContent = phone.value;
+      resumeAddress!.textContent = address.value;
+      resumeService!.textContent =
+        selectOption.options[selectOption.selectedIndex].text;
+
+      Object.keys(bookingSummary).forEach((key) => {
+        const value = bookingSummary[key];
+        addDetailToSummary(key, value);
+      });
+    }
+
+    function addDetailToSummary(title:string, value:string) {
+      const detailElement = document.createElement('p');
+      detailElement.classList.add(
+        'flex',
+        'items-center',
+        'text-sm',
+        'text-gray-500'
+      );
+      detailElement.innerHTML = `
+      <span class="font-semibold mr-1">${title}:</span> ${value}
+    `;
+      const resumeServiceDetails = document.querySelector(
+        '#resume_service_details'
+      );
+      resumeServiceDetails!.appendChild(detailElement);
+    }
+
+    function validateInputs(inputs) {
+      inputs.forEach((input) => {
+        const label = input.nextElementSibling;
+        if (!input.reportValidity()) {
+          if (input.classList.contains('hidden')) {
+            label?.classList.add('border-red-500');
+          } else {
+            input.classList.add('border-red-500');
+          }
+        } else {
+          if (input.classList.contains('hidden')) {
+            label?.classList.remove('border-red-500');
+          } else {
+            input.classList.remove('border-red-500');
+          }
+        }
+      });
+    }
+
+    function updateServiceForm() {
+      if (buttons && buttons?.length > 0) {
+        buttons.forEach((button) => {
+          button.removeEventListener('click', handlerCouterButton);
+        });
+      }
+
+      if (checkboxes && checkboxes?.length > 0) {
+        checkboxes.forEach((checkbox) => {
+          checkbox.removeEventListener('change', handleCheckboxChange);
+        });
+      }
+      if (radios && radios?.length > 0) {
+        radios.forEach((radio) => {
+          radio.removeEventListener('change', handleCheckboxChange);
+        });
+      }
+
+      const h2Element = fieldsets[currentStep + 1].querySelector('h2');
+      const selectElement = fieldsets[currentStep].querySelector('select');
+      const formStep2 = fieldsets[currentStep + 1].querySelector('#form-step2');
+      if (h2Element && selectElement && formStep2) {
+        const selectedOptionText =
+          selectElement.options[selectElement.selectedIndex].text;
+        h2Element.textContent = selectedOptionText;
+        const formHTML = getFormHTMLForService(selectedOptionText);
+        formStep2.innerHTML = formHTML;
+
+        buttons = formStep2.querySelectorAll('[data-input-counter]');
+        buttons.forEach((button) => {
+          button.addEventListener('click', handlerCouterButton);
+        });
+
+        checkboxes = formStep2.querySelectorAll('[input-option-checked]');
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener('change', handleCheckboxChange);
+        });
+
+        radios = formStep2.querySelectorAll('[input-radio-checked]');
+        radios.forEach((radio) => {
+          radio.addEventListener('change', handleRadioChange);
+        });
+      }
+    }
+
+    function scrollToError() {
+      alertError!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function handleStepChange(incrementor) {
+      if (currentStep === 0 && incrementor === -1) return;
+      if (incrementor === -1) {
+        currentStep += -1;
+        return showStep(currentStep);
+      }
+
+      switch (currentStep) {
+        case 0:
+          updateServiceForm();
+          break;
+        case 2:
+          updateBookingSummary();
+          break;
+      }
+
+      const inputs = fieldsets[currentStep].querySelectorAll('input');
+      validateInputs(inputs);
+
+      const allValid = [...inputs].every((input) => input.reportValidity());
+
+      if (allValid) {
+        alertError!.classList.add('hidden');
+        alertError!.classList.remove('flex');
+        currentStep += incrementor;
+        showStep(currentStep);
+      } else {
+        alertError!.classList.remove('hidden');
+        alertError!.classList.add('flex');
+        scrollToError();
+      }
+    }
+
+    multiStepForm?.addEventListener('click', handleButtonClick);
+
     fieldsets.forEach((step) => {
       step.addEventListener('animationend', (e: any) => {
         fieldsets[currentStep].classList.remove('hidden');
@@ -393,6 +389,6 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
     <ServiceSelectorStep />
     <ServiceDetailsStep />
     <PersonalDetailsStep />
-    <Step4 />
+    <BookingSummaryStep />
   </div>
 </form>
