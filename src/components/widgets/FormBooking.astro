@@ -245,7 +245,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       });
     }
 
-    function addDetailToSummary(title:string, value:string) {
+    function addDetailToSummary(title: string, value: string) {
       const detailElement = document.createElement('p');
       detailElement.classList.add(
         'flex',
@@ -374,6 +374,53 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
         );
       });
     });
+
+    async function handleSubmit(event) {
+      console.log(event);
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const formDataObject = {} as any;
+      for (const [key, value] of formData.entries()) {
+        formDataObject[transformServiceName(key)] = value;
+      }
+      const {
+        name,
+        address,
+        email,
+        message,
+        date,
+        phone,
+        'preferable time': preferableTime,
+        ...formService
+      } = formDataObject;
+
+      console.log('name:', name);
+      console.log('address:', address);
+      console.log('email:', email);
+      console.log('message:', message);
+      console.log('date:', date);
+      console.log('phone:', phone);
+      console.log('preferableTime:', preferableTime);
+      console.log('Datos del formulario:', formService);
+
+      const data = await fetch('/api/sendEmail.json', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'Global Service & Maintenance <onboarding@resend.dev>',
+          to: ['camilo.cortes1753@gmail.com'],
+          subject: 'New booking',
+          html: '<p>Hi<p>',
+          text: 'Hi',
+        }),
+      });
+
+      console.log(data);
+    }
+
+    multiStepForm?.addEventListener('submit', handleSubmit);
   }
   init();
   document.addEventListener('astro:after-swap', init);

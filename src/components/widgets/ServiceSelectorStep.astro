@@ -17,6 +17,7 @@ import StepForm from './StepForm.astro';
         <select
           class="block appearance-none w-full bg-gray-100 border border-gray-100 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 overflow-y-auto"
           id="select-service"
+          name="select_service"
         >
           <option value="Regular Cleaning">Regular Cleaning</option>
           <option value="One off Cleaning">One off Cleaning</option>
@@ -60,6 +61,7 @@ import StepForm from './StepForm.astro';
         class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
         id="grid-zip"
         type="text"
+        name="zipcode"
         placeholder="Enter UK postcode"
         pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][A-Za-z]{2}"
         title="Please enter a valid UK postcode"
