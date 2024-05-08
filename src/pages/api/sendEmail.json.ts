@@ -5,14 +5,15 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 const SECRET_KEY = import.meta.env.SECRET_KEY_TURNSTILE || '';
 const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request,clientAddress }) => {
   const body = await request.json();
   const { to, from, html, subject, text, cf_turnstile_response } = body;
 
   let formData = new FormData();
-
+  
   formData.append('secret', SECRET_KEY);
   formData.append('response', cf_turnstile_response);
+  formData.append('remoteip', clientAddress);
 
   const result = await fetch(url, {
     body: formData,
