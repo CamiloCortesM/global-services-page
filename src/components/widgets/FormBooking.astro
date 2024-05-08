@@ -381,7 +381,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       const formData = new FormData(event.target);
       const formDataObject = {} as any;
       for (const [key, value] of formData.entries()) {
-        formDataObject[transformServiceName(key)] = value;
+        formDataObject[key] = value;
       }
       const {
         name,
@@ -390,6 +390,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
         message,
         date,
         phone,
+        'cf-turnstile-response': cf_turnstile,
         'preferable time': preferableTime,
         ...formService
       } = formDataObject;
@@ -403,6 +404,8 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       console.log('preferableTime:', preferableTime);
       console.log('Datos del formulario:', formService);
 
+      console.log(cf_turnstile)
+      
       const data = await fetch('/api/sendEmail.json', {
         method: 'POST',
         headers: {
@@ -412,6 +415,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
           from: 'Global Service & Maintenance <onboarding@resend.dev>',
           to: ['camilo.cortes1753@gmail.com'],
           subject: 'New booking',
+          cf_turnstile_response: cf_turnstile,
           html: '<p>Hi<p>',
           text: 'Hi',
         }),

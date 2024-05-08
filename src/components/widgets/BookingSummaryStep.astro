@@ -56,17 +56,23 @@ import StepForm from './StepForm.astro';
   <hr class="my-4 bg-gray-300" />
   <div class="space-y-2 my-5">
     <h2 class="text-2xl font-bold">Service details:</h2>
-    <div id="resume_service_details">
-     
-    </div>
+    <div id="resume_service_details"></div>
   </div>
   <hr class="my-4 bg-gray-300" />
-  <Button
-    data-previous
-    type="button"
-    text="PREVIOUS"
-    variant="tertiary"
-    class="w-auto"
-  />
-  <Button type="submit" text="SUBMIT" variant="tertiary" class="ml-3 w-auto" />
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAAZsgP4zOdPbgeHO"></div>
+  <div class="my-5">
+    <Button
+      data-previous
+      type="button"
+      text="PREVIOUS"
+      variant="tertiary"
+      class="w-auto"
+    />
+    <Button
+      type="submit"
+      text="SUBMIT"
+      variant="tertiary"
+      class="ml-3 w-auto"
+    />
+  </div>
 </StepForm>
