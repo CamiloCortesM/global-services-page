@@ -51,7 +51,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
 </style>
 
 <script>
-  import { servicesForms } from '@/utils/service-forms';
+  import { servicesForms, emailPage } from '@/utils/service-forms';
   import { transformServiceName } from '@/utils/utils';
 
   function init(): void {
@@ -395,6 +395,8 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
         ...formService
       } = formDataObject;
 
+      console.log(formDataObject);
+
       console.log('name:', name);
       console.log('address:', address);
       console.log('email:', email);
@@ -404,8 +406,8 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       console.log('preferableTime:', preferableTime);
       console.log('Datos del formulario:', formService);
 
-      console.log(cf_turnstile)
-      
+      console.log(cf_turnstile);
+
       const data = await fetch('/api/sendEmail.json', {
         method: 'POST',
         headers: {
@@ -416,7 +418,7 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
           to: ['camilo.cortes1753@gmail.com'],
           subject: 'New booking',
           cf_turnstile_response: cf_turnstile,
-          html: '<p>Hi<p>',
+          html: emailPage,
           text: 'Hi',
         }),
       });
