@@ -1,8 +1,8 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-const SECRET_KEY = import.meta.env.SECRET_KEY_TURNSTILE || '';
+const resend = new Resend(import.meta.env.PUBLIC_RESEND_API_KEY);
+const SECRET_KEY = import.meta.env.PUBLIC_SECRET_KEY_TURNSTILE || '';
 const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 export const POST: APIRoute = async ({ request,clientAddress }) => {
