@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request,clientAddress }) => {
   const { to, from, html, subject, text, cf_turnstile_response } = body;
 
   let formData = new FormData();
-  
+
   formData.append('secret', SECRET_KEY);
   formData.append('response', cf_turnstile_response);
   formData.append('remoteip', clientAddress);
