@@ -145,7 +145,6 @@
     window.onpageshow = onPageShow;
 
     document.addEventListener('astro:after-swap', () => {
-      initTheme();
       onLoad();
       onPageShow();
     });

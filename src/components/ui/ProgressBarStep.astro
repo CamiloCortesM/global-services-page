@@ -1,0 +1,92 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div id="progressbar" class="flex w-full">
+  <div class="w-1/4">
+    <div class="relative mb-2">
+      <div
+        class="w-10 h-10 mx-auto border-2 border-gray-200 rounded-full text-lg text-white flex items-center icon-active"
+      >
+        <span class="text-center w-full">
+          <Icon name="tabler:hand-click" class="w-full fill-current" />
+        </span>
+      </div>
+    </div>
+    <div class="text-xs text-center md:text-base">Select service</div>
+  </div>
+
+  <div class="w-1/4">
+    <div class="relative mb-2">
+      <div
+        class="absolute flex align-center items-center align-middle content-center"
+        style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)"
+      >
+        <div
+          class="w-full bg-gray-200 rounded items-center align-middle align-center flex-1"
+        >
+          <div class="py-1 rounded line-icon-step"></div>
+        </div>
+      </div>
+
+      <div
+        class="w-10 h-10 mx-auto border-2 border-gray-200 rounded-full text-lg text-white flex items-center icon-step"
+      >
+        <span class="text-center text-white w-full">
+          <Icon name="tabler:book-2" class="w-full fill-current" />
+        </span>
+      </div>
+    </div>
+
+    <div class="text-xs text-center md:text-base">Book</div>
+  </div>
+
+  <div class="w-1/4">
+    <div class="relative mb-2">
+      <div
+        class="absolute flex align-center items-center align-middle content-center"
+        style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)"
+      >
+        <div
+          class="w-full bg-gray-200 rounded items-center align-middle align-center flex-1"
+        >
+          <div class="py-1 rounded line-icon-step"></div>
+        </div>
+      </div>
+
+      <div
+        class="w-10 h-10 mx-auto border-2 border-gray-200 rounded-full text-lg text-white flex items-center icon-step"
+      >
+        <span class="text-center text-gray-600 w-full">
+          <Icon name="tabler:list-details" class="w-full fill-current" />
+        </span>
+      </div>
+    </div>
+    <div class="text-xs text-center md:text-base">Details</div>
+  </div>
+
+  <div class="w-1/4">
+    <div class="relative mb-2">
+      <div
+        class="absolute flex align-center items-center align-middle content-center"
+        style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)"
+      >
+        <div
+          class="w-full bg-gray-200 rounded items-center align-middle align-center flex-1"
+        >
+          <div class="py-1 rounded line-icon-step"></div>
+        </div>
+      </div>
+
+      <div
+        class="w-10 h-10 mx-auto border-2 border-gray-200 rounded-full text-lg text-white flex items-center icon-step"
+      >
+        <span class="text-center text-gray-600 w-full">
+          <Icon name="tabler:check" class="w-full fill-current" />
+        </span>
+      </div>
+    </div>
+
+    <div class="text-xs text-center md:text-base">Submit</div>
+  </div>
+</div>

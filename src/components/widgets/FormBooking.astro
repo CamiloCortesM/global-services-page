@@ -1,0 +1,533 @@
+---
+import ServiceSelectorStep from './ServiceSelectorStep.astro';
+import ProgressBarStep from '../ui/ProgressBarStep.astro';
+import ServiceDetailsStep from './ServiceDetailsStep.astro';
+import BookingSummaryStep from './BookingSummaryStep.astro';
+import PersonalDetailsStep from './PersonalDetailsStep.astro';
+---
+
+<style is:global>
+  .icon-step {
+    background-color: white;
+  }
+
+  .icon-step span {
+    color: rgb(75 85 99 / 1);
+  }
+
+  .icon-active {
+    background-color: #464c8f;
+  }
+
+  .icon-active span {
+    color: white;
+  }
+
+  .card {
+    animation: fade 450ms ease-in-out forwards;
+  }
+
+  .card.active {
+    animation: fade-back 250ms ease-in-out both;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-back {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  import { servicesForms, htmlString } from '@/utils/service-forms';
+  import { transformServiceName } from '@/utils/utils';
+
+  function init(): void {
+    if (window.location.pathname !== '/booking') return;
+
+    const multiStepForm = document.querySelector('[data-multi-step]');
+    const fieldsets = [...multiStepForm?.querySelectorAll('fieldset')!];
+    const progressBar = document.querySelectorAll('#progressbar > div');
+    const alertError = document.querySelector('#alter_error');
+    let buttons: NodeListOf<Element> | null = null;
+    let checkboxes: NodeListOf<Element> | null = null;
+    let radios: NodeListOf<Element> | null = null;
+
+    let currentStep = 0;
+
+    function showStep(step: number) {
+      fieldsets?.forEach((fieldset, index) => {
+        fieldset.classList.toggle('active', index === step);
+      });
+
+      progressBar.forEach((stepElement, index) => {
+        if (index === 0) return;
+        const isStepActive = index <= step;
+        stepElement
+          .querySelector('.line-icon-step')
+          ?.classList.toggle('bg-[#464c8f]', isStepActive);
+        stepElement
+          .querySelector('.icon-step')
+          ?.classList.toggle('icon-active', isStepActive);
+      });
+    }
+
+    function getFormHTMLForService(service: string): string {
+      return servicesForms[service] || '';
+    }
+
+    function handleRadioChange() {
+      const targetId = this.getAttribute('input-radio-checked');
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const inputElements = targetElement.querySelectorAll('input');
+        inputElements.forEach((input) => {
+          input.disabled = false;
+        });
+        targetElement.classList.add('block');
+        targetElement.classList.remove('hidden');
+      }
+
+      const radios = document.querySelectorAll(
+        `input[type="radio"][name="${this.name}"][input-radio-checked]:not(#${this.id})`
+      );
+      radios.forEach((radio) => {
+        const otherTargetId: any = radio.getAttribute('input-radio-checked');
+        const otherTargetElement = document.getElementById(otherTargetId);
+        if (otherTargetElement) {
+          const inputElements = otherTargetElement.querySelectorAll('input');
+          inputElements.forEach((input) => {
+            input.disabled = true;
+          });
+          otherTargetElement.classList.remove('block');
+          otherTargetElement.classList.add('hidden');
+        }
+      });
+    }
+
+    function handlerCouterButton() {
+      const inputId = this.getAttribute('data-input-counter');
+      const operation = this.getAttribute('data-operation');
+      const inputElement = document.getElementById(inputId) as HTMLInputElement;
+
+      if (!inputElement) {
+        return;
+      }
+
+      let minvalue = parseInt(inputElement.min) || 0;
+      let value = parseInt(inputElement.value) || 0;
+
+      if (operation === 'increment' && value < 9) {
+        inputElement.value = (value + 1).toString();
+      } else if (operation === 'decrement' && value > minvalue) {
+        inputElement.value = (value - 1).toString();
+      }
+    }
+
+    function handleCheckboxChange() {
+      const targetId = this.getAttribute('input-option-checked');
+      const targetElement = document.getElementById(
+        targetId
+      ) as HTMLInputElement;
+
+      if (!targetElement) {
+        return;
+      }
+
+      const inputElements = targetElement.querySelectorAll('input');
+
+      if (this.checked) {
+        inputElements.forEach((input) => {
+          input.disabled = false;
+        });
+        targetElement.classList.add('block');
+        targetElement.classList.remove('hidden');
+      } else {
+        inputElements.forEach((input) => {
+          input.disabled = true;
+        });
+        targetElement.classList.remove('block');
+        targetElement.classList.add('hidden');
+      }
+    }
+
+    function handleNextButtonClick() {
+      handleStepChange(1);
+    }
+
+    function handlePreviousButtonClick() {
+      handleStepChange(-1);
+    }
+
+    function handleButtonClick(event) {
+      if (event.target.matches('[data-next]')) {
+        handleNextButtonClick();
+      } else if (event.target.matches('[data-previous]')) {
+        handlePreviousButtonClick();
+      }
+    }
+
+    function updateBookingSummary() {
+      const resumeZipcode = document.querySelector('#resume_zipcode');
+      const resumeDate = document.querySelector('#resume_date');
+      const resumeService = document.querySelector('#resume_service');
+      const resumeName = document.querySelector('#resume_name');
+      const resumeEmail = document.querySelector('#resume_email');
+      const resumePhone = document.querySelector('#resume_phone');
+      const resumeAddress = document.querySelector('#resume_address');
+
+      const resumeServiceDetails: any = document.querySelector(
+        '#resume_service_details'
+      );
+      resumeServiceDetails.innerHTML = '';
+      const zipcode: any = document.querySelector('#grid-zip');
+      const date: any = document.querySelector('#date');
+      const selectOption: any = fieldsets[0].querySelector('select');
+      const name: any = document.querySelector('#name');
+      const email: any = document.querySelector('#email');
+      const phone: any = document.querySelector('#phone');
+      const address: any = document.querySelector('#address');
+      const inputsService = [
+        ...(fieldsets[1]?.querySelectorAll('input') || []),
+      ];
+
+      const bookingSummary = {};
+
+      inputsService.forEach((input) => {
+        const name: any = transformServiceName(
+          input.getAttribute('name') || ''
+        );
+        const value = transformServiceName(input.value);
+
+        if (!input.disabled) {
+          if (input.type === 'checkbox') {
+            if (!bookingSummary[name]) {
+              bookingSummary[name] = [];
+            }
+            if (input.checked) {
+              bookingSummary[name].push(value);
+            }
+          } else if (input.type === 'radio') {
+            if (input.checked) {
+              bookingSummary[name] = value;
+            }
+          } else if (input.type === 'text') {
+            bookingSummary[name] = value;
+          }
+        }
+      });
+
+      resumeZipcode!.textContent = zipcode.value;
+      resumeDate!.textContent = date.value;
+      resumeName!.textContent = name.value;
+      resumeEmail!.textContent = email.value;
+      resumePhone!.textContent = phone.value;
+      resumeAddress!.textContent = address.value;
+      resumeService!.textContent =
+        selectOption.options[selectOption.selectedIndex].text;
+
+      Object.keys(bookingSummary).forEach((key) => {
+        const value = bookingSummary[key];
+        addDetailToSummary(key, value);
+      });
+    }
+
+    function addDetailToSummary(title: string, value: string) {
+      const detailElement = document.createElement('p');
+      detailElement.classList.add(
+        'flex',
+        'items-center',
+        'text-sm',
+        'text-gray-500'
+      );
+      detailElement.innerHTML = `
+      <span class="font-semibold mr-1">${title}:</span> ${value}
+    `;
+      const resumeServiceDetails = document.querySelector(
+        '#resume_service_details'
+      );
+      resumeServiceDetails!.appendChild(detailElement);
+    }
+
+    function validateInputs(inputs) {
+      inputs.forEach((input) => {
+        const label = input.nextElementSibling;
+        if (!input.reportValidity()) {
+          if (input.classList.contains('hidden')) {
+            label?.classList.add('border-red-500');
+          } else {
+            input.classList.add('border-red-500');
+          }
+        } else {
+          if (input.classList.contains('hidden')) {
+            label?.classList.remove('border-red-500');
+          } else {
+            input.classList.remove('border-red-500');
+          }
+        }
+      });
+    }
+
+    function updateServiceForm() {
+      if (buttons && buttons?.length > 0) {
+        buttons.forEach((button) => {
+          button.removeEventListener('click', handlerCouterButton);
+        });
+      }
+
+      if (checkboxes && checkboxes?.length > 0) {
+        checkboxes.forEach((checkbox) => {
+          checkbox.removeEventListener('change', handleCheckboxChange);
+        });
+      }
+      if (radios && radios?.length > 0) {
+        radios.forEach((radio) => {
+          radio.removeEventListener('change', handleCheckboxChange);
+        });
+      }
+
+      const h2Element = fieldsets[currentStep + 1].querySelector('h2');
+      const selectElement = fieldsets[currentStep].querySelector('select');
+      const formStep2 = fieldsets[currentStep + 1].querySelector('#form-step2');
+      if (h2Element && selectElement && formStep2) {
+        const selectedOptionText =
+          selectElement.options[selectElement.selectedIndex].text;
+        h2Element.textContent = selectedOptionText;
+        const formHTML = getFormHTMLForService(selectedOptionText);
+        formStep2.innerHTML = formHTML;
+
+        buttons = formStep2.querySelectorAll('[data-input-counter]');
+        buttons.forEach((button) => {
+          button.addEventListener('click', handlerCouterButton);
+        });
+
+        checkboxes = formStep2.querySelectorAll('[input-option-checked]');
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener('change', handleCheckboxChange);
+        });
+
+        radios = formStep2.querySelectorAll('[input-radio-checked]');
+        radios.forEach((radio) => {
+          radio.addEventListener('change', handleRadioChange);
+        });
+      }
+    }
+
+    function scrollToError() {
+      alertError!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function handleStepChange(incrementor) {
+      if (currentStep === 0 && incrementor === -1) return;
+      if (incrementor === -1) {
+        currentStep += -1;
+        return showStep(currentStep);
+      }
+
+      switch (currentStep) {
+        case 0:
+          updateServiceForm();
+          break;
+        case 2:
+          updateBookingSummary();
+          break;
+      }
+
+      const inputs = fieldsets[currentStep].querySelectorAll('input');
+      validateInputs(inputs);
+
+      const allValid = [...inputs].every((input) => input.reportValidity());
+
+      if (allValid) {
+        alertError!.classList.add('hidden');
+        alertError!.classList.remove('flex');
+        currentStep += incrementor;
+        showStep(currentStep);
+      } else {
+        alertError!.classList.remove('hidden');
+        alertError!.classList.add('flex');
+        scrollToError();
+      }
+    }
+
+    multiStepForm?.addEventListener('click', handleButtonClick);
+
+    fieldsets.forEach((step) => {
+      step.addEventListener('animationend', (e: any) => {
+        fieldsets[currentStep].classList.remove('hidden');
+        e.target!.classList.toggle(
+          'hidden',
+          !e.target!.classList.contains('active')
+        );
+      });
+    });
+
+    function generateServiceInfoText(formDataObject) {
+      let text = '';
+
+      for (const key in formDataObject) {
+        text += `${key.replace('_', ' ')}: ${formDataObject[key]}\n`;
+      }
+
+      return text;
+    }
+
+    function generateServiceInfoHTML(serviceInfo) {
+      let html = '';
+
+      for (const key in serviceInfo) {
+        if (serviceInfo.hasOwnProperty(key)) {
+          const value = serviceInfo[key];
+          html += `<p style="font-size: 16px; line-height: 24px; margin: 16px 0;" id="field_${transformServiceName(key)}"><b>${key.replace('_', ' ')}: </b>${value}</p>`;
+        }
+      }
+
+      return html;
+    }
+
+    function generateText(formDataObject) {
+      const {
+        select_service,
+        name,
+        zipcode,
+        address,
+        email,
+        date,
+        phone,
+        preferable_time,
+        message,
+        ...formService
+      } = formDataObject;
+      let text = 'Global Service & Maintenance,\n\n';
+      text += 'Please find below the details of the new booking:\n\n';
+
+      text += `Service: ${select_service}\n`;
+      text += `Name: ${name}\n`;
+      text += `Zipcode: ${zipcode}\n`;
+      text += `Address: ${address}\n`;
+      text += `Email: ${email}\n`;
+      text += `Date: ${date}\n`;
+      text += `Phone: ${phone}\n`;
+      text += `Preferable Time: ${preferable_time}\n`;
+      text += `Additional Notes: ${message}\n\n`;
+
+      const serviceInfoText = generateServiceInfoText(formService);
+      text += serviceInfoText + '\n\n';
+
+      return text;
+    }
+
+    function generateManipulatedHtml(formDataObject) {
+      const {
+        select_service,
+        name,
+        zipcode,
+        address,
+        email,
+        date,
+        phone,
+        preferable_time,
+        message,
+        ...formService
+      } = formDataObject;
+
+      const tempElement = document.createElement('html');
+      tempElement.innerHTML = htmlString;
+
+      tempElement.querySelector('#field_service')!.innerHTML = select_service;
+
+      const fields = {
+        name: '#field_name',
+        zipcode: '#field_zipcode',
+        address: '#field_address',
+        email: '#field_email',
+        date: '#field_date',
+        phone: '#field_phone',
+        preferable_time: '#field_preferableTime',
+        message: '#field_notes',
+      };
+
+      Object.entries(fields).forEach(([key, selector]) => {
+        tempElement.querySelector(selector)!.innerHTML =
+          `<b>${key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}: </b>${formDataObject[key]}`;
+      });
+
+      tempElement.querySelector('#service_information_field')!.innerHTML =
+        generateServiceInfoHTML(formService);
+
+      return tempElement.outerHTML;
+    }
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const formDataObject = {} as any;
+
+      for (const [key, value] of formData.entries()) {
+        formDataObject[key] = value;
+      }
+
+      const { 'cf-turnstile-response': cf_turnstile, ...formServiceData } =
+        formDataObject;
+
+      const manipulatedHtmlString = generateManipulatedHtml(formServiceData);
+      const text = generateText(formServiceData);
+
+      try {
+        const data = await fetch('/api/sendEmail.json', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'Global Service & Maintenance <onboarding@resend.dev>',
+            to: ['camilo.cortes1753@gmail.com'],
+            subject: 'New booking',
+            cf_turnstile_response: cf_turnstile,
+            html: manipulatedHtmlString,
+            text: text,
+          }),
+        });
+        if (data.ok) {
+          window.location.reload();
+        } else {
+          throw new Error('Error in received data');
+        }
+      } catch (error) {
+        alert('Something has gone wrong. Please try again later.');
+        console.log(error);
+      }
+    }
+
+    multiStepForm?.addEventListener('submit', handleSubmit);
+  }
+  init();
+  document.addEventListener('astro:after-swap', init);
+</script>
+
+<form data-multi-step class="bg-white p-4 md:p-12 w-full mx-auto relative">
+  <div class="w-full py-6 px-2 md:px-10 my-4">
+    <!-- progressbar -->
+    <ProgressBarStep />
+
+    <hr class="my-7 mx-2 md:mx-10 h-0.5 border-t-0 bg-neutral-100" />
+
+    <ServiceSelectorStep />
+    <ServiceDetailsStep />
+    <PersonalDetailsStep />
+    <BookingSummaryStep />
+  </div>
+</form>

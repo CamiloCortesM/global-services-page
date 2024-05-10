@@ -1,0 +1,20 @@
+---
+import type { StepForm } from '@/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  id,
+  classes = 'active',
+} = Astro.props as StepForm;
+---
+
+<fieldset
+  id={id}
+  class=`mx-2 md:mx-auto md:w-[60%] md:min-w-[700px] card bg-white rounded-lg overflow-hidden shadow-xl p-6 relative border-t-2 ${classes}`
+>
+  <div class="flex justify-center mb-5">
+    <h2 class="font-medium text-2xl">{title}</h2>
+  </div>
+  <hr class="mb-6 h-0.5 border-t-0 bg-neutral-200" />
+  <slot />
+</fieldset>

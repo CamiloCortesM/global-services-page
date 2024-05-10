@@ -1,0 +1,81 @@
+---
+import Button from '../ui/Button.astro';
+
+import StepForm from './StepForm.astro';
+---
+
+<StepForm id="step1" classes="active" title="Choose a service">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label
+        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+        for="select-service"
+      >
+        Select a service <span class="text-red-500">*</span>
+      </label>
+      <div class="relative">
+        <select
+          class="block appearance-none w-full bg-gray-100 border border-gray-100 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 overflow-y-auto"
+          id="select-service"
+          name="select_service"
+        >
+          <option value="Regular Cleaning">Regular Cleaning</option>
+          <option value="One off Cleaning">One off Cleaning</option>
+          <option value="End of Tenancy Cleaning"
+            >End of Tenancy Cleaning</option
+          >
+          <option value="Antiviral Sanitisation">Antiviral Sanitisation</option>
+          <option value="Office Cleaning">Office Cleaning</option>
+          <option value="Carpet Cleaning">Carpet Cleaning</option>
+          <option value="Mattress Cleaning">Mattress Cleaning</option>
+          <option value="Upholstery Cleaning">Upholstery Cleaning</option>
+          <option value="Window Cleaning">Window Cleaning</option>
+          <option value="Curtain Cleaning">Curtain Cleaning</option>
+          <option value="Oven Cleaning">Oven Cleaning</option>
+          <option value="Rubbish Removal">Rubbish Removal</option>
+          <option value="Gardening">Gardening</option>
+          <option value="Maintenance service">Maintenance service</option>
+        </select>
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+        >
+          <svg
+            class="fill-current h-4 w-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            ><path
+              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            ></path></svg
+          >
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label
+        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+        for="grid-zip"
+      >
+        Zip <span class="text-red-500">*</span>
+      </label>
+      <input
+        class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+        id="grid-zip"
+        type="text"
+        name="zipcode"
+        placeholder="Enter UK postcode"
+        pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][A-Za-z]{2}"
+        title="Please enter a valid UK postcode"
+        required
+      />
+    </div>
+  </div>
+  <div class="flex -mx-3 mb-6">
+    <Button
+      data-next
+      type="button"
+      text="NEXT"
+      variant="tertiary"
+      class="ml-3 -auto"
+    />
+  </div></StepForm
+>
