@@ -1,7 +1,50 @@
 ---
+
+import ContactUs from '@/components/widgets/ContactUs.astro';
 import Layout from '@/layouts/ServiceLayout.astro';
+import { headerData } from '@/navigation';
+
+const servicesLinks = headerData.links?.find(
+  (link) => link.text === 'SERVICES'
+)?.links;
 ---
 
-<Layout image="/images/mano-sosteniendo-moneda-mexicana.webp" title='Get a quote'>
-
+<Layout
+  image="/images/mano-sosteniendo-moneda-mexicana.webp"
+  title="Get a quote"
+  content = 'Impeccable Cleanliness at Your Fingertips'
+>
+  <ContactUs
+    title="Get a Free Quote on Our Cleaning Services"
+    classes={{ container: 'md:py-4 lg:py-8' }}
+    subtitle="Looking for quality cleaning services? Get a free quote today. Our professionals are ready to take care of your cleaning needs, whether it's for homes, offices or commercial spaces, contact us now and find out how we can help you keep your space spotless!"
+    description="Our support team typically responds within 48 business hours."
+    subject="New Quote"
+    button="Get Quote"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Number',
+        pattern: '[0-9]+',
+        title:'Please enter a valid UK telephone number.',
+      },
+    ]}
+    serviceOption={{ servicesLinks, label: 'Service Options' }}
+    columnsForm={false}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+  />
 </Layout>
