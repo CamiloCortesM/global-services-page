@@ -248,7 +248,7 @@ export interface Description extends Headline {
   image?: string;
 }
 
-export interface ImageGalery extends Widget {
+export interface ImageGallery extends Widget {
   images: [{ src: string; alt: string }];
 }
 

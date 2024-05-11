@@ -5,7 +5,7 @@ import ServiceDetails from '@/components/widgets/ServiceDetails.astro';
 import CertificationDetails from '@/components/widgets/CertificationDetails.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import ServiceOfferings from '@/components/widgets/ServiceOfferings.astro';
-import ImageGalery from '@/components/widgets/ImageGalery.astro';
+import ImageGallery from '@/components/widgets/ImageGallery.astro';
 import FAQs from '@/components/widgets/FAQs.astro';
 
 import { getStaticPathsServices } from '@/utils/service';
@@ -18,7 +18,7 @@ const {
   serviceDetails,
   features,
   serviceOfferings,
-  imageGalery,
+  imageGallery,
   faqs,
   layout,
 } = Astro.props;
@@ -46,7 +46,7 @@ const {
     }}
   />
 
-  <ImageGalery {...imageGalery} />
+  <ImageGallery {...imageGallery} />
 
   <FAQs classes={{ container: 'max-w-6xl' }} {...faqs} />
 </Layout>
