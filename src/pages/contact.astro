@@ -1,5 +1,4 @@
 ---
-export const prerender = false;
 import Layout from '@/layouts/PageLayout.astro';
 import ContactUs from '@/components/widgets/ContactUs.astro';
 import Ubication from '@/components/widgets/Ubication.astro';
@@ -34,6 +33,7 @@ import Ubication from '@/components/widgets/Ubication.astro';
       label:
         'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
     }}
+    subject="New Contact"
     items={[
       {
         title: 'General support',
