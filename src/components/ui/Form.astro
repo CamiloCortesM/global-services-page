@@ -1,150 +1,184 @@
 ---
 import type { Form } from '@/types';
 import Button from '@/components/ui/Button.astro';
-import sgMail from '@sendgrid/mail';
+import { validationForm } from '@/utils/validationForm';
+import { sendEmail } from '@/utils/sendEmail';
 
 const {
   inputs,
   textarea,
   disclaimer,
-  button = 'Contact us',
+  serviceOption,
+  button = 'Contact Us',
   description = '',
+  subject = '',
 } = Astro.props as Form;
 
-sgMail.setApiKey(import.meta.env.TWILIO_EMAIL_KEY);
-const errors = { name: '', email: '', textarea: '' };
+let emailResult: boolean | undefined;
+
+const handlePostRequest = async () => {
+  const data = await Astro.request.formData();
+
+  const name = data.get('name');
+  const email = data.get('email');
+  const message = data.get('textarea');
+  const chosenService = data.get('service');
+  const phoneNumber = data.get('phone');
+
+  const infoClient = {
+    name,
+    email,
+    message,
+    chosenService,
+    phoneNumber,
+    subject,
+    serviceOption,
+  };
+
+  let { errors, information } = await validationForm(infoClient);
+  const hasErrors = Object.values(errors).some((msg) => msg !== '');
+
+  if (!hasErrors) {
+    emailResult = await sendEmail(information);
+  }
+
+  if (hasErrors) {
+    console.log(errors);
+  }
+};
 
 if (Astro.request.method === 'POST') {
   try {
-    const data = await Astro.request.formData();
-    const name = data.get('name');
-    const email = data.get('email');
-    const textarea = data.get('textarea');
-
-    if (typeof name !== 'string' || name.length < 5) {
-      errors.name += 'Please enter a name.';
-    }
-    if (typeof textarea !== 'string' || textarea.length < 10) {
-      errors.textarea += 'Messsage too short.';
-    }
-    const hasErrors = Object.values(errors).some((msg) => msg);
-
-    if (!hasErrors) {
-      const msg = {
-        to: 'kurumi.010730@gmail.com',
-        from: 'kurumi.010730@gmail.com',
-        subject: 'Contact Global Service & Maintenance',
-        text: `Name: ${name} \nUser Email: ${email}  \nMessage: ${textarea}`,
-      };
-
-      sgMail
-        .send(msg)
-        .then(() => {
-          console.log('Email sent');
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
+    await handlePostRequest();
+  } catch (validationError) {
+    if (validationError instanceof Error) {
+      console.error('Validation error:', validationError.message);
     }
   }
 }
 ---
 
-<form method="POST">
-  {
-    inputs &&
-      inputs.map(
-        ({
-          type = 'text',
-          name,
-          label = '',
-          autocomplete = 'on',
-          placeholder = '',
-        }) =>
-          name && (
-            <div class="mb-6">
-              {label && (
-                <label for={name} class="block text-sm font-medium">
-                  {label}
-                </label>
-              )}
-              <input
-                type={type}
-                name={name}
-                id={name}
-                autocomplete={autocomplete}
-                placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
-                required
-                minlength="5"
-              />
-            </div>
-          )
-      )
-  }
+<div>
+  <form method="POST" data-astro-reload>
+    {
+      inputs &&
+        inputs.map(
+          ({
+            type = 'text',
+            name,
+            label = '',
+            autocomplete = 'on',
+            placeholder = '',
+            pattern,
+            title,
+          }) =>
+            name && (
+              <div class="mb-6">
+                {label && (
+                  <label for={name} class="block text-sm font-medium">
+                    {label}
+                  </label>
+                )}
+                <input
+                  type={type}
+                  name={name}
+                  id={name}
+                  pattern={pattern}
+                  autocomplete={autocomplete}
+                  placeholder={placeholder}
+                  title={title}
+                  class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
+                  required
+                  minlength="5"
+                />
+              </div>
+            )
+        )
+    }
 
-  {
-    textarea && (
-      <div>
-        <label for="textarea" class="block text-sm font-medium">
-          {textarea.label}
-        </label>
-        <textarea
-          id="textarea"
-          name="textarea"
-          rows={textarea.rows ? textarea.rows : 4}
-          placeholder={textarea.placeholder}
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
-          required
-          minlength="10"
-        />
-      </div>
-    )
-  }
-
-  {
-    disclaimer && (
-      <div class="mt-3 flex items-start">
-        <div class="flex mt-0.5">
-          <input
-            id="disclaimer"
-            name="disclaimer"
-            type="checkbox"
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white"
+    {
+      textarea && (
+        <div>
+          <label for="textarea" class="block text-sm font-medium">
+            {textarea.label}
+          </label>
+          <textarea
+            id="textarea"
+            name="textarea"
+            rows={textarea.rows ? textarea.rows : 4}
+            placeholder={textarea.placeholder}
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
             required
+            minlength="10"
           />
         </div>
-        <div class="ml-3">
-          <label
-            for="disclaimer"
-            class="cursor-pointer select-none text-sm text-gray-600 "
-          >
-            {disclaimer.label}
+      )
+    }
+
+    {
+      serviceOption && (
+        <div class="mb-6">
+          <label for="service" class="block text-sm font-medium">
+            {serviceOption.label}
           </label>
+          <select
+            name="service"
+            id="service"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 bg-white"
+            required
+          >
+            <option value="">Choose a service</option>
+            {serviceOption.servicesLinks.map(({ text }) => (
+              <option value={text.charAt(0) + text.slice(1).toLowerCase()}>
+                {text.charAt(0) + text.slice(1).toLowerCase()}
+              </option>
+            ))}
+          </select>
         </div>
-      </div>
-    )
-  }
+      )
+    }
 
-  {
-    button && (
-      <div class="mt-10 grid">
-        <Button variant="primary" type="submit">
-          {button}
-        </Button>
-      </div>
-    )
-  }
+    {
+      disclaimer && (
+        <div class="mt-3 flex items-start mb-6">
+          <div class="flex mt-0.5">
+            <input
+              id="disclaimer"
+              name="disclaimer"
+              type="checkbox"
+              class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white"
+              required
+            />
+          </div>
+          <div class="ml-3">
+            <label
+              for="disclaimer"
+              class="cursor-pointer select-none text-sm text-gray-600 "
+            >
+              {disclaimer.label}
+            </label>
+          </div>
+        </div>
+      )
+    }
 
-  {
-    description && (
-      <div class="mt-3 text-center">
-        <p class="text-sm text-gray-600 ">{description}</p>
-      </div>
-    )
-  }
-</form>
+    {
+      button && (
+        <div class="mt-10 grid">
+          <Button variant="primary" type="submit">
+            {button}
+          </Button>
+        </div>
+      )
+    }
+
+    {
+      description && (
+        <div class="mt-3 text-center">
+          <p class="text-sm text-gray-600 ">{description}</p>
+        </div>
+      )
+    }
+  </form>
+  {emailResult && <script>alert('Email Send')</script>}
+</div>

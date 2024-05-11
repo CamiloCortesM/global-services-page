@@ -115,6 +115,8 @@ export interface Input {
   label?: string;
   autocomplete?: string;
   placeholder?: string;
+  pattern?: string;
+  title?: string;
 }
 
 export interface Textarea {
@@ -157,6 +159,8 @@ export interface Form {
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  serviceOption?: ServiceOption;
+  subject?: string;
 }
 
 // WIDGETS
@@ -284,7 +288,11 @@ export interface Contact extends Headline, Form, Widget {
   items: Array<Item>;
   defaultIcon?: string;
   columns: number;
+  subject?: string;
+  button?: string;
+  columnsForm?: boolean;
 }
+
 
 export interface Quote {
   quote?: string;
@@ -300,4 +308,53 @@ export interface Opinions extends Headline, Widget {
 
 export interface NumberInputControl {
   text?: string;
+}
+
+//Untils
+
+export interface cloudflareResult {
+  success: boolean;
+  'error-codes': any[];
+  challenge_ts: Date;
+  hostname: string;
+  action: string;
+  cdata: string;
+  metadata: Metadata;
+}
+
+interface Metadata {
+  interactive: boolean;
+}
+
+export interface CaptchaProps {
+  token: FormDataEntryValue | null;
+  ip: string | null;
+}
+
+export interface FormErrors {
+  name: string;
+  email: string;
+  message: string;
+  chosenService: string;
+  phone: string;
+}
+
+export interface FormInformation {
+  clientEmail: string;
+  clientName: string;
+  message: string;
+  chosenService: string;
+  phoneNumber: string;
+  subject: string;
+}
+
+export interface FormResult {
+  errors: FormErrors;
+  information: FormInformation;
+}
+
+export interface responseCaptcha {
+  statusText?: string;
+  status?: Number;
+  json?: () => Promise<any>;
 }

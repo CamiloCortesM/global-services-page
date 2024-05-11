@@ -14,9 +14,12 @@ const {
   disclaimer,
   button,
   description,
+  serviceOption,
   items = [],
   defaultIcon,
   columns = 1,
+  columnsForm = true,
+  subject,
 
   id,
   classes = {},
@@ -31,7 +34,9 @@ const {
 >
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <section class="flex flex-col-reverse md:flex-row gap-4">
+  <section
+    class=`${columnsForm ? 'flex flex-col-reverse md:flex-row gap-4': ''}`
+  >
     <ItemGrid
       items={items}
       columns={columns}
@@ -53,6 +58,8 @@ const {
             disclaimer={disclaimer}
             button={button}
             description={description}
+            serviceOption={serviceOption}
+            subject={subject}
           />
         </div>
       )
