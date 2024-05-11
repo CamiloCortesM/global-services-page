@@ -1,3 +1,4 @@
+export const prerender = false;
 import { Email } from '@/components/ui/Email';
 import { Resend } from 'resend';
 
@@ -7,9 +8,10 @@ export const sendEmail = async (information) => {
   try {
     const { subject, ...info } = information;
 
+    console.log(subject,info)
     const { data } = await resend.emails.send({
       from: 'Global Service & Maintenance <onboarding@resend.dev>',
-      to: ['kurumi.010730@gmail.com'],
+      to: ['camilo.cortes1753@gmail.com'],
       subject,
       react: Email(info),
     });
