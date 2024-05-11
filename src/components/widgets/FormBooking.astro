@@ -479,12 +479,9 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
       for (const [key, value] of formData.entries()) {
         formDataObject[key] = value;
       }
-
-      const { 'cf-turnstile-response': cf_turnstile, ...formServiceData } =
-        formDataObject;
-
-      const manipulatedHtmlString = generateManipulatedHtml(formServiceData);
-      const text = generateText(formServiceData);
+      
+      const manipulatedHtmlString = generateManipulatedHtml(formDataObject);
+      const text = generateText(formDataObject);
 
       try {
         const data = await fetch('/api/sendEmail.json', {
@@ -496,7 +493,6 @@ import PersonalDetailsStep from './PersonalDetailsStep.astro';
             from: 'Global Service & Maintenance <onboarding@resend.dev>',
             to: ['camilo.cortes1753@gmail.com'],
             subject: 'New booking',
-            cf_turnstile_response: cf_turnstile,
             html: manipulatedHtmlString,
             text: text,
           }),
