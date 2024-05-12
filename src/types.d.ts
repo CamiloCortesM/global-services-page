@@ -206,6 +206,9 @@ export interface Features extends Headline, Widget {
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
 }
+export interface Booking extends Widget {
+
+}
 
 export interface ServicesOfferings extends Headline, Widget {
   image?: { src: string; alt: string };
