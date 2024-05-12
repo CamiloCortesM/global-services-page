@@ -3,12 +3,13 @@ import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
 const resend = new Resend(import.meta.env.PUBLIC_RESEND_API_KEY);
+const email = import.meta.env.PUBLIC_EMAIL;
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
-  const { to, from, html, subject, text } = body;
+  const { html, subject, text } = body;
 
-  if (!to || !from || !html || !subject || !text) {
+  if (!html || !subject || !text) {
     return new Response(null, {
       status: 404,
       statusText: 'Did not provide the right data',
@@ -16,8 +17,8 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const send = await resend.emails.send({
-    from,
-    to,
+    from: 'Global Service & Maintenance <onboarding@resend.dev>',
+    to: [email],
     subject,
     html,
     text,
