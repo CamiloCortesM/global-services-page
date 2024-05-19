@@ -487,7 +487,7 @@ const {
       for (const [key, value] of formData.entries()) {
         formDataObject[key] = value;
       }
-      
+
       const manipulatedHtmlString = generateManipulatedHtml(formDataObject);
       const text = generateText(formDataObject);
 
@@ -504,14 +504,24 @@ const {
           }),
         });
         if (data.ok) {
-          window.location.reload();
+          saveInfoAndRedirect(true);
         } else {
-          throw new Error('Error in received data');
+          saveInfoAndRedirect(false);
         }
       } catch (error) {
-        alert('Something has gone wrong. Please try again later.');
         console.log(error);
+        saveInfoAndRedirect(false);
       }
+    }
+
+    function saveInfoAndRedirect(status: boolean) {
+      const path = window.location.pathname;
+      const info = {
+        path,
+        status,
+      };
+      window.localStorage.setItem('Info', JSON.stringify(info));
+      window.location.href = `/email-status`;
     }
 
     multiStepForm?.addEventListener('submit', handleSubmit);
@@ -529,14 +539,13 @@ const {
     <div class="w-full px-0 md:px-10">
       <!-- progressbar -->
       <ProgressBarStep />
-  
+
       <hr class="my-7 mx-2 md:mx-10 h-0.5 border-t-0 bg-neutral-100" />
-  
+
       <ServiceSelectorStep />
       <ServiceDetailsStep />
       <PersonalDetailsStep />
       <BookingSummaryStep />
     </div>
   </form>
-  
 </WidgetWrapper>
