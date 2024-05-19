@@ -267,6 +267,9 @@ const {
 
     async function handleSubmit(event) {
       event.preventDefault();
+      if (currentStep !== 3) {
+        return;
+      }
       const formData = new FormData(event.target);
       const formDataObject = {} as any;
 

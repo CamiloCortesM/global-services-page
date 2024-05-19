@@ -2,11 +2,9 @@
 export const prerender = false;
 import ContactUs from '@/components/widgets/ContactUs.astro';
 import Layout from '@/layouts/ServiceLayout.astro';
-import { headerData } from '@/navigation';
+import { servicesForms } from '@/utils/service-forms';
 
-const servicesLinks = headerData.links?.find(
-  (link) => link.text === 'SERVICES'
-)?.links;
+const servicesLinks = Object.keys(servicesForms);
 ---
 
 <Layout

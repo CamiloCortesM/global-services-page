@@ -18,6 +18,8 @@ let emailInfo = {
   confirm: 3,
 };
 
+
+console.log(serviceOption)
 const handlePostRequest = async () => {
   const data = await Astro.request.formData();
 
@@ -139,9 +141,9 @@ if (Astro.request.method === 'POST') {
             required
           >
             <option value="">Choose a service</option>
-            {serviceOption.servicesLinks.map(({ text }) => (
-              <option value={text.charAt(0) + text.slice(1).toLowerCase()}>
-                {text.charAt(0) + text.slice(1).toLowerCase()}
+            {serviceOption.servicesLinks.map((service:string) => (
+              <option value={service}>
+                {service}
               </option>
             ))}
           </select>
