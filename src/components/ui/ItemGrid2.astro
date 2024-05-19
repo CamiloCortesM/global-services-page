@@ -54,7 +54,7 @@ const { items = [] } = Astro.props as ItemGrid;
 }
 
 <script is:inline>
-  window.addEventListener('load', () => {
+  function init() {
     new Swiper('.mySwiper', {
       slidesPerView: 3,
       spaceBetween: 50,
@@ -80,33 +80,8 @@ const { items = [] } = Astro.props as ItemGrid;
         },
       },
     });
-  });
-  document.addEventListener(
-    'astro:after-swap',
-    new Swiper('.mySwiper', {
-      slidesPerView: 3,
-      spaceBetween: 50,
-      loop: true,
-      centerSlide: true,
-      fade: true,
-      grabCursor: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
+  }
 
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        560: {
-          slidesPerView: 2,
-        },
-        950: {
-          slidesPerView: 3,
-        },
-      },
-    })
-  );
+  init();
+  document.addEventListener('astro:after-swap', init);
 </script>
