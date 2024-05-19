@@ -49,7 +49,7 @@ import {
     return (
       <Html>
         <Head />
-        <Preview>New {subject}</Preview>
+        <Preview>¡A new client has contacted!</Preview>
         <Body style={main}>
           <Container>
             <Section style={logo}>
