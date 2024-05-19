@@ -194,7 +194,9 @@ if (Astro.request.method === 'POST') {
   {
     emailInfo?.confirm === 1 ? (
       <script>
+        const path = window.location.pathname;
         const info = {
+            path,
             status: true,
           } 
         window.localStorage.setItem("Info",JSON.stringify(info))
