@@ -43,11 +43,8 @@ const handlePostRequest = async () => {
   if (!hasErrors) {
     try {
       const emailResult = await sendEmail(information);
-      emailInfo["emailResult"] = emailResult;
-
       if (emailResult) {
         emailInfo.confirm = 1;
-        emailInfo['message'] = subject;
       } else {
         emailInfo.confirm = 2;
       }
