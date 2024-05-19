@@ -59,7 +59,17 @@ const {
 </style>
 
 <script>
-  import { servicesForms, htmlString } from '@/utils/service-forms';
+  import {
+    getFormHTMLForService,
+    handleRadioChange,
+    handlerCounterButton,
+    handleCheckboxChange,
+    validateInputs,
+    generateText,
+    saveInfoAndRedirect,
+    generateManipulatedHtml,
+    addDetailToSummary,
+  } from '@/utils/booking-utils';
   import { transformServiceName } from '@/utils/utils';
 
   function init(): void {
@@ -90,86 +100,6 @@ const {
           .querySelector('.icon-step')
           ?.classList.toggle('icon-active', isStepActive);
       });
-    }
-
-    function getFormHTMLForService(service: string): string {
-      return servicesForms[service] || '';
-    }
-
-    function handleRadioChange() {
-      const targetId = this.getAttribute('input-radio-checked');
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        const inputElements = targetElement.querySelectorAll('input');
-        inputElements.forEach((input) => {
-          input.disabled = false;
-        });
-        targetElement.classList.add('block');
-        targetElement.classList.remove('hidden');
-      }
-
-      const radios = document.querySelectorAll(
-        `input[type="radio"][name="${this.name}"][input-radio-checked]:not(#${this.id})`
-      );
-      radios.forEach((radio) => {
-        const otherTargetId: any = radio.getAttribute('input-radio-checked');
-        const otherTargetElement = document.getElementById(otherTargetId);
-        if (otherTargetElement) {
-          const inputElements = otherTargetElement.querySelectorAll('input');
-          inputElements.forEach((input) => {
-            input.disabled = true;
-          });
-          otherTargetElement.classList.remove('block');
-          otherTargetElement.classList.add('hidden');
-        }
-      });
-    }
-
-    function handlerCouterButton() {
-      const inputId = this.getAttribute('data-input-counter');
-      const operation = this.getAttribute('data-operation');
-      const inputElement = document.getElementById(inputId) as HTMLInputElement;
-
-      if (!inputElement) {
-        return;
-      }
-
-      let minvalue = parseInt(inputElement.min) || 0;
-      let value = parseInt(inputElement.value) || 0;
-
-      if (operation === 'increment' && value < 9) {
-        inputElement.value = (value + 1).toString();
-      } else if (operation === 'decrement' && value > minvalue) {
-        inputElement.value = (value - 1).toString();
-      }
-    }
-
-    function handleCheckboxChange() {
-      const targetId = this.getAttribute('input-option-checked');
-      const targetElement = document.getElementById(
-        targetId
-      ) as HTMLInputElement;
-
-      if (!targetElement) {
-        return;
-      }
-
-      const inputElements = targetElement.querySelectorAll('input');
-
-      if (this.checked) {
-        inputElements.forEach((input) => {
-          input.disabled = false;
-        });
-        targetElement.classList.add('block');
-        targetElement.classList.remove('hidden');
-      } else {
-        inputElements.forEach((input) => {
-          input.disabled = true;
-        });
-        targetElement.classList.remove('block');
-        targetElement.classList.add('hidden');
-      }
     }
 
     function handleNextButtonClick() {
@@ -253,46 +183,10 @@ const {
       });
     }
 
-    function addDetailToSummary(title: string, value: string) {
-      const detailElement = document.createElement('p');
-      detailElement.classList.add(
-        'flex',
-        'items-center',
-        'text-sm',
-        'text-gray-500'
-      );
-      detailElement.innerHTML = `
-      <span class="font-semibold mr-1">${title}:</span> ${value}
-    `;
-      const resumeServiceDetails = document.querySelector(
-        '#resume_service_details'
-      );
-      resumeServiceDetails!.appendChild(detailElement);
-    }
-
-    function validateInputs(inputs) {
-      inputs.forEach((input) => {
-        const label = input.nextElementSibling;
-        if (!input.reportValidity()) {
-          if (input.classList.contains('hidden')) {
-            label?.classList.add('border-red-500');
-          } else {
-            input.classList.add('border-red-500');
-          }
-        } else {
-          if (input.classList.contains('hidden')) {
-            label?.classList.remove('border-red-500');
-          } else {
-            input.classList.remove('border-red-500');
-          }
-        }
-      });
-    }
-
     function updateServiceForm() {
       if (buttons && buttons?.length > 0) {
         buttons.forEach((button) => {
-          button.removeEventListener('click', handlerCouterButton);
+          button.removeEventListener('click', handlerCounterButton);
         });
       }
 
@@ -319,7 +213,7 @@ const {
 
         buttons = formStep2.querySelectorAll('[data-input-counter]');
         buttons.forEach((button) => {
-          button.addEventListener('click', handlerCouterButton);
+          button.addEventListener('click', handlerCounterButton);
         });
 
         checkboxes = formStep2.querySelectorAll('[input-option-checked]');
@@ -371,114 +265,6 @@ const {
       }
     }
 
-    multiStepForm?.addEventListener('click', handleButtonClick);
-
-    fieldsets.forEach((step) => {
-      step.addEventListener('animationend', (e: any) => {
-        fieldsets[currentStep].classList.remove('hidden');
-        e.target!.classList.toggle(
-          'hidden',
-          !e.target!.classList.contains('active')
-        );
-      });
-    });
-
-    function generateServiceInfoText(formDataObject) {
-      let text = '';
-
-      for (const key in formDataObject) {
-        text += `${key.replace('_', ' ')}: ${formDataObject[key]}\n`;
-      }
-
-      return text;
-    }
-
-    function generateServiceInfoHTML(serviceInfo) {
-      let html = '';
-
-      for (const key in serviceInfo) {
-        if (serviceInfo.hasOwnProperty(key)) {
-          const value = serviceInfo[key];
-          html += `<p style="font-size: 16px; line-height: 24px; margin: 16px 0;" id="field_${transformServiceName(key)}"><b>${key.replace('_', ' ')}: </b>${value}</p>`;
-        }
-      }
-
-      return html;
-    }
-
-    function generateText(formDataObject) {
-      const {
-        select_service,
-        name,
-        zipcode,
-        address,
-        email,
-        date,
-        phone,
-        preferable_time,
-        message,
-        ...formService
-      } = formDataObject;
-      let text = 'Global Service & Maintenance,\n\n';
-      text += 'Please find below the details of the new booking:\n\n';
-
-      text += `Service: ${select_service}\n`;
-      text += `Name: ${name}\n`;
-      text += `Zipcode: ${zipcode}\n`;
-      text += `Address: ${address}\n`;
-      text += `Email: ${email}\n`;
-      text += `Date: ${date}\n`;
-      text += `Phone: ${phone}\n`;
-      text += `Preferable Time: ${preferable_time}\n`;
-      text += `Additional Notes: ${message}\n\n`;
-
-      const serviceInfoText = generateServiceInfoText(formService);
-      text += serviceInfoText + '\n\n';
-
-      return text;
-    }
-
-    function generateManipulatedHtml(formDataObject) {
-      const {
-        select_service,
-        name,
-        zipcode,
-        address,
-        email,
-        date,
-        phone,
-        preferable_time,
-        message,
-        ...formService
-      } = formDataObject;
-
-      const tempElement = document.createElement('html');
-      tempElement.innerHTML = htmlString;
-
-      tempElement.querySelector('#field_service')!.innerHTML = select_service;
-
-      const fields = {
-        name: '#field_name',
-        zipcode: '#field_zipcode',
-        address: '#field_address',
-        email: '#field_email',
-        date: '#field_date',
-        phone: '#field_phone',
-        preferable_time: '#field_preferableTime',
-        message: '#field_notes',
-      };
-
-      Object.entries(fields).forEach(([key, selector]) => {
-        tempElement.querySelector(selector)!.innerHTML =
-          `<b>${key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}: </b>${formDataObject[key]}`;
-      });
-
-      tempElement.querySelector('#service_information_field')!.innerHTML =
-        generateServiceInfoHTML(formService);
-
-      return tempElement.outerHTML;
-    }
-
     async function handleSubmit(event) {
       event.preventDefault();
       const formData = new FormData(event.target);
@@ -514,17 +300,18 @@ const {
       }
     }
 
-    function saveInfoAndRedirect(status: boolean) {
-      const path = window.location.pathname;
-      const info = {
-        path,
-        status,
-      };
-      window.localStorage.setItem('Info', JSON.stringify(info));
-      window.location.href = `/email-status`;
-    }
-
+    multiStepForm?.addEventListener('click', handleButtonClick);
     multiStepForm?.addEventListener('submit', handleSubmit);
+
+    fieldsets.forEach((step) => {
+      step.addEventListener('animationend', (e: any) => {
+        fieldsets[currentStep].classList.remove('hidden');
+        e.target!.classList.toggle(
+          'hidden',
+          !e.target!.classList.contains('active')
+        );
+      });
+    });
   }
   init();
   document.addEventListener('astro:after-swap', init);
