@@ -14,7 +14,9 @@ const {
   subject = '',
 } = Astro.props as Form;
 
-let emailResult: boolean | undefined;
+let emailInfo = {
+  confirm: 3,
+};
 
 const handlePostRequest = async () => {
   const data = await Astro.request.formData();
@@ -39,14 +41,26 @@ const handlePostRequest = async () => {
   const hasErrors = Object.values(errors).some((msg) => msg !== '');
 
   if (!hasErrors) {
-    emailResult = await sendEmail(information);
-  }
+    try {
+      const emailResult = await sendEmail(information);
+      emailInfo["emailResult"] = emailResult;
 
-  if (hasErrors) {
+      if (emailResult) {
+        emailInfo.confirm = 1;
+        emailInfo['message'] = subject;
+      } else {
+        emailInfo.confirm = 2;
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      emailInfo.confirm = 2;
+    }
+  } else {
     console.log(errors);
   }
+  
+  return { hasErrors, emailInfo };
 };
-
 if (Astro.request.method === 'POST') {
   try {
     await handlePostRequest();
@@ -180,5 +194,28 @@ if (Astro.request.method === 'POST') {
       )
     }
   </form>
-  {emailResult && <script>alert('Email Send')</script>}
+  {
+    emailInfo?.confirm === 1 ? (
+      <script>
+        const info = {
+            status: true,
+          } 
+        window.localStorage.setItem("Info",JSON.stringify(info))
+        window.location.href=`/email-status`
+        </script>
+    ) : (
+      emailInfo?.confirm === 2 && (
+        <script>
+          const path = window.location.pathname;
+          const info = {
+            path,
+            status: false,
+          } 
+
+          window.localStorage.setItem("Info",JSON.stringify(info))
+          window.location.href=`/email-status`
+        </script>
+      )
+    )
+  }
 </div>

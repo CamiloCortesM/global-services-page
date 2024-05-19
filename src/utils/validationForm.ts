@@ -56,7 +56,7 @@ export const validationForm = async ({
     message: message ? String(message) : '',
     chosenService: chosenService ? String(chosenService) : '',
     phoneNumber: phoneNumber ? String(phoneNumber) : '',
-    subject,
+    subject: `New ${subject}`,
   };
 
   return { errors, information };

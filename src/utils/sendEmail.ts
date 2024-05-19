@@ -22,9 +22,9 @@ export const sendEmail = async (information) => {
     if (data) {
       return true;
     }
-
     return false;
   } catch (error) {
     console.error('Error:', error);
+    return false;
   }
 };
