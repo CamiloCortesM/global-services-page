@@ -1,5 +1,6 @@
 ---
 export const prerender = true;
+
 import Layout from '@/layouts/ServiceLayout.astro';
 import ServiceDetails from '@/components/widgets/ServiceDetails.astro';
 import CertificationDetails from '@/components/widgets/CertificationDetails.astro';
@@ -7,7 +8,6 @@ import Features2 from '@/components/widgets/Features2.astro';
 import ServiceOfferings from '@/components/widgets/ServiceOfferings.astro';
 import ImageGallery from '@/components/widgets/ImageGallery.astro';
 import FAQs from '@/components/widgets/FAQs.astro';
-
 import { getStaticPathsServices } from '@/utils/service';
 
 export function getStaticPaths() {

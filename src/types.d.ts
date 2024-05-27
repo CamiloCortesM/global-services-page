@@ -101,14 +101,6 @@ export interface Price {
   ribbonTitle?: string;
 }
 
-export interface Testimonial {
-  title?: string;
-  testimonial?: string;
-  name?: string;
-  job?: string;
-  image?: string | unknown;
-}
-
 export interface Input {
   type: HTMLInputTypeAttribute;
   name: string;
@@ -145,14 +137,6 @@ export interface ItemGrid {
   classes?: Record<string, string>;
 }
 
-export interface Collapse {
-  iconUp?: string;
-  iconDown?: string;
-  items?: Array<Item>;
-  columns?: number;
-  classes?: Record<string, string>;
-}
-
 export interface Form {
   inputs?: Array<Input>;
   textarea?: Textarea;
@@ -184,11 +168,6 @@ export interface Pricing extends Headline, Widget {
   prices?: Array<Price>;
 }
 
-export interface Testimonials extends Headline, Widget {
-  testimonials?: Array<Testimonial>;
-  callToAction?: CallToAction;
-}
-
 export interface Brands extends Headline, Widget {
   icons?: Array<string>;
   images?: Array<Image>;
@@ -207,7 +186,6 @@ export interface Features extends Headline, Widget {
   isAfterContent?: boolean;
 }
 export interface Booking extends Widget {
-
 }
 
 export interface ServicesOfferings extends Headline, Widget {
@@ -312,8 +290,6 @@ export interface Opinions extends Headline, Widget {
 export interface NumberInputControl {
   text?: string;
 }
-
-//Untils
 
 export interface cloudflareResult {
   success: boolean;
