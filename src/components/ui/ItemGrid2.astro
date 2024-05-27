@@ -4,10 +4,6 @@ import type { ItemGrid } from '@/types';
 const { items = [] } = Astro.props as ItemGrid;
 ---
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
 
 <style>
   .swiper {
@@ -54,34 +50,35 @@ const { items = [] } = Astro.props as ItemGrid;
   )
 }
 
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
 <script is:inline>
-  new Swiper('.mySwiper', {
-    slidesPerView: 3,
-    spaceBetween: 50,
-    loop: true,
-    centerSlide: 'true',
-    fade: 'true',
-    grabCursor: 'true',
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true,
-    },
+  function init() {
+    new Swiper('.mySwiper', {
+      slidesPerView: 3,
+      spaceBetween: 50,
+      loop: true,
+      centerSlide: true,
+      fade: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
 
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        560: {
+          slidesPerView: 2,
+        },
+        950: {
+          slidesPerView: 3,
+        },
       },
-      560: {
-        slidesPerView: 2,
-      },
-      950: {
-        slidesPerView: 3,
-      },
-    },
-  });
+    });
+  }
+
+  init();
+  document.addEventListener('astro:after-swap', init);
 </script>

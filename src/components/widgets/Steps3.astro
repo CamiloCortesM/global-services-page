@@ -49,14 +49,14 @@ const {
             <Fragment set:html={image} />
           ) : (
             <Image
-              class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400"
-              widths={[400, 768]}
-              sizes="(max-width: 768px) 100vw, 432px"
-              width={432}
-              height={768}
+              class="inset-0 object-cover object-center w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400"
+              widths={[400, 768, 1024]}
+              sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw, 432px"
+              width={768}
+              height={'auto'}
               layout="cover"
               src={image?.src}
-              alt={image?.alt || ''}
+              alt={image?.alt || 'Default alt text'}
             />
           )}
         </div>

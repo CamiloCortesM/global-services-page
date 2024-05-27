@@ -52,14 +52,13 @@ const {
                   <div class="w-1/2 p-1 md:p-1 max-h-32">
                     {image.src && (
                       <Image
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        widths={[400, 768]}
-                        sizes="(max-width: 768px) 100vw, 432px"
-                        width={432}
-                        height={768}
-                        layout="cover"
+                        class="rounded-lg h-full object-cover object-center"
+                        widths={[200, 400, 768]}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={384}
+                        height={'auto'}
                         src={image.src}
-                        alt={image.alt || ''}
+                        alt={image.alt || 'Default alt text'}
                       />
                     )}
                   </div>
@@ -73,13 +72,12 @@ const {
                   ) : (
                     <Image
                       class="block h-full w-full rounded-lg object-cover object-center"
-                      widths={[400, 768]}
-                      sizes="(max-width: 768px) 100vw, 432px"
-                      width={432}
-                      height={768}
-                      layout="cover"
+                      widths={[400, 768, 1024]}
+                      sizes="(max-width: 400px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      width={1024}
+                      height={'auto'}
                       src={itemImageLarge?.src}
-                      alt={itemImageLarge?.alt || ''}
+                      alt={itemImageLarge?.alt || 'Default alt text'}
                     />
                   )}
                 </div>

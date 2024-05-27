@@ -8,149 +8,148 @@ export const getStaticPathsServices = () => {
         },
         title: 'General Cleaning',
         content: 'Comprehensive cleaning for a spotless space.',
-        image:
-          '/images/vista-lateral-mesa-limpieza-barista-femenina-guantes-latex.webp',
+        image: '/images/vista-lateral-mesa-limpieza-barista-femenina-guantes-latex.webp',
         position: 'bg-center',
       },
       serviceDetails: {
         id: 'service-details',
         paragraph1:
-          'Nuestros servicios de limpieza general están diseñados para mantener tu espacio impecable y acogedor en todo momento. Con un enfoque en la atención al detalle, nuestro equipo altamente capacitado se encarga de cada aspecto, desde la limpieza de rutina hasta la eliminación de manchas difíciles.',
+          'Our general cleaning services are designed to keep your space immaculate and inviting at all times. With a focus on attention to detail, our highly trained team takes care of every aspect, from routine cleaning to tackling tough stains.',
         paragraph2:
-          'En Global Services and Maintenance, comprendemos la importancia de mantener un ambiente limpio y saludable. Nos esforzamos por superar tus expectativas en cada servicio que ofrecemos, ya sea una limpieza programada regularmente o una limpieza profunda para un evento especial.',
+          'At Global Services and Maintenance, we understand the importance of maintaining a clean and healthy environment. We strive to exceed your expectations with every service we offer, whether it\'s regularly scheduled cleaning or a deep clean for a special event.',
         paragraph3:
-          'Nos comprometemos a proporcionar un servicio de limpieza impecable y de alta calidad para satisfacer las necesidades más exigentes de nuestros clientes. Utilizamos técnicas avanzadas y productos de limpieza certificados para garantizar resultados excepcionales en cada trabajo. Tu satisfacción y tranquilidad son nuestra prioridad absoluta.',
+          'We are committed to providing impeccable, high-quality cleaning services to meet the most demanding needs of our clients. We use advanced techniques and certified cleaning products to ensure exceptional results on every job. Your satisfaction and peace of mind are our top priority.',
       },
-
+    
       features: {
-        title: 'Características de Nuestros Servicios',
+        title: 'Features of Our Services',
         subtitle:
-          'Descubre por qué nuestros servicios son la opción ideal para mantener tus espacios limpios y saludables.',
+          'Discover why our services are the ideal choice for keeping your spaces clean and healthy.',
         items: [
           {
-            title: 'Métodos Avanzados',
+            title: 'Advanced Methods',
             description:
-              'Utilizamos técnicas de limpieza de vanguardia respaldadas por años de experiencia en el sector.',
+              'We use cutting-edge cleaning techniques backed by years of experience in the industry.',
             icon: 'mdi:tools',
           },
           {
-            title: 'Inspección Detallada',
+            title: 'Detailed Inspection',
             description:
-              'Realizamos una inspección meticulosa para identificar áreas problemáticas y ofrecer soluciones personalizadas.',
+              'We conduct a meticulous inspection to identify problem areas and offer customized solutions.',
             icon: 'mdi:magnify',
           },
           {
-            title: 'Productos Ecológicos',
+            title: 'Eco-Friendly Products',
             description:
-              'Priorizamos el uso de productos de limpieza ecológicos para garantizar un ambiente más saludable y sostenible.',
+              'We prioritize the use of eco-friendly cleaning products to ensure a healthier, more sustainable environment.',
             icon: 'mdi:leaf',
           },
         ],
       },
-
+    
       serviceOfferings: {
-        title: 'Servicios de Limpieza General',
+        title: 'General Cleaning Services',
         subtitle:
-          'Descubre cómo podemos mantener tus espacios impecables y libres de suciedad con nuestros servicios de limpieza general.',
+          'Discover how we can keep your spaces spotless and dirt-free with our general cleaning services.',
         classes: {},
         image: {
           src: 'https://res.cloudinary.com/dnw9rbfpx/image/upload/v1710122517/front-view-man-cleaning-indoors_pqgahy.webp',
           alt: 'cleaning-indoors',
         },
-        paragraphList: 'Estos son nuestros servicios de limpieza general:',
+        paragraphList: 'These are our general cleaning services:',
         listItems: [
-          'Limpieza Regular',
-          'Limpieza Profunda',
-          'Lavado de Alfombras',
-          'Limpieza de Ventanas',
-          'Recogida y Eliminación de Basura',
-          'Desinfección de Baños',
-          'Encerado y Pulido de Pisos',
-          'Lavado a Alta Presión',
-          'Opciones de Limpieza Ecológica',
+          'Regular Cleaning',
+          'Deep Cleaning',
+          'Carpet Washing',
+          'Window Cleaning',
+          'Trash Collection and Removal',
+          'Bathroom Disinfection',
+          'Floor Waxing and Polishing',
+          'High-Pressure Washing',
+          'Eco-Friendly Cleaning Options',
         ],
-        titleHeading: 'Nuestro Proceso de Limpieza',
+        titleHeading: 'Our Cleaning Process',
         paragraphText:
-          'Nuestro equipo sigue un proceso detallado que incluye inspección, limpieza meticulosa y acabado final para asegurar que tus espacios estén impecables en todo momento. Con nuestra dedicación y atención al detalle, puedes confiar en que tus espacios estarán limpios y frescos para que los disfrutes plenamente.',
+          'Our team follows a detailed process that includes inspection, thorough cleaning, and final finishing to ensure your spaces are immaculate at all times. With our dedication and attention to detail, you can trust that your spaces will be clean and fresh for you to enjoy fully.',
         strongText:
-          'Con nuestra dedicación y atención al detalle, puedes confiar en que tus espacios estarán limpios y frescos para que los disfrutes plenamente.',
+          'With our dedication and attention to detail, you can trust that your spaces will be clean and fresh for you to enjoy fully.',
       },
-      imageGalery: {
+      imageGallery: {
         images: [
           {
             src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
-            alt: 'persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina',
+            alt: 'cleaning-professional-vacuuming-office',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/hombres-tiro-completo-chocan-cinco-oficina_23-2149345549.jpg?t=st=1710092868~exp=1710096468~hmac=448b210a524726f64f9df6743bcafa8e6058f0172fd3eea774c5a589c8e37098&w=996',
-            alt: 'hombres-tiro-completo-chocan-cinco-oficina',
+            alt: 'full-length-men-high-fiving-office',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/primer-plano-camarera-desinfectando-mesas-cafe-al-aire-libre_637285-7996.jpg?t=st=1710092892~exp=1710096492~hmac=43304fb756f5c232fc829c5b6d7698eeb4f7e937cff84466f74a92bf5e654be0&w=996',
-            alt: 'primer-plano-camarera-desinfectando-mesas-cafe-al-aire-libre',
+            alt: 'close-up-waitress-disinfecting-outdoor-cafe-tables',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/personas-que-encargan-limpieza-oficinas_23-2149374433.jpg?t=st=1710092805~exp=1710096405~hmac=0d5b20fd89bfea36de39e1b764c182e612a3c7d881b16235b0ee70720dd15bd6&w=360',
-            alt: 'personas-que-encargan-limpieza-oficinas',
+            alt: 'people-overseeing-office-cleaning',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/vista-frontal-hombre-limpiando-interior_23-2150454484.jpg?t=st=1710092908~exp=1710096508~hmac=b19dad312c34a93ce9791221a604cdc6aeb94fb3434df824fae22550231a1a2d&w=996',
-            alt: 'vista-frontal-hombre-limpiando-interior',
+            alt: 'front-view-man-cleaning-indoors',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/vista-lateral-cerca-mano-joven-delantal-guantes-goma-sosteniendo-canasta-equipo-limpieza-plumero-botella-rociadora-esponja-pano-limpiar-canasta_1150-48118.jpg?t=st=1710092928~exp=1710096528~hmac=abc808091e3659bdb8bd653ee30e1293d73b8a02e45595bca68af1c27ae0c3b5&w=996',
-            alt: 'vista-lateral-cerca-mano-joven-delantal-guantes-goma-sosteniendo-canasta-equipo-limpieza-plumero-botella-rociadora-esponja-pano-limpiar-canasta',
+            alt: 'side-view-close-up-young-apron-gloves-rubber-holding-basket-cleaning-supplies-duster-spray-bottle-sponge-cloth-clean-basket',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/persona-que-encarga-limpieza-oficinas_23-2149374462.jpg?t=st=1710092950~exp=1710096550~hmac=da1f46318a31d8c31f06255693ae1247d187e5e3213f0a5ef3cf06a0acf1d468&w=996',
-            alt: 'persona-que-encarga-limpieza-oficinas',
+            alt: 'person-in-charge-office-cleaning',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/ama-casa-sonriente-mujer-joven-que-limpia-muebles-cocina_231208-547.jpg?t=st=1710092844~exp=1710096444~hmac=7dc1197a612539e0c28792e87cb342fe7eaba417f166dba4cb231a252e93ed47&w=360',
-            alt: 'ama-casa-sonriente-mujer-joven-que-limpia-muebles-cocina',
+            alt: 'smiling-housewife-young-woman-cleaning-kitchen-furniture',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/servicio-limpieza-profesional-personas-trabajando-juntas-oficina_23-2150520643.jpg?t=st=1710092971~exp=1710096571~hmac=22a2e97e64312e34f54a39d6e47651ec63a186c5fac24a4d411cdad4d2cf696e&w=996',
-            alt: 'servicio-limpieza-profesional-personas-trabajando-juntas-oficina',
+            alt: 'professional-cleaning-service-people-working-together-office',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/personas-desinfectando-area-riesgo-biologico_23-2148848556.jpg?w=996',
-            alt: 'personas-desinfectando-area-riesgo-biologico',
+            alt: 'people-disinfecting-biological-hazard-area',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/edificio-limpieza-personas-tiro-medio_23-2150454565.jpg?t=st=1710093038~exp=1710096638~hmac=8e9f5b5769b07dc0b61c2fd03f79132f89b467690356068d1a4a8c08742ade9d&w=996',
-            alt: 'edificio-limpieza-personas-tiro-medio',
+            alt: 'building-cleaning-people-medium-shot',
           },
           {
             src: 'https://img.freepik.com/foto-gratis/barandilla-limpieza-hombre-angulo_23-2149345522.jpg?t=st=1710093020~exp=1710096620~hmac=c804fa432ca0a47637aeb0758ba3df29edd229ea8747e6c09f0e8b4892bb5fbe&w=360',
-            alt: 'barandilla-limpieza-hombre-angulo',
+            alt: 'railing-cleaning-man-angle',
           },
         ],
       },
       faqs: {
-        title: 'Preguntas Frecuentes',
+        title: 'Frequently Asked Questions',
         subtitle:
-          'Encuentra respuestas a las preguntas más comunes sobre nuestros servicios de limpieza general.',
+          'Find answers to the most common questions about our general cleaning services.',
         items: [
           {
-            title: '¿Qué incluye el servicio de limpieza general?',
+            title: 'What is included in the general cleaning service?',
             description:
-              'Nuestro servicio de limpieza general abarca la limpieza de todas las áreas comunes de tu hogar o negocio, incluyendo pisos, superficies, baños, y más.',
+              'Our general cleaning service covers cleaning all common areas of your home or business, including floors, surfaces, bathrooms, and more.',
           },
           {
-            title: '¿Cuál es el proceso de contratación de vuestros servicios?',
+            title: 'What is the process for hiring your services?',
             description:
-              'El proceso es simple: primero, contáctanos para programar una evaluación de tus necesidades de limpieza. Luego, te proporcionaremos un presupuesto detallado y, una vez aceptado, coordinaremos la fecha y hora de inicio del servicio.',
+              'The process is simple: first, contact us to schedule an evaluation of your cleaning needs. Then, we will provide you with a detailed quote and, once accepted, we will coordinate the start date and time of the service.',
           },
           {
-            title: '¿Cómo garantizan la calidad de vuestro trabajo?',
+            title: 'How do you ensure the quality of your work?',
             description:
-              'Nos comprometemos a ofrecer un servicio de la más alta calidad. Nuestro equipo está compuesto por profesionales capacitados y utilizamos productos y equipos de limpieza de última generación para garantizar resultados excepcionales en cada trabajo.',
+              'We are committed to offering the highest quality service. Our team is composed of trained professionals, and we use state-of-the-art cleaning products and equipment to ensure exceptional results on every job.',
           },
           {
-            title: '¿Ofrecen servicios personalizados según mis necesidades?',
+            title: 'Do you offer customized services based on my needs?',
             description:
-              'Sí, nos adaptamos a tus necesidades específicas. Podemos diseñar un plan de limpieza a medida que se ajuste a tus preferencias y requerimientos, ya sea para una limpieza regular o para ocasiones especiales.',
+              'Yes, we tailor our services to your specific needs. We can design a custom cleaning plan that fits your preferences and requirements, whether it\'s for regular cleaning or special occasions.',
           },
         ],
       },
@@ -224,7 +223,7 @@ export const getStaticPathsServices = () => {
         strongText:
           'With our dedication to quality, your windows will shine brightly and enhance the overall appearance of your property.',
       },
-      imageGalery: {
+      imageGallery: {
         images: [
           {
             src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
@@ -257,22 +256,6 @@ export const getStaticPathsServices = () => {
           {
             src: 'https://img.freepik.com/foto-gratis/ama-casa-sonriente-mujer-joven-que-limpia-muebles-cocina_231208-547.jpg?t=st=1710092844~exp=1710096444~hmac=7dc1197a612539e0c28792e87cb342fe7eaba417f166dba4cb231a252e93ed47&w=360',
             alt: 'ama-casa-sonriente-mujer-joven-que-limpia-muebles-cocina',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/servicio-limpieza-profesional-personas-trabajando-juntas-oficina_23-2150520643.jpg?t=st=1710092971~exp=1710096571~hmac=22a2e97e64312e34f54a39d6e47651ec63a186c5fac24a4d411cdad4d2cf696e&w=996',
-            alt: 'servicio-limpieza-profesional-personas-trabajando-juntas-oficina',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/personas-desinfectando-area-riesgo-biologico_23-2148848556.jpg?w=996',
-            alt: 'personas-desinfectando-area-riesgo-biologico',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/edificio-limpieza-personas-tiro-medio_23-2150454565.jpg?t=st=1710093038~exp=1710096638~hmac=8e9f5b5769b07dc0b61c2fd03f79132f89b467690356068d1a4a8c08742ade9d&w=996',
-            alt: 'edificio-limpieza-personas-tiro-medio',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/barandilla-limpieza-hombre-angulo_23-2149345522.jpg?t=st=1710093020~exp=1710096620~hmac=c804fa432ca0a47637aeb0758ba3df29edd229ea8747e6c09f0e8b4892bb5fbe&w=360',
-            alt: 'barandilla-limpieza-hombre-angulo',
           },
         ],
       },
@@ -376,7 +359,7 @@ export const getStaticPathsServices = () => {
         strongText:
           'With our expertise and dedication, we guarantee exceptional results that rejuvenate your carpets and enhance the overall appearance of your space.',
       },
-      imageGalery: {
+      imageGallery: {
         images: [
           {
             src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
@@ -530,36 +513,8 @@ export const getStaticPathsServices = () => {
         strongText:
           'With our expertise and dedication, your outdoor space will flourish and thrive throughout the year.',
       },
-      imageGalery: {
+      imageGallery: {
         images: [
-          {
-            src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
-            alt: 'persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/hombres-tiro-completo-chocan-cinco-oficina_23-2149345549.jpg?t=st=1710092868~exp=1710096468~hmac=448b210a524726f64f9df6743bcafa8e6058f0172fd3eea774c5a589c8e37098&w=996',
-            alt: 'hombres-tiro-completo-chocan-cinco-oficina',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/primer-plano-camarera-desinfectando-mesas-cafe-al-aire-libre_637285-7996.jpg?t=st=1710092892~exp=1710096492~hmac=43304fb756f5c232fc829c5b6d7698eeb4f7e937cff84466f74a92bf5e654be0&w=996',
-            alt: 'primer-plano-camarera-desinfectando-mesas-cafe-al-aire-libre',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/personas-que-encargan-limpieza-oficinas_23-2149374433.jpg?t=st=1710092805~exp=1710096405~hmac=0d5b20fd89bfea36de39e1b764c182e612a3c7d881b16235b0ee70720dd15bd6&w=360',
-            alt: 'personas-que-encargan-limpieza-oficinas',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/vista-frontal-hombre-limpiando-interior_23-2150454484.jpg?t=st=1710092908~exp=1710096508~hmac=b19dad312c34a93ce9791221a604cdc6aeb94fb3434df824fae22550231a1a2d&w=996',
-            alt: 'vista-frontal-hombre-limpiando-interior',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/vista-lateral-cerca-mano-joven-delantal-guantes-goma-sosteniendo-canasta-equipo-limpieza-plumero-botella-rociadora-esponja-pano-limpiar-canasta_1150-48118.jpg?t=st=1710092928~exp=1710096528~hmac=abc808091e3659bdb8bd653ee30e1293d73b8a02e45595bca68af1c27ae0c3b5&w=996',
-            alt: 'vista-lateral-cerca-mano-joven-delantal-guantes-goma-sosteniendo-canasta-equipo-limpieza-plumero-botella-rociadora-esponja-pano-limpiar-canasta',
-          },
-          {
-            src: 'https://img.freepik.com/foto-gratis/persona-que-encarga-limpieza-oficinas_23-2149374462.jpg?t=st=1710092950~exp=1710096550~hmac=da1f46318a31d8c31f06255693ae1247d187e5e3213f0a5ef3cf06a0acf1d468&w=996',
-            alt: 'persona-que-encarga-limpieza-oficinas',
-          },
           {
             src: 'https://img.freepik.com/foto-gratis/ama-casa-sonriente-mujer-joven-que-limpia-muebles-cocina_231208-547.jpg?t=st=1710092844~exp=1710096444~hmac=7dc1197a612539e0c28792e87cb342fe7eaba417f166dba4cb231a252e93ed47&w=360',
             alt: 'ama-casa-sonriente-mujer-joven-que-limpia-muebles-cocina',
@@ -684,7 +639,7 @@ export const getStaticPathsServices = () => {
         strongText:
           'With our proactive approach and attention to detail, we ensure that your property remains safe, functional, and well-maintained.',
       },
-      imageGalery: {
+      imageGallery: {
         images: [
           {
             src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
@@ -772,7 +727,7 @@ export const getStaticPathsServices = () => {
       serviceDetails,
       features,
       serviceOfferings,
-      imageGalery,
+      imageGallery,
       faqs,
     }) => {
       return {
@@ -782,7 +737,7 @@ export const getStaticPathsServices = () => {
           serviceDetails,
           features,
           serviceOfferings,
-          imageGalery,
+          imageGallery,
           faqs,
         },
       };

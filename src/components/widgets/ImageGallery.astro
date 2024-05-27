@@ -1,21 +1,23 @@
 ---
 import Image from '@/components/common/Image.astro';
 import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
-import type { ImageGalery } from '@/types';
+import type { ImageGallery } from '@/types';
 
 const {
   images = [],
   id,
   classes = {},
   bg = await Astro.slots.render('bg'),
-} = Astro.props as ImageGalery;
+} = Astro.props as ImageGallery;
 
 interface Image {
   src: string;
   alt: string;
 }
 
-const elementosPorFila = Math.ceil(images.length / 4);
+const numRows = images.length <= 6 ? 3 : 4
+
+const elementosPorFila = Math.ceil(images.length / numRows);
 const groupedImages: Image[][] = [];
 
 for (let i = 0; i < 4; i++) {
@@ -30,16 +32,14 @@ for (let i = 0; i < 4; i++) {
   containerClass={`max-w-6xl mx-auto py-4 md:py-4 lg:py-4  ${classes?.container ?? ''}`}
   bg={bg}
 >
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class=`grid grid-cols-2 md:grid-cols-${numRows} gap-4 justify-center`>
     {
       groupedImages.map((group) => (
         <div class="grid gap-4">
           {group.map((image) => (
             <div class="overflow-hidden rounded-lg">
               <Image
-                width="auto"
-                height="auto"
-                layout="cover"
+                layout="fullWidth"
                 src={image.src}
                 alt={image.alt}
                 class="h-full max-w-full transition duration-300 ease-in-out hover:scale-110"

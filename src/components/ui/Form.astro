@@ -43,11 +43,8 @@ const handlePostRequest = async () => {
   if (!hasErrors) {
     try {
       const emailResult = await sendEmail(information);
-      emailInfo["emailResult"] = emailResult;
-
       if (emailResult) {
         emailInfo.confirm = 1;
-        emailInfo['message'] = subject;
       } else {
         emailInfo.confirm = 2;
       }
@@ -142,9 +139,9 @@ if (Astro.request.method === 'POST') {
             required
           >
             <option value="">Choose a service</option>
-            {serviceOption.servicesLinks.map(({ text }) => (
-              <option value={text.charAt(0) + text.slice(1).toLowerCase()}>
-                {text.charAt(0) + text.slice(1).toLowerCase()}
+            {serviceOption.servicesLinks.map((service:string) => (
+              <option value={service}>
+                {service}
               </option>
             ))}
           </select>
@@ -197,7 +194,9 @@ if (Astro.request.method === 'POST') {
   {
     emailInfo?.confirm === 1 ? (
       <script>
+        const path = window.location.pathname;
         const info = {
+            path,
             status: true,
           } 
         window.localStorage.setItem("Info",JSON.stringify(info))

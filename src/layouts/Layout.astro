@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import '@/assets/styles/talwind.css';
+
 import CustomStyles from '@/components/CustomStyles.astro';
 import BasicScripts from '@/components/common/BasicScripts.astro';
 import Contact from '@/components/widgets/Contact.astro';
@@ -19,24 +20,47 @@ const { language, textDirection } = I18N;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Custom Styles -->
+    
     <CustomStyles />
-    <!-- TODO: Metadata,CustomStyles... -->
+    <!-- View Transitions -->
     <ViewTransitions />
+
+    <!-- Swiper Styles and Scripts -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+      defer></script>
+
+    <!-- TODO: Add more metadata if needed -->
   </head>
 
   <body class="antialiased text-default tracking-tight">
+    <!-- Contact Section -->
     <slot name="contact">
       <Contact />
     </slot>
+
+    <!-- Header Section -->
     <slot name="header">
       <Header {...headerData} />
     </slot>
+
+    <!-- Main Content -->
     <main>
       <slot />
     </main>
+
+    <!-- Footer Section -->
     <slot name="footer">
       <Footer {...footerData} />
     </slot>
+
+    <!-- Basic Scripts -->
     <BasicScripts />
   </body>
 </html>

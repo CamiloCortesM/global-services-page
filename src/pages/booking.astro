@@ -1,5 +1,4 @@
 ---
-export const prerender = true;
 import Layout from '@/layouts/ServiceLayout.astro';
 import FormBooking from '@/components/widgets/FormBooking.astro';
 ---
@@ -7,6 +6,7 @@ import FormBooking from '@/components/widgets/FormBooking.astro';
 <Layout
   image="/images/primer-plano-mujer-que-usa-telefono-inteligente-mientras-aprende-noche-casa.webp"
   title="Book Online"
+  content='Book cleaning and maintenance services online hassle-free'
 >
-  <FormBooking />
+  <FormBooking id="form_booking" />
 </Layout>

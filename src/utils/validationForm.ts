@@ -34,8 +34,8 @@ export const validationForm = async ({
   }
 
   if (chosenService) {
-    const isValidService = serviceOption?.servicesLinks.some((service) => {
-      return service.text.toLowerCase() === chosenServiceString;
+    const isValidService = serviceOption?.servicesLinks.some((service:string) => {
+      return service?.toLowerCase() === chosenServiceString;
     });
 
     if (!isValidService) {
