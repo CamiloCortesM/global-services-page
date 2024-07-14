@@ -5,7 +5,7 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: ''
+  googleSiteVerificationId: UrzrkBm_iL88K5YvhzaNw0FcMRcsie5kaAmLlo71xWA
 
 # SEO metadata
 metadata:
@@ -35,7 +35,7 @@ i18n:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: G-SX9L8C359Z
 
 ui:
   theme: 'system'
