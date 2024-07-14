@@ -10,9 +10,19 @@ import Header from '@/components/widgets/Header.astro';
 
 import { footerData, headerData } from '@/navigation';
 
+import type { MetaData as MetaDataType } from '@/types';
 import { I18N } from '../utils/config';
+import Metadata from '@/components/common/Metadata.astro';
+import CommonMeta from '@/components/common/CommonMeta.astro';
+
+export interface Props {
+  metadata?: MetaDataType;
+}
+
+const { metadata = {} } = Astro.props;
 
 const { language, textDirection } = I18N;
+
 ---
 
 <!doctype html>
@@ -20,10 +30,9 @@ const { language, textDirection } = I18N;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Custom Styles -->
-    
+    <CommonMeta />
     <CustomStyles />
-    <!-- View Transitions -->
+    <Metadata {...metadata} />
     <ViewTransitions />
 
     <!-- Swiper Styles and Scripts -->

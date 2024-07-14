@@ -16,10 +16,11 @@ const {
   content = '',
   image = '/images/vista-lateral-mesa-limpieza-barista-femenina-guantes-latex.webp',
   position = 'bg-center',
+  metadata,
 } = Astro.props;
 ---
 
-<Layout>
+<Layout metadata={metadata}>
   <slot name="Hero">
     <HeroService>
       <Fragment slot="title">{title}</Fragment>

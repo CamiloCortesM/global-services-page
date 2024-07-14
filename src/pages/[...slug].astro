@@ -22,9 +22,17 @@ const {
   faqs,
   layout,
 } = Astro.props;
+
+const metadata = {
+  title: `${layout.title} - Global Service and Maintenance`,
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 ---
 
-<Layout {...layout}>
+<Layout {...layout} metadata={metadata}>
   <CertificationDetails />
 
   <ServiceDetails {...serviceDetails} />
