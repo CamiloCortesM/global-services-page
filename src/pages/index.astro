@@ -10,9 +10,14 @@ import Brands from '@/components/widgets/Brands.astro';
 import FAQs from '@/components/widgets/FAQs.astro';
 
 import { getPermalink } from '@/utils/permalinks';
+
+//metadata
+const metadata = {
+  title: 'Home',
+};
 ---
 
-<Layout>
+<Layout metadata={metadata}>
   <Description
     id="description"
     title="THE BEST CLEANING COMPANY IN LONDON"

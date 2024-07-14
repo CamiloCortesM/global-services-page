@@ -2,9 +2,15 @@
 export const prerender = true;
 import FAQs from '@/components/widgets/FAQs.astro';
 import Layout from '@/layouts/PageLayout.astro';
+
+//metadata
+const metadata = {
+  title: 'FAQs',
+};
 ---
 
 <Layout
+  metadata={metadata}
   title="FAQs: Answers to Your Cleaning Queries"
   content="Find solutions to common cleaning questions."
   image="/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina2.webp"

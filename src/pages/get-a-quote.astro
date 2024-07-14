@@ -5,9 +5,15 @@ import Layout from '@/layouts/ServiceLayout.astro';
 import { servicesForms } from '@/utils/service-forms';
 
 const servicesLinks = Object.keys(servicesForms);
+
+//metadata
+const metadata = {
+  title: 'Get a Quote',
+};
 ---
 
 <Layout
+  metadata={metadata}
   image="/images/mano-sosteniendo-moneda-mexicana.webp"
   title="Get a quote"
   content = 'Impeccable Cleanliness at Your Fingertips'
