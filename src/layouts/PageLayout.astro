@@ -16,10 +16,11 @@ const {
   content = 'Cleaning Services',
   image = '/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina.webp',
   position = 'bg-center',
+  metadata,
 } = Astro.props;
 ---
 
-<Layout>
+<Layout metadata={metadata}>
   <slot name="Hero">
     <Hero>
       <Fragment slot="title">
