@@ -1,5 +1,3 @@
-import fs from 'fs';
-import yaml from 'js-yaml';
 import merge from 'lodash.merge';
 
 import type { MetaData } from '../types';
@@ -34,42 +32,64 @@ export interface AnalyticsConfig {
   };
 }
 
-// const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
-//   site?: SiteConfig;
-//   metadata?: MetaDataConfig;
-//   i18n?: I18NConfig;
-//   // apps?: {
-//   //   TODO page routes
-//   // };
-//   ui?: unknown;
-//   analytics?: unknown;
-// };
 
-const DEFAULT_SITE_NAME = 'Website';
-
-//TODO: DELETE IN PRODUCTION
 const config = {
   site: {
-    name: DEFAULT_SITE_NAME,
-    site: undefined,
+    name: 'Global Service',
+    // site: 'https://globalservice.vercel.app',
     base: '/',
     trailingSlash: false,
-
     googleSiteVerificationId: '',
   },
-  metadata: {},
+  metadata: {
+    title: {
+      default: 'Global Service',
+      template: '%s — Global Service',
+    },
+    description:
+      'Global Service offers professional cleaning solutions for residential and commercial spaces. Our team of experienced cleaners ensures a spotless and healthy environment, using eco-friendly products and state-of-the-art equipment. Trust us to keep your space immaculate with our reliable and customizable cleaning services.',
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      site_name: 'Global Service',
+      images: [
+        {
+          url: '/images/og-image.jpg',
+          width: 1200,
+          height: 628,
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      handle: '@nameUser', //change
+      site: '@nameUser',
+      cardType: 'summary_large_image',
+    },
+  },
   i18n: {
     language: 'en-GB',
     textDirection: 'ltr',
   },
-  ui: {},
-  analytics: {},
+  analytics: {
+    vendors: {
+      googleAnalytics: {
+        id: null,
+      },
+    },
+  },
+  ui: {
+    theme: 'system',
+  },
 };
+const DEFAULT_SITE_NAME = 'Website';
 
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
-    site: undefined,
+    site: 'http://localhost:4321',
     base: '/',
     trailingSlash: false,
 

@@ -3,9 +3,14 @@ export const prerender = false;
 import Layout from '@/layouts/PageLayout.astro';
 import ContactUs from '@/components/widgets/ContactUs.astro';
 import Ubication from '@/components/widgets/Ubication.astro';
+
+const metadata = {
+  title: 'Contact',
+};
 ---
 
 <Layout
+  metadata={metadata}
   title="Contact Us"
   content="Reach out for sparkling clean solutions."
   image="/images/oficina-limpieza-hombres-tiro-completo.webp"

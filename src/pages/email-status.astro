@@ -1,5 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+//metadata
+const metadata = {
+  title: 'Email Status',
+};
 ---
 
 <script>
@@ -317,6 +322,6 @@ import Layout from '@/layouts/Layout.astro';
   };
 </script>
 
-<Layout>
+<Layout metadata={metadata} >
   <div id="emailStatus"></div>
 </Layout>

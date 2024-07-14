@@ -1,9 +1,14 @@
 ---
 import Layout from '@/layouts/ServiceLayout.astro';
 import FormBooking from '@/components/widgets/FormBooking.astro';
+
+const metadata = {
+  title: 'Book Online',
+};
 ---
 
 <Layout
+  metadata={metadata}
   image="/images/primer-plano-mujer-que-usa-telefono-inteligente-mientras-aprende-noche-casa.webp"
   title="Book Online"
   content='Book cleaning and maintenance services online hassle-free'
