@@ -14,6 +14,8 @@ import type { MetaData as MetaDataType } from '@/types';
 import { I18N } from '../utils/config';
 import Metadata from '@/components/common/Metadata.astro';
 import CommonMeta from '@/components/common/CommonMeta.astro';
+import Favicons from '@/components/Favicons.astro';
+import Analitys from '@/components/common/Analitys.astro';
 
 export interface Props {
   metadata?: MetaDataType;
@@ -22,7 +24,6 @@ export interface Props {
 const { metadata = {} } = Astro.props;
 
 const { language, textDirection } = I18N;
-
 ---
 
 <!doctype html>
@@ -34,6 +35,8 @@ const { language, textDirection } = I18N;
     <CustomStyles />
     <Metadata {...metadata} />
     <ViewTransitions />
+    <Favicons />
+    <Analitys />
 
     <!-- Swiper Styles and Scripts -->
     <link
