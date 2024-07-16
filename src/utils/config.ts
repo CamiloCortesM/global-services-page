@@ -36,10 +36,10 @@ export interface AnalyticsConfig {
 const config = {
   site: {
     name: 'Global Service',
-    // site: 'https://globalservice.vercel.app',
+    site: 'https://globalservice.vercel.app',
     base: '/',
     trailingSlash: false,
-    googleSiteVerificationId: '',
+    googleSiteVerificationId: 'UrzrkBm_iL88K5YvhzaNw0FcMRcsie5kaAmLlo71xWA',
   },
   metadata: {
     title: {
@@ -76,7 +76,7 @@ const config = {
   analytics: {
     vendors: {
       googleAnalytics: {
-        id: null,
+        id: 'G-SX9L8C359Z',
       },
     },
   },
@@ -93,7 +93,7 @@ const getSite = () => {
     base: '/',
     trailingSlash: false,
 
-    googleSiteVerificationId: '',
+    googleSiteVerificationId: 'UrzrkBm_iL88K5YvhzaNw0FcMRcsie5kaAmLlo71xWA',
   };
 
   return merge({}, _default, config?.site ?? {}) as SiteConfig;
@@ -142,7 +142,7 @@ const getAnalytics = () => {
   const _default = {
     vendors: {
       googleAnalytics: {
-        id: undefined,
+        id: 'G-SX9L8C359Z',
         partytown: true,
       },
     },
