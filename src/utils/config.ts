@@ -36,7 +36,7 @@ export interface AnalyticsConfig {
 const config = {
   site: {
     name: 'Global Service',
-    site: 'https://globalservice.vercel.app',
+    site: 'https://global-services-page.vercel.app/',
     base: '/',
     trailingSlash: false,
     googleSiteVerificationId: 'UrzrkBm_iL88K5YvhzaNw0FcMRcsie5kaAmLlo71xWA',
