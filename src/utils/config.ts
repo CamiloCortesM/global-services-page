@@ -76,7 +76,7 @@ const config = {
   analytics: {
     vendors: {
       googleAnalytics: {
-        id: null,
+        id: 'G-SX9L8C359Z',
       },
     },
   },
