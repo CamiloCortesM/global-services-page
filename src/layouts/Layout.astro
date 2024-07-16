@@ -16,6 +16,7 @@ import Metadata from '@/components/common/Metadata.astro';
 import CommonMeta from '@/components/common/CommonMeta.astro';
 import Favicons from '@/components/Favicons.astro';
 import Analitys from '@/components/common/Analitys.astro';
+import SiteVerification from '@/components/common/SiteVerification.astro';
 
 export interface Props {
   metadata?: MetaDataType;
@@ -37,6 +38,7 @@ const { language, textDirection } = I18N;
     <ViewTransitions />
     <Favicons />
     <Analitys />
+    <SiteVerification />
 
     <!-- Swiper Styles and Scripts -->
     <link
