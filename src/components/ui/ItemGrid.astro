@@ -84,7 +84,7 @@ const {
                       descriptionClass,
                       itemClasses?.description
                     )}
-                    set:html={description}
+                    set:html={description.split('\n').join('<br>')}
                   />
                 )}
                 {callToAction && (

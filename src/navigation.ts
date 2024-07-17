@@ -107,8 +107,10 @@ export const footerData = {
     {
       title: 'Contact Us',
       links: [
-        { text: 'example@gmail.com', href: '#' },
-        { text: '+44 204571654', href: '#' },
+        { text: 'gsmlimitedinfo@gmail.com', href: 'mailto:gsmlimitedinfo@gmail.com' },
+        { text: 'director@gsmlimited.co.uk', href: 'mailto:director@gsmlimited.co.uk' },
+        { text: '020 3319 0192', href: 'tel:+44 020 3319 0192' },
+        { text: '07599 065018', href: 'tel:+44 07599 065018' },
         { text: 'Monday To Friday', href: '#' },
         { text: '9AM - 5PM', href: '#' },
       ],
