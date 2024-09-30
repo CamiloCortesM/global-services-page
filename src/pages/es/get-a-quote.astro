@@ -1,0 +1,54 @@
+---
+export const prerender = false;
+import ContactUs from '@/components/widgets/ContactUs.astro';
+import Layout from '@/layouts/ServiceLayout.astro';
+import { servicesForms } from '@/utils/service-forms';
+
+const servicesLinks = Object.keys(servicesForms);
+
+//metadata
+const metadata = {
+  title: 'Solicitar presupuesto',
+};
+---
+
+<Layout
+  metadata={metadata}
+  image="/images/mano-sosteniendo-moneda-mexicana.webp"
+  title="Solicitar presupuesto"
+  content = 'Limpieza impecable al alcance de su mano'
+>
+  <ContactUs
+    title="Solicite un presupuesto gratuito para nuestros servicios de limpieza"
+    classes={{ container: 'md:py-4 lg:py-8' }}
+    subtitle="¿Busca servicios de limpieza de calidad? Obtenga un presupuesto gratuito hoy mismo. Nuestros profesionales están listos para hacerse cargo de sus necesidades de limpieza, ya sea para hogares, oficinas o espacios comerciales, ¡contáctenos ahora y descubra cómo podemos ayudarle a mantener su espacio impecable!"
+    description="Nuestro equipo de asistencia suele responder en un plazo de 48 horas laborables."
+    subject="Quote"
+    button="Obtener presupuesto"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nombre',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Número',
+        pattern: '[0-9]+',
+        title:'Introduzca un número de teléfono válido en el Reino Unido.',
+      },
+    ]}
+    serviceOption={{ servicesLinks, label: 'Opciones de servicio' }}
+    columnsForm={false}
+    disclaimer={{
+      label:
+        'Al enviar este formulario de contacto, usted reconoce y acepta la recopilación de su información personal.',
+    }}
+  />
+</Layout>

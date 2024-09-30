@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/ServiceLayout.astro';
+import FormBooking from '@/components/widgets/FormBooking.astro';
+
+const metadata = {
+  title: 'Reservar en línea',
+};
+---
+
+<Layout
+  metadata={metadata}
+  image="/images/primer-plano-mujer-que-usa-telefono-inteligente-mientras-aprende-noche-casa.webp"
+  title="Reservar en línea"
+  content="Reserva servicios de limpieza y mantenimiento en línea sin complicaciones"
+>
+  <FormBooking id="form_booking" />
+</Layout>

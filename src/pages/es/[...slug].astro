@@ -1,0 +1,60 @@
+---
+export const prerender = true;
+
+import Layout from '@/layouts/ServiceLayout.astro';
+import ServiceDetails from '@/components/widgets/ServiceDetails.astro';
+import CertificationDetails from '@/components/widgets/CertificationDetails.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import ServiceOfferings from '@/components/widgets/ServiceOfferings.astro';
+import ImageGallery from '@/components/widgets/ImageGallery.astro';
+import FAQs from '@/components/widgets/FAQs.astro';
+import { getStaticPathsServices } from '@/utils/service';
+
+export function getStaticPaths() {
+  return getStaticPathsServices();
+}
+
+const {
+  serviceDetails,
+  features,
+  serviceOfferings,
+  imageGallery,
+  faqs,
+  layout,
+} = Astro.props;
+
+const metadata = {
+  title: `${layout.title} - Global Service and Maintenance`,
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+---
+
+<Layout {...layout} metadata={metadata}>
+  <CertificationDetails />
+
+  <ServiceDetails {...serviceDetails} />
+
+  <Features2 {...features}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <ServiceOfferings
+    {...serviceOfferings}
+    classes={{
+      headline: {
+        title: 'text-left',
+        subtitle: 'text-left',
+        container: 'mb-2 md:mb-4',
+      },
+    }}
+  />
+
+  <ImageGallery {...imageGallery} />
+
+  <FAQs classes={{ container: 'max-w-6xl' }} {...faqs} />
+</Layout>
