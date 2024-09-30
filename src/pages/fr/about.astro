@@ -1,0 +1,133 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Steps3 from '@/components/widgets/Steps3.astro';
+import Steps2 from '@/components/widgets/Steps2.astro';
+import QuoteCustomer from '@/components/widgets/QuoteCustomer.astro';
+
+import {
+  womenCleanOffice,
+  unsplashImage1,
+  unsplashImage3,
+  unsplashImage2,
+  unsplashImage4,
+  unsplashImage5,
+  unsplashImage6,
+} from '@/assets/images/images.js';
+
+const metadata = {
+  title: 'Qui sommes-nous',
+};
+---
+
+<Layout
+  metadata={metadata}
+  title="Notre entreprise"
+  content="Découvrez notre parcours et notre engagement envers l'excellence"
+  image="/images/personas-que-encargan-limpieza-oficinas.webp"
+>
+  <Steps3
+    title="Notre engagement envers l'excellence dans le nettoyage"
+    subtitle="Chez Global Service & Maintenance, nous nous engageons à fournir des services de nettoyage exceptionnels à Londres. Notre objectif est de créer un environnement propre et sain, dépassant les attentes de nos clients."
+    image={{
+      src: womenCleanOffice,
+      alt: 'Femmes - Nettoyage de bureaux',
+    }}
+  />
+
+  <Steps2
+    title="Notre objectif"
+    subtitle="Avec une équipe hautement qualifiée et des produits de nettoyage de qualité, notre objectif est d'obtenir des résultats impeccables et la pleine satisfaction du client. Nous valorisons la confiance et nous efforçons de bâtir des relations durables basées sur la qualité et l'attention aux détails. Faites-nous confiance pour un nettoyage impeccable et un service exceptionnel."
+    isReversedImage="true"
+    items={[
+      {
+        title: 'Notre objectif',
+        description:
+          "Fournir des services de nettoyage exceptionnels pour les maisons et les entreprises, dépassant les attentes des clients en matière de propreté et d'hygiène, tout en favorisant des relations durables basées sur la confiance et l'excellence.",
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Vision de l’entreprise',
+        description:
+          'Nous sommes des leaders dans le secteur des services de nettoyage résidentiel et commercial, offrant une qualité exceptionnelle, une attention méticuleuse aux détails, et la satisfaction maximale du client.',
+        icon: 'tabler:crown',
+      },
+      {
+        title: 'Procédure',
+        description:
+          'Nous évaluons les besoins en nettoyage, mettons en œuvre un plan complet avec des équipes qualifiées et des produits de qualité, et réalisons des contrôles de qualité rigoureux pour garantir des résultats impeccables.',
+        icon: 'tabler:award',
+      },
+    ]}
+    itemsImagesShort={[
+      {
+        alt: 'clean-house',
+        src: unsplashImage1,
+      },
+      {
+        alt: 'clean-windows',
+        src: unsplashImage3,
+      },
+    ]}
+    itemImageLarge={{
+      alt: 'items-clean',
+      src: unsplashImage2,
+    }}
+  />
+
+  <Steps2
+    title="Pourquoi nous choisir"
+    subtitle="Nous sommes plus qu'une entreprise de nettoyage. Nous sommes vos partenaires dans la création d'un environnement propre et sain pour votre maison ou votre entreprise."
+    isReversed="true"
+    items={[
+      {
+        title: 'Qualité',
+        description:
+          'Nous utilisons des produits et équipements de nettoyage de haute qualité, garantissant un résultat impeccable et hygiénique. Nous effectuons également des contrôles de qualité réguliers pour maintenir nos normes élevées.',
+        icon: 'tabler:discount-check-filled',
+      },
+      {
+        title: 'Expérience',
+        description:
+          "Avec plus de 10 ans d'expérience dans le secteur du nettoyage, nous servons une vaste gamme de clients dans tout Londres. Nous avons l'expérience et les compétences nécessaires pour relever tous les défis de nettoyage, petits ou grands.",
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Confiance',
+        description:
+          'Nous sommes une entreprise fiable et digne de confiance, avec un historique prouvé de prestation de services exceptionnels. Nous valorisons votre vie privée et votre sécurité, et traitons votre propriété avec respect et soin.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+    itemsImagesShort={[
+      {
+        alt: 'clean-windows',
+        src: unsplashImage4,
+      },
+      {
+        alt: 'clean-carpet',
+        src: unsplashImage6,
+      },
+    ]}
+    itemImageLarge={{
+      alt: 'gathering-people',
+      src: unsplashImage5,
+    }}
+  />
+  <QuoteCustomer
+    title="Engagement envers la satisfaction du client"
+    subtitle="Nous nous engageons à offrir le meilleur service possible à nos clients. Mais ne vous fiez pas uniquement à notre parole. Voici ce que disent certains de nos clients satisfaits :"
+    tagline="Avis des clients"
+    items={[
+      {
+        quote:
+          "Global Service & Maintenance a fait un travail incroyable. Ma maison n'a jamais été aussi propre. Je recommande vivement leurs services.",
+        author: ' - Karmen M.',
+      },
+      {
+        quote:
+          "L'équipe de Global Service & Maintenance est professionnelle, minutieuse et toujours ponctuelle. Je ne ferais confiance à personne d'autre pour nettoyer ma maison.",
+        author: '- John D.',
+      },
+    ]}
+  />
+</Layout>

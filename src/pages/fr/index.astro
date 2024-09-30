@@ -1,0 +1,337 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Features from '@/components/widgets/Features.astro';
+import Description from '@/components/widgets/Description.astro';
+import Benefit from '@/components/widgets/Benefit.astro';
+import Services from '@/components/widgets/Services.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Brands from '@/components/widgets/Brands.astro';
+import FAQs from '@/components/widgets/FAQs.astro';
+
+import { getPermalink } from '@/utils/permalinks';
+
+//metadata
+const metadata = {
+  title: "Accueil",
+};
+---
+
+<Layout metadata={metadata}>
+  <Description
+    id="description"
+    title="LA MEILLEURE ENTREPRISE DE NETTOYAGE À LONDRES"
+    subtitle="Chez Global Services and Maintenance, nous sommes spécialisés dans la prestation de services professionnels de nettoyage et d'entretien pour les maisons et les bureaux à Londres. Forts de plusieurs années d'expérience, nous garantissons des résultats exceptionnels pour chaque tâche, du nettoyage général au lavage de tapis et à l'entretien des jardins. Notre équipe hautement qualifiée s'engage à offrir l'excellence dans chaque détail, avec efficacité, professionnalisme et des prix compétitifs. Faites-nous confiance pour maintenir votre espace immaculé et en parfait état."
+    classes={{
+      headline: {
+        title: 'text-2xl md:text-3xl',
+        subtitle: 'text-left text-lg',
+      },
+    }}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
+      alt: 'Todo:change',
+    }}
+  />
+
+  <Features
+    id="features"
+    tagline="Notre excellence"
+    title="Découvrez l'excellence avec Global Services and Maintenance"
+    subtitle="Explorez les niveaux exceptionnels des services professionnels de nettoyage et d'entretien que nous proposons à Londres."
+    items={[
+      {
+        title: "Formules spécialisées",
+        description:
+          "Des détergents puissants mais doux qui garantissent un nettoyage en profondeur sans endommager les surfaces.",
+        icon: 'tabler:flask',
+      },
+      {
+        title: "Fiabilité",
+        description:
+          "Faites-nous confiance pour redonner à votre maison son meilleur aspect, votre sanctuaire de propreté.",
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: "Qualité certifiée",
+        description:
+          "Nous garantissons un niveau de propreté impeccable pour votre maison ou votre bureau.",
+        icon: 'tabler:certificate',
+      },
+      {
+        title: "Des décennies d'expérience",
+        description:
+          "Avec des années d'expérience dans le secteur, nous offrons une qualité de nettoyage qui change la vie.",
+        icon: 'tabler:star',
+      },
+      {
+        title: "Une équipe qualifiée",
+        description:
+          "Nos professionnels travaillent avec respect pour votre maison, garantissant un travail bien fait.",
+        icon: 'tabler:users',
+      },
+      {
+        title: "Efficacité dans le travail",
+        description:
+          "Des services rapides et efficaces adaptés à votre emploi du temps.",
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Benefit
+    isReversed
+    tagline="Avantages"
+    title="Pourquoi sommes-nous différents ?"
+    items={[
+      {
+        title: "Satisfaction garantie",
+        description:
+          "Nous nous engageons à garantir votre satisfaction à chaque service, en travaillant sans relâche pour dépasser vos attentes et vous offrir une expérience de nettoyage exceptionnelle.",
+      },
+      {
+        title: "Professionnels licenciés et assurés",
+        description:
+          "Notre équipe de professionnels est entièrement autorisée et assurée, vous offrant ainsi la tranquillité d'esprit de savoir que votre propriété est entre de bonnes mains.",
+      },
+      {
+        title: "Construire des relations durables",
+        description:
+          "Nous nous engageons activement auprès de la communauté, établissant des relations à long terme avec nos clients et recherchant constamment de nouvelles opportunités de croissance et d'expansion pour notre entreprise.",
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709050517~exp=1709054117~hmac=40deee42843737865431b89c549be019954c535b19225b647749e06087f8bd79&w=996',
+      alt: 'Colorful Image',
+    }}
+  >
+  
+  
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+      Ready for Impeccable Cleaning
+    </h3>
+    Get prepared for a thorough cleaning of your home, office, residence, or warehouse
+    with astonishing precision. We'll ensure your space shines brilliantly and
+    exudes a fresh, inviting scent.
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50"></div>
+  </Fragment>
+</Benefit>
+
+<Benefit
+  isAfterContent
+  items={[
+    {
+      title: 'Tailored Cleaning Solutions',
+      description: `We design personalised cleaning programmes tailored to your specific needs, ensuring exceptional results with every service.`,
+    },
+    {
+      title: 'Commitment to Environmental Responsibility',
+      description:
+        'We are committed to using natural, environmentally-friendly cleaning products, guaranteeing effective cleaning without compromising the health of your home or the planet.',
+    },
+    {
+      title: 'Continuous Improvement and Innovation',
+      description:
+        'We strive to stay at the forefront of the industry through ongoing training of our staff and the adoption of new technologies and innovative practices to deliver the highest quality service.',
+    },
+  ]}
+  image={{
+    src: 'https://img.freepik.com/foto-gratis/hombres-tiro-completo-chocan-cinco-oficina_23-2149345549.jpg?t=st=1709050551~exp=1709054151~hmac=03a3cd0f5efe0c5d0003422e676811159838f65fced42b34e85351a88d39527b&w=996',
+    alt: 'Blueprint Image',
+  }}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50"></div>
+  </Fragment>
+</Benefit>
+
+<Services
+  tagline="Nos services"
+  title="Découvrez nos différents modèles"
+  subtitle="Découvrez notre sélection ci-dessous pour rationaliser et améliorer vos projets."
+  items={[
+    {
+      title: 'Nettoyage général',
+      description:
+        'Des services de nettoyage complets adaptés à vos besoins, garantissant un environnement impeccable et hygiénique.',
+      link: getPermalink('/general-cleaning'),
+      image: {
+        src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520594.jpg?t=st=1709088387~exp=1709091987~hmac=1bf82601d7aa24a881d526a694409d39fccbff1239eefbf637163360aaf91596&w=996',
+        alt: 'Nettoyage général',
+      },
+    },
+    {
+      title: 'Nettoyage de vitres',
+      description:
+        "Un nettoyage expert pour des fenêtres cristallines, qui améliorent l'apparence et la luminosité de votre espace.",
+      link: getPermalink('/window-cleaning'),
+      image: {
+        src: 'https://img.freepik.com/foto-gratis/primer-mano-ventana-limpieza-guante-goma_23-2148529568.jpg?t=st=1709088427~exp=1709092027~hmac=0f978bff641a53b61921fa02b48551442f36708263d42c09f2c7c95f1f580610&w=826',
+        alt: 'Nettoyage de vitres',
+      },
+    },
+    {
+      title: 'Lavage de tapis',
+      description: `Nettoyage professionnel de tapis pour rajeunir vos tapis et leur redonner leur fraîcheur d'origine.`,
+      link: getPermalink('/carpet-cleaning'),
+      image: {
+        src: 'https://img.freepik.com/foto-gratis/hombre-haciendo-servicio-profesional-limpieza-hogar_23-2150359033.jpg?t=st=1709088474~exp=1709092074~hmac=d6f65c07db419e543a43121144c71ce0e3d202635359a0c6535c307f2a3df90f&w=996',
+        alt: 'Lavage de tapis',
+      },
+    },
+    {
+      title: 'Entretien des jardins',
+      description:
+        `Des experts s'occupent de votre jardin et veillent à ce qu'il reste luxuriant, vivant et beau tout au long de l'année.`,
+      link: getPermalink('/garden-maintenance'),
+      image: {
+        src: 'https://img.freepik.com/foto-gratis/joven-apuesto-jardinero-alegre-sonriendo-regando-cuidando-plantas_176420-3834.jpg?t=st=1709088508~exp=1709092108~hmac=2ff2ac91c1ad0b954fcfd007cdbbb4daf6409c5e8f6b81934ff22dfc4374c29f&w=996',
+        alt: 'Entretien des jardins',
+      },
+    },
+    {
+      title: 'Services de maintenance',
+      description:
+        `Des solutions d'entretien complètes pour maintenir votre propriété en parfait état et en bon état de fonctionnement.`,
+      link: getPermalink('/maintenance-services'),
+      image: {
+        src: 'https://img.freepik.com/foto-gratis/fontanera-que-trabaja-arreglar-problemas-casa-cliente_23-2150990725.jpg?t=st=1709088559~exp=1709092159~hmac=589093fb29e7afa6861afecb6885f041796084fd824fb941eee856ec4054ea5c&w=996',
+        alt: 'Services de maintenance',
+      },
+    },
+  ]}
+/>
+
+<Stats
+  title="Notre parcours en chiffres"
+  subtitle="Découvrez ce qui nous distingue"
+  stats={[
+    { title: `Années d'expérience`, amount: '8' },
+    { title: 'Des clients satisfaits', amount: '100' },
+    { title: 'Nettoyeurs', amount: '50' },
+    { title: 'Branches', amount: '2' },
+  ]}
+/>
+
+<Steps
+  isReversed
+  title="Rationalisez votre processus de réservation de services de nettoyage et d'entretien avec Global Services and Maintenance."
+  items={[
+    {
+      title: 'Étape 1 : Choisissez votre service',
+      description:
+        `Parcourez notre gamme de services de nettoyage et d'entretien et choisissez celui qui répond le mieux à vos besoins. Qu'il s'agisse de nettoyage général, de nettoyage de vitres, de lavage de tapis ou d'entretien de jardin, nous avons ce qu'il vous faut.`,
+      icon: 'tabler:package',
+    },
+    {
+      title: 'Étape 2 : Prise de rendez-vous',
+      description:
+        `Contactez-nous pour prendre rendez-vous à la date et à l'heure de votre choix. Notre personnel amical vous aidera à trouver le créneau le plus pratique pour votre service de nettoyage ou d'entretien.`,
+      icon: 'tabler:calendar',
+    },
+    {
+      title: 'Étape 3 : Confirmation',
+      description:
+        "Une fois votre rendez-vous fixé, vous recevrez un courriel ou un message de confirmation contenant tous les détails. Soyez assuré que votre service est réservé et que notre équipe sera là à l'heure.",
+      icon: 'tabler:message-circle',
+    },
+    {
+      title: 'Étape 4 : Se détendre et profiter',
+      description:
+        `Installez-vous confortablement et détendez-vous pendant que nos professionnels qualifiés s'occupent de vos besoins en matière de nettoyage et d'entretien. Avec Global Services and Maintenance, vous pouvez être sûr que votre propriété est entre de bonnes mains.`,
+      icon: 'tabler:check',
+    },
+  ]}
+  image={{
+    src: 'https://img.freepik.com/foto-gratis/personas-que-encargan-limpieza-oficinas_23-2149374433.jpg?t=st=1709089122~exp=1709092722~hmac=d00e9cb30bc94476d4240d9f8df88d9bd1ceec579eeeb4f118f160a3ca4eea0c&w=360',
+    alt: 'Steps image',
+  }}
+/>
+<Brands
+  title="Certains de nos partenaires"
+  subtitle="Nos collaborateurs de confiance"
+  icons={[]}
+  images={[
+    {
+      src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
+      alt: 'Paypal',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+      alt: 'Visa',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
+      alt: 'Ebay',
+    },
+
+    {
+      src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
+      alt: 'Youtube',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+      alt: 'Microsoft',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+      alt: 'Node JS',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+      alt: 'Google',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+      alt: 'Meta',
+    },
+    {
+      src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+      alt: 'Yahoo',
+    },
+  ]}
+/>
+
+<FAQs
+  title="Foires aux questions"
+  subtitle="Trouvez les réponses aux questions les plus courantes sur les services que nous offrons chez Global Services et Maintenance."
+  tagline="FAQ"
+  classes={{ container: 'max-w-6xl' }}
+  items={[
+    {
+      title: 'Pourquoi choisir Global Services et Maintenance ?',
+      description:
+        "Chez Global Services et Maintenance, nous sommes engagés à fournir des services de nettoyage et de maintenance de haute qualité. Notre équipe hautement qualifiée et dévouée s'efforce de dépasser les attentes de nos clients à chaque fois. De plus, notre attention aux détails et notre approche écologique nous distinguent sur le marché.",
+    },
+    {
+      title: 'Quels services offrez-vous ?',
+      description:
+        'Nous offrons une large gamme de services de nettoyage et de maintenance, notamment le nettoyage général, le nettoyage des fenêtres, le lavage des tapis et la maintenance des jardins. Quels que soient vos besoins, nous sommes là pour vous aider à maintenir votre espace propre et rangé.',
+    },
+    {
+      title: 'Comment puis-je prendre rendez-vous ?',
+      description:
+        "Prendre rendez-vous avec Global Services et Maintenance est facile. Il suffit de contacter notre équipe, et nous serons heureux de coordonner un rendez-vous qui convient à votre emploi du temps. Que ce soit pour un nettoyage ponctuel ou une maintenance régulière, nous sommes là pour vous aider.",
+    },
+    {
+      title: 'Combien de temps faut-il pour prendre rendez-vous ?',
+      description:
+        "Nous nous efforçons de fournir des services rapides et efficaces à nos clients. Selon la disponibilité, nous pouvons prendre rendez-vous en quelques jours. Contactez-nous dès aujourd'hui, et nous ferons en sorte que votre espace soit propre et rangé en un rien de temps !",
+    },
+    {
+      title: 'Offrez-vous des services personnalisés ?',
+      description:
+        "Oui, chez Global Services et Maintenance, nous comprenons que chaque client a des besoins uniques. C'est pourquoi nous offrons des services personnalisés pour répondre à vos besoins spécifiques. Il suffit de nous dire ce dont vous avez besoin, et nous concevrons un plan de nettoyage et de maintenance sur mesure pour vous !",
+    },
+    {
+      title: 'Comment puis-je obtenir plus d\'informations sur vos services ?',
+      description:
+        'Pour plus d\'informations sur nos services et nos tar ifs, n\'hésitez pas à contacter notre équipe. Nous sommes là pour répondre à toutes vos questions et vous fournir les informations dont vous avez besoin pour prendre la meilleure décision pour votre espace.',
+    },
+  ]}
+/>
+</Layout>

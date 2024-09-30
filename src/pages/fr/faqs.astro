@@ -1,0 +1,72 @@
+---
+export const prerender = true;
+import FAQs from '@/components/widgets/FAQs.astro';
+import Layout from '@/layouts/PageLayout.astro';
+
+//metadata
+const metadata = {
+  title: "FAQs",
+};
+---
+
+<Layout
+  metadata={metadata}
+  title="Réponses à vos questions sur le nettoyage"
+  content="Trouvez des solutions aux questions courantes sur le nettoyage."
+  image="/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina2.webp"
+  position="bg-top"
+>
+  <FAQs
+    title="Questions générales"
+    subtitle="Voici quelques-unes des questions les plus fréquemment posées à Global Service and Maintenance, et nous y répondons une par une. Choisir le bon plan est important, et nous sommes là pour répondre à vos questions. Si vous avez des doutes sur nos options tarifaires, vous êtes au bon endroit."
+    columns={1}
+    classes={{ container: "lg:py-10" }}
+    items={[
+      {
+        title: "Quels types de services de nettoyage votre entreprise londonienne propose-t-elle?",
+        description: "Notre entreprise, basée à Londres, propose divers services de nettoyage, notamment le nettoyage commercial, le nettoyage résidentiel, le nettoyage de fin de bail, le nettoyage de tapis et le nettoyage de vitres.",
+      },
+      {
+        title: "Depuis combien de temps votre entreprise de services de nettoyage opère-t-elle à Londres?",
+        description: "Notre entreprise de services de nettoyage est opérationnelle à Londres depuis plus de 5 ans.",
+      },
+      {
+        title: "Votre entreprise propose-t-elle des services de nettoyage en dehors de Londres?",
+        description: "Oui, bien que nous soyons basés à Londres, nous proposons également des services de nettoyage dans les environs.",
+      },
+      {
+        title: "Quelles mesures votre entreprise prend-elle pour garantir la qualité de ses services de nettoyage?",
+        description: "Nous garantissons la qualité de nos services de nettoyage en utilisant des produits de nettoyage de haute qualité, en employant du personnel expérimenté et formé, et en recueillant régulièrement les avis de nos clients.",
+      },
+      {
+        title: "Votre entreprise de services de nettoyage possède-t-elle des accréditations ou certifications?",
+        description: "Oui, notre entreprise est pleinement accréditée et certifiée par l'Institut britannique des sciences du nettoyage.",
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Questions sur les services"
+    subtitle="Voici les questions les plus fréquemment posées concernant les services fournis par Global Service and Maintenance"
+    columns={1}
+    classes={{ container: "lg:py-10" }}
+    items={[
+      {
+        title: "Quels services spécifiques de nettoyage votre entreprise propose-t-elle?",
+        description: "Notre entreprise propose une large gamme de services de nettoyage, y compris le nettoyage commercial, le nettoyage résidentiel, le nettoyage de fin de bail, le nettoyage de tapis et le nettoyage de vitres.",
+      },
+      {
+        title: "Pouvez-vous décrire brièvement en quoi consiste votre service de nettoyage commercial?",
+        description: "Notre service de nettoyage commercial comprend le nettoyage des bureaux, des magasins, des restaurants, des entrepôts et d'autres locaux commerciaux. Cela inclut l'époussetage, le passage de l'aspirateur, le lavage des sols, le nettoyage des sanitaires et le retrait des déchets.",
+      },
+      {
+        title: "Qu'est-ce qui est inclus dans votre service de nettoyage résidentiel?",
+        description: "Notre service de nettoyage résidentiel comprend l'époussetage, le passage de l'aspirateur, le lavage des sols, le nettoyage des cuisines, des salles de bains et l'ordre général de toutes les pièces de la maison.",
+      },
+      {
+        title: "En quoi votre service de nettoyage de fin de bail est-il différent du nettoyage habituel?",
+        description: "Notre service de nettoyage de fin de bail est un nettoyage en profondeur conçu pour garantir qu'une propriété soit en parfait état.",
+      },
+    ]}
+  />
+</Layout>
