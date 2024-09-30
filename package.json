@@ -24,6 +24,7 @@
     "@types/react-dom": "^18.2.17",
     "astro": "^4.0.9",
     "astro-icon": "^1.1.0",
+    "global-service": "file:",
     "js-yaml": "^4.1.0",
     "limax": "^4.1.0",
     "lodash.merge": "^4.6.2",

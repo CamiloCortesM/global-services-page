@@ -9,6 +9,13 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   output: 'hybrid',
   adapter: vercel(),
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['es', 'en', 'pt', 'fr'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [
     react({
       include: ['**/react/*'],
@@ -38,4 +45,10 @@ export default defineConfig({
       },
     }),
   ],
+
+  vite: {
+    ssr: {
+      noExternal: ['@fontsource-variable/inter'],
+    },
+  },
 });
