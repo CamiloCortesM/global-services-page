@@ -1,0 +1,74 @@
+---
+export const prerender = false;
+import Layout from '@/layouts/PageLayout.astro';
+import ContactUs from '@/components/widgets/ContactUs.astro';
+import Ubication from '@/components/widgets/Ubication.astro';
+
+const metadata = {
+  title: 'Contacte-nos',
+};
+---
+
+<Layout
+  metadata={metadata}
+  title="Contacte-nos"
+  content="Encontre soluções brilhantes e limpas."
+  image="/images/oficina-limpieza-hombres-tiro-completo.webp"
+>
+  <ContactUs
+    title="Envie-nos uma mensagem hoje mesmo."
+    classes={{ container: 'md:py-4 lg:py-8' }}
+    subtitle="Para respostas mais rápidas, explore a nossa secção FAQ. Pode encontrar a solução que procura. Caso contrário, a nossa equipa de apoio terá todo o prazer em ajudar."
+    description="A nossa equipa de apoio normalmente responde em até 48 horas úteis."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nome',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Endereço de e-mail',
+      },
+    ]}
+    textarea={{
+      label: 'Mensagem',
+    }}
+    disclaimer={{
+      label:
+        'Ao enviar este formulário de contacto, reconhece e aceita que os seus dados pessoais serão recolhidos.',
+    }}
+    subject="Contacto"
+    items={[
+      {
+        title: 'Suporte geral',
+        description:
+          'Converse connosco e faça-nos perguntas sobre os nossos serviços ou qualquer outra dúvida que possa ter sobre nós ou os nossos serviços.',
+      },
+      {
+        title: 'Contacto comercial',
+        description:
+          'Pergunte sobre a nossa disponibilidade, métodos de pagamento ou qualquer outra questão sobre a nossa empresa e o que oferecemos.',
+      },
+      {
+        title: 'Telefone',
+        description: `07599 065018 - 07455 503978
+                      linha fixa: 020 3319 0192`,
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Endereço de e-mail',
+        description: `director@gsmlimited.co.uk
+                      gsmlimitedinfo@gmail.com`,
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+
+  <Ubication
+    title="Localização"
+    subtitle="Localizada no coração de Londres, a nossa empresa oferece serviços de limpeza da mais alta qualidade para satisfazer todas as suas necessidades de manutenção doméstica e empresarial."
+    map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.3675249828293!2d-0.11413562370026689!3d51.46976787180479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604617d025ebb%3A0x2d12eaf07ee8c87!2sHolles%20House%2C%20Overton%20Rd%2C%20London%20SW9%207AP%2C%20Reino%20Unido!5e0!3m2!1spt!2spt!4v1721166598283!5m2!1spt!2spt"
+  />
+</Layout>
