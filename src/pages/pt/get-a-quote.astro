@@ -1,0 +1,54 @@
+---
+export const prerender = false;
+import ContactUs from '@/components/widgets/ContactUs.astro';
+import Layout from '@/layouts/ServiceLayout.astro';
+import { servicesForms } from '@/utils/service-forms';
+
+const servicesLinks = Object.keys(servicesForms);
+
+//metadata
+const metadata = {
+  title: "Demander un devis",
+};
+---
+
+<Layout
+  metadata={metadata}
+  image="/images/mano-sosteniendo-moneda-mexicana.webp"
+  title="Demander un devis"
+  content="Un nettoyage impeccable à portée de main"
+>
+  <ContactUs
+    title="Demandez un devis gratuit pour nos services de nettoyage"
+    classes={{ container: "md:py-4 lg:py-8" }}
+    subtitle="Vous recherchez des services de nettoyage de qualité ? Obtenez un devis gratuit dès aujourd'hui. Nos professionnels sont prêts à répondre à vos besoins en matière de nettoyage, que ce soit pour des maisons, des bureaux ou des espaces commerciaux. Contactez-nous maintenant et découvrez comment nous pouvons vous aider à garder votre espace impeccable !"
+    description="Notre équipe d'assistance répond généralement sous 48 heures ouvrables."
+    subject="Devis"
+    button="Obtenir un devis"
+    inputs={[
+      {
+        type: "text",
+        name: "name",
+        label: "Nom",
+      },
+      {
+        type: "email",
+        name: "email",
+        label: "E-mail",
+      },
+      {
+        type: "tel",
+        name: "phone",
+        label: "Numéro",
+        pattern: "[0-9]+",
+        title: "Veuillez entrer un numéro de téléphone valide au Royaume-Uni.",
+      },
+    ]}
+    serviceOption={{ servicesLinks, label: "Options de service" }}
+    columnsForm={false}
+    disclaimer={{
+      label:
+        "En envoyant ce formulaire de contact, vous reconnaissez et acceptez la collecte de vos informations personnelles.",
+    }}
+  />
+</Layout>

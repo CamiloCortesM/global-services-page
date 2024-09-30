@@ -1,0 +1,325 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Features from '@/components/widgets/Features.astro';
+import Description from '@/components/widgets/Description.astro';
+import Benefit from '@/components/widgets/Benefit.astro';
+import Services from '@/components/widgets/Services.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Brands from '@/components/widgets/Brands.astro';
+import FAQs from '@/components/widgets/FAQs.astro';
+
+import { getPermalink } from '@/utils/permalinks';
+
+//metadata
+const metadata = {
+  title: 'Início',
+};
+---
+
+<Layout metadata={metadata}>
+  <Description
+    id="description"
+    title="A MELHOR EMPRESA DE LIMPEZA EM LONDRES"
+    subtitle="Na Global Services and Maintenance, somos especializados em fornecer serviços de limpeza e manutenção profissionais para residências e escritórios em Londres. Com anos de experiência, garantimos resultados excepcionais em todas as tarefas, desde a limpeza geral até a lavagem de carpetes e a manutenção de jardins. A nossa equipa altamente treinada está comprometida em oferecer excelência em todos os detalhes, com eficiência, profissionalismo e preços competitivos. Confie em nós para manter o seu espaço impecável e em perfeitas condições."
+    classes={{
+      headline: {
+        title: 'text-2xl md:text-3xl',
+        subtitle: 'text-left text-lg',
+      },
+    }}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709169976~exp=1709173576~hmac=ae60dfdcc11a6d6425872deb5eae7ac68cc8513e77816452d65a3be32cbf5ff8&w=996',
+      alt: 'Todo:change',
+    }}
+  />
+
+  <Features
+    id="features"
+    tagline="A Nossa Excelência"
+    title="Experimente a Excelência com Global Services and Maintenance"
+    subtitle="Explore os padrões excepcionais dos serviços profissionais de limpeza e manutenção que oferecemos em Londres."
+    items={[
+      {
+        title: 'Fórmulas Especializadas',
+        description:
+          'Detergentes potentes mas suaves garantem uma limpeza completa sem danificar as superfícies.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Confiabilidade',
+        description:
+          'Confie em nós para restaurar a sua casa ao seu melhor estado, o seu santuário de limpeza.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Qualidade Certificada',
+        description:
+          'Garantimos padrões de limpeza impecáveis para a sua casa ou escritório.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Décadas de Experiência',
+        description:
+          'Com anos de experiência na indústria, oferecemos uma qualidade de limpeza transformadora.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Uma Equipa Qualificada',
+        description:
+          'Os nossos profissionais trabalham com respeito pela sua casa, garantindo um trabalho bem feito.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Eficiência no Trabalho',
+        description:
+          'Serviços rápidos e eficazes, adaptados para se encaixar perfeitamente no seu horário.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Benefit
+    isReversed
+    tagline="Benefício"
+    title="Por Que Somos Diferentes?"
+    items={[
+      {
+        title: 'Satisfação Garantida',
+        description:
+          'Estamos comprometidos em garantir a sua satisfação com todos os serviços, trabalhando incansavelmente para superar as suas expectativas e proporcionar-lhe uma experiência de limpeza excepcional.',
+      },
+      {
+        title: 'Profissionais Totalmente Licenciados e Segurados',
+        description:
+          'A nossa equipa de profissionais é totalmente licenciada e segurada, proporcionando-lhe a tranquilidade de que a sua propriedade está em boas mãos.',
+      },
+      {
+        title: 'Construindo Relações Duradouras',
+        description:
+          'Envolvemo-nos ativamente com a comunidade, criando relações de longo prazo com os nossos clientes e buscando constantemente novas oportunidades de crescimento e expansão para a nossa empresa.',
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520631.jpg?t=st=1709050517~exp=1709054117~hmac=40deee42843737865431b89c549be019954c535b19225b647749e06087f8bd79&w=996',
+      alt: 'Imagem Colorida',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        Pronto para uma Limpeza Impecável
+      </h3>
+      Prepare-se para uma limpeza completa da sua casa, escritório, residência ou
+      armazém com uma precisão surpreendente. Vamos garantir que o seu espaço brilhe
+      e emane um aroma fresco e convidativo.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50"></div>
+    </Fragment>
+  </Benefit>
+
+  <Benefit
+    isAfterContent
+    items={[
+      {
+        title: 'Soluções de Limpeza Personalizadas',
+        description: `Desenhamos programas de limpeza personalizados adaptados às suas necessidades específicas, garantindo resultados excepcionais em cada serviço.`,
+      },
+      {
+        title: 'Compromisso com a Responsabilidade Ambiental',
+        description:
+          'Estamos comprometidos com o uso de produtos de limpeza naturais e ecológicos, garantindo uma limpeza eficaz sem comprometer a saúde da sua casa ou do planeta.',
+      },
+      {
+        title: 'Melhoria Contínua e Inovação',
+        description:
+          'Esforçamo-nos para estar na vanguarda da indústria através da formação contínua da nossa equipa e da adoção de novas tecnologias e práticas inovadoras para oferecer o serviço da mais alta qualidade.',
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/hombres-tiro-completo-chocan-cinco-oficina_23-2149345549.jpg?t=st=1709050551~exp=1709054151~hmac=03a3cd0f5efe0c5d0003422e676811159838f65fced42b34e85351a88d39527b&w=996',
+      alt: 'Imagem de Plano',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50"></div>
+    </Fragment>
+  </Benefit>
+  <Services
+    tagline="Os nossos serviços"
+    title="Descubra os nossos diferentes modelos"
+    subtitle="Explore a nossa seleção abaixo para otimizar e melhorar os seus projetos."
+    items={[
+      {
+        title: 'Limpeza geral',
+        description:
+          'Serviços de limpeza completos adaptados às suas necessidades, garantindo um ambiente impecável e higiénico.',
+        link: getPermalink('/general-cleaning'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/persona-servicio-limpieza-profesional-que-usa-aspiradora-oficina_23-2150520594.jpg?t=st=1709088387~exp=1709091987~hmac=1bf82601d7aa24a881d526a694409d39fccbff1239eefbf637163360aaf91596&w=996',
+          alt: 'Limpeza geral',
+        },
+      },
+      {
+        title: 'Limpeza de janelas',
+        description:
+          'Limpeza especializada para janelas cristalinas, que melhoram a aparência e a luminosidade do seu espaço.',
+        link: getPermalink('/window-cleaning'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/primer-mano-ventana-limpieza-guante-goma_23-2148529568.jpg?t=st=1709088427~exp=1709092027~hmac=0f978bff641a53b61921fa02b48551442f36708263d42c09f2c7c95f1f580610&w=826',
+          alt: 'Limpeza de janelas',
+        },
+      },
+      {
+        title: 'Lavagem de carpetes',
+        description: `Limpeza profissional de carpetes para rejuvenescer os seus tapetes e restaurar a sua frescura original.`,
+        link: getPermalink('/carpet-cleaning'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/hombre-haciendo-servicio-profesional-limpieza-hogar_23-2150359033.jpg?t=st=1709088474~exp=1709092074~hmac=d6f65c07db419e543a43121144c71ce0e3d202635359a0c6535c307f2a3df90f&w=996',
+          alt: 'Lavagem de carpetes',
+        },
+      },
+      {
+        title: 'Manutenção de jardins',
+        description: `Especialistas cuidam do seu jardim e garantem que ele permanece exuberante, vibrante e bonito ao longo do ano.`,
+        link: getPermalink('/garden-maintenance'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/joven-apuesto-jardinero-alegre-sonriendo-regando-cuidando-plantas_176420-3834.jpg?t=st=1709088508~exp=1709092108~hmac=2ff2ac91c1ad0b954fcfd007cdbbb4daf6409c5e8f6b81934ff22dfc4374c29f&w=996',
+          alt: 'Manutenção de jardins',
+        },
+      },
+      {
+        title: 'Serviços de manutenção',
+        description: `Soluções completas de manutenção para manter a sua propriedade em perfeitas condições de funcionamento.`,
+        link: getPermalink('/maintenance-services'),
+        image: {
+          src: 'https://img.freepik.com/foto-gratis/fontanera-que-trabaja-arreglar-problemas-casa-cliente_23-2150990725.jpg?t=st=1709088559~exp=1709092159~hmac=589093fb29e7afa6861afecb6885f041796084fd824fb941eee856ec4054ea5c&w=996',
+          alt: 'Serviços de manutenção',
+        },
+      },
+    ]}
+  />
+
+  <Stats
+    title="O nosso percurso em números"
+    subtitle="Descubra o que nos distingue"
+    stats={[
+      { title: `Anos de experiência`, amount: '8' },
+      { title: 'Clientes satisfeitos', amount: '100' },
+      { title: 'Funcionários de limpeza', amount: '50' },
+      { title: 'Filiais', amount: '2' },
+    ]}
+  />
+
+  <Steps
+    isReversed
+    title="Otimize o seu processo de agendamento de serviços de limpeza e manutenção com Global Services and Maintenance."
+    items={[
+      {
+        title: 'Passo 1: Escolha o seu serviço',
+        description: `Explore a nossa gama de serviços de limpeza e manutenção e escolha o que melhor se adapta às suas necessidades. Seja limpeza geral, limpeza de janelas, lavagem de carpetes ou manutenção de jardins, temos o que precisa.`,
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Passo 2: Marcação de horário',
+        description: `Contacte-nos para agendar um horário à sua conveniência. A nossa equipa simpática irá ajudá-lo a encontrar o melhor momento para o seu serviço de limpeza ou manutenção.`,
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Passo 3: Confirmação',
+        description:
+          'Depois de agendado o serviço, receberá um e-mail ou uma mensagem de confirmação com todos os detalhes. Fique tranquilo, o seu serviço está reservado e a nossa equipa chegará a horas.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Passo 4: Relaxe e aproveite',
+        description: `Sente-se e relaxe enquanto os nossos profissionais qualificados cuidam das suas necessidades de limpeza e manutenção. Com a Global Services and Maintenance, pode ter a certeza de que a sua propriedade está em boas mãos.`,
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://img.freepik.com/foto-gratis/personas-que-encargan-limpieza-oficinas_23-2149374433.jpg?t=st=1709089122~exp=1709092722~hmac=d00e9cb30bc94476d4240d9f8df88d9bd1ceec579eeeb4f118f160a3ca4eea0c&w=360',
+      alt: 'Steps image',
+    }}
+  />
+
+  <Brands
+    title="Alguns dos nossos parceiros"
+    subtitle="Os nossos colaboradores de confiança"
+    icons={[]}
+    images={[
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
+        alt: 'Paypal',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+        alt: 'Visa',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
+        alt: 'Ebay',
+      },
+
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
+        alt: 'Youtube',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Perguntas Frequentes"
+    subtitle="Encontre as respostas para as perguntas mais comuns sobre os serviços que oferecemos na Global Services and Maintenance."
+    tagline="FAQ"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Por que escolher a Global Services and Maintenance?',
+        description:
+          'Na Global Services and Maintenance, estamos comprometidos em fornecer serviços de limpeza e manutenção de alta qualidade. A nossa equipa altamente qualificada e dedicada esforça-se para superar as expectativas dos nossos clientes em cada vez. Além disso, a nossa atenção aos detalhes e abordagem ecológica distinguem-nos no mercado.',
+      },
+      {
+        title: 'Que serviços oferecem?',
+        description:
+          'Oferecemos uma ampla gama de serviços de limpeza e manutenção, incluindo limpeza geral, limpeza de janelas, lavagem de carpetes e manutenção de jardins. Independentemente das suas necessidades, estamos aqui para ajudá-lo a manter o seu espaço limpo e arrumado.',
+      },
+      {
+        title: 'Como posso marcar um serviço?',
+        description:
+          'Marcar um serviço connosco é fácil! Simplesmente entre em contacto através do nosso formulário de contacto ou telefone, e a nossa equipa amigável agendará um horário que seja conveniente para si.',
+      },
+      {
+        title: 'A Global Services and Maintenance é uma empresa ecológica?',
+        description:
+          'Sim, estamos comprometidos com práticas ecológicas em todos os nossos serviços. Utilizamos produtos de limpeza seguros e ecológicos, bem como métodos que minimizam o impacto ambiental.',
+      },
+      {
+        title: 'A equipa da Global Services and Maintenance está qualificada?',
+        description:
+          'Sim, a nossa equipa é composta por profissionais altamente treinados e qualificados, com anos de experiência na indústria de limpeza e manutenção. Garantimos que cada serviço é realizado com o mais alto padrão de qualidade.',
+      },
+    ]}
+  />
+</Layout>

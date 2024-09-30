@@ -1,0 +1,73 @@
+---
+export const prerender = false;
+import Layout from '@/layouts/PageLayout.astro';
+import ContactUs from '@/components/widgets/ContactUs.astro';
+import Ubication from '@/components/widgets/Ubication.astro';
+
+const metadata = {
+  title: "Contactez-nous",
+};
+---
+
+<Layout
+  metadata={metadata}
+  title="Contactez-nous"
+  content="Trouvez des solutions brillantes et propres."
+  image="/images/oficina-limpieza-hombres-tiro-completo.webp"
+>
+  <ContactUs
+    title="Envoyez-nous un message dès aujourd'hui."
+    classes={{ container: "md:py-4 lg:py-8" }}
+    subtitle="Pour des réponses plus rapides, explorez notre section FAQ. Vous y trouverez peut-être la solution que vous cherchez. Sinon, notre équipe d'assistance se fera un plaisir de vous aider."
+    description="Notre équipe d'assistance répond généralement sous 48 heures ouvrables."
+    inputs={[
+      {
+        type: "text",
+        name: "name",
+        label: "Nom",
+      },
+      {
+        type: "email",
+        name: "email",
+        label: "Adresse e-mail",
+      },
+    ]}
+    textarea={{
+      label: "Message",
+    }}
+    disclaimer={{
+      label:
+        "En soumettant ce formulaire de contact, vous reconnaissez et acceptez que vos données personnelles soient collectées.",
+    }}
+    subject="Contact"
+    items={[
+      {
+        title: "Support général",
+        description: "Discutez avec nous et posez-nous des questions sur nos services ou tout autre doute que vous pourriez avoir sur nous ou nos services.",
+      },
+      {
+        title: "Contact commercial",
+        description:
+          "Demandez notre disponibilité, les méthodes de paiement ou toute autre question concernant notre entreprise et ce que nous offrons.",
+      },
+      {
+        title: "Téléphone",
+        description: `07599 065018 - 07455 503978
+                      ligne fixe: 020 3319 0192`,
+        icon: "tabler:headset",
+      },
+      {
+        title: "Adresse e-mail",
+        description: `director@gsmlimited.co.uk
+                      gsmlimitedinfo@gmail.com`,
+        icon: "tabler:mail",
+      },
+    ]}
+  />
+
+  <Ubication
+    title="Localisation"
+    subtitle="Située au cœur de Londres, notre entreprise offre des services de nettoyage de la plus haute qualité pour répondre à tous vos besoins d'entretien de la maison et du bureau."
+    map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.3675249828293!2d-0.11413562370026689!3d51.46976787180479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604617d025ebb%3A0x2d12eaf07ee8c87!2sHolles%20House%2C%20Overton%20Rd%2C%20London%20SW9%207AP%2C%20Royaume-Uni!5e0!3m2!1sfr!2sco!4v1721166598283!5m2!1sfr!2sco"
+  />
+</Layout>

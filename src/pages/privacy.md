@@ -52,4 +52,4 @@ We reserve the right to modify this Privacy Policy at any time. If we make mater
 
 If you have any questions about this Privacy Policy, please contact us:
 
-- By email: Example@google.com
+- By email: gsmlimitedinfo@gmail.com - director@gsmlimited.co.uk

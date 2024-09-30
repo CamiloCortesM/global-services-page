@@ -3,13 +3,17 @@ import type { Form } from '@/types';
 import Button from '@/components/ui/Button.astro';
 import { validationForm } from '@/utils/validationForm';
 import { sendEmail } from '@/utils/sendEmail';
+import { getLangFromUrl, useTranslations } from '@/utils/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const {
   inputs,
   textarea,
   disclaimer,
   serviceOption,
-  button = 'Contact Us',
+  button = t('contact.form.button'),
   description = '',
   subject = '',
 } = Astro.props as Form;

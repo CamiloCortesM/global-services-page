@@ -4,8 +4,12 @@ import Logo from '@/components/Logo.astro';
 import ToggleMenu from '@/components/common/ToggleMenu.astro';
 import Button from '@/components/ui/Button.astro';
 
-import { getHomePermalink, trimSlash } from '@/utils/permalinks';
+import { getPermalink, trimSlash } from '@/utils/permalinks';
 import type { ActionLink, MenuLink } from '@/navigation';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import Languaje from '../ui/Languaje.astro';
+
+const currentLocale = Astro.currentLocale ?? 'en';
 
 export interface Props {
   id?: string;
@@ -47,7 +51,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         'flex justify-between items-center',
       ]}
     >
-      <a class="flex items-center" href={getHomePermalink()}>
+      <a
+        class="flex items-center"
+        href={getPermalink(getRelativeLocaleUrl(currentLocale, '/'))}
+      >
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
@@ -110,7 +117,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           ))
         }
       </ul>
+      <Languaje />
     </nav>
+
     <div
       class:list={[
         { 'ml-auto': position === 'left' },

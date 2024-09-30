@@ -1,0 +1,87 @@
+---
+export const prerender = true;
+import FAQs from '@/components/widgets/FAQs.astro';
+import Layout from '@/layouts/PageLayout.astro';
+
+//metadata
+const metadata = {
+  title: 'FAQs',
+};
+---
+
+<Layout
+  metadata={metadata}
+  title="Respuestas a sus preguntas sobre limpieza"
+  content="Encuentre soluciones a preguntas habituales sobre limpieza."
+  image="/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina2.webp"
+  position="bg-top"
+>
+  <FAQs
+    title="Cuestiones generales"
+    subtitle="Estas son algunas de las preguntas más frecuentes sobre Global Service and Maintenance, y respondemos a cada una de ellasElegir el plan adecuado es importante, y estamos aquí para responder a sus preguntas. Si tiene dudas sobre nuestras opciones de precios, está en el lugar adecuado."
+    columns={1}
+    classes={{ container: 'lg:py-10' }}
+    items={[
+      {
+        title:
+          '¿Qué tipos de servicios de limpieza ofrece su empresa londinense?',
+        description:
+          'Nuestra empresa, con sede en Londres, ofrece diversos servicios de limpieza, como limpieza comercial, limpieza residencial, limpieza de fin de alquiler, limpieza de alfombras y limpieza de cristales.',
+      },
+      {
+        title:
+          '¿Cuánto tiempo lleva operando su empresa de servicios de limpieza en Londres?',
+        description:
+          'Nuestra empresa de servicios de limpieza lleva más de 5 años operando en Londres.',
+      },
+      {
+        title: '¿Su empresa presta servicios de limpieza fuera de Londres?',
+        description:
+          'Sí, aunque tenemos nuestra sede en Londres, también prestamos servicios de limpieza en los alrededores.',
+      },
+      {
+        title:
+          '¿Qué medidas toma su empresa para garantizar la calidad de sus servicios de limpieza?',
+        description:
+          'Garantizamos la calidad de nuestros servicios de limpieza utilizando productos de limpieza de alta calidad, empleando a personal experimentado y formado, y recabando regularmente la opinión de nuestros clientes.',
+      },
+      {
+        title:
+          '¿Tiene su empresa de servicios de limpieza alguna acreditación o certificación?',
+        description:
+          'Sí, nuestra empresa está plenamente acreditada y certificada por el Instituto Británico de Ciencias de la Limpieza.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Preguntas sobre los servicios"
+    subtitle="Estas son las preguntas más frecuentes sobre los servicios prestados por Global Service and Maintenance"
+    columns={1}
+    classes={{ container: 'lg:py-10' }}
+    items={[
+      {
+        title: '¿Qué servicios específicos de limpieza ofrece su empresa?',
+        description:
+          'Nuestra empresa ofrece una amplia gama de servicios de limpieza, incluida la limpieza comercial, la limpieza residencial, la limpieza de fin de alquiler, la limpieza de alfombras y la limpieza de cristales.',
+      },
+      {
+        title:
+          '¿Puede describir brevemente en qué consiste su servicio de limpieza comercial?',
+        description:
+          'Nuestro servicio de limpieza comercial incluye la limpieza de oficinas, tiendas, restaurantes, almacenes y otros locales comerciales. Esto implica quitar el polvo, pasar la aspiradora, fregar, limpiar los baños y retirar la basura.',
+      },
+      {
+        title: 'What is included in your residential cleaning service?',
+        description:
+          'Nuestro servicio de limpieza residencial incluye limpieza de polvo, aspirado, fregado, limpieza de cocinas, limpieza de baños y orden general de todas las habitaciones de la casa.',
+      },
+      {
+        title:
+          '¿En qué se diferencia su servicio de limpieza de final de contrato de la limpieza habitual?',
+        description:
+          'Nuestro servicio de limpieza de fin de alquiler es un servicio de limpieza a fondo diseñado para garantizar que una propiedad esté en perfecto estado.',
+      },
+    ]}
+  />
+</Layout>
