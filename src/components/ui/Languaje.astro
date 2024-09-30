@@ -1,0 +1,74 @@
+---
+import { Icon } from 'astro-icon/components';
+// import Icon from "./icons/Icon.astro";
+const currentLocale = Astro.currentLocale ?? 'en';
+const currentPath = Astro.url.pathname;
+
+const links = [
+  {
+    text: 'ES',
+    href: '/es',
+    svg: '/images/spain.svg',
+    alt: 'Spain flag',
+  },
+  {
+    text: 'EN',
+    href: '/',
+    svg: '/images/united-kingdom.svg',
+    alt: 'United Kingdom flag',
+  },
+  {
+    text: 'FR',
+    href: '/fr',
+    svg: '/images/france.svg',
+    alt: 'France flag',
+  },
+  {
+    text: 'PT',
+    href: '/pt',
+    svg: '/images/portugal.svg',
+    alt: 'Portugal flag',
+  },
+];
+---
+
+<li
+  class="dropdown list-none text-xl md:text-[0.82rem] tracking-[0.02rem] font-medium"
+>
+  {
+    (
+      <>
+        <button
+          class=""
+          class:list={[
+            'hover:text-link px-4 py-5 flex items-center  leading-snug ',
+          ]}
+        >
+          <Icon
+            name="tabler:world"
+            class="w-3.5 h-3.5 ml-0.5 hidden md:inline mx-1"
+          />
+          {currentLocale.toUpperCase()}
+        </button>
+        <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[50px] drop-shadow-xl">
+          {links.map(({ text, href, svg, alt }) => (
+            <li>
+              <a
+                class:list={[
+                  'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link py-2 px-2 flex items-center',
+                  { 'aw-link-active-select': href === currentPath },
+                ]}
+                href={href}
+              >
+                <div class="mx-2">
+                 <img src={svg} alt={alt} />
+                </div>
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</li>
