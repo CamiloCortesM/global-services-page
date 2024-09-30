@@ -1,26 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { SITE } from '@/utils/config';
-import { getHomePermalink } from '@/utils/permalinks';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getPermalink } from '@/utils/permalinks';
 
-interface Link {
-  text?: string;
-  href?: string;
-  ariaLabel?: string;
-  icon?: string;
-}
-
-interface Links {
-  title?: string;
-  links: Array<Link>;
-}
-
-export interface Props {
-  links: Array<Links>;
-  secondaryLinks: Array<Link>;
-  socialLinks: Array<Link>;
-  footNote?: string;
-}
+const currentLocale = Astro.currentLocale ?? 'en';
 
 const {
   socialLinks = [],
@@ -30,21 +14,15 @@ const {
 } = Astro.props;
 ---
 
-<footer
-  class:list={[
-    'relative border-t border-gray-200 not-prose',
-  ]}
->
-  <div
-    class="absolute inset-0 pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
+<footer class:list={['relative border-t border-gray-200 not-prose']}>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 md:col-span-3 lg:col-span-6">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}
+          <a
+            class="inline-block font-bold text-xl"
+            href={getPermalink(getRelativeLocaleUrl(currentLocale, '/'))}
             >Global Service & Maintenance</a
           >
         </div>
