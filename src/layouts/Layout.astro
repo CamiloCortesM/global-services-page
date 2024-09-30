@@ -8,7 +8,7 @@ import Contact from '@/components/widgets/Contact.astro';
 import Footer from '@/components/widgets/Footer.astro';
 import Header from '@/components/widgets/Header.astro';
 
-import { footerData, headerData } from '@/navigation';
+import { getFooterData, getHeaderData } from '@/navigation';
 
 import type { MetaData as MetaDataType } from '@/types';
 import { I18N } from '../utils/config';
@@ -17,18 +17,25 @@ import CommonMeta from '@/components/common/CommonMeta.astro';
 import Favicons from '@/components/Favicons.astro';
 import Analitys from '@/components/common/Analitys.astro';
 import SiteVerification from '@/components/common/SiteVerification.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 export interface Props {
   metadata?: MetaDataType;
 }
 
-const { metadata = {} } = Astro.props;
+const url = Astro.url;
 
-const { language, textDirection } = I18N;
+const headerData = getHeaderData(url, getRelativeLocaleUrl);
+const footerData = getFooterData(url, getRelativeLocaleUrl);
+
+const { metadata = {} } = Astro.props;
+const { currentLocale } = Astro;
+
+const { textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={currentLocale} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
