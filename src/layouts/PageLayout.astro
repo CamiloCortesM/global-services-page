@@ -2,6 +2,7 @@
 import Hero from '@/components/widgets/Hero.astro';
 import Layout from './Layout.astro';
 import type { MetaData } from '@/types';
+import { getLangFromUrl, useTranslations } from '@/utils/i18n/utils';
 
 interface Props {
   title?: string;
@@ -11,9 +12,12 @@ interface Props {
   metadata?: MetaData;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const {
   title = 'Global Services and Maintenance',
-  content = 'Cleaning Services',
+  content = t('index.description'),
   image = '/images/servicio-limpieza-profesional-personas-trabajando-juntas-oficina.webp',
   position = 'bg-center',
   metadata,

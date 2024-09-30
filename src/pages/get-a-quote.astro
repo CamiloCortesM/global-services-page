@@ -8,28 +8,28 @@ const servicesLinks = Object.keys(servicesForms);
 
 //metadata
 const metadata = {
-  title: 'Get a Quote',
+  title: 'Obtenha uma Cotação',
 };
 ---
 
 <Layout
   metadata={metadata}
   image="/images/mano-sosteniendo-moneda-mexicana.webp"
-  title="Get a quote"
-  content = 'Impeccable Cleanliness at Your Fingertips'
+  title="Obtenha uma cotação"
+  content = 'Limpeza Impecável ao Seu Alcance'
 >
   <ContactUs
-    title="Get a Free Quote on Our Cleaning Services"
+    title="Obtenha uma Cotação Gratuita dos Nossos Serviços de Limpeza"
     classes={{ container: 'md:py-4 lg:py-8' }}
-    subtitle="Looking for quality cleaning services? Get a free quote today. Our professionals are ready to take care of your cleaning needs, whether it's for homes, offices or commercial spaces, contact us now and find out how we can help you keep your space spotless!"
-    description="Our support team typically responds within 48 business hours."
-    subject="Quote"
-    button="Get Quote"
+    subtitle="Está à procura de serviços de limpeza de qualidade? Obtenha uma cotação gratuita hoje mesmo. Os nossos profissionais estão prontos para cuidar das suas necessidades de limpeza, seja para casas, escritórios ou espaços comerciais. Contacte-nos agora e descubra como podemos ajudá-lo a manter o seu espaço impecável!"
+    description="A nossa equipa de suporte normalmente responde dentro de 48 horas úteis."
+    subject="Cotação"
+    button="Obter Cotação"
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Nome',
       },
       {
         type: 'email',
@@ -39,16 +39,16 @@ const metadata = {
       {
         type: 'tel',
         name: 'phone',
-        label: 'Number',
+        label: 'Número',
         pattern: '[0-9]+',
-        title:'Please enter a valid UK telephone number.',
+        title:'Por favor, insira um número de telefone válido do Reino Unido.',
       },
     ]}
-    serviceOption={{ servicesLinks, label: 'Service Options' }}
+    serviceOption={{ servicesLinks, label: 'Opções de Serviço' }}
     columnsForm={false}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        'Ao enviar este formulário de contacto, reconhece e concorda com a recolha das suas informações pessoais.',
     }}
   />
 </Layout>

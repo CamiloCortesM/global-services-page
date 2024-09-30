@@ -1,5 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/utils/i18n/utils';
 import { Icon } from 'astro-icon/components';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div
@@ -16,7 +20,7 @@ import { Icon } from 'astro-icon/components';
     </li>
     <li class="flex justify-center items-center">
       <Icon name="tabler:clock-filled" class="text-primarys w-3 h-3 mr-2 text-yellow-300" />
-      <span>Monday - Friday: 9:00/19:00</span>
+      <span>{t('fot.contact.days')}: 9:00/19:00</span>
     </li>
     <li class="flex justify-center items-center">
       <Icon name="ic:baseline-email" class="text-primarys w-3 h-3 mr-2 text-yellow-300" />
