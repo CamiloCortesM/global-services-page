@@ -8,10 +8,10 @@ import Features2 from '@/components/widgets/Features2.astro';
 import ServiceOfferings from '@/components/widgets/ServiceOfferings.astro';
 import ImageGallery from '@/components/widgets/ImageGallery.astro';
 import FAQs from '@/components/widgets/FAQs.astro';
-import { getStaticPathsServices } from '@/utils/service';
+import { getStaticPathsServicesEs } from '@/utils/i18n/service.es';
 
 export function getStaticPaths() {
-  return getStaticPathsServices();
+  return getStaticPathsServicesEs();
 }
 
 const {
