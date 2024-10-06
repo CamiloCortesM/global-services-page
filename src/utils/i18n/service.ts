@@ -1,4 +1,5 @@
-export const getStaticPathsServices = () => {
+export const getStaticPathsServices = (url: URL) => {
+  console.log(url)
   const pages = [
     {
       slug: 'general-cleaning',
